@@ -9,11 +9,11 @@ assignees: ''
 
 ### Description
 
-*Sentence inside square bracket are considered as placeholder, replace them by your answers.*
+*Sentences inside square brackets are considered as placeholders, replace them with your answers.*
 
 [A clear and concise description of the bug.]
 
-### Steps to Reproduce
+### Steps To Reproduce
 
 [Exemple:]
 

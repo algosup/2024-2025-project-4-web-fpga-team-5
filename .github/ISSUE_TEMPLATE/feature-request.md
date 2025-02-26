@@ -9,11 +9,11 @@ assignees: ''
 
 ### Description
 
-*Sentence inside square bracket are considered as placeholder, replace them by your answers.*
+*Sentences inside square brackets are considered as placeholders, replace them with your answers.*
 
 [A clear and concise description of the feature you are proposing.]
 
-### Motivation and Context
+### Motivation And Context
 
 [Explain why this feature is needed and how it will benefit users. Include any links or references that might be useful.]
 

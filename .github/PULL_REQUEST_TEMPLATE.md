@@ -1,19 +1,19 @@
 ### Description
 
-*Sentence inside square bracket are considered as placeholder, replace them by your answers.*
+*Sentences inside square brackets are considered as placeholders, replace them with your answers.*
 
 [Please provide a clear and concise summary of your changes. Include context about the problem being solved and any relevant links to related issues.]
 
-### Related Issue(s) (If there is)
+### Related Issue(s) (If There Is)
 
 - Fixes #[Issue Number]
 - References #[Issue Number]
 
-### Type of Change
+### Type Of Change
 
 - [ ] Bug fix (non-breaking change which fixes an issue)
 - [ ] New feature (non-breaking change which adds functionality)
-- [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
+- [ ] Breaking change (fix or feature that would cause existing functionality not to work as expected)
 - [ ] Documentation update
 
 ### Checklist
@@ -22,15 +22,15 @@
 
 - [ ] My code follows the project’s style guidelines.
 - [ ] I have performed a self-review of my own code.
-- [ ] I have commented my code, particularly in hard-to-understand areas.
-- [ ] I have added unit-tests that prove my fix is effective or that my feature works.
+- [ ] I have commented on my code, particularly in hard-to-understand areas.
+- [ ] I have added unit tests that prove my fix is effective or that my feature works.
 - [ ] New and existing unit tests pass locally with my changes.
-- [ ] I have ensured that my code does not introduce any error or warnings.
+- [ ] I have ensured that my code does not introduce any errors or warnings.
 
 #### Documents Only
 
 - [ ] My documentation follows the project’s style guidelines.
-- [ ] I have self reviewed my document(s).
+- [ ] I have self-reviewed my document(s).
 - [ ] I have checked my documentation for grammatical errors.
 - [ ] I have ensured that my documentation is clear and easy to understand.
 
@@ -39,7 +39,7 @@
 [Add any additional context or screenshots (if applicable) here.]
 
 >[!WARNING]
->Don't forget to fill the following fields:
+>Don't forget to fill in the following fields:
 >
 >| Field     | Value                                                                                        |
 >| --------- | -------------------------------------------------------------------------------------------- |
