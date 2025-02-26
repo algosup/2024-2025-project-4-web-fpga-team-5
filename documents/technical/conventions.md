@@ -1,5 +1,18 @@
 # Conventions - Web FPGA
 
+## Table Of Content
+
+- [GitHub Conventions](#github-conventions)
+  - [Branches](#branches)
+  - [Folders](#folders)
+  - [Files](#files)
+  - [Commits](#commits)
+- [Document Conventions](#document-conventions)
+  - [Title](#title)
+  - [Headers](#headers)
+  - [Contents](#contents)
+- [Coding Conventions](#coding-conventions)
+
 ## GitHub Conventions
 
 ### Branches
