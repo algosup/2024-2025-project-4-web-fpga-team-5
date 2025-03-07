@@ -19,23 +19,12 @@
 
 Many branches would be created to simplify the overall project. It should be named in `kebab-case`.
 
-**Wrong example** ❌
+>[!CAUTION]
+> Bad Example
+> - Documents
+> - Login_Page
 
-```
-Documents
-Login_Page
-```
-
-**Right Example** ✅
-
->[!EXAMPLE]
-> Good Example
-> ```
-> documents
-> login-page
-> ```
-
->[!EXAMPLE]
+>[!TIP]
 > Good Example
 > - documents
 > - login-page
