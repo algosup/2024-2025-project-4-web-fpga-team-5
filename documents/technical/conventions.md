@@ -20,12 +20,12 @@
 Many branches would be created to simplify the overall project. It should be named in `kebab-case`.
 
 >[!CAUTION]
-> Bad Example
+> Wrong Examples:
 > - Documents
 > - Login_Page
 
 >[!TIP]
-> Good Example
+> Right Examples:
 > - documents
 > - login-page
 
@@ -33,11 +33,13 @@ Many branches would be created to simplify the overall project. It should be nam
 
 All the folders in the repository would be written in `camelCase`.
 
->[!CAUTION] Bad Example
+>[!CAUTION]
+> Wrong Examples:
 > - Documents
 > - Quality_Assurance
 
->[!TIP] Good Example
+>[!TIP]
+> Right Examples:
 > - documents
 > - qualityAssurance
 
@@ -45,19 +47,15 @@ All the folders in the repository would be written in `camelCase`.
 
 All the files would be written in `camelCase`.
 
-**Wrong example** ❌
+>[!CAUTION]
+> Wrong Examples:
+> - management_artifacts.md
+> - FUNCTIONAL_SPECIFICATIONS.md
 
-```
-management_artifacts.md
-FUNCTIONAL_SPECIFICATIONS.md
-```
-
-**Right Example** ✅
-
-```
-managementArtifacts.md
-functionalSpecifications.md
-```
+>[!TIP]
+> Right Examples:
+> - managementArtifacts.md
+> - functionalSpecifications.md
 
 ### Commits
 
@@ -65,34 +63,26 @@ Commits would follow different conventions, aiming to a better understanding of 
 
 - The name of the commit should start with a verb in preterit explaining what as be done within the commit:
 
-**Wrong example** ❌
+>[!CAUTION]
+> Wrong Examples:
+> - last update
+> - oupsie
 
-```
-last update
-oupsie
-```
-
-**Right Example** ✅
-
-```
-Updated the log-in page.
-Fixed the issue #33.
-```
+>[!TIP]
+> Right Examples:
+> - Updated the log-in page.
+> - Fixed the issue #33.
 
 - A more detailed description could, and is recommended, be written.
 
-**Wrong example** ❌
+>[!CAUTION]
+> Wrong Example:
+> - {feature name}
 
-```
-- {feature name}
-```
-
-**Right Example** ✅
-
-```
-- added {feature name}
-- wrote comments for {function name}
-```
+>[!TIP]
+> Right Examples:
+> - added {feature name}
+> - wrote comments for {function name}
 
 - a coworker should be added if the work was done in pair.
 
@@ -102,55 +92,43 @@ Fixed the issue #33.
 
 The title of a document should contain the file and project names.
 
-**Wrong example** ❌
+>[!CAUTION]
+> Wrong Examples:
+> - \# Planning Strategy Of Web FPGA Project
+> - \# Test Plan - Team 5
 
-```
-# Planning Strategy Of Web FPGA Project
-# Test Plan - Team 5
-```
-
-**Right Example** ✅
-
-```
-# Test Plan - Web FPGA
-# Conventions - Web FPGA
-```
+>[!TIP]
+> Right Examples:
+> - \# Test Plan - Web FPGA
+> - \# Conventions - Web FPGA
 
 ### Headers
 
 All words in a header should start with a capital case.
 
-**Wrong example** ❌
+>[!CAUTION]
+> Wrong Examples:
+> - \### headers
+> - \## coding_conventions
 
-```
-### headers
-## coding_conventions
-```
-
-**Right Example** ✅
-
-```
-### Headers
-## Coding Conventions
-```
+>[!TIP]
+> Right Examples:
+> - \### Headers
+> - \## Coding Conventions
 
 ### Contents
 
 Documents should be written in American English and not in British English.
 
-**Wrong example** ❌
+>[!CAUTION]
+> Wrong Examples:
+> - colour
+> - optimise
 
-```
-colour
-optimise
-```
-
-**Right Example** ✅
-
-```
-color
-optimize
-```
+>[!TIP]
+> Right Examples:
+> - color
+> - optimize
 
 ## Coding Conventions
 
