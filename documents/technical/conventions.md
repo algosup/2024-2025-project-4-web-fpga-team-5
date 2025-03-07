@@ -28,10 +28,17 @@ Login_Page
 
 **Right Example** ✅
 
-```
-documents
-login-page
-```
+>[!EXAMPLE]
+> Good Example
+> ```
+> documents
+> login-page
+> ```
+
+>[!EXAMPLE]
+> Good Example
+> - documents
+> - login-page
 
 ### Folders
 
