@@ -33,19 +33,13 @@ Many branches would be created to simplify the overall project. It should be nam
 
 All the folders in the repository would be written in `camelCase`.
 
-**Wrong example** ❌
+>[!CAUTION] Bad Example
+> - Documents
+> - Quality_Assurance
 
-```
-Documents
-Quality_Assurance
-```
-
-**Right Example** ✅
-
-```
-documents
-qualityAssurance
-```
+>[!TIP] Good Example
+> - documents
+> - qualityAssurance
 
 ### Files
 
