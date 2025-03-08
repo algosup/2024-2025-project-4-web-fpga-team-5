@@ -12,6 +12,13 @@
   - [Headers](#headers)
   - [Contents](#contents)
 - [Coding Conventions](#coding-conventions)
+  - [Components](#components)
+  - [Props](#props)
+  - [State Variables](#state-variables)
+  - [Event Handlers](#event-handlers)
+  - [CSS Classes](#css-classes)
+  - [Constants](#constants)
+  - [Utility Functions](#utility-functions)
 
 ## GitHub Conventions
 
@@ -132,4 +139,102 @@ Documents should be written in American English and not in British English.
 
 ## Coding Conventions
 
-<!-- TODO -->
+### Components
+
+Components should be written in `PascalCase`.
+
+>[!CAUTION]
+> Wrong Examples:
+> - const todoItem
+> - interface todoItem
+> - type todoList
+
+>[!TIP]
+> Right Examples:
+> - const TodoItem
+> - interface TodoItem
+> - type TodoList
+
+### Props
+
+Use descriptive names for props to clearly indicate their purpose. Avoid abbreviations or acronyms unless they are widely understood in the context of your project.
+
+>[!CAUTION]
+> Wrong Example:
+> - Usr
+
+>[!TIP]
+> Right Example:
+> - User
+
+### State Variables
+
+Prefix state variables with `is`, `has`, or `should` to denote boolean values.
+
+>[!CAUTION]
+> Wrong Examples:
+> - const [Active, setActive] = useState(false);
+> - const [Error, setError] = useState(false);
+> - const [Render, setRender] = useState(false);
+
+>[!TIP]
+> Right Examples:
+> - const [isActive, setIsActive] = useState(false);
+> - const [hasError, setHasError] = useState(false);
+> - const [shouldRender, setShouldRender] = useState(false);
+
+### Event Handlers
+
+Use `handle` as a prefix for event handler functions.
+
+>[!CAUTION]
+> Wrong Examples:
+> - const ButtonClick = () => {}
+> - const InputChange = () => {}
+
+>[!TIP]
+> Right Examples:
+> - const handleButtonClick = () => {}
+> - const handleInputChange = () => {}
+
+### CSS Classes
+
+Use `kebab-case` for CSS classes names.
+
+>[!CAUTION]
+> Wrong Examples:
+> - \<div className="WrongExample">
+> - \<div className="Example_Container">
+
+>[!TIP]
+> Right Examples:
+> - \<div className="good-example">
+> - \<div className="example-container">
+
+### Constants
+
+Use `SCREAMING_CASE` for the constants naming.
+
+>[!CAUTION]
+> Wrong Examples:
+> - const api_url
+> - const max_result
+
+>[!TIP]
+> Right Examples:
+> - const API_URL
+> - const MAX_RESULT
+
+### Utility Functions
+
+Choose descriptive names that indicate their purpose or functionality. Use `camelCase` for their names.
+
+>[!CAUTION]
+> Wrong Examples:
+> - const FormatDate = (date) => {}
+> - const generate-unique-id = () => {}
+
+>[!TIP]
+> Right Examples:
+> - const formatDate = (date) => {}
+> - const generateUniqueId = () => {}
