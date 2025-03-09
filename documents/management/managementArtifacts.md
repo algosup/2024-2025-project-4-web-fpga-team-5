@@ -35,19 +35,42 @@
 **Legend:** R=Responsible, A=Accountable, C=Consulted, I=Informed
 
 
-## Communication
-
-By Slack, and GitHub for issues : [here](https://github.com/LeFl0w/ALGOSUP_POC/issues).
-
-
-
-## Risks & Assumptions
-
-
 ## Key Performance Indicators
+
+
+### KPIs
+
+To follow the progress of the project, multiple KPIs have been defined. They can be viewed through our KPIs spread sheet.
+
+Our KPIs have been separated into different categories as followed:
+
+Documents
+Project charter
+Functional specifications
+Technical specifications
+Test plan
+User manual
+
+
+### Mood
+
+
 
 
 ## Weekly Reports
 
+Each week a weekly report is done to ensure a follow of the project, [here]() you can find all the folder with cumulative weekly reports. 
 
-## Post Mortem Analysis
+You can directly access the reports individually:
+
+[Weekly report 1](https://github.com/algosup/2024-2025-project-4-web-fpga-team-5/tree/main/documents/management/weeklyReport/weekly_Report_1)
+[Weekly report 2](https://github.com/algosup/2024-2025-project-4-web-fpga-team-5/tree/main/documents/management/weeklyReport/weekly_Report_2)
+[Weekly report 3](https://github.com/algosup/2024-2025-project-4-web-fpga-team-5/tree/main/documents/management/weeklyReport/weekly_Report_3)
+[Weekly report 4](https://github.com/algosup/2024-2025-project-4-web-fpga-team-5/tree/main/documents/management/weeklyReport/weekly_Report_4)
+[Weekly report 5](https://github.com/algosup/2024-2025-project-4-web-fpga-team-5/tree/main/documents/management/weeklyReport/weekly_Report_5)
+[Weekly report 6](https://github.com/algosup/2024-2025-project-4-web-fpga-team-5/tree/main/documents/management/weeklyReport/weekly_Report_6)
+
+## Post Mortem 
+
+
+Method Waterfall

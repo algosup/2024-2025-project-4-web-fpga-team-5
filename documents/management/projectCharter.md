@@ -10,7 +10,7 @@
 | -------------- | ------------- |
 | Document Owner | Robin Goumy   |
 | Creation Date  | 27/02/2025    |
-| Last Update    | 27/02/2025    |
+| Last Update    | 05/03/2025    |
 
 </div>
 
@@ -26,32 +26,78 @@
 | <img src="https://avatars.githubusercontent.com/u/182214449?v=4" width="100" height="100"> | Robin GOUMY       | Project Manager     |
 | <img src="https://avatars.githubusercontent.com/u/123485791?v=4" width="100" height="100"> | Alexandre BOPP    | Program Manager     |
 | <img src="https://avatars.githubusercontent.com/u/145995586?v=4" width="100" height="100"> | Maxime THIZEAU    | Technical Leader    |
-| <img src="https://avatars.githubusercontent.com/u/62845771?v=4" width="100" height="100"> | Geoffrey Delrieu  | Software Engineer 1 |
+| <img src="https://avatars.githubusercontent.com/u/62845771?v=4" width="100" height="100">  | Geoffrey Delrieu  | Software Engineer 1 |
 | <img src="https://avatars.githubusercontent.com/u/145995367?v=4" width="100" height="100"> | Mathias GAGNEPAIN | Quality Assurance   |
 | <img src="https://avatars.githubusercontent.com/u/145991425?v=4" width="100" height="100"> | Habi CAILLEAU     | Technical Writer    |
 
 
+
 ## Scope
 
-### Project Goals 
+### Project Purpose
+
+This project aims to create a web interface for an FPGA simulator, visually combining 2D FPGA layouts with real-time signal propagation. It will help students understand FPGA behavior through interactive simulations while allowing teachers to upload educational examples.
+
+[Here](https://github.com/LeFl0w/ALGOSUP_POC/tree/main) you can find the Call of tender.
 
 ### Core Requirements
+
+#### Technologies and Accessibility
+
+- Developed using an open-source web technology.
+- Accessible via a web browser.
+- Data hosted on a backend server.
+
+#### Student Interface
+
+- 2D visualization of BELs and signal connections.
+- Navigation (zoom, move).
+- Selection of preloaded application examples.
+- Simulation playback at different speeds (x1, x2, x4…).
+- Pause/resume and step-by-step execution buttons.
+
+#### Teacher Interface
+
+- Uploading of Verilog application files and testbenches.
+- Generation of simulation and visualization files.
+- Definition of an intermediate pivot file format for easier data integration.
+
+#### Expected Deliverables
+- Source code on a Git repository.
+- Documentation on installation and usage.
+- Two educational examples: a flip-flop and a LUT4.
+
+## Out of Scope
+
+- Have multiple educational example (more than 2).
+- Create a 3D visualisation of the signal.
+- Support for several FPGA families
+
 
 ## Project Limitations
 
 ### Constraints
 
+- Input files must be in Verilog and SDF formats.
+- Need for smooth and interactive graphical visualization.
+- Backend must efficiently transform input data for frontend usage.
+
 ### Risks
 
-| Risk Type                                 | Description                                                                                                           | Likelihood | Impact     | Mitigation Strategy                                      |
-| ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ---------- | ---------- | --------------------------------------------------------- |
+- Complex data transformation: Converting Verilog and SDF files into a usable frontend format could be challenging.
+- Performance and interactivity: Ensuring real-time, smooth animation.
+- Tool interoperability: Potential incompatibilities between input formats and open-source tools could slow down development.
 
 
 ## Stakeholders
 
-| Role                     | Representative              | Expectations                                                                                          |
-| ------------------------ | --------------------------- | ------------------------------------------------------------------------------------------------------ |
-| School Director & Client | Franck JEANNIN (ALGOSUP)    |  |
+| Role   | Representative              | 
+| ------ | --------------------------- | 
+| Client | Florent Manni (CNES)        |
+
+## Communication
+
+Communication with the customer has been set up in slack as well as GitHub for [issues](https://github.com/LeFl0w/ALGOSUP_POC/issues).
 
 ## Team Members and Responsibilities
 
