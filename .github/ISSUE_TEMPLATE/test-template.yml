@@ -1,45 +1,61 @@
-name: Test Case
-description: Template for creating test cases
-title: "[TEST CASE]"
-labels: ["test case"]
+name: Test
+description: Template for creating tests based on test cases
+title: "[TEST]"
+labels: ["test"]
 projects:
   - "2024-2025-Project-4-Team-5 Quality Assurance Planning"
+type: Task
 assignees:
     - MistzSoftware
 body:
   - type: textarea
-    id: description
+    id: actual
     attributes:
-      label: Test Case Description
-      description: Describe the test case you are creating.
-      placeholder: A clear and concise description of the test case.
+      label: Actual Results
+      description: Describe the actual results of the test case.
+      placeholder: Describe the actual results of the test case.
     validations:
       required: true
-  - type: textarea
-    id: preconditions
+  - type: dropdown
+    id: status
     attributes:
-      label: Preconditions
-      description: Describe any preconditions or setup required before executing the test case.
-      placeholder: Describe any preconditions or setup required before executing the test case.
+      label: Test Status
+      description: The status of the test.
+      options:
+        - Passed
+        - Failed
+        - Blocked
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating System
+      description: The operating system used for the test.
+      options:
+        - Windows
+        - macOS
+        - Linux
+    validations:
+      required: true
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      description: The browser used for the test.
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+        - Edge
+        - Internet Explorer
     validations:
       required: false
-  - type: textarea
-    id: steps
+  - type: input
+    id: version
     attributes:
-      label: Test Steps
-      description: Describe the steps to execute the test case.
-      placeholder: |
-        1. Go to '...'
-        2. Click on '...'
-        3. Perform action '...'
-        4. Verify '...'
-    validations:
-      required: true
-  - type: textarea
-    id: expected
-    attributes:
-      label: Expected Results
-      description: Describe the expected results of the test case.
-      placeholder: Describe the expected results of the test case.
+      label: Version
+      description: The version of the software you tested.
+      placeholder: 0.0.0
     validations:
       required: true
