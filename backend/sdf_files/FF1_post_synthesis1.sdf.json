@@ -1,0 +1,163 @@
+{
+  "instances": [
+    {
+      "name": "routing_segment_D_output_0_0_to_lut_\\$auto\\$rtlil\\.cc\\:2714\\:MuxGate\\$139_input_0_3",
+      "iopaths": []
+    },
+    {
+      "name": "routing_segment_clk_output_0_0_to_latch_Q_clock_0_0",
+      "iopaths": []
+    },
+    {
+      "name": "routing_segment_async_reset_output_0_0_to_lut_\\$auto\\$rtlil\\.cc\\:2714\\:MuxGate\\$139_input_0_1",
+      "iopaths": []
+    },
+    {
+      "name": "routing_segment_latch_Q_output_0_0_to_lut_\\$auto\\$rtlil\\.cc\\:2714\\:MuxGate\\$139_input_0_2",
+      "iopaths": []
+    },
+    {
+      "name": "routing_segment_latch_Q_output_0_0_to_Q_input_0_0",
+      "iopaths": []
+    },
+    {
+      "name": "routing_segment_lut_\\$auto\\$rtlil\\.cc\\:2714\\:MuxGate\\$139_output_0_0_to_latch_Q_input_0_0",
+      "iopaths": []
+    },
+    {
+      "name": "lut_\\$auto\\$rtlil\\.cc\\:2714\\:MuxGate\\$139",
+      "iopaths": []
+    },
+    {
+      "name": "latch_Q",
+      "iopaths": [
+        {
+          "from": "datain",
+          "to": "dataout",
+          "delays": {
+            "min": "1693.56",
+            "typ": "1693.56",
+            "max": "1693.56"
+          },
+          "slews": {
+            "min": "1693.56",
+            "typ": "1693.56",
+            "max": "1693.56"
+          }
+        },
+        {
+          "from": "datain",
+          "to": "dataout",
+          "delays": {
+            "min": "10",
+            "typ": "10",
+            "max": "10"
+          },
+          "slews": {
+            "min": "10",
+            "typ": "10",
+            "max": "10"
+          }
+        },
+        {
+          "from": "datain",
+          "to": "dataout",
+          "delays": {
+            "min": "463.327",
+            "typ": "463.327",
+            "max": "463.327"
+          },
+          "slews": {
+            "min": "463.327",
+            "typ": "463.327",
+            "max": "463.327"
+          }
+        },
+        {
+          "from": "datain",
+          "to": "dataout",
+          "delays": {
+            "min": "0",
+            "typ": "0",
+            "max": "0"
+          },
+          "slews": {
+            "min": "0",
+            "typ": "0",
+            "max": "0"
+          }
+        },
+        {
+          "from": "datain",
+          "to": "dataout",
+          "delays": {
+            "min": "2304.7",
+            "typ": "2304.7",
+            "max": "2304.7"
+          },
+          "slews": {
+            "min": "2304.7",
+            "typ": "2304.7",
+            "max": "2304.7"
+          }
+        },
+        {
+          "from": "datain",
+          "to": "dataout",
+          "delays": {
+            "min": "96",
+            "typ": "96",
+            "max": "96"
+          },
+          "slews": {
+            "min": "96",
+            "typ": "96",
+            "max": "96"
+          }
+        },
+        {
+          "from": "in[1]",
+          "to": "out",
+          "delays": {
+            "min": "152",
+            "typ": "152",
+            "max": "152"
+          },
+          "slews": {
+            "min": "152",
+            "typ": "152",
+            "max": "152"
+          }
+        },
+        {
+          "from": "in[2]",
+          "to": "out",
+          "delays": {
+            "min": "150",
+            "typ": "150",
+            "max": "150"
+          },
+          "slews": {
+            "min": "150",
+            "typ": "150",
+            "max": "150"
+          }
+        },
+        {
+          "from": "in[3]",
+          "to": "out",
+          "delays": {
+            "min": "150",
+            "typ": "150",
+            "max": "150"
+          },
+          "slews": {
+            "min": "150",
+            "typ": "150",
+            "max": "150"
+          }
+        }
+      ]
+    }
+  ]
+}
