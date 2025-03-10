@@ -1,0 +1,45 @@
+name: Test Case
+description: Template for creating test cases
+title: "[TEST CASE]"
+labels: ["test-case"]
+projects:
+  - "2024-2025-Project-4-Team-5 Quality Assurance Planning"
+assignees:
+    - MistzSoftware
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Test Case Description
+      description: Describe the test case you are creating.
+      placeholder: A clear and concise description of the test case.
+    validations:
+      required: true
+  - type: textarea
+    id: preconditions
+    attributes:
+      label: Preconditions
+      description: Describe any preconditions or setup required before executing the test case.
+      placeholder: Describe any preconditions or setup required before executing the test case.
+    validations:
+      required: false
+  - type: textarea
+    id: steps
+    attributes:
+      label: Test Steps
+      description: Describe the steps to execute the test case.
+      placeholder: |
+        1. Go to '...'
+        2. Click on '...'
+        3. Perform action '...'
+        4. Verify '...'
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Results
+      description: Describe the expected results of the test case.
+      placeholder: Describe the expected results of the test case.
+    validations:
+      required: true
