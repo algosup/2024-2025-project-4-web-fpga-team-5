@@ -1,7 +1,7 @@
 name: Test Case
 description: Template for creating test cases
 title: "[TEST CASE]"
-labels: ["test-case"]
+labels: ["test case"]
 projects:
   - "2024-2025-Project-4-Team-5 Quality Assurance Planning"
 assignees:
