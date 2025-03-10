@@ -24,7 +24,7 @@
   - [6. Test Deliverables](#6-test-deliverables)
   - [7. Roles and Responsibilities](#7-roles-and-responsibilities)
   - [8. Defect Management](#8-defect-management)
-    - [8.1 Defect Reporting](#81-defect-reporting)
+    - [8.1 Defect Reporting Process](#81-defect-reporting-process)
     - [8.2 Defect Tracking](#82-defect-tracking)
   - [9. Risks and Contingencies](#9-risks-and-contingencies)
   - [Glossary](#glossary)
@@ -63,13 +63,31 @@ Testing covers:
 
 ### 1.4 References
 
-<!-- TODO: Provide references to related documents, standards, or guidelines. (Tech specs, func specs, etc...) -->
+- [Functional Requirements Specification](./functionalRequirements.md)
+- [Technical Design Document](./technicalDesign.md)
+- [WCAG 2.1 Guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/)
+- [API Documentation](./apiDocumentation.md) <!-- TODO: Create this document (TL or SE)-->
+- [Regression Testing Plan](./regressionPlan.md)  <!-- TODO: Create this document -->
+- [Integration Testing Strategy](./integrationStrategy.md)  <!-- TODO: Create this document -->
+- [Test Case Document](./testCases.md)  <!-- TODO: Create this document -->
+- [Defect Management Process](./defectManagement.md)
 
 ## 2. Test Items
 
 ### 2.1 Features to be Tested
 
-<!-- TODO: List the features and functionalities to be tested. -->
+| Feature                               | Description                                                                   |
+| ------------------------------------- | ----------------------------------------------------------------------------- |
+| Web Interface                         | Test the user interface for usability, responsiveness, and functionality.     |
+| API Integration                       | Validate the integration with external APIs and services.                     |
+| Security Features                     | Ensure all security measures are implemented and functioning correctly.       |
+| Performance Metrics                   | Measure the system's performance under various conditions and loads.          |
+| User Authentication and Authorization | Test the login, registration, and role-based access control mechanisms.       |
+| Error Handling and Logging            | Verify that errors are handled gracefully and logged appropriately.           |
+| Cross-Browser Compatibility           | Ensure the web application works across different browsers and devices.       |
+| Regression Testing                    | Re-test existing functionalities to ensure new changes do not introduce bugs. |
+
+For detailed test cases, refer to the [Test Case Document](./testCases.md).
 
 ### 2.2 Features Not to be Tested
 
@@ -105,7 +123,14 @@ Testing covers:
 
 ### 4.1 Hardware
 
-<!-- TODO: List the hardware requirements for the test environment. -->
+- Server: <!-- TODO: Add the linux model and specifications after receiving it-->
+- Workstations:
+  - MacBook Air (macOs Sequoia): 16GB RAM, 500GB SSD, CPU M3.
+  - Lenovo ThinkBook 14 G4 IAP (Windows 11): 16 GM RAM, 512GB SSD, CPU I7 12th gen.
+- Teststations:
+  - MacBook Air (macOs Sequoia): 16GB RAM, 500GB SSD, CPU M3.
+  - Lenovo ThinkBook 14 G4 IAP (Windows 11): 16 GM RAM, 512GB SSD, CPU I7 12th gen.
+  - Ubuntu <!-- TODO: Add more hardware info after receiving it-->
 
 ### 4.2 Software
 
@@ -121,17 +146,30 @@ Testing covers:
 
 ## 7. Roles and Responsibilities
 
-<!-- TODO: Define the roles and responsibilities of the testing team members. -->
+| Role              | Responsibilities                                                                                                                   |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| Software Engineer | Develops and maintains test scripts. Executes automated and manual tests.                                                          |
+| Quality Assurance | Designs and documents test cases, test plan, test reports, executes tests, and reports defects. Ensures quality standards are met. |
 
 ## 8. Defect Management
 
-### 8.1 Defect Reporting
+### 8.1 Defect Reporting Process
 
-<!-- TODO: Describe the process for reporting defects. -->
+The defect reporting process involves:
+
+- identifying
+- logging
+- triaging
+- assigning
+- resolving
+- verifying
+- closing defects
+
+For a detailed description of each step in the process, please refer to the [Defect Management Process](defectManagementProcess.md) document.
 
 ### 8.2 Defect Tracking
 
-- **Dashboard**: Real-time Jira board with filters (e.g., "Critical Bugs").
+- **Dashboard**: GitHub project board with filters (e.g., "Critical Bugs").
 - **SLA**: Critical (24h), High (72h), Medium (1 sprint), Low (backlog).
 - **Closure**: Retest after fix, attach evidence, update status.
 
@@ -149,4 +187,4 @@ Testing covers:
 | Term | Definition                                                                                                                                                                                                                       |
 | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | SLA  | A service-level agreement is an agreement between a service provider and a customer. Particular aspects of the service – quality, availability, responsibilities – are agreed between the service provider and the service user. |
-| UAT | User Acceptance Testing |
+| UAT  | User Acceptance Testing                                                                                                                                                                                                          |
