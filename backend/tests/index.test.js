@@ -43,7 +43,7 @@ describe('API Endpoints Tests', () => {
     });
 
     // No file uploaded Test
-    it('fail to uploads and parses an SDF file (no file passed)', async () => {
+    it('fail to uploads and parses an SDF file (no file uploaded)', async () => {
         const response = await request(app)
         .post('/upload-sdf');
 
