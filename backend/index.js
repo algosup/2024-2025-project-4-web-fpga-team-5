@@ -7,7 +7,7 @@ import cors from 'cors';
 
 import { parseSDF } from './src/sdfProccess.js';
 
-const app = express();
+export const app = express();
 const port = 3001;
 
 // Get absolute path
@@ -102,6 +102,6 @@ app.get('/list-sdf', async (req, res) => {
     }
 });
 
-app.listen(port, () => {
+export const server = app.listen(port, () => {
     console.log(`Backend launched on http://localhost:${port}`);
 });
