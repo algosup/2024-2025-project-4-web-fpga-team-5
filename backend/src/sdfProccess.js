@@ -8,7 +8,7 @@ export const parseSDF = (fileContent) => {
 
     const instancesMap = new Map();
 
-    // Extraxt instances
+    // instances extract 
     let match;
     while ((match = instanceRegex.exec(fileContent)) !== null) {
         const instanceName = match[1];
@@ -32,6 +32,5 @@ export const parseSDF = (fileContent) => {
             });
         }
     }
-
     return sdfData;
 }
