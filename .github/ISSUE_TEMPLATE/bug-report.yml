@@ -2,6 +2,9 @@ name: Bug Report
 description: Report a bug to help us improve
 title: "[BUG]"
 labels: ["bug"]
+projects:
+  - "2024-2025-Project-4-Team-5 Quality Assurance Planning"
+type: Bug
 body:
   - type: input
     id: description
@@ -63,13 +66,12 @@ body:
         - Internet Explorer
     validations:
       required: false
-  - type: dropdown
+  - type: input
     id: version
     attributes:
       label: Version
       description: The version of the software you encountered the bug on.
-      options:
-        - 0.1.0
+      placeholder: 0.0.0
     validations:
       required: true
   - type: textarea
