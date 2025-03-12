@@ -10,14 +10,34 @@
 | -------------- | ------------- |
 | Document Owner | Robin Goumy   |
 | Creation Date  | 27/02/2025    |
-| Last Update    | 05/03/2025    |
+| Last Update    | 12/03/2025    |
 
 </div>
 
 <br>
 
 <details>
-<summary><b>Table of contents</b></summary>
+
+<summary>Table of Contents</summary>
+
+- [2024 - 2025 Project-2 Serious Game Team-8 - Project Charter](#2024---2025-project-2-serious-game-team-8---project-charter)
+  - [Team member](#team-member)
+  - [Scope](#scope)
+    - [Project Purpose](#project-purpose)
+    - [Core Requirements](#core-requirements)
+      - [Technologies and Accessibility](#technologies-and-accessibility)
+      - [Student Interface](#student-interface)
+      - [Teacher Interface](#teacher-interface)
+      - [Expected Deliverables](#expected-deliverables)
+  - [Out of Scope](#out-of-scope)
+  - [Project Limitations](#project-limitations)
+    - [Constraints](#constraints)
+    - [Risks](#risks)
+  - [Stakeholders](#stakeholders)
+  - [Communication](#communication)
+  - [Responsibilities](#responsibilities)
+  - [Deadline](#deadline)
+  - [Allocated Resources](#allocated-resources)
 </details>
 
 ## Team member
@@ -36,9 +56,9 @@
 
 ### Project Purpose
 
-This project aims to create a web interface for an FPGA simulator, visually combining 2D FPGA layouts with real-time signal propagation. It will help students understand FPGA behavior through interactive simulations while allowing teachers to upload educational examples.
+This project aims to create a web interface, visually combining 2D FPGA layouts with real-time signal propagation. It will help students understand FPGA behavior through interactive interface while allowing teachers to upload educational examples.
 
-[Here](https://github.com/LeFl0w/ALGOSUP_POC/tree/main) you can find the Call of tender.
+[Here](https://github.com/LeFl0w/ALGOSUP_POC/tree/main) you can find the Call of tender, of this project.
 
 ### Core Requirements
 
@@ -63,6 +83,7 @@ This project aims to create a web interface for an FPGA simulator, visually comb
 - Definition of an intermediate pivot file format for easier data integration.
 
 #### Expected Deliverables
+
 - Source code on a Git repository.
 - Documentation on installation and usage.
 - Two educational examples: a flip-flop and a LUT4.
@@ -97,9 +118,9 @@ This project aims to create a web interface for an FPGA simulator, visually comb
 
 ## Communication
 
-Communication with the customer has been set up in slack as well as GitHub for [issues](https://github.com/LeFl0w/ALGOSUP_POC/issues).
+Communication with the customer has been set up in Slack as well as GitHub for [issues](https://github.com/LeFl0w/ALGOSUP_POC/issues).
 
-## Team Members and Responsibilities
+## Responsibilities
 
 | Team Member       | Position             | Key Responsibilities                                                                 | Success Criteria                                                                        |
 | ----------------- | -------------------- | ----------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
@@ -113,19 +134,19 @@ Communication with the customer has been set up in slack as well as GitHub for [
 
 ## Deadline
 
-| Date       | Milestone                          |
-| ---------- | ---------------------------------- |
-| 13/03/2025 | Functional Specification Delivery  |
-| 25/03/2025 | Technical Specification Delivery   |
-| 25/03/2025 | Test Plan Delivery                 |
-| 01/04/2025 | Final Codebase Delivery            |
-| 01/04/2025 | User Manual Delivery               |
-| 01/04/2025 | Oral Presentation                  |
+| Date       | Milestone                |
+| ---------- | ------------------------ |
+| 13/03/2025 | Functional Specification |
+| 25/03/2025 | Technical Specification  |
+| 24/03/2025 | V.1 Code                 |
+| 25/03/2025 | Test Plan                |
+| 25/03/2025 | Test Case                |
+| 01/04/2025 | User Manual              |
 
 ## Allocated Resources
 
-- **Budget:** €0 (No external funding)
-- **Team:** 6 members (6 during the first week)
+- **Budget:** €0
+- **Team:** 6 members
 - **Work Hours:** 20 half-days of 3 hours and 30 minutes each = 70h
 
 **Total estimated human hours:** 70h * 6 = 420H
