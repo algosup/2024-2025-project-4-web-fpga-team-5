@@ -3,7 +3,7 @@
 
 ---
 
-# 2024 - 2025 Project-2 Serious Game Team-8 - Project Charter
+# 2024 - 2025 Project-4-web-fpga-team-5 - Project Charter
 
 
 | Description    | Information   |
@@ -20,7 +20,7 @@
 
 <summary>Table of Contents</summary>
 
-- [2024 - 2025 Project-2 Serious Game Team-8 - Project Charter](#2024---2025-project-2-serious-game-team-8---project-charter)
+- [2024 - 2025 Project-4-web-fpga-team-5 - Project Charter](#2024---2025-project-4-web-fpga-team-5---project-charter)
   - [Team member](#team-member)
   - [Scope](#scope)
     - [Project Purpose](#project-purpose)

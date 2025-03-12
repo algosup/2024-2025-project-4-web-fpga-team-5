@@ -3,8 +3,7 @@
 ---
 
 # 2024 - 2025 Project-4-web-fpga-team-5 - Project Charter
-Public
- - Management Artifacts
+
 
 [logo]()
 
