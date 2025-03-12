@@ -132,6 +132,9 @@ Once again. This list has been made in amount of the project. Therefore, it is m
 ```md
 2024-2025-project-4-web-fpga-team-5
 ├─── backend
+│   ├─── test
+│   │   ├─── (all the backend test files would be stored in this folder)
+│   │   └─── sdfProccess.test.js
 │   ├─── sdfFiles
 │   │   ├─── FF1PostSynthesis.json
 │   │   ├─── FF1NorstPostSynthesis.json
@@ -147,6 +150,10 @@ Once again. This list has been made in amount of the project. Therefore, it is m
 │   ├─── package-lock.json
 │   └─── package.json 
 ├─── frontend
+│   ├─── test
+│   │   ├─── (all the frontend test files would be stored in this folder)
+│   │   ├─── app.test.jsx
+│   │   └─── main.test.jsx
 │   ├─── public
 │   │   └─── (assets than can be public, e.g. svg, jpeg, etc.)
 │   ├─── src
@@ -208,7 +215,33 @@ You can find the different aspect at these two places:
 
 ### Themes And Styles
 
-<!-- TODO -->
+Regarding the themes of the application. At the launch of the product, only the light mode will be created, since toggling themes aren't a priority in our application. \
+However, on a future update, this feature would be implemented. To do so, the development team would use the `color-scheme` attributes.
+It could be use as in the example below: \
+**The CSS part:**
+```CSS
+:root {
+    color-scheme: light dark; /* light dark means it supports both light and dark mode */
+    --bg-color: white;
+    --text-color: black;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.dark-mode {
+    --bg-color: black;
+    --text-color: white;
+}
+```
+**The JS part:**
+```JS
+function toggleTheme() {
+    document.body.classList.toggle('dark-mode');
+}
+```
 
 ## Integration And Environment
 
@@ -362,11 +395,59 @@ $ npx vite
 
 ### Bug Reporting And Tracking
 
-<!-- TODO -->
+To handle all the errors, the development team would neeed to create unit test to ensure the code is bug-free. Therefore, a new folder would be created in the `frontend` and `backend` folders. It would be called test and will contain all the test files. There would be one testinf file for every file in the application. They would be named with a `.test` at the end of the file name.
+
+Example:
+```
+/lib -> app.jsx
+
+would become
+
+/test -> app.test.jsx
+```
+
+To create those unit tests, the development team would use Jest. They would need to modify the following files accordingly:
+
+- Downloading the necesary library:
+```
+npm install @testing-library/jest-dom --save-dev
+npm install @testing-library/react --save-dev
+```
+
+- Importing the libraries in all of the testing files:
+```JS
+import '@testing-library/jest-dom';
+import '@testing-library/jest-dom/extend-expect';
+```
+
+- Modify the `package.json` file:
+```
+"scripts": {
+    "test": "react-scripts test --watchAll --coverage"
+},
+```
+
+Here is an example of a unit test:
+```JSX
+import { render, screen } from '@testing-library/react'
+import FirstTest from '../components/FirstTest';
+
+test("Example 1 renders successfully", () => {
+    render(<FirstTest/>);
+
+    const element = screen.getByText(/first test/i);
+
+    expect(element).toBeInTheDocument();
+})
+```
+
+For further information, please refer to the [test plan](../qualityAssurance/testPlan.md).
 
 ### Updates And Upgrades
 
-<!-- TODO -->
+As this project only has six weeks in lenght for us, ALGOSUP students. Every push, or pull request made after the end date, which is the first of April, would be considered as an update. 
+
+Our team will do its best to complete all the requirements in time, in that case, every features not required for this project but approved by the customer would be considered as an upgrade.
 
 ## Glossary
 
