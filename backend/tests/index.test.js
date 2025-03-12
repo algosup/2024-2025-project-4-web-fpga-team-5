@@ -36,7 +36,7 @@ describe('API Endpoints Tests', () => {
     it('successfully uploads and parses an SDF file', async () => {
         const response = await request(app)
         .post('/api/sdf/upload')
-        .attach('sdfFile', Buffer.from('test'), './testFiles/example-sdf.sdf');
+        .attach('sdfFile', Buffer.from('test'), './testFiles/exampleSDF.sdf');
 
         expect(response.status).toBe(200);
         expect(response.text).toBe('File parsed and JSON saved successfully.');
@@ -55,7 +55,7 @@ describe('API Endpoints Tests', () => {
     it('fail to uploads and parses an SDF file (file already exists)', async () => {
         const response = await request(app)
         .post('/api/sdf/upload')
-        .attach('sdfFile', Buffer.from('test'), './testFiles/example-sdf.sdf');
+        .attach('sdfFile', Buffer.from('test'), './testFiles/exampleSDF.sdf');
 
         expect(response.status).toBe(400);
         expect(response.text).toBe('File already exists.');
@@ -65,7 +65,7 @@ describe('API Endpoints Tests', () => {
     it('fail to uploads and parses an SDF file (file not found)', async () => {
         const response = await request(app)
         .post('/api/sdf/upload')
-        .attach('sdfFile', Buffer.from('test'), './testFiles/non-existent.sdf');
+        .attach('sdfFile', Buffer.from('test'), './testFiles/nonExistent.sdf');
 
         expect(response.status).toBe(500);
         expect(response.text).toBe('Error parsing SDF file.');
@@ -75,7 +75,7 @@ describe('API Endpoints Tests', () => {
     it('fail to uploads and parses an SDF file (invalid file format)', async () => {
         const response = await request(app)
         .post('/api/sdf/upload')
-        .attach('sdfFile', Buffer.from('test'), './testFiles/invalid-format.txt');
+        .attach('sdfFile', Buffer.from('test'), './testFiles/invalidFormat.txt');
 
         expect(response.status).toBe(400);
         expect(response.text).toBe('Invalid file type, only .sdf files are allowed!');
@@ -87,14 +87,14 @@ describe('API Endpoints Tests', () => {
 
     // Normal Conditions Test
     it('successfully fetch a parsed JSON file', async () => {
-        const response = await request(app).get('/api/sdf/map/example-sdf.sdf');
+        const response = await request(app).get('/api/sdf/map/exampleSDF.sdf');
         expect(response.status).toBe(200);
         expect(response.headers['content-type']).toMatch(/json/);
     });
 
     // File not found Test
     it('fail to fetch a parsed JSON file (file not found)', async () => {
-        const response = await request(app).get('/api/sdf/map/non-existent.sdf');
+        const response = await request(app).get('/api/sdf/map/nonExistent.sdf');
         expect(response.status).toBe(500);
         expect(response.text).toBe('Error reading parsed SDF JSON file. File may not exist.');
     });    
@@ -119,7 +119,7 @@ describe('API Endpoints Tests', () => {
         });
 
         // Content validation
-        expect(data).toEqual(["example-sdf.sdf"]);
+        expect(data).toEqual(["exampleSDF.sdf"]);
     });
 
     // ! ||--------------------------------------------------------------------------------||
@@ -128,14 +128,14 @@ describe('API Endpoints Tests', () => {
 
     // Normal Conditions Test
     it('successfully deletes the parsed JSON file', async () => {
-        const response = await request(app).delete('/api/sdf/delete-json/example-sdf.sdf');
+        const response = await request(app).delete('/api/sdf/delete-json/exampleSDF.sdf');
         expect(response.status).toBe(200);
         expect(response.text).toBe('SDF JSON file deleted successfully.');
     });
 
     // File not found Test
     it('fail to delete the parsed JSON file (file not found)', async () => {
-        const response = await request(app).delete('/api/sdf/delete-json/non-existent.sdf');
+        const response = await request(app).delete('/api/sdf/delete-json/nonExistent.sdf');
         expect(response.status).toBe(500);
         expect(response.text).toBe('Error deleting JSON file.');
     });
