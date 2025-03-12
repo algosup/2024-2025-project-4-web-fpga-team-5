@@ -17,19 +17,19 @@ what actually happens when you execute the code above.
 ## Documentation of the project
 
 - This document describes what the software should do by outlining user requirements and expected functionalities :
-  - **[Functional Specifications](Documents/functional/functionalSpecifications.md)**
+  - **[Functional Specifications](documents/functional/functionalSpecifications.md)**
 
 - This document details how the software will be built, including architecture, design, and technology choices.
-  - **[Technical Specifications](Documents/technical/technicalSpecifications.md)**
+  - **[Technical Specifications](documents/technical/technicalSpecifications.md)**
   
 - This document officially initiates the project by defining its scope, objectives, stakeholders, and overall framework.
-  - **[Project Charter](Documents/management/projectCharter.md)**
+  - **[Project Charter](documents/management/projectCharter.md)**
   
 - This document outlines the strategy, procedures, and criteria for verifying that the system meets its requirements.
-  - **[Test Plan](Documents/qualityAssurance/testPlan.md)**
+  - **[Test Plan](documents/qualityAssurance/testPlan.md)**
   
 - This document provides end-users with instructions on how to use the system and troubleshoot common issues.
-  - **[User Manual](Documents/manual/userManual.md)**
+  - **[User Manual](documents/manual/userManual.md)**
 
 ## Developing
 
