@@ -10,7 +10,8 @@
 <br>
 
 <details>
-<summary><b>Table of contents</b></summary>
+<summary><b>Table of contents</b>
+
 - [Project-4-web-fpga-team-5 - Project Charter](#project-4-web-fpga-team-5---project-charter)
   - [Team member](#team-member)
   - [Scope](#scope)
@@ -30,6 +31,7 @@
   - [Deadline](#deadline)
   - [Allocated Resources](#allocated-resources)
 
+</summary>
 
 </details>
 
