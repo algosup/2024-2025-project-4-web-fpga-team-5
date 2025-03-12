@@ -4,22 +4,24 @@
 
 **Author:** Alexandre Bopp
 
-### *Last update on March 29, 2025*
+**Title:** SPIN
+
+### *Last update on March 14, 2025*
 
 **Team:** 5
 
-![alt text](images/logo.jpg)
+![alt text](images/logo.png)
 
 </div>
 
 | Role | Name |
 |---|---|
 | Project Manager       | Robin GOUMY       |
-| Program Manager       | Alexandre BOPP         |
-| Tech Lead             | Maxime THIZEAU   |
-| Technical Writer      | Habi CAILLEAU      |
-| Software Developer    | Geoffrey DELRIEU       |
-| Quality Assurance     | Mathias DELILE       |
+| Program Manager       | Alexandre BOPP    |
+| Tech Lead             | Maxime THIZEAU    |
+| Technical Writer      | Habi CAILLEAU     |
+| Software Developer    | Geoffrey DELRIEU  |
+| Quality Assurance     | Mathias DELILLE    |
 
 ---
 
@@ -29,15 +31,23 @@
 
 ## Introduction
 
-### Presentation Document
+### 1. Presentation Document
 
 The purpose of a functional specification is to define the requirements to be implemented by the software solution.
 
-### Presentation Project
+### 2. Presentation Project
 
-The aim of this project is to develop a web-based interface for an FPGA simulator that will be used for educational purposes. The interface will provide students and teachers with a visualization of FPGA signal propagation in real-time. It will integrate tools for synthesis, place and route (P&R), and timing simulation to offer a comprehensive learning experience. The FPGA model primarily targeted is the NanoXplore NGultra, with additional support for a basic Xilinx Series 7 model using the VTR flow. The project is expected to provide an interactive 2D view of the FPGA's layout, showing BEL utilization and signal routing, synchronized with time evolution during the simulation process.
+The goal of this project is to create a web-based interface for an FPGA simulator designed for educational use. This interface will help students and teachers visualize FPGA signal propagation in real time. It will integrate essential tools for synthesis, placement and routing (P&R), and timing simulation to provide a complete learning experience.
 
-### Presentation Team & Roles
+The simulator will primarily support the NanoXplore NGultra FPGA, with additional basic support for Xilinx Series 7 using the VTR flow. Users will be able to explore an interactive 2D FPGA layout, where they can see how signals travel, how resources (BELs) are utilized, and how everything evolves over time during the simulation.
+
+### 3. Presentation Name
+
+**Why SPIN ?**
+
+SPIN stands for **Signal Propagation Inspector**. We chose this name because it is short, impactful, and conveys the core functionality of our tool. A concise yet meaningful name enhances clarity and memorability, making it more effective for users.
+
+### 4. Presentation Team & Roles
 
 | Role                 | Description                                                                                          |
 |----------------------|------------------------------------------------------------------------------------------------------|
@@ -48,13 +58,13 @@ The aim of this project is to develop a web-based interface for an FPGA simulato
 | **Software Engineer** | Implements features by writing code.<br>Participates in technical design and maintains documentation. |
 | **Quality Assurance** | Tests features to identify bugs and inconsistencies.<br>Documents issues and verifies fixes.<br>Develops and executes test plans. |
 
-## Stakeholders
+### 5. Stakeholders
 
 | Name           | Occupation                  | Links                          |
 |----------------|-----------------------------|--------------------------------|
 | Florent MANNI  | Client CNES worker | [Website](https://cnes.fr/) |
 
-### **Glossary**  
+### 6. Glossary  
 
 | **Term**             | **Definition** |
 |----------------------|--------------|
@@ -85,7 +95,7 @@ The aim of this project is to develop a web-based interface for an FPGA simulato
 
 Project requirements define the necessary standards, conditions, and constraints for the FPGA web interface project. These ensure that the project meets its intended purpose while staying within the defined scope.  
 
-### **Core Requirements**  
+### 1. Core Requirements  
 
 - Develop a **web-based interface** for **FPGA simulation** focused on **educational purposes**.  
 - Provide **real-time visualization** of **FPGA signal propagation**.  
@@ -96,11 +106,11 @@ Project requirements define the necessary standards, conditions, and constraints
 
 ---
 
-### **Functional Requirements**  
+### 2. Functional Requirements
 
-The core requirements define the fundamental objectives of the FPGA web interface project. These are the essential functionalities and integrations required to achieve the project's purpose. 
+The core requirements define the fundamental objectives of the FPGA web interface project. These are the essential functionalities and integrations required to achieve the project's purpose.
 
-#### **1. Web-Based Interface**  
+#### a. Web-Based Interface  
 
 The application must provide a user-friendly and responsive interface for FPGA simulation. It should support:  
 
@@ -153,26 +163,42 @@ If the user selects **Student Mode** (or if a teacher clicks on the **visualizat
 
 </div>
 
-#### **2. FPGA Model Support**  
+##### **Website color chart**
+
+| COLOR                          | TYPE      |
+|--------------------------------|----------|
+| <span style="background-color:#14002b; color:white; padding:4px 8px; border-radius:4px;">#14002b</span> | Primary   |
+| <span style="background-color:#ffffff; color:black; padding:4px 8px; border-radius:4px; border: 1px solid #ccc;">#ffffff</span> | Secondary |
+| <span style="background-color:#000000; color:white; padding:4px 8px; border-radius:4px;">#000000</span> | Tertiary  |
+
+
+#### b. FPGA Model Support  
 
 The system must be compatible with multiple FPGA architectures to ensure flexibility in teaching and learning:
 
 - **Primary FPGA Model**: NanoXplore NGultra.  
 - **Secondary Support**: Xilinx Series 7 via the VTR flow.  
 
-#### **3. Visualization Features**  
+#### c. Visualization Features  
 
 To enhance user understanding of FPGA operations, the system must include:  
 
 - An **interactive 2D FPGA layout** that accurately represents the circuit.  
 - Dynamic **BEL utilization and signal routing** visualization.  
 
-#### **4. Tool Integration**  
+#### d. Tool Integration  
 
-The platform should integrate with industry-standard tools for synthesis and simulation, including:
+To ensure a seamless FPGA simulation workflow, SPIN will integrate multiple tools.  
 
 - **Impulse, ModelSim, Yosys, and VPR** for synthesis, place & route (P&R), and simulation tasks.  
-- Automated conversion of **Verilog applications into FPGA-compatible netlists** for visualization.  
+- Automated conversion of **Verilog applications into FPGA-compatible netlists** for visualization.
+
+| **Stage**            | **NanoXplore (NGultra)** | **Xilinx (Series 7)** |
+|----------------------|------------------------|----------------------|
+| **Synthesis**       | Impulse                 | Yosys               |
+| **Place & Route**   | Impulse                 | VPR                 |
+| **Timing Simulation** | Impulse               | VPR                 |
+| **Testbench Execution** | ModelSim           | ModelSim             |
 
 ##### **Flowchart: Tool Integration Process**  
 
@@ -185,7 +211,7 @@ flowchart TD;
     E -->|Output| F[Web Interface Visualization]
 ```
 
-#### **5. Simulation Control**  
+#### e. Simulation Control  
 
 To offer a flexible learning experience, the system should allow users to:
 
@@ -209,11 +235,11 @@ flowchart TD;
     E -->|Affects| F
 ```
 
-#### **6. Backend Processing**  
+#### f. Backend Processing  
 
 The backend system must efficiently handle simulation requests and provide seamless integration between the frontend and FPGA tools:  
 
-- **Support uploading of Verilog applications and testbenches.**  
+- **Support uploading of Verilog & STD applications and testbenches.**  
 - **Process and prepare Verilog applications for visualization.** 
 
 #### **Flowchart: Backend Processing Workflow**  
@@ -228,12 +254,14 @@ flowchart TD;
     C -->|Fails| G[Error Message to User]
 ```
 
-#### **7. Educational Features**  
+#### g. Educational Features  
 
 To facilitate teaching and learning, the system must include:  
 
 - A feature allowing **teachers to upload Verilog applications and testbenches** for students.  
 - **Preloaded example applications** (e.g., Flip-Flop, LUT4) to assist in demonstrations.  
+  - The preloaded examples are all on the github provided by the customer
+  - Available from [here](https://github.com/LeFl0w/ALGOSUP_POC)
 
 ---
 
@@ -296,14 +324,14 @@ Functional requirements describe the specific actions the system must perform to
 | **Hands-on FPGA Simulation**              | A student uploads a Verilog file and visualizes the FPGA logic gates and signals. | John Rivera (Student) |  
 | **Step-by-Step Debugging**                | The system allows pausing and analyzing FPGA signals at different stages of execution. | Student, Teacher |  
 | **Multi-Speed Simulation**                | Users control the speed of the FPGA signal visualization (e.g., x1, x2, x4). | Student, Teacher |  
-| **Real-Time Feedback on Design Errors**   | The system provides warnings for incorrect Verilog syntax or logical inconsistencies. | Student |  
-| **Preloaded Example Circuits**            | Users access example circuits like Flip-Flops and LUT4 to experiment with. | Student, Teacher |  
+| **Real-Time Feedback on Design Errors**   | The system provides warnings for incorrect Verilog syntax or logical inconsistencies. | Teacher |  
+| **Preloaded Example Circuits**            | Users access example circuits like Flip-Flops and LUT4 to experiment with. | Teacher |  
 
 ---
 
-# Risk Assessment
+## Risk Assessment
 
-## **Data Security & Integrity**
+### 1. Data Security & Integrity**
 
 The client has specified that no login system is required, as the web application is intended for internal use within the company rather than public access. This affects security considerations in the following ways:
 
@@ -315,7 +343,7 @@ The client has specified that no login system is required, as the web applicatio
 
 ---
 
-## **Product Stability & Reliability**
+### 2. Product Stability & Reliability
 
 Potential technical risks affecting performance and user experience:
 
@@ -326,20 +354,25 @@ Potential technical risks affecting performance and user experience:
 
 ---
 
-## **Market & Competitor Analysis**
+### 3. Competitor Analysis
 
-Understanding competing solutions helps define the unique value of our FPGA web interface:
+The Web FPGA project is compared against existing FPGA simulation tools.  
 
-| **Competitor**   | **Strengths**                                | **Weaknesses**                           |
-|-----------------|--------------------------------|--------------------------------|
-| Impulse        | Well-established in signal analysis | No web-based FPGA layout visualization |
-| ModelSim       | Industry standard for Verilog simulation | Requires local installation, lacks interactivity |
-| Yosys          | Open-source synthesis tool | Lacks a visual FPGA layout interface |
-| Digitaljs      | Accurate and clear visualization | Limited FPGA-specific features |
+| **Feature**                | **SPIN (This Project)** | **EDA Playground** | **Quartus Prime (Intel)** | **Vivado (Xilinx)** |
+|----------------------------|------------------------|--------------------|---------------------------|---------------------|
+| **Web-Based**              | ✅ Yes                 | ✅ Yes             | ❌ No                     | ❌ No               |
+| **Real-Time Signal Visualization** | ✅ Yes | ❌ No | ❌ No | ❌ No |
+| **FPGA Layout Visualization** | ✅ Yes | ❌ No | ✅ Limited | ✅ Limited |
+| **Synthesis & P&R**        | ✅ Yes                 | ✅ Yes             | ✅ Yes                     | ✅ Yes              |
+| **Multi-FPGA Support**     | ✅ Yes (NGultra, Xilinx 7) | ❌ No | ❌ No (Intel only) | ❌ No (Xilinx only) |
+| **Timing Simulation**      | ✅ Yes                 | ✅ Yes             | ✅ Yes                     | ✅ Yes              |
+| **Testbench Support**      | ✅ Yes                 | ✅ Yes             | ✅ Yes                     | ✅ Yes              |
+
+SPIN aims to provide the best balance between **usability, visualization, and accessibility**, differentiating itself from existing FPGA tools.  
 
 ---
 
-## **Risk Management Plan**
+### 4. Risk Management Plan
 
 | **Risk**                              | **Likelihood** | **Impact** | **Mitigation Strategy** |
 |----------------------------------|--------------|---------|-------------------|
@@ -353,33 +386,31 @@ Understanding competing solutions helps define the unique value of our FPGA web 
 
 ## Future Improvements  
 
-### **1. Enhanced Visualization & UX**  
+### 1. Enhanced Visualization & UX
 
 - Add **custom color mapping** for signal propagation to improve readability.  
 - Introduce **dark mode** for better accessibility and user comfort.  
 
-### **2. Expanded FPGA Model Support**  
+### 2. Expanded FPGA Model Support  
 
 - Extend support to additional FPGA architectures (e.g., **Intel/Altera, Lattice**).  
 - Allow users to **define custom FPGA models** for broader educational use.  
 
-### **3. Advanced Simulation Features**  
+### 3. Advanced Simulation Features
 
 - Support **step-by-step execution** for more precise debugging.  
 - Implement a **history rewind** feature to analyze past signal states.  
 - Introduce a **timeline control bar**, similar to a video player, to quickly navigate to specific points in the simulation.  
 - Allow users to **generate Verilog code from visualized signal propagation** (inverse simulation).  
 
-### **4. Backend & Performance Optimizations**  
+### 4. Backend & Performance Optimizations
 
 - Improve **real-time rendering** for large-scale FPGA layouts.  
 - Optimize backend processing for **faster synthesis and P&R operations**.  
 - Introduce **GPU acceleration** to speed up complex computations.  
 
-### **5. Extensibility & API Integration**  
+### 5. Extensibility & API Integration
 
 - Add support for **exporting results to third-party platforms**.  
   - **Export the FPGA model** in a standard format.  
   - **Export the generated Verilog code** based on simulation results.  
-
----
