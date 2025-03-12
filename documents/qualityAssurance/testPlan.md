@@ -2,7 +2,7 @@
 
 <details>
 
-<summary>Table of contents</summary>
+<summary>Table Of Contents</summary>
 
 - [Quality Assurance Test Plan](#quality-assurance-test-plan)
   - [1. Introduction](#1-introduction)
@@ -11,8 +11,8 @@
     - [1.3 Objectives](#13-objectives)
     - [1.4 References](#14-references)
   - [2. Test Items](#2-test-items)
-    - [2.1 Features to be Tested](#21-features-to-be-tested)
-    - [2.2 Features Not to be Tested](#22-features-not-to-be-tested)
+    - [2.1 Features To Be Tested](#21-features-to-be-tested)
+    - [2.2 Features Not To Be Tested](#22-features-not-to-be-tested)
   - [3. Test Strategy](#3-test-strategy)
     - [3.1 Testing Types](#31-testing-types)
     - [3.2 Testing Levels](#32-testing-levels)
@@ -22,11 +22,11 @@
     - [4.2 Software](#42-software)
   - [5. Test Schedule](#5-test-schedule)
   - [6. Test Deliverables](#6-test-deliverables)
-  - [7. Roles and Responsibilities](#7-roles-and-responsibilities)
+  - [7. Roles And Responsibilities](#7-roles-and-responsibilities)
   - [8. Defect Management](#8-defect-management)
     - [8.1 Defect Reporting Process](#81-defect-reporting-process)
     - [8.2 Defect Tracking](#82-defect-tracking)
-  - [9. Risks and Contingencies](#9-risks-and-contingencies)
+  - [9. Risks And Contingencies](#9-risks-and-contingencies)
   - [Glossary](#glossary)
 
 </details>
@@ -74,7 +74,7 @@ Testing covers:
 
 ## 2. Test Items
 
-### 2.1 Features to be Tested
+### 2.1 Features To Be Tested
 
 | Feature                               | Description                                                                   |
 | ------------------------------------- | ----------------------------------------------------------------------------- |
@@ -89,7 +89,7 @@ Testing covers:
 
 For detailed test cases, refer to the [Test Case Document](./testCases.md).
 
-### 2.2 Features Not to be Tested
+### 2.2 Features Not To Be Tested
 
 | Feature                              | Reason for Exclusion       |
 | ------------------------------------ | -------------------------- |
@@ -105,15 +105,17 @@ For detailed test cases, refer to the [Test Case Document](./testCases.md).
 
 - **Functional**: Requirement-driven tests (manual/automated).
 - **Performance**: Load (expected traffic), Stress (breaking point), and Endurance (24h+ runtime) testing.
-- **Compatibility**: Browser/OS matrix, mobile device testing. <!-- TODO: Verify if a mobile version should be available -->
+- **Compatibility**: Browser/OS matrix testing.
 - **Usability**: UX validation against WCAG 2.1 guidelines.
 
 ### 3.2 Testing Levels
 
-1. **Unit Testing**: Developer-led component tests (JUnit, pytest). <!-- TODO: Change framework depending of the technology choose by the TL-->
-2. **Integration Testing**: API/contract testing (Postman, Pact). <!-- TODO: Change depeding on the architecture defined by the TL -->
-3. **System Testing**: End-to-end workflows (Cypress).
-4. **UAT**: Business-user validation in staging environment.
+| Level of testing | Name                    | Description                                                                  |
+| ---------------- | ----------------------- | ---------------------------------------------------------------------------- |
+| 1                | **Unit Testing**        | Developer-led component tests (Jest).                                        |
+| 2                | **Integration Testing** | API/contract testing (Postman, supertest).                                   |
+| 3                | **System Testing**      | End-to-end workflows (Selenium for the frontend, supertest for the backend). |
+| 4                | **UAT**                 | Business-user validation in staging environment.                             |
 
 ### 3.3 Test Design Techniques
 
@@ -144,7 +146,7 @@ For detailed test cases, refer to the [Test Case Document](./testCases.md).
 
 <!-- TODO: List the deliverables that will be produced during the testing process (e.g., test cases, test scripts, test reports). -->
 
-## 7. Roles and Responsibilities
+## 7. Roles And Responsibilities
 
 | Role              | Responsibilities                                                                                                                   |
 | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
@@ -173,7 +175,7 @@ For a detailed description of each step in the process, please refer to the [Def
 - **SLA**: Critical (24h), High (72h), Medium (1 sprint), Low (backlog).
 - **Closure**: Retest after fix, attach evidence, update status.
 
-## 9. Risks and Contingencies
+## 9. Risks And Contingencies
 
 | Risk                        | Impact                       | Mitigation                               |
 | --------------------------- | ---------------------------- | ---------------------------------------- |
