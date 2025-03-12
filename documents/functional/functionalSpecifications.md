@@ -6,7 +6,7 @@
 
 **Title:** SPIN
 
-### *Last update on March 14, 2025*
+### **Last update on March 14, 2025**
 
 **Team:** 5
 
@@ -27,7 +27,53 @@
 
 ## Table of content
 
----
+- [Functional Specifications Project Web FPGA](#functional-specifications-project-web-fpga)
+    - [**Last update on March 14, 2025**](#last-update-on-march-14-2025)
+  - [Table of content](#table-of-content)
+  - [Introduction](#introduction)
+    - [1. Presentation Document](#1-presentation-document)
+    - [2. Presentation Project](#2-presentation-project)
+    - [3. Presentation Name](#3-presentation-name)
+    - [4. Presentation Team \& Roles](#4-presentation-team--roles)
+    - [5. Stakeholders](#5-stakeholders)
+    - [6. Glossary](#6-glossary)
+  - [Requirements](#requirements)
+    - [1. Core Requirements](#1-core-requirements)
+    - [2. Deliverables](#2-deliverables)
+    - [3. Functional Requirements](#3-functional-requirements)
+      - [a. Web-Based Interface](#a-web-based-interface)
+        - [**Mockups of the Application**](#mockups-of-the-application)
+        - [**Main Page**](#main-page)
+        - [**Teacher, Creation \& Management**](#teacher-creation--management)
+        - [**Student, Visualization**](#student-visualization)
+        - [**Website color chart**](#website-color-chart)
+      - [b. FPGA Model Support](#b-fpga-model-support)
+      - [c. Visualization Features](#c-visualization-features)
+      - [d. Tool Integration](#d-tool-integration)
+        - [**Flowchart: Tool Integration Process**](#flowchart-tool-integration-process)
+      - [e. Simulation Control](#e-simulation-control)
+        - [**Flowchart: Simulation Control**](#flowchart-simulation-control)
+      - [f. Backend Processing](#f-backend-processing)
+      - [**Flowchart: Backend Processing Workflow**](#flowchart-backend-processing-workflow)
+      - [g. Educational Features](#g-educational-features)
+    - [4. Non-Functional Requirements](#4-non-functional-requirements)
+  - [Context](#context)
+    - [**Personas**](#personas)
+      - [**Dr. Alice Martin – FPGA Design Instructor**](#dr-alice-martin--fpga-design-instructor)
+      - [**John Rivera – FPGA Design Student**](#john-rivera--fpga-design-student)
+    - [**Use Cases**](#use-cases)
+  - [Risk Assessment](#risk-assessment)
+    - [1. Data Security \& Integrity\*\*](#1-data-security--integrity)
+    - [2. Product Stability \& Reliability](#2-product-stability--reliability)
+    - [3. Competitor Analysis](#3-competitor-analysis)
+    - [4. Risk Management Plan](#4-risk-management-plan)
+  - [Future Improvements](#future-improvements)
+    - [1. Enhanced Visualization \& UX](#1-enhanced-visualization--ux)
+    - [2. Expanded FPGA Model Support](#2-expanded-fpga-model-support)
+    - [3. Advanced Simulation Features](#3-advanced-simulation-features)
+    - [4. Backend \& Performance Optimizations](#4-backend--performance-optimizations)
+    - [5. Extensibility \& API Integration](#5-extensibility--api-integration)
+
 
 ## Introduction
 
@@ -53,7 +99,7 @@ SPIN stands for **Signal Propagation Inspector**. We chose this name because it 
 |----------------------|------------------------------------------------------------------------------------------------------|
 | **Project Manager**  | Oversees planning, organization, and budgeting.<br>Ensures the team stays on track and motivated.   |
 | **Program Manager**  | Defines project goals and ensures alignment with expectations.<br>Leads design efforts.<br>Authors Functional Specifications. |
-| **Tech Lead**        | Drives technical decisions.<br>Translates Functional Specifications into Technical Specifications.<br>Reviews code and provides guidance. |
+| **Technical Leader**        | Drives technical decisions.<br>Translates Functional Specifications into Technical Specifications.<br>Reviews code and provides guidance. |
 | **Technical Writer** | Develops and maintains documentation, including user manuals and technical guides.<br>Collaborates with engineers to ensure clarity and accuracy.<br>Makes documentation accessible and user-friendly. |
 | **Software Engineer** | Implements features by writing code.<br>Participates in technical design and maintains documentation. |
 | **Quality Assurance** | Tests features to identify bugs and inconsistencies.<br>Documents issues and verifies fixes.<br>Develops and executes test plans. |
@@ -104,9 +150,20 @@ Project requirements define the necessary standards, conditions, and constraints
 - Ensure an **interactive and intuitive** experience for both **students and teachers**.  
 - Display an **FPGA layout with BEL utilization and signal routing** synchronized with **time evolution during simulation**.  
 
----
+### 2. Deliverables
 
-### 2. Functional Requirements
+Deliverables, which refer to the specific outputs, products, or results that a project intends to produce and deliver to its stakeholders
+
+| Name | Deadline | Link |
+| --  | -- | -- |
+| Functional Specifications  | 13/03/2025 | [functionalSpecifications.md](../functional/functionalSpecifications.md) |
+| Technical Specifications  | 25/03/2024 | [technicalSpecifications.md](../technical/technicalSpecifications.md) |
+| Test Plan | 25/03/2025 | [testPlan.md](../qualityAssurance/testPlan.md) |
+| Test Cases | 25/03/2025 | [testCases.md](../qualityAssurance/testCases.md) |
+| Code | 01/04/2025  | [Folder](https://github.com/algosup/2024-2025-project-4-web-fpga-team-5/tree/main) |
+| User Manual | 01/04/2025 | [userManual.md](../manual/userManual.md") |
+
+### 3. Functional Requirements
 
 The core requirements define the fundamental objectives of the FPGA web interface project. These are the essential functionalities and integrations required to achieve the project's purpose.
 
@@ -170,7 +227,6 @@ If the user selects **Student Mode** (or if a teacher clicks on the **visualizat
 | <span style="background-color:#14002b; color:white; padding:4px 8px; border-radius:4px;">#14002b</span> | Primary   |
 | <span style="background-color:#ffffff; color:black; padding:4px 8px; border-radius:4px; border: 1px solid #ccc;">#ffffff</span> | Secondary |
 | <span style="background-color:#000000; color:white; padding:4px 8px; border-radius:4px;">#000000</span> | Tertiary  |
-
 
 #### b. FPGA Model Support  
 
@@ -265,7 +321,7 @@ To facilitate teaching and learning, the system must include:
 
 ---
 
-### **Non-Functional Requirements**
+### 4. Non-Functional Requirements
 
 Functional requirements describe the specific actions the system must perform to fulfill the core requirements. These define how the user will interact with the system and the expected behaviors.  
 
