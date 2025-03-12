@@ -1,4 +1,4 @@
-<img src="./images/cnes.png"  width="60" height="60" alt="Logo of the project" align="right">
+<img src="./images/cnes.png"  width="330" height="120" alt="Logo of the project" align="right">
 
 
 
