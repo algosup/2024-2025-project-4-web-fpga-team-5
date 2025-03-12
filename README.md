@@ -16,7 +16,7 @@ A quick introduction of the minimal setup you need.
 commands here
 ```
 
-what actually happens when you execute the code above.
+This section explains what happens when you execute the code above.
 
 ## Documentation of the project
 
@@ -64,7 +64,7 @@ Explain what these tests test and why.
 Give an example
 ```
 
-## Api Reference
+## API Description
 
 In this section you'll be provided with the link to [api documentation](here)
 
@@ -79,5 +79,3 @@ In this section you'll be provided with the link to [api documentation](here)
 | <img src="https://avatars.githubusercontent.com/u/62845771?v=4" width="100" height="100">  | Software Developer | Geoffrey Delrieu  | [GitHub](https://github.com/Z2VvZ2Vv) \| [LinkedIn](https://www.linkedin.com/in/geoffrey-delrieu-77203a353/)       |
 | <img src="https://avatars.githubusercontent.com/u/145995367?v=4" width="100" height="100"> | Quality Assurance  | Mathias GAGNEPAIN | [GitHub](https://github.com/MistzSoftware) \| [LinkedIn](https://www.linkedin.com/in/mathias-gagnepain-426a131b0/) |
 | <img src="https://avatars.githubusercontent.com/u/145991425?v=4" width="100" height="100"> | Technical Writer   | Habi CAILLEAU     | [GitHub](https://github.com/habicll) \| [LinkedIn](https://www.linkedin.com/in/habi-cailleau-3b72b5293/)           |
-
-<!-- TODO -->
