@@ -6,12 +6,6 @@
 # **Weekly Report 1** 
 
 
-| Description    | Information   |
-| -------------- | ------------- |
-| Document Owner | Robin Goumy   |
-| Creation Date  | 27/02/2025    |
-| Last Update    | 27/02/2025    |
-
 </div>
 
 ---

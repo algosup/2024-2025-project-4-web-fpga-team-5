@@ -5,17 +5,33 @@
 
 # Project-4-web-fpga-team-5 - Project Charter
 
-
-| Description    | Information   |
-| -------------- | ------------- |
-| Document Owner | Robin Goumy   |
-| Creation Date  | 27/02/2025    |
-| Last Update    | 12/03/2025    |
-
 </div>
 
 <br>
 
+<details>
+<summary><b>Table of contents</b></summary>
+- [Project-4-web-fpga-team-5 - Project Charter](#project-4-web-fpga-team-5---project-charter)
+  - [Team member](#team-member)
+  - [Scope](#scope)
+    - [Project Purpose](#project-purpose)
+    - [Core Requirements](#core-requirements)
+      - [Technologies And Accessibility](#technologies-and-accessibility)
+      - [Student Interface](#student-interface)
+      - [Teacher Interface](#teacher-interface)
+      - [Expected Deliverables](#expected-deliverables)
+  - [Out Of Scope](#out-of-scope)
+  - [Project Limitations](#project-limitations)
+    - [Constraints](#constraints)
+    - [Risks](#risks)
+  - [Stakeholders](#stakeholders)
+  - [Communication](#communication)
+  - [Responsibilities](#responsibilities)
+  - [Deadline](#deadline)
+  - [Allocated Resources](#allocated-resources)
+
+
+</details>
 
 ## Team member
 | Picture                                                                                    | Name              | Role                |
@@ -114,7 +130,7 @@ Communication with the customer has been set up in Slack as well as GitHub for [
 | ---------- | ------------------------  |
 | 13/03/2025 | Functional Specifications |
 | 25/03/2025 | Technical Specifications  |
-| 24/03/2025 | VVersion 1 Code           |
+| 24/03/2025 | Version 1 Code           |
 | 25/03/2025 | Test Plan                 |
 | 25/03/2025 | Test Cases                |
 | 01/04/2025 | User Manual               |
