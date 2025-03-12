@@ -260,9 +260,9 @@ Installing Node.JS depends on your browser, therefore, precise your operating sy
 
 | Operating System | Illustration                                                                              |
 | ---------------- | ----------------------------------------------------------------------------------------- |
-| MacOS            | <img src="./images/nodeJSMacOS.png" alt="nodeJS installation on MacOS" width="500em">     |
-| Windows          | <img src="./images/nodeJSWindows.png" alt="nodeJS installation on Windows" width="500em"> |
-| Linux            | <img src="./images/nodeJSLinux.png" alt="nodeJS installation on Linux" width="500em">     |
+| MacOS            | <img src="../../images/nodeJSMacOS.png" alt="nodeJS installation on MacOS" width="500em">     |
+| Windows          | <img src="../../images/nodeJSWindows.png" alt="nodeJS installation on Windows" width="500em"> |
+| Linux            | <img src="../../images/nodeJSLinux.png" alt="nodeJS installation on Linux" width="500em">     |
 
 Some VSCode extensions that could be useful:
 - *Search node_modules*
