@@ -68,6 +68,12 @@ app.post('/api/sdf/upload', (req, res) => {
             try {
                 // Parse the SDF file content
                 const sdfContent = req.file.buffer.toString('utf-8');
+
+                // Check if the file is empty
+                if (!sdfContent) {
+                    return res.status(400).send('Uploaded file is empty.');
+                }
+
                 const sdfData = parseSDF(sdfContent);
         
                 // Save the parsed data as JSON
@@ -139,6 +145,12 @@ app.post('/api/verilog/upload', (req, res) => {
             try {
                 // Parse the SDF file content
                 const verilogContent = req.file.buffer.toString('utf-8');
+
+                // Check if the file is empty
+                if (!verilogContent) {
+                    return res.status(400).send('Uploaded file is empty.');
+                }
+
                 const verilogData = parseVerilog(verilogContent);
         
                 // Save the parsed data as JSON
