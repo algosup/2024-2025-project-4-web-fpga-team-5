@@ -2,8 +2,6 @@
 
 This project was requested by [ALGOSUP](https://algosup.com), a French computer science school.
 
-<!-- This project aims to create a quick pathfinding<sup><a href="#1">[1]</a></sup> server according to a CSV<sup><a href="#1">[2]</a></sup> file of USA-roads. -->
-
 <details>
 <summary>Table Of Contents</summary>
 
@@ -17,9 +15,18 @@ This project was requested by [ALGOSUP](https://algosup.com), a French computer 
     - [Code Structure](#code-structure)
 - [Hardware](#hardware)
 - [Technical Requirements](#technical-requirements)
-<!-- - [Data Management](#data-management)
-    - [Data Models](#data-models)
-    - [Local Storage](#local-storage) -->
+    - [Flow](#flow)
+    - [Languages](#languages)
+        - [Front-End](#front-end)
+        - [Back-End](#back-end)
+    - [Versioning](#versioning)
+    - [Server](#server)
+        - [Endpoints](#endpoints)
+    - [Data Management](#data-management)
+        - [Local Storage](#local-storage)
+        - [Creation Of Applications](#creation-of-applications)
+        - [Data Security](#data-security)
+        - [Data Integrity](#data-integrity)
 - [User Interface Design](#user-interface-design)
     - [UI Components](#ui-components)
     - [Themes And Styles](#themes-and-styles)
@@ -29,6 +36,7 @@ This project was requested by [ALGOSUP](https://algosup.com), a French computer 
         - [VSCode Installation](#vscode-installation)
         - [NPM Installation](#npm-installation)
         - [Node.JS Installation](#nodejs-installation)
+        - [Express.JS Installation](#expressjs-installation)
         - [React.JS Installation](#reactjs-installation)
         - [D3.JS Installation](#d3js-installation)
         - [Vite Installation](#vite-installation)
@@ -115,6 +123,7 @@ The structure showed below would allow team members to access every file quickly
 │       ├─── conventions.md
 │       └─── technicalSpecifications.md
 ├─── frontend
+├─── images
 ├─── .gitignore
 └─── README.md
 ```
@@ -189,15 +198,108 @@ These are all the hardware we'll use to develop the project:
 
 ## Technical Requirements
 
+### Flow
+
 <!-- TODO: Making graph for flow and applications -->
 
-<!-- ## Data Management -->
+### Languages
 
-<!-- ### Data Models -->
+This project has no language requirement. Therefore, our team was free to chose the language that would suits the best our needs.
+
+#### Front-End
+
+To complete this project, the team has to create a webpage for the customer. To do so, it was set to use React.JS, which is a framework of JavaScript, a language used in the web development.
+
+React.JS was chosed for these numerous advantages:
+- **Fast & Efficient**: Uses a declarative approach, leading to better performance and maintainability.
+- **Strong Community Support**: Backed by Facebook and a vast open-source community.
+- **Easy to Learn**: Especially for developers familiar with JavaScript and JSX.
+- **Cross-Platform Development**: Can be used for mobile apps via React Native.
+
+Unfortunately, React.JS has its share of flaws:
+- **Poor Documentation**: Due to rapid updates, some features lack up-to-date documentation.
+- **Heavy Initial Load**: The React library itself can add to the initial bundle size.
+- **Too Many Choices**: Various ways to structure projects (Hooks, Context API, Redux, etc.) can be overwhelming.
+
+However, we judge it suitable for our product and decided to went along with it.
+
+Finally, we also thought of another library for the visualization part, which is D3.JS. The development team would mainly use it for it's user-friendly approach of UI features such as Zoom in/out.
+
+Advantages:
+- **Powerful Data Visualization**: Allows for highly customizable and interactive charts, graphs, and visualizations.
+- **Rich Animation & Interactivity**: Uses built-in transitions and event listeners for dynamic UI.
+- **Extensive Community & Resources**: Strong support from developers and a wide range of tutorials.
+- **No Dependencies**: A pure JavaScript library that doesn’t rely on external frameworks.
+
+Drawbacks:
+- **Steep Learning Curve**: Requires understanding of SVG, JavaScript, and functional programming concepts.
+- **Performance Issues**: Can be slow for extremely large datasets if not optimized properly.
+- **Not a Full-Fledged Framework**: Unlike React or Angular, D3.js is just a visualization library, requiring integration with other tools for complex applications.
+- **Mobile Responsiveness Needs Manual Handling**: Unlike some modern charting libraries, D3 requires explicit coding for responsiveness.
+
+#### Back-End
+
+Concerning the back-end, the choice has been made to keep it simple and to use Node.JS and Express.JS which are world wide spread. \
+Here are some pros and cons about Node.JS:
+
+Node.JS advantages:
+- **Fast Performance**: Built on Google’s V8 engine, making it highly efficient for I/O operations.
+- **Large Ecosystem (NPM)**: Offers thousands of open-source packages to speed up development.
+- **Cross-Platform Compatibility**: Runs on Windows, Linux, and macOS.
+- **Active Community**: Backed by a large developer community and enterprise support.
+
+Node.JS flaws:
+- **Callback Hell**: Complex nesting of callbacks can make code harder to manage (mitigated with Promises and async/await).
+- **Heavy Dependency on Third-Party Modules**: Many features require external libraries, increasing potential security risks.
+
+And here are those for Express.JS:
+
+Express.JS advantages:
+- **Minimal & Lightweight**: A fast, unopinionated framework that provides only essential features.
+- **Easy to Learn**: Simple syntax and structure make it beginner-friendly.
+- **Flexible**: Does not enforce any specific project structure, allowing developers to build as they prefer.
+
+Express.JS drawbacks:
+- **Callback Hell**: Can lead to deeply nested callbacks if not handled properly (mitigated with async/await or Promises).
+- **Not Ideal for Large-Scale Apps Alone**: Lacks built-in solutions for scalability, requiring additional tools like Nest.js or frameworks like Next.js.
+
+### Versioning
+
+For this project, the versioning has been defined has below:
+
+| Ids       | Names          | Definitions                                                                                          |
+| --------- | -------------- | ---------------------------------------------------------------------------------------------------- |
+| **0**.0.0 | Major update   | This identifier will be used for the major update/product (0: before MVP; 1: MVP; 2: final product). |
+| 0.**0**.0 | Feature update | This identifier will be the number of feature added after each major version of the product.         |
+| 0.0.**0** | Fixes          | This identifier shows theh number of fixes in between two major updates of the product.              |
+
+>[!CAUTION]
+> Increasing the major version indicator will reset the two other indicators.
+> However, increasing the feature update indicator will not reset the fixes one.
+
+### Server
 
 <!-- TODO -->
 
-<!-- ### Local Storage -->
+#### Endpoints
+
+<!-- TODO -->
+
+### Data Management
+
+#### Local Storage
+
+<!-- TODO -->
+
+#### Creation Of Applications
+
+<!-- TODO -->
+
+#### Data Security
+
+<!-- TODO -->
+
+#### Data Integrity
 
 <!-- TODO -->
 
@@ -308,7 +410,18 @@ Some VSCode extensions that could be useful:
 - *node-snippets*
 - *Node Essentials*
 
-#### **React.JS Installation**
+#### Express.JS Installation
+
+To install Express.JS you need to have Node.JS already installed. You can refer to [this section](#nodejs-installation). You could follow the installation guide in the Express.JS [official website](https://expressjs.com/en/starter/installing.html).
+
+1. Open your command prompt window, then navigate to your repository.
+2. Create the folder that will contain your repository, then navigate through it.
+3. Run: `npm install express`.
+
+A VSCode extension that could be useful:
+- *Express.js FastAPI Backend Snippets*
+
+#### React.JS Installation
 
 There are two ways of installing React.JS. The first one is by using CRA while the second needs [Vite](#vite-installation).
 
