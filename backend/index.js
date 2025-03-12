@@ -8,7 +8,7 @@ import cors from 'cors';
 import { parseSDF } from './src/sdfProccess.js';
 import { parseVerilog } from './src/vProccess.js';
 
-const app = express();
+export const app = express();
 const port = 3001;
 
 // Get absolute path
@@ -196,7 +196,6 @@ app.get('/api/verilog/list', async (req, res) => {
     }
 });
 
-
-app.listen(port, () => {
+export const server = app.listen(port, () => {
     console.log(`Backend launched on http://localhost:${port}`);
 });

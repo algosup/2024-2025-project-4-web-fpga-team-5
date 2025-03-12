@@ -10,6 +10,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+package-lock.json
 dist
 dist-ssr
 *.local
@@ -24,3 +25,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# API files
+sdf_files
+v_files
