@@ -137,7 +137,7 @@ describe('API Endpoints Tests', () => {
     it('fail to delete the parsed JSON file (file not found)', async () => {
         const response = await request(app).delete('/api/sdf/delete-json/nonExistent.sdf');
         expect(response.status).toBe(500);
-        expect(response.text).toBe('Error deleting JSON file.');
+        expect(response.text).toBe('Error deleting SDF JSON file, the file may not exists.');
     });
 
 });
