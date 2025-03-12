@@ -1,8 +1,10 @@
-<img src="./images/cnes.png"  width="330" height="120" alt="Logo of the project" align="right">
 
+<img src="./images/cnes.png"  width="160" height="60" alt="Logo of the project" align="right">
 
 
 # Web FPGA - Team 5
+
+
 
 This project involves creating a web-based interface for an FPGA simulator that visually demonstrates how signals propagate within an FPGA. It is designed to serve as an educational tool. Our goal is to help users understand FPGA internals by merging a 2D floorplan view of the FPGA (showing its basic elements and the interconnections between them) with a dynamic simulation of signal timing.
 
