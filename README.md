@@ -1,4 +1,6 @@
-<img src="./images/logo.sample.png" alt="Logo of the project" align="right">
+<img src="./images/cnes.png"  width="45" height="45" alt="Logo of the project" align="right">
+
+
 
 # Web FPGA - Team 5
 
