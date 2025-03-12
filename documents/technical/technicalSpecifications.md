@@ -198,7 +198,13 @@ These are all the hardware we'll use to develop the project:
 
 ### UI Components
 
-<!-- TODO -->
+All the UI Components have been predesigned in a mock-up to help the development part of the application. The softwre development team will just have to look on the mock-up and to follow each instruction to reproduce an apllication similar to our ideal mock-up.
+
+Moreover, this mock-uo has been iterated many times according to the client preferences. Therefore, it shouldn't be changed in the following days or in a near future.
+
+You can find the different aspect at these two places:
+- [The Functinal Specifications](../functional/functionalSpecifications.md)
+- [The Application Mock-up](https://www.figma.com/design/YohFQNPfGWHBlULNmWJFgS/WebFPGA?node-id=0-1&p=f&t=iZloJbAbCTv3OLB5-0)
 
 ### Themes And Styles
 
