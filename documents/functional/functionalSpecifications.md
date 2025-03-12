@@ -10,7 +10,7 @@
 
 **Team:** 5
 
-![alt text](images/logo.png)
+![alt text](../../images/logo.png)
 
 </div>
 
@@ -25,11 +25,12 @@
 
 ---
 
-## Table of content
+<details>
+
+<summary>Table of Contents</summary>
 
 - [Functional Specifications Project Web FPGA](#functional-specifications-project-web-fpga)
     - [**Last update on March 14, 2025**](#last-update-on-march-14-2025)
-  - [Table of content](#table-of-content)
   - [Introduction](#introduction)
     - [1. Presentation Document](#1-presentation-document)
     - [2. Presentation Project](#2-presentation-project)
@@ -54,7 +55,7 @@
       - [e. Simulation Control](#e-simulation-control)
         - [**Flowchart: Simulation Control**](#flowchart-simulation-control)
       - [f. Backend Processing](#f-backend-processing)
-      - [**Flowchart: Backend Processing Workflow**](#flowchart-backend-processing-workflow)
+        - [**Flowchart: Backend Processing Workflow**](#flowchart-backend-processing-workflow)
       - [g. Educational Features](#g-educational-features)
     - [4. Non-Functional Requirements](#4-non-functional-requirements)
   - [Context](#context)
@@ -74,12 +75,13 @@
     - [4. Backend \& Performance Optimizations](#4-backend--performance-optimizations)
     - [5. Extensibility \& API Integration](#5-extensibility--api-integration)
 
+</details>
 
 ## Introduction
 
 ### 1. Presentation Document
 
-The purpose of a functional specification is to define the requirements to be implemented by the software solution.
+The purpose of a functional specification is to define the requirements to be implemented, by specifying features, behaviors, and actions to meet user needs.
 
 ### 2. Presentation Project
 
@@ -186,7 +188,7 @@ Upon arriving on the website, users can choose one of the following modes:  *
 
 <div align="center">
 
-<img src="images/mainpage.png" width="600"/>  
+<img src="../../images/mainpage.png" width="600"/>  
 
 </div>
 
@@ -200,8 +202,8 @@ If the user selects **Teacher Mode**, they will be redirected to this page, wher
 
 <div align="center">
 
-<img src="images/teacher1.png" width="600"/> 
-<img src="images/teacher2.png" width="600"/> 
+<img src="../../images/teacher1.png" width="600"/> 
+<img src="../../images/teacher2.png" width="600"/> 
 
 </div>
 
@@ -215,8 +217,8 @@ If the user selects **Student Mode** (or if a teacher clicks on the **visualizat
 
 <div align="center">
 
-<img src="images/student1.png" width="600"/>  
-<img src="images/student2.png" width="600"/>
+<img src="../../images/student1.png" width="600"/>  
+<img src="../../images/student2.png" width="600"/>
 
 </div>
 
@@ -298,7 +300,7 @@ The backend system must efficiently handle simulation requests and provide seaml
 - **Support uploading of Verilog & STD applications and testbenches.**  
 - **Process and prepare Verilog applications for visualization.** 
 
-#### **Flowchart: Backend Processing Workflow**  
+##### **Flowchart: Backend Processing Workflow**  
 
 ```mermaid
 flowchart TD;
@@ -327,16 +329,11 @@ Functional requirements describe the specific actions the system must perform to
 
 | **Category**        | **Requirement** |
 |---------------------|----------------|
-| **Performance**     | Ensure **real-time rendering** and **smooth interactions** for FPGA visualization. |
-|                     | Optimize handling of **large FPGA models**. |
+| **Performance**     | Ensure **real-time rendering** and **smooth interactions** for FPGA visualization. <br> Optimize handling of **large FPGA models**. |
 | **Scalability**     | Support **multiple FPGA configurations** and **growing simulation complexity**. |
-| **Usability**       | Provide **clear and accessible documentation** for students and teachers. |
-|                     | Implement a **user-friendly UI** for ease of navigation. |
-| **Security**        | No need to have multiple access. |
-|                     | Implement **different user roles** (button for teacher or student). |
-| **Technical Constraints** | The **frontend and backend technologies are not predefined**, allowing flexibility in tech selection. |
-|                     | Ensure **cross-browser compatibility** (Chrome, Firefox, Edge, Safari). |
-|                     | Support a **scalable architecture** for handling growing users and applications. |
+| **Usability**       | Provide **clear and accessible documentation** for students and teachers. <br> Implement a **user-friendly UI** for ease of navigation. |
+| **Security**        | No need to have multiple access. <br> Implement **different user roles** (button for teacher or student). |
+| **Technical Constraints** | The **frontend and backend technologies are not predefined**, allowing flexibility in tech selection. <br> Ensure **cross-browser compatibility** (Chrome, Firefox, Edge, Safari). <br> Support a **scalable architecture** for handling growing users and applications. |
 
 ---
 
@@ -344,7 +341,7 @@ Functional requirements describe the specific actions the system must perform to
 
 ### **Personas**  
 
-<img src="images/persona1.jpg" width="200"/>
+<img src="../../images/persona1.jpg" width="200"/>
 
 #### **Dr. Alice Martin – FPGA Design Instructor**  
 
@@ -358,7 +355,7 @@ Functional requirements describe the specific actions the system must perform to
 
 ---
 
-<img src="images/persona2.jpg" width="200"/>
+<img src="../../images/persona2.jpg" width="200"/>
 
 #### **John Rivera – FPGA Design Student**  
 
@@ -376,8 +373,8 @@ Functional requirements describe the specific actions the system must perform to
 
 | **Use Case**                              | **Description** | **Actors** |  
 |-------------------------------------------|---------------|------------|  
-| **FPGA Concept Demonstration**            | A teacher demonstrates real-time signal propagation using an interactive FPGA layout. | Dr. Alice Martin (Instructor) |  
-| **Hands-on FPGA Simulation**              | A student uploads a Verilog file and visualizes the FPGA logic gates and signals. | John Rivera (Student) |  
+| **FPGA Concept Demonstration**            | A teacher demonstrates real-time signal propagation using an interactive FPGA layout. | Dr. Alice Martin  |  
+| **Hands-on FPGA Simulation**              | A student uploads a Verilog file and visualizes the FPGA logic gates and signals. | John Rivera  |  
 | **Step-by-Step Debugging**                | The system allows pausing and analyzing FPGA signals at different stages of execution. | Student, Teacher |  
 | **Multi-Speed Simulation**                | Users control the speed of the FPGA signal visualization (e.g., x1, x2, x4). | Student, Teacher |  
 | **Real-Time Feedback on Design Errors**   | The system provides warnings for incorrect Verilog syntax or logical inconsistencies. | Teacher |  
