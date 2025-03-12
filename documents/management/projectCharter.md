@@ -3,7 +3,7 @@
 
 ---
 
-# 2024 - 2025 Project-4-web-fpga-team-5 - Project Charter
+# Project-4-web-fpga-team-5 - Project Charter
 
 
 | Description    | Information   |
@@ -16,29 +16,6 @@
 
 <br>
 
-<details>
-
-<summary>Table of Contents</summary>
-
-- [2024 - 2025 Project-4-web-fpga-team-5 - Project Charter](#2024---2025-project-4-web-fpga-team-5---project-charter)
-  - [Team member](#team-member)
-  - [Scope](#scope)
-    - [Project Purpose](#project-purpose)
-    - [Core Requirements](#core-requirements)
-      - [Technologies and Accessibility](#technologies-and-accessibility)
-      - [Student Interface](#student-interface)
-      - [Teacher Interface](#teacher-interface)
-      - [Expected Deliverables](#expected-deliverables)
-  - [Out of Scope](#out-of-scope)
-  - [Project Limitations](#project-limitations)
-    - [Constraints](#constraints)
-    - [Risks](#risks)
-  - [Stakeholders](#stakeholders)
-  - [Communication](#communication)
-  - [Responsibilities](#responsibilities)
-  - [Deadline](#deadline)
-  - [Allocated Resources](#allocated-resources)
-</details>
 
 ## Team member
 | Picture                                                                                    | Name              | Role                |
@@ -46,7 +23,7 @@
 | <img src="https://avatars.githubusercontent.com/u/182214449?v=4" width="100" height="100"> | Robin GOUMY       | Project Manager     |
 | <img src="https://avatars.githubusercontent.com/u/123485791?v=4" width="100" height="100"> | Alexandre BOPP    | Program Manager     |
 | <img src="https://avatars.githubusercontent.com/u/145995586?v=4" width="100" height="100"> | Maxime THIZEAU    | Technical Leader    |
-| <img src="https://avatars.githubusercontent.com/u/62845771?v=4" width="100" height="100">  | Geoffrey Delrieu | Software Engineer 1 |
+| <img src="https://avatars.githubusercontent.com/u/62845771?v=4" width="100" height="100">  | Geoffrey DELRIEU  | Software Engineer   |
 | <img src="https://avatars.githubusercontent.com/u/145995367?v=4" width="100" height="100"> | Mathias DELILLE   | Quality Assurance   |
 | <img src="https://avatars.githubusercontent.com/u/145991425?v=4" width="100" height="100"> | Habi CAILLEAU     | Technical Writer    |
 
@@ -62,7 +39,7 @@ This project aims to create a web interface, visually combining 2D FPGA layouts 
 
 ### Core Requirements
 
-#### Technologies and Accessibility
+#### Technologies And Accessibility
 
 - Developed using an open-source web technology.
 - Accessible via a web browser.
@@ -86,9 +63,8 @@ This project aims to create a web interface, visually combining 2D FPGA layouts 
 
 - Source code on a Git repository.
 - Documentation on installation and usage.
-- Two educational examples: a flip-flop and a LUT4.
 
-## Out of Scope
+## Out Of Scope
 
 - Have multiple educational example (more than 2).
 - Create a 3D visualisation of the signal.
@@ -126,7 +102,7 @@ Communication with the customer has been set up in Slack as well as GitHub for [
 | ----------------- | -------------------- | ----------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
 | Robin GOUMY       | Project Manager      | Oversee project schedule and resource allocation<br>Assign tasks among team members<br>Provide progress updates to stakeholders<br>Identify and mitigate potential risks | Timely project completion<br>Fully functional software<br>Optimal resource utilization<br>Smooth workflow |
 | Alexandre BOPP    | Program Manager      | Design mockups and general layout<br>Act as liaison with the client<br>Define functional requirements<br>Assess and manage project risks | Well-defined functional specifications<br>Positive client reception regarding design and usability |
-| Maxime THIZEAU    | Technical Lead       | Establish coding guidelines<br>Select appropriate technologies<br>Draft technical documentation<br>Supervise development work | Detailed and comprehensive technical documentation |
+| Maxime THIZEAU    | Technical Leader       | Establish coding guidelines<br>Select appropriate technologies<br>Draft technical documentation<br>Supervise development work | Detailed and comprehensive technical documentation |
 | Geoffrey DELRIEU  | Software Developer   | Implement core features<br>Resolve software issues<br>Maintain and document the codebase<br>Develop and execute unit tests | Successful feature implementation<br>Minimal bug occurrence |
 | Mathias DELILLE | Quality Assurance    | Review and validate documentation<br>Conduct software testing<br>Ensure compliance with client requirements<br>Develop a structured testing plan | Well-defined and executed test plan<br>Effective bug detection<br>Comprehensive documentation |
 | Habi CAILLEAU     | Technical Writer     | Write and structure the user guide                                                   | Clear, well-organized, and accessible documentation |
@@ -134,14 +110,14 @@ Communication with the customer has been set up in Slack as well as GitHub for [
 
 ## Deadline
 
-| Date       | Milestone                |
-| ---------- | ------------------------ |
-| 13/03/2025 | Functional Specification |
-| 25/03/2025 | Technical Specification  |
-| 24/03/2025 | V.1 Code                 |
-| 25/03/2025 | Test Plan                |
-| 25/03/2025 | Test Case                |
-| 01/04/2025 | User Manual              |
+| Date       | Milestone                 |
+| ---------- | ------------------------  |
+| 13/03/2025 | Functional Specifications |
+| 25/03/2025 | Technical Specifications  |
+| 24/03/2025 | VVersion 1 Code           |
+| 25/03/2025 | Test Plan                 |
+| 25/03/2025 | Test Cases                |
+| 01/04/2025 | User Manual               |
 
 ## Allocated Resources
 
