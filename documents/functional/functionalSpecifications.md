@@ -6,11 +6,11 @@
 
 **Title:** SPIN
 
-**Last update on March 13, 2025**
+**Last updated:** March 13, 2025
 
 **Team:** 5
 
-![alt text](../../images/logo.png)
+<img src="../../images/logo.png" width="400" alt="Logo"/>
 
 </div>
 
@@ -20,20 +20,20 @@
 | Program Manager       | Alexandre BOPP    |
 | Technical Leader      | Maxime THIZEAU    |
 | Technical Writer      | Habi CAILLEAU     |
-| Software engineer     | Geoffrey DELRIEU  |
+| Software Engineer     | Geoffrey DELRIEU  |
 | Quality Assurance     | Mathias DELILLE   |
 
 ---
 
 <details>
 
-<summary>Table of Contents</summary>
+<summary>Table Of Contents</summary>
 
 - [Functional Specifications Project Web FPGA](#functional-specifications-project-web-fpga)
   - [Introduction](#introduction)
     - [1. Glossary](#1-glossary)
     - [2. Document Purposes](#2-document-purposes)
-    - [3. Project's introduction](#3-projects-introduction)
+    - [3. Project's Introduction](#3-projects-introduction)
     - [4. Name Explanation](#4-name-explanation)
     - [5. Team \& Roles](#5-team--roles)
     - [6. Stakeholders](#6-stakeholders)
@@ -108,7 +108,7 @@
 
 The purpose of a functional specification is to define the requirements to be implemented, by specifying features, behaviors, and actions to meet user needs.
 
-### 3. Project's introduction
+### 3. Project's Introduction
 
 The goal of this project is to create a web-based interface for an FPGA simulator designed for educational use. This interface will help students and teachers visualize FPGA signal propagation in real time. It will integrate essential tools for synthesis, placement and routing (P&R), and timing simulation to provide a complete learning experience.
 
@@ -159,7 +159,7 @@ Deliverables, which refer to the specific outputs, products, or results that a p
 | Name | Deadline | Link |
 | --  | -- | -- |
 | Functional Specifications  | 13/03/2025 | [functionalSpecifications.md](../functional/functionalSpecifications.md) |
-| Technical Specifications  | 25/03/2024 | [technicalSpecifications.md](../technical/technicalSpecifications.md) |
+| Technical Specifications  | 25/03/2025 | [technicalSpecifications.md](../technical/technicalSpecifications.md) |
 | Test Plan | 25/03/2025 | [testPlan.md](../qualityAssurance/testPlan.md) |
 | Test Cases | 25/03/2025 | [testCases.md](../qualityAssurance/testCases.md) |
 | Code | 01/04/2025  | [Folder](https://github.com/algosup/2024-2025-project-4-web-fpga-team-5/tree/main) |
@@ -231,13 +231,13 @@ The backend system must efficiently handle simulation requests and provide seaml
 ```mermaid
 flowchart TD
     A[Teacher Uploads Verilog Netlist + SDF File] --> B[Backend System]
-    B --> C[Parse SDF File]
-    B --> D[Parse Verilog Netlist]
-    C --> E[SDF JSON: Timing Data]
-    D --> F[Verilog JSON: Layout Data]
-    E --> G[Merge JSON Data]
-    F --> G
-    G --> H[Unified JSON Pivot Format]
+    B --> C{Files Valid?}
+    C -->|Yes| D[Parse SDF to JSON]
+    C -->|No| E[Error Message to Teacher]
+    D --> F[Parse Verilog to JSON]
+    F --> G{Merge Successful?}
+    G -->|Yes| H[Unified JSON Pivot Format]
+    G -->|No| E
     H --> I[Send to Frontend for Visualization]
 ```
 
@@ -268,7 +268,7 @@ Functional requirements describe the specific actions the system must perform to
 
 ## Context  
 
-### Personas 
+### Personas
 
 <img src="../../images/persona1.jpg" width="200" alt="Personna1"/>
 
@@ -318,7 +318,7 @@ The red arrows present in the images are just for guidance and are not part of t
 
 ### Main Page
 
-Upon arriving on the website, users can choose one of the following pages: 
+Upon arriving on the website, users can choose one of the following pages:
 
 - **Visualization page**  
 - **Creation page**  
@@ -339,8 +339,8 @@ If the user selects **Creation Mode**, they will be redirected to this page, whe
 
 <div align="center">
 
-<img src="../../images/teacher1.png" width="600" alt="Creation_page1"/> 
-<img src="../../images/teacher2.png" width="600" alt="Creation_page2"/> 
+<img src="../../images/teacher1.png" width="600" alt="Creation_page1"/>
+<img src="../../images/teacher2.png" width="600" alt="Creation_page2"/>
 
 </div>
 
