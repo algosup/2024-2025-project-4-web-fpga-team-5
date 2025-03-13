@@ -6,7 +6,7 @@
 
 **Title:** SPIN
 
-### **Last update on March 14, 2025**
+**Last update on March 13, 2025**
 
 **Team:** 5
 
@@ -15,13 +15,13 @@
 </div>
 
 | Role | Name |
-|---|---|
+|------|------|
 | Project Manager       | Robin GOUMY       |
 | Program Manager       | Alexandre BOPP    |
-| Tech Lead             | Maxime THIZEAU    |
+| Technical Leader      | Maxime THIZEAU    |
 | Technical Writer      | Habi CAILLEAU     |
-| Software Developer    | Geoffrey DELRIEU  |
-| Quality Assurance     | Mathias DELILLE    |
+| Software engineer     | Geoffrey DELRIEU  |
+| Quality Assurance     | Mathias DELILLE   |
 
 ---
 
@@ -30,41 +30,38 @@
 <summary>Table of Contents</summary>
 
 - [Functional Specifications Project Web FPGA](#functional-specifications-project-web-fpga)
-    - [**Last update on March 14, 2025**](#last-update-on-march-14-2025)
   - [Introduction](#introduction)
-    - [1. Presentation Document](#1-presentation-document)
-    - [2. Presentation Project](#2-presentation-project)
-    - [3. Presentation Name](#3-presentation-name)
-    - [4. Presentation Team \& Roles](#4-presentation-team--roles)
-    - [5. Stakeholders](#5-stakeholders)
-    - [6. Glossary](#6-glossary)
+    - [1. Glossary](#1-glossary)
+    - [2. Document Purposes](#2-document-purposes)
+    - [3. Project's introduction](#3-projects-introduction)
+    - [4. Name Explanation](#4-name-explanation)
+    - [5. Team \& Roles](#5-team--roles)
+    - [6. Stakeholders](#6-stakeholders)
   - [Requirements](#requirements)
     - [1. Core Requirements](#1-core-requirements)
     - [2. Deliverables](#2-deliverables)
     - [3. Functional Requirements](#3-functional-requirements)
       - [a. Web-Based Interface](#a-web-based-interface)
-        - [**Mockups of the Application**](#mockups-of-the-application)
-        - [**Main Page**](#main-page)
-        - [**Teacher, Creation \& Management**](#teacher-creation--management)
-        - [**Student, Visualization**](#student-visualization)
-        - [**Website color chart**](#website-color-chart)
       - [b. FPGA Model Support](#b-fpga-model-support)
       - [c. Visualization Features](#c-visualization-features)
-      - [d. Tool Integration](#d-tool-integration)
-        - [**Flowchart: Tool Integration Process**](#flowchart-tool-integration-process)
-      - [e. Simulation Control](#e-simulation-control)
+      - [d. Simulation Control](#d-simulation-control)
         - [**Flowchart: Simulation Control**](#flowchart-simulation-control)
-      - [f. Backend Processing](#f-backend-processing)
+      - [e. Backend Processing](#e-backend-processing)
         - [**Flowchart: Backend Processing Workflow**](#flowchart-backend-processing-workflow)
-      - [g. Educational Features](#g-educational-features)
+      - [f. Educational Features](#f-educational-features)
     - [4. Non-Functional Requirements](#4-non-functional-requirements)
   - [Context](#context)
-    - [**Personas**](#personas)
-      - [**Dr. Alice Martin – FPGA Design Instructor**](#dr-alice-martin--fpga-design-instructor)
-      - [**John Rivera – FPGA Design Student**](#john-rivera--fpga-design-student)
-    - [**Use Cases**](#use-cases)
+    - [Personas](#personas)
+      - [Dr. Alice Martin – FPGA Design Instructor](#dr-alice-martin--fpga-design-instructor)
+      - [John Rivera – FPGA Design Student](#john-rivera--fpga-design-student)
+    - [Use Cases](#use-cases)
+  - [Mockups Of The Application](#mockups-of-the-application)
+    - [Main Page](#main-page)
+    - [Creation \& Management](#creation--management)
+    - [Visualization](#visualization)
+    - [Website Color Chart](#website-color-chart)
   - [Risk Assessment](#risk-assessment)
-    - [1. Data Security \& Integrity\*\*](#1-data-security--integrity)
+    - [1. Data Security \& Integrity](#1-data-security--integrity)
     - [2. Product Stability \& Reliability](#2-product-stability--reliability)
     - [3. Competitor Analysis](#3-competitor-analysis)
     - [4. Risk Management Plan](#4-risk-management-plan)
@@ -79,43 +76,10 @@
 
 ## Introduction
 
-### 1. Presentation Document
-
-The purpose of a functional specification is to define the requirements to be implemented, by specifying features, behaviors, and actions to meet user needs.
-
-### 2. Presentation Project
-
-The goal of this project is to create a web-based interface for an FPGA simulator designed for educational use. This interface will help students and teachers visualize FPGA signal propagation in real time. It will integrate essential tools for synthesis, placement and routing (P&R), and timing simulation to provide a complete learning experience.
-
-The simulator will primarily support the NanoXplore NGultra FPGA, with additional basic support for Xilinx Series 7 using the VTR flow. Users will be able to explore an interactive 2D FPGA layout, where they can see how signals travel, how resources (BELs) are utilized, and how everything evolves over time during the simulation.
-
-### 3. Presentation Name
-
-**Why SPIN ?**
-
-SPIN stands for **Signal Propagation Inspector**. We chose this name because it is short, impactful, and conveys the core functionality of our tool. A concise yet meaningful name enhances clarity and memorability, making it more effective for users.
-
-### 4. Presentation Team & Roles
-
-| Role                 | Description                                                                                          |
-|----------------------|------------------------------------------------------------------------------------------------------|
-| **Project Manager**  | Oversees planning, organization, and budgeting.<br>Ensures the team stays on track and motivated.   |
-| **Program Manager**  | Defines project goals and ensures alignment with expectations.<br>Leads design efforts.<br>Authors Functional Specifications. |
-| **Technical Leader**        | Drives technical decisions.<br>Translates Functional Specifications into Technical Specifications.<br>Reviews code and provides guidance. |
-| **Technical Writer** | Develops and maintains documentation, including user manuals and technical guides.<br>Collaborates with engineers to ensure clarity and accuracy.<br>Makes documentation accessible and user-friendly. |
-| **Software Engineer** | Implements features by writing code.<br>Participates in technical design and maintains documentation. |
-| **Quality Assurance** | Tests features to identify bugs and inconsistencies.<br>Documents issues and verifies fixes.<br>Develops and executes test plans. |
-
-### 5. Stakeholders
-
-| Name           | Occupation                  | Links                          |
-|----------------|-----------------------------|--------------------------------|
-| Florent MANNI  | Client CNES worker | [Website](https://cnes.fr/) |
-
-### 6. Glossary  
+### 1. Glossary  
 
 | **Term**             | **Definition** |
-|----------------------|--------------|
+|----------------------|----------------|
 | **FPGA (Field-Programmable Gate Array)** | A reconfigurable integrated circuit that contains an array of programmable logic blocks and interconnects, allowing custom digital circuit designs. Unlike microcontrollers or CPUs, FPGAs are not pre-programmed and require users to configure their functionality. |
 | **Basic Element (BEL)** | The fundamental building blocks inside an FPGA, including flip-flops (for storing state), Look-Up Tables (LUTs) (for implementing logic functions), and Block RAM (for memory storage). These elements are combined to create complex digital designs. |
 | **Application**      | A digital circuit or function that is implemented on an FPGA, typically described using a Hardware Description Language (HDL) like Verilog or VHDL. |
@@ -125,6 +89,7 @@ SPIN stands for **Signal Propagation Inspector**. We chose this name because it 
 | **Software**         | The web-based FPGA simulation and visualization tool developed for this project. It provides an interactive interface for loading, visualizing, and testing FPGA circuits. |
 | **Testbench**        | A **Verilog script** that defines test scenarios to verify the correctness of an FPGA design. It provides stimulus (input signals) and checks expected outputs to ensure the circuit functions as intended. |
 | **Timing Netlist**   | A special type of **Verilog netlist** that includes **detailed signal propagation timing information**. It is used for analyzing performance, ensuring that the FPGA design meets timing constraints, and preventing issues like setup and hold violations. |
+| **Netlist**          | A representation of a digital circuit’s components (e.g., gates, flip-flops, LUTs) and their connections (nets), generated after synthesis. It serves as input to P&R and is parsed into JSON for visualization in this project. A **timing netlist** is a post-P&R version with placement and timing details. |
 | **Scalability**      | The ability of the FPGA simulation tool to handle increasingly larger designs or more complex architectures without performance degradation. Scalability is essential for ensuring that the tool remains useful as design complexity grows. |
 | **Latency**         | The delay between an input stimulus and its observable response in the FPGA simulation. Lower latency improves real-time feedback and makes the tool more responsive for users. |
 | **Throughput**       | The amount of data or number of operations processed per unit of time. In FPGA simulation, high throughput ensures efficient execution of large-scale models. |
@@ -136,6 +101,41 @@ SPIN stands for **Signal Propagation Inspector**. We chose this name because it 
 | **Parallelism**      | The ability to execute multiple operations simultaneously within an FPGA. FPGAs excel at parallel processing compared to traditional CPUs. |
 | **Bitstream**        | The final compiled file that configures the FPGA hardware. The bitstream is generated after synthesis and place-and-route steps and is loaded onto the FPGA for execution. |
 | **Verification**     | The process of ensuring that an FPGA design behaves as intended before deployment. This includes functional simulation, timing analysis, and formal verification methods. |
+| **VPR (Versatile Place and Route)** | An open-source tool within the VTR framework used for the **place-and-route** phase. It maps a synthesized netlist to FPGA BELs (placement) and determines signal paths (routing), producing a timing netlist and layout data. Used for Xilinx Series 7 in this project. |
+| **VTR (Verilog-to-Routing)** | An open-source framework that automates the FPGA design flow from Verilog to a routed implementation. It integrates **Yosys** (synthesis), **VPR** (P&R), and analysis tools. Used as the flow for Xilinx Series 7 in this project. |
+
+### 2. Document Purposes
+
+The purpose of a functional specification is to define the requirements to be implemented, by specifying features, behaviors, and actions to meet user needs.
+
+### 3. Project's introduction
+
+The goal of this project is to create a web-based interface for an FPGA simulator designed for educational use. This interface will help students and teachers visualize FPGA signal propagation in real time. It will integrate essential tools for synthesis, placement and routing (P&R), and timing simulation to provide a complete learning experience.
+
+The simulator will primarily support the NanoXplore NGultra FPGA, with additional basic support for Xilinx Series 7 using the VTR flow. Users will be able to explore an interactive 2D FPGA layout, where they can see how signals travel, how resources (BELs) are utilized, and how everything evolves over time during the simulation.
+
+### 4. Name Explanation  
+
+**Why SPIN?**  
+
+SPIN stands for **Signal Propagation Inspector**. The **"IN"** comes from "Inspector" to emphasize the tool’s role in analyzing and inspecting signal propagation. This deliberate choice keeps the name concise while preserving its meaning. A short, impactful name enhances clarity, making it easier for users to remember and associate with its purpose.  
+
+### 5. Team & Roles
+
+| Role                 | Description                                                                                          |
+|----------------------|------------------------------------------------------------------------------------------------------|
+| **Project Manager**  | Oversees planning, organization, and budgeting.<br>Ensures the team stays on track and motivated.   |
+| **Program Manager**  | Defines project goals and ensures alignment with expectations.<br>Leads design efforts.<br>Authors Functional Specifications. |
+| **Technical Leader**        | Drives technical decisions.<br>Translates Functional Specifications into Technical Specifications.<br>Reviews the code and provides guidance. |
+| **Technical Writer** | Develops and maintains documentation, including user manuals and technical guides.<br>Collaborates with engineers to ensure clarity and accuracy.<br>Makes documentation accessible and user-friendly. |
+| **Software Engineer** | Implements features by writing code.<br>Participates in technical design and maintains documentation. |
+| **Quality Assurance** | Tests features to identify bugs and inconsistencies.<br>Documents issues and verifies fixes.<br>Develops and executes test plan. |
+
+### 6. Stakeholders
+
+| Name           | Occupation                  | Links                          |
+|----------------|-----------------------------|--------------------------------|
+| Florent MANNI  | Client CNES worker | [Website](https://cnes.fr/) |
 
 ---
 
@@ -148,7 +148,7 @@ Project requirements define the necessary standards, conditions, and constraints
 - Develop a **web-based interface** for **FPGA simulation** focused on **educational purposes**.  
 - Provide **real-time visualization** of **FPGA signal propagation**.  
 - Support **NanoXplore NGultra** as the primary FPGA model, with additional support for **Xilinx Series 7** via the **VTR flow**.  
-- Integrate with **synthesis, place & route (P&R), and timing simulation tools** (Impulse, ModelSim, Yosys, VPR).  
+- Support **synthesis, place & route (P&R), and timing simulation tools** (Impulse, ModelSim, Yosys, VPR).  
 - Ensure an **interactive and intuitive** experience for both **students and teachers**.  
 - Display an **FPGA layout with BEL utilization and signal routing** synchronized with **time evolution during simulation**.  
 
@@ -171,64 +171,7 @@ The core requirements define the fundamental objectives of the FPGA web interfac
 
 #### a. Web-Based Interface  
 
-The application must provide a user-friendly and responsive interface for FPGA simulation. It should support:  
-
-##### **Mockups of the Application**  
-
-**Legend:**  
-The red arrows present in the images are just for guidance and are not part of the final mockup.  
-
-##### **Main Page**
-
-Upon arriving on the website, users can choose one of the following modes:  *
-
-- **Student Mode**  
-- **Preview Mode**  
-- **Teacher Mode (Creative Mode)**  
-
-<div align="center">
-
-<img src="../../images/mainpage.png" width="600"/>  
-
-</div>
-
-##### **Teacher, Creation & Management**
-
-If the user selects **Teacher Mode**, they will be redirected to this page, where they can manage examples efficiently:
-
-- **Create new examples** in the easiest way possible.  
-- **Delete old examples** to keep the library relevant.  
-- A button at the bottom allows **returning to the visualization page**.  
-
-<div align="center">
-
-<img src="../../images/teacher1.png" width="600"/> 
-<img src="../../images/teacher2.png" width="600"/> 
-
-</div>
-
-##### **Student, Visualization**
-
-If the user selects **Student Mode** (or if a teacher clicks on the **visualization button**), they will be redirected to the final **student page**.  
-
-- Users can **select an example** from a list.  
-- Once selected, the **preview** of the FPGA simulation will be displayed below.  
-- The interface will show **signals and all available features** for interaction.  
-
-<div align="center">
-
-<img src="../../images/student1.png" width="600"/>  
-<img src="../../images/student2.png" width="600"/>
-
-</div>
-
-##### **Website color chart**
-
-| COLOR                          | TYPE      |
-|--------------------------------|----------|
-| <span style="background-color:#14002b; color:white; padding:4px 8px; border-radius:4px;">#14002b</span> | Primary   |
-| <span style="background-color:#ffffff; color:black; padding:4px 8px; border-radius:4px; border: 1px solid #ccc;">#ffffff</span> | Secondary |
-| <span style="background-color:#000000; color:white; padding:4px 8px; border-radius:4px;">#000000</span> | Tertiary  |
+The application must provide a user-friendly interface for FPGA simulation. It should be accessible via modern web browsers and support various screen sizes but not on mobile, ensuring usability across desktops, tablets. The interface should have an intuitive layout, allowing users to configure, simulate, and analyze FPGA designs seamlessly. It must also include interactive elements such as real-time visualization, drag-and-drop functionality, and dynamic feedback to enhance user experience.
 
 #### b. FPGA Model Support  
 
@@ -244,32 +187,7 @@ To enhance user understanding of FPGA operations, the system must include:
 - An **interactive 2D FPGA layout** that accurately represents the circuit.  
 - Dynamic **BEL utilization and signal routing** visualization.  
 
-#### d. Tool Integration  
-
-To ensure a seamless FPGA simulation workflow, SPIN will integrate multiple tools.  
-
-- **Impulse, ModelSim, Yosys, and VPR** for synthesis, place & route (P&R), and simulation tasks.  
-- Automated conversion of **Verilog applications into FPGA-compatible netlists** for visualization.
-
-| **Stage**            | **NanoXplore (NGultra)** | **Xilinx (Series 7)** |
-|----------------------|------------------------|----------------------|
-| **Synthesis**       | Impulse                 | Yosys               |
-| **Place & Route**   | Impulse                 | VPR                 |
-| **Timing Simulation** | Impulse               | VPR                 |
-| **Testbench Execution** | ModelSim           | ModelSim             |
-
-##### **Flowchart: Tool Integration Process**  
-
-```mermaid
-flowchart TD;
-    A[User Uploads Verilog Code] --> B[Backend Processing]
-    B -->|Synthesis| C[Yosys]
-    C -->|P&R| D[VPR]
-    D -->|Simulation| E[ModelSim/Impulse]
-    E -->|Output| F[Web Interface Visualization]
-```
-
-#### e. Simulation Control  
+#### d. Simulation Control  
 
 To offer a flexible learning experience, the system should allow users to:
 
@@ -282,37 +200,48 @@ To offer a flexible learning experience, the system should allow users to:
 ##### **Flowchart: Simulation Control**
 
 ```mermaid
-flowchart TD;
-    A[User] -->|Selects Speed| B[Simulation Engine]
-    A -->|Steps Through Execution| C[Signal Analysis]
-    A -->|Moves Elements with Mouse| D[Simulation Interaction]
-    A -->|Zooms In/Out| E[View Adjustment]
-    B -->|Updates| F[Signal Propagation]
-    C -->|Displays| F
-    D -->|Modifies| F
-    E -->|Affects| F
+flowchart TD
+    A[Student] --> B[Select Simulation Speed: x1, x2, x4]
+    A --> C[Step Through Execution]
+    A --> D[Play/Pause/Resume]
+    A --> E[Drag View with Mouse]
+    A --> F[Zoom In/Out]
+    B --> G[Simulation Engine]
+    C --> G
+    D --> G
+    G --> H[Update Signal Propagation Animation]
+    E --> I[Adjust 2D View Position]
+    F --> J[Adjust 2D View Scale]
+    H --> K[Web Interface Display]
+    I --> K
+    J --> K
 ```
 
-#### f. Backend Processing  
+#### e. Backend Processing  
 
 The backend system must efficiently handle simulation requests and provide seamless integration between the frontend and FPGA tools:  
 
-- **Support uploading of Verilog & STD applications and testbenches.**  
-- **Process and prepare Verilog applications for visualization.** 
+- **Support uploading of Verilog & STF.**  
+- **Parsing and prepare Verilog & SDF applications to Json file.**
+- **Merging both.**
+- **Send for visualization**
 
 ##### **Flowchart: Backend Processing Workflow**  
 
 ```mermaid
-flowchart TD;
-    A[User Uploads Verilog File] --> B[Backend System]
-    B -->|Validates Code| C[Syntax Checking]
-    C -->|Passes| D[Run Synthesis & P&R]
-    D -->|Generates| E[Netlist & Routing Data]
-    E -->|Sends to| F[Frontend for Visualization]
-    C -->|Fails| G[Error Message to User]
+flowchart TD
+    A[Teacher Uploads Verilog Netlist + SDF File] --> B[Backend System]
+    B --> C[Parse SDF File]
+    B --> D[Parse Verilog Netlist]
+    C --> E[SDF JSON: Timing Data]
+    D --> F[Verilog JSON: Layout Data]
+    E --> G[Merge JSON Data]
+    F --> G
+    G --> H[Unified JSON Pivot Format]
+    H --> I[Send to Frontend for Visualization]
 ```
 
-#### g. Educational Features  
+#### f. Educational Features  
 
 To facilitate teaching and learning, the system must include:  
 
@@ -331,19 +260,19 @@ Functional requirements describe the specific actions the system must perform to
 |---------------------|----------------|
 | **Performance**     | Ensure **real-time rendering** and **smooth interactions** for FPGA visualization. <br> Optimize handling of **large FPGA models**. |
 | **Scalability**     | Support **multiple FPGA configurations** and **growing simulation complexity**. |
-| **Usability**       | Provide **clear and accessible documentation** for students and teachers. <br> Implement a **user-friendly UI** for ease of navigation. |
+| **Usability**       | Provide **clear and accessible documentation** for students and teachers. <br> Implement a **user-friendly interface** for ease of navigation. |
 | **Security**        | No need to have multiple access. <br> Implement **different user roles** (button for teacher or student). |
-| **Technical Constraints** | The **frontend and backend technologies are not predefined**, allowing flexibility in tech selection. <br> Ensure **cross-browser compatibility** (Chrome, Firefox, Edge, Safari). <br> Support a **scalable architecture** for handling growing users and applications. |
+| **Technical Constraints** | The **frontend and backend technologies are not predefined**, allowing flexibility in tech selection. <br> Ensure **cross-browser compatibility** (Chrome, Firefox, Edge, Safari). |
 
 ---
 
 ## Context  
 
-### **Personas**  
+### Personas 
 
-<img src="../../images/persona1.jpg" width="200"/>
+<img src="../../images/persona1.jpg" width="200" alt="Personna1"/>
 
-#### **Dr. Alice Martin – FPGA Design Instructor**  
+#### Dr. Alice Martin – FPGA Design Instructor
 
 > **Role**: Teacher  
 > **Age**: 42  
@@ -355,9 +284,9 @@ Functional requirements describe the specific actions the system must perform to
 
 ---
 
-<img src="../../images/persona2.jpg" width="200"/>
+<img src="../../images/persona2.jpg" width="200" alt="Personna2"/>
 
-#### **John Rivera – FPGA Design Student**  
+#### John Rivera – FPGA Design Student
 
 > **Role**: Student  
 > **Age**: 24  
@@ -369,12 +298,12 @@ Functional requirements describe the specific actions the system must perform to
 
 ---
 
-### **Use Cases**  
+### Use Cases
 
 | **Use Case**                              | **Description** | **Actors** |  
 |-------------------------------------------|---------------|------------|  
-| **FPGA Concept Demonstration**            | A teacher demonstrates real-time signal propagation using an interactive FPGA layout. | Dr. Alice Martin  |  
-| **Hands-on FPGA Simulation**              | A student uploads a Verilog file and visualizes the FPGA logic gates and signals. | John Rivera  |  
+| **FPGA Concept Demonstration**            | A teacher demonstrates real-time signal propagation using an interactive FPGA layout. | Teacher  |  
+| **Hands-on FPGA Simulation**              | A student uploads a Verilog file and visualizes the FPGA logic gates and signals. | Student  |  
 | **Step-by-Step Debugging**                | The system allows pausing and analyzing FPGA signals at different stages of execution. | Student, Teacher |  
 | **Multi-Speed Simulation**                | Users control the speed of the FPGA signal visualization (e.g., x1, x2, x4). | Student, Teacher |  
 | **Real-Time Feedback on Design Errors**   | The system provides warnings for incorrect Verilog syntax or logical inconsistencies. | Teacher |  
@@ -382,16 +311,73 @@ Functional requirements describe the specific actions the system must perform to
 
 ---
 
+## Mockups Of The Application
+
+**Legend:**  
+The red arrows present in the images are just for guidance and are not part of the final mockup.  
+
+### Main Page
+
+Upon arriving on the website, users can choose one of the following pages: 
+
+- **Visualization page**  
+- **Creation page**  
+
+<div align="center">
+
+<img src="../../images/mainpage.png" width="600" alt="Selection_page"/>  
+
+</div>
+
+### Creation & Management
+
+If the user selects **Creation Mode**, they will be redirected to this page, where they can manage examples efficiently:
+
+- **Create new examples** in the easiest way possible.  
+- **Delete old examples** to keep the library relevant.  
+- A button at the bottom allows **returning to the visualization page**.  
+
+<div align="center">
+
+<img src="../../images/teacher1.png" width="600" alt="Creation_page1"/> 
+<img src="../../images/teacher2.png" width="600" alt="Creation_page2"/> 
+
+</div>
+
+### Visualization
+
+If the user selects **Student Mode** (or if a teacher clicks on the **visualization button**), they will be redirected to the final **student page**.  
+
+- Users can **select an example** from a list.  
+- Once selected, the **preview** of the FPGA simulation will be displayed below.  
+- The interface will show **signals and all available features** for interaction.  
+
+<div align="center">
+
+<img src="../../images/student1.png" width="600" alt="Visualization_page1"/>  
+<img src="../../images/student2.png" width="600" alt="Visualization_page2"/>
+
+</div>
+
+### Website Color Chart
+
+| COLOR                          | TYPE      |
+|--------------------------------|----------|
+| <span style="background-color:#14002b; color:white; padding:4px 8px; border-radius:4px;">#14002b</span> | Primary   |
+| <span style="background-color:#ffffff; color:black; padding:4px 8px; border-radius:4px; border: 1px solid #ccc;">#ffffff</span> | Secondary |
+| <span style="background-color:#000000; color:white; padding:4px 8px; border-radius:4px;">#000000</span> | Tertiary  |
+
+---
+
 ## Risk Assessment
 
-### 1. Data Security & Integrity**
+### 1. Data Security & Integrity
 
 The client has specified that no login system is required, as the web application is intended for internal use within the company rather than public access. This affects security considerations in the following ways:
 
 - **No login authentication** required.
 - **No sensitive data input**, as the tool operates with pre-defined example cases.
 - **Precision and relevance** are prioritized over security, ensuring the FPGA signal propagation tool delivers accurate results.
-- **No security measures** needed for adding new examples.
 - **Several predefined examples** are included, as requested by the client.
 
 ---
@@ -430,7 +416,7 @@ SPIN aims to provide the best balance between **usability, visualization, and ac
 | **Risk**                              | **Likelihood** | **Impact** | **Mitigation Strategy** |
 |----------------------------------|--------------|---------|-------------------|
 | Performance issues with large FPGA models | High  | High  | Optimize rendering algorithms, implement progressive loading |
-| Incompatibility with external tools | Medium  | High  | Maintain modular architecture, conduct regular compatibility tests |
+| Incompatibility with external tools | High  | High  | Maintain modular architecture, conduct regular compatibility tests |
 | Security vulnerabilities | Low  | Medium | Minimal security needed due to internal usage |
 | User adoption challenges | Medium | Medium | Provide thorough documentation, tutorials, and an intuitive UI |
 | Data loss or corruption | Low | High | Implement regular backups and file validation |
