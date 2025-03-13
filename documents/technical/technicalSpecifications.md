@@ -52,18 +52,18 @@ This project was requested by [ALGOSUP](https://algosup.com), a French computer 
 
 ### Overview
 
-The aim of this project is to develop a web-based interface for an FPGA simulator that will be used for educational purposes. \ 
-The interface will provide students and teachers with a visualization of FPGA signal propagation in real-time. It will integrate tools for synthesis, place and route (P&R), and timing simulation to offer a comprehensive learning experience. 
+The aim of this project is to develop a web-based interface for an FPGA<sup><a id="1-bis" href="#1">[1]</a></sup> simulator that will be used for educational purposes. \ 
+The interface will provide students and teachers with a visualization of FPGA signal propagation in real-time. It will integrate tools for synthesis, place and route (P&R)<sup><a id="2-bis" href="#2">[2]</a></sup>, and timing simulation to offer a comprehensive learning experience. 
 
 ### In-Scope
 
 All of the following points are in-scope objectives that should be completed before the end of the project, which will be on the first of April:
 
 - The web-page should contain a 2D representation of the simulation made by the customer program.
-- The web-page should represent all BEL utilization and signal routing, synchronized with time during the simulation process.
+- The web-page should represent all BEL<sup><a id="3-bis" href="#3">[3]</a></sup> utilization and signal routing, synchronized with time during the simulation process.
 - The user should be able to pause, resume, advance and return in time.
-- The clock cycles should be visible within the interface.
-- Application examples should be loaded beforehand thanks to a parser created by our team and the sdf file given by the customer.
+- The clock cycles<sup><a id="4-bis" href="#4">[4]</a></sup> should be visible within the interface.
+- Application examples should be loaded beforehand thanks to a parser<sup><a id="5-bis" href="#5">[5]</a></sup> created by our team and the sdf file<sup><a id="6-bis" href="#6">[6]</a></sup> given by the customer.
 - The "teacher" user should be able to create a new application within the web-page.
 
 ### Out Of Scope
@@ -75,6 +75,7 @@ All of the understated points are out-of-scope and therefore irrelevant for this
 - Representing the entire board during the simulation.
 - Creating a loggin page.
 - Using a deployment strategy.
+- Making the page scalable for smartphones.
 
 ### Expected Deliverables
 
@@ -131,12 +132,12 @@ The structure showed below would allow team members to access every file quickly
 ### Code Structure
 
 Concerning the code structure, it would be parted in two different folders:
-- the first one would be dedicated to the backend;
-- while the second one would be for the frontend.
+- the first one would be dedicated to the back-end;
+- while the second one would be for the front-end.
 
-By following these conventions, every one exterior to the project team 5 would be able to catch up quite easily and to find every information needed fpr their own advancement.
+By following these conventions, every exterior people of the team 5 project would be able to catch up quite easily and to find every information needed for their own advancement.
 
-Once again. This list has been made in amount of the project. Therefore, it is meant to change in the following weeks if a better structure or a new idea shoudl be implemented to the repository/structure. Eventually, these changes would be described in the following tree or in a sub category to keep catch of the first arrangement.
+Once again. This list has been made in amount of the project. Therefore, it is meant to change in the following weeks if a better structure or a new idea should be implemented to the repository/structure. Eventually, these changes would be described in the following tree or in a sub category to keep catch of the first arrangement.
 
 ```md
 2024-2025-project-4-web-fpga-team-5
@@ -208,7 +209,7 @@ This project has no language requirement. Therefore, our team was free to chose 
 
 #### Front-End
 
-To complete this project, the team has to create a webpage for the customer. To do so, it was set to use React.JS, which is a framework of JavaScript, a language used in the web development.
+To complete this project, the team has to create a webpage for the customer. To do so, it was set to use React.JS<sup><a id="7-bis" href="#7">[7]</a></sup>, which is a framework of JavaScript<sup><a id="8-bis" href="#8">[8]</a></sup>, a language used in the web development.
 
 React.JS was chosed for these numerous advantages:
 - **Fast & Efficient**: Uses a declarative approach, leading to better performance and maintainability.
@@ -223,7 +224,7 @@ Unfortunately, React.JS has its share of flaws:
 
 However, we judge it suitable for our product and decided to went along with it.
 
-Finally, we also thought of another library for the visualization part, which is D3.JS. The development team would mainly use it for it's user-friendly approach of UI features such as Zoom in/out.
+Finally, we also thought of another library for the visualization part, which is D3.JS<sup><a id="9-bis" href="#9">[9]</a></sup>. The development team would mainly use it for it's user-friendly approach of UI features such as Zoom in/out.
 
 Advantages:
 - **Powerful Data Visualization**: Allows for highly customizable and interactive charts, graphs, and visualizations.
@@ -239,7 +240,7 @@ Drawbacks:
 
 #### Back-End
 
-Concerning the back-end, the choice has been made to keep it simple and to use Node.JS and Express.JS which are world wide spread. \
+Concerning the back-end, the choice has been made to keep it simple and to use Node.JS<sup><a id="10-bis" href="#10">[10]</a></sup> and Express.JS<sup><a id="11-bis" href="#11">[11]</a></sup> which are world wide spread. \
 Here are some pros and cons about Node.JS:
 
 Node.JS advantages:
@@ -271,7 +272,7 @@ For this project, the versioning has been defined has below:
 | --------- | -------------- | ---------------------------------------------------------------------------------------------------- |
 | <ins>**0**</ins>.0.0 | Major update   | This identifier will be used for the major update/product (0: before MVP; 1: MVP; 2: final product). |
 | 0.<ins>**0**</ins>.0 | Feature update | This identifier will be the number of feature added after each major version of the product.         |
-| 0.0.<ins>**0**</ins> | Fixes          | This identifier shows theh number of fixes in between two major updates of the product.              |
+| 0.0.<ins>**0**</ins> | Fixes          | This identifier shows the number of fixes in between two major updates of the product.              |
 
 >[!CAUTION]
 > Increasing the major version indicator will reset the two other indicators.
@@ -280,10 +281,10 @@ For this project, the versioning has been defined has below:
 ### Server
 
 <!-- TODO: To confirm with Geoffrey or Mathias -->
-This project required a webpage accessible easily on every operating system and even smaller devices, such as tablets. It also needs to store some basic applications for the customer to show to their client/user. Therefore, we decided to come up with a simple local host server to store all the data.
+This project required a webpage accessible easily on every operating system and even smaller devices, such as tablets. It also needs to store some basic applications (examples) for the customer to show to their client/user. Therefore, we decided to come up with a simple local host server<sup><a id="12-bis" href="#12">[12]</a></sup> to store all the data.
 
-However, if there is servers, there should be endpoints to whom giving requests. These endpoints would be described furthermore in the following part. \
-The development team will use Postman to test and develop these endpoints.
+However, if there are servers, there should be endpoints<sup><a id="13-bis" href="#13">[13]</a></sup> to whom giving requests. These endpoints would be described furthermore in the following part. \
+The development team will use Postman<sup><a id="14-bis" href="#14">[14]</a></sup> to test and develop these endpoints.
 
 #### Endpoints
 
@@ -306,9 +307,9 @@ All of these endpoints are more detailed in our [API Documentation](./APIDocumen
 
 #### Local Storage
 
-As previously mentioned in the [server](#server) part, we will be using a server with local host to store all of the predefined appliation asked by the client.
+As previously mentioned in the [server](#server) part, we will be using a server with local host to store all of the predefined applications asked by the client.
 You can find all of them at its repository: [ALGOSUP_POC](https://github.com/LeFl0w/ALGOSUP_POC/tree/main/Examples). \
-However, these examples are for now under sdf and verilog format, which is not suitable for our application.
+However, these examples are for now under sdf and verilog<sup><a id="15-bis" href="#15">[15]</a></sup> format, which is not suitable for our application.
 
 The development team has to create a parser that will translate these two files into one in JSON. It would be more suitable and convenient this way.
 
@@ -316,7 +317,7 @@ The parser would be coded in JavaScript and would follow the described logic you
 
 All of these application would be accessible directly within the application through a dropdown menu. You can learn more about it in the [Flows part](#flows).
 
-Finally, the parsed files would keep the same name as the sdf and verilog ones, except it would be JSON files.
+Finally, the parsed files would keep the same name as the sdf and verilog ones, except it would be JSON<sup><a id="16-bis" href="#16">[16]</a></sup> files.
 
 ```Example
 FF1_post_synthesis.sdf + FF1_post_synthesis.v
@@ -328,7 +329,7 @@ FF1PostSynthesis.json
 
 #### Creation Of Applications
 
-Another feature required by the customer was to create applications within the webpage. To create these applications, the user would have to click on a add button. This will trigger an event and the user would be able to drag and drop (or search from it's local storage) a sdf and verilog file.
+Another feature required by the customer was to create applications within the webpage. To create these applications, the user would have to click on an add button. This will trigger an event and the user would be able to drag and drop (or search from it's local storage) a sdf and verilog file.
 
 >[!CAUTION]
 > These two files are mandatory and needed to do the parsing and the creation of the application.
@@ -336,7 +337,7 @@ Another feature required by the customer was to create applications within the w
 
 If the two files don't have the same name, a default name would be given to the application (`newApplication1`).
 
-Finally, to create an application, we still need to parse the files into a JSON file. However, we won't use the same parser as the first one will only serve as parsing the prerequisites example made by the client at the launching of the server. \
+Finally, to create an application, we still need to parse the files into a JSON file. However, we won't use the same parser as the first one will only serve as parsing the prerequisited examples made by the client at the launching of the server. \
 Moreover, this parser would not send the data to the server but will keep them inside the repository in the `sdfFiles` folder.
 
 #### Data Security
@@ -411,11 +412,11 @@ app.post('/verifyData', (req, res) => {
 
 ### UI Components
 
-All the UI Components have been predesigned in a mock-up to help the development part of the application. The softwre development team will just have to look on the mock-up and to follow each instruction to reproduce an apllication similar to our ideal mock-up.
+All the UI Components have been predesigned in a mock-up<sup><a id="17-bis" href="#17">[17]</a></sup> to help the development part of the application. The software development team will just have to look on the mock-up and to follow each instruction to reproduce an application similar to our ideal mock-up.
 
-Moreover, this mock-uo has been iterated many times according to the client preferences. Therefore, it shouldn't be changed in the following days or in a near future.
+Moreover, this mock-up has been iterated many times according to the client preferences. Therefore, it shouldn't be changed in the following days or in a near future.
 
-You can find the different aspect at these two places:
+You can find the different aspects at these two places:
 - [The Functinal Specifications](../functional/functionalSpecifications.md)
 - [The Application Mock-up](https://www.figma.com/design/YohFQNPfGWHBlULNmWJFgS/WebFPGA?node-id=0-1&p=f&t=iZloJbAbCTv3OLB5-0)
 
@@ -457,13 +458,15 @@ For this project, the development team would use a continuous integration. Which
 
 The continuous integration will mainly be held by GitHub and the repository, allowing all the team members to create branches and work simultaneously on different parts of the code.
 
-The merge and pull request would be done regularly with a check by the quality assurance before any of the pull requests to the dev and main branches. It would avoid stress by pushing a wrong version in the main branch but would also highly enhance the code quality.
+The merge and pull request would be done regularly with a check by the quality assurance before any of the pull requests to the dev and main branches. It would avoid stressing out by pushing a wrong version in the main branch and would also highly enhance the code quality.
 
 ### Environment Configuration
 
 To achieve this project, you would need:
 - VSCode 1.77 or later
+- NPM
 - Node.JS
+- Express.JS
 - React.JS
 - D3.JS
 - Vite (optional)
@@ -527,7 +530,7 @@ A VSCode extension that could be useful:
 
 #### React.JS Installation
 
-There are two ways of installing React.JS. The first one is by using CRA while the second needs [Vite](#vite-installation).
+There are two ways of installing React.JS. The first one is by using CRA<sup><a id="18-bis" href="#18">[18]</a></sup> while the second needs [Vite](#vite-installation).
 
 *By Using CRA*
 
@@ -612,7 +615,7 @@ $ npx vite
 
 ### Bug Reporting And Tracking
 
-To handle all the errors, the development team would neeed to create unit test to ensure the code is bug-free. Therefore, a new folder would be created in the `frontend` and `backend` folders. It would be called test and will contain all the test files. There would be one testinf file for every file in the application. They would be named with a `.test` at the end of the file name.
+To handle all the errors, the development team would need to create unit tests to ensure the code is bug-free. Therefore, a new folder would be created in the `frontend` and `backend` folders. It would be called test and will contain all the test files. There would be one testing file for every file in the application. They would be named with a `.test` at the end of the file name.
 
 Example:
 ```
@@ -623,7 +626,7 @@ would become
 /test -> app.test.jsx
 ```
 
-To create those unit tests, the development team would use Jest. They would need to modify the following files accordingly:
+To create those unit tests, the development team would use Jest<sup><a id="19-bis" href="#19">[19]</a></sup>. They would need to modify the following files accordingly:
 
 - Downloading the necesary library:
 ```
@@ -662,14 +665,54 @@ For further information, please refer to the [test plan](../qualityAssurance/tes
 
 ### Updates And Upgrades
 
-As this project only has six weeks in lenght for us, ALGOSUP students. Every push, or pull request made after the end date, which is the first of April, would be considered as an update. 
+As this project only last six weeks for us, ALGOSUP students. Every push, or pull request made after the end date, which is the first of April, would be considered as an update. 
 
 Our team will do its best to complete all the requirements in time, in that case, every features not required for this project but approved by the customer would be considered as an upgrade.
 
 ## Glossary
 
-<!-- TODO -->
+| Ids                                | Names             | Definitions | Sources |
+| ---------------------------------- | ----------------- | ----------- | ------- |
+| <a id="3" href="#3-bis">[3]</a>    | BEL               | It stands for Basic Element, these are the hardware electrical ressources available inside the FPGA like fliflop, Look-Up-Table (LUT), Block RAM | [GitHub](https://github.com/LeFl0w/ALGOSUP_POC) |
+| <a id="4" href="#4-bis">[4]</a>    | Clock cycles      | The time interval between rising edges of a repetitive clock signal. | [ScienceDirect](https://www.sciencedirect.com/topics/computer-science/clock-cycle#:~:text=A%20clock%20cycle%2C%20in%20the,be%20done%20per%20unit%20time.) |
+| <a id="18" href="#18-bis">[18]</a> | CRA               | It stands for Create React Application, which is the method used to create an appliation in React. | /        |
+| <a id="9" href="#9-bis">[9]</a>    | D3.JS             | D3.js (also known as D3, short for Data-Driven Documents) is a JavaScript library for producing dynamic, interactive data visualizations in web browsers. | [Wikipedia](https://en.wikipedia.org/wiki/D3.js) |
+| <a id="13" href="#13-bis">[13]</a> | Endpoints         | An API endpoint is a digital location where an application programming interface (API) receives API calls, also known as API requests, for resources on its server. | [IBM](https://www.ibm.com/think/topics/api-endpoint#:~:text=An%20API%20endpoint%20is%20a,URLs%2C%20or%20uniform%20resource%20locators.) |
+| <a id="11" href="#11-bis">[11]</a> | Express.JS        | It is a back end web application framework for building RESTful APIs with Node.js. | [Wikipedia](https://en.wikipedia.org/wiki/Express.js#:~:text=js%2C%20or%20simply%20Express%2C%20is,building%20web%20applications%20and%20APIs.) |
+| <a id="1" href="#1-bis">[1]</a>    | FPGA              | It stands for Field-Programmable Gate Array. A reconfigurable integrated circuit that contains an array of programmable logic blocks and interconnects, allowing custom digital circuit designs. Unlike microcontrollers or CPUs, FPGAs are not pre-programmed and require users to configure their functionality. | / |
+| <a id="8" href="#8-bis">[8]</a>    | JavaScript        | It is a programming language used most often for dynamic client-side scripts on webpages. | [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Glossary/JavaScript) |
+| <a id="19" href="#19-bis">[19]</a> | Jest              | Jest is a JavaScript Testing Framework with a focus on simplicity. | [Jest](https://jestjs.io) |
+| <a id="16" href="#16-bis">[16]</a> | JSON              | JavaScript Object Notation (JSON) is a data-interchange format. | [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Glossary/JSON) |
+| <a id="12" href="#12-bis">[12]</a> | Local host server | Localhost is a hostname referring to the specific local machine or computer on which the program is currently running. | [BrowserStack](https://www.browserstack.com/guide/what-is-local-host) |
+| <a id="17" href="#17-bis">[17]</a> | Mock-up           | In IT, the term mock-up refers to a prototype of a user interface. | / |
+| <a id="10" href="#10-bis">[10]</a> | Node.JS           |             |         |
+| <a id="5" href="#5-bis">[5]</a>    | Parser            |             |         |
+| <a id="2" href="#2-bis">[2]</a>    | Place and route   |             |         |
+| <a id="14" href="#14-bis">[14]</a> | Postman           |             |         |
+| <a id="7" href="#7-bis">[7]</a>    | React.JS          |             |         |
+| <a id="6" href="#6-bis">[6]</a>    | SDF files         |             |         |
+| <a id="15" href="#15-bis">[15]</a> | Verilog           |             |         |
 
 ## References
 
-<!-- TODO -->
+**Client Repository**: https://github.com/LeFl0w/ALGOSUP_POC
+
+**Draw.io**: https://app.diagrams.net
+
+**React.dev**: https://react.dev/learn/installation
+
+**D3.JS**: https://d3js.org/getting-started
+
+**Node.JS**: https://nodejs.org/en/download
+
+**Express.JS**: https://expressjs.com/fr/starter/installing.html
+
+**Wikipedia**: https://en.wikipedia.org/wiki/Main_Page
+
+**Postman**: https://www.postman.com
+
+**mdn web docs**: https://developer.mozilla.org/en-US/
+
+**npm**: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
+
+**Vite**: https://vite.dev/guide/
