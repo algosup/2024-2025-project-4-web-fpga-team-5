@@ -15,7 +15,7 @@ This project was requested by [ALGOSUP](https://algosup.com), a French computer 
     - [Code Structure](#code-structure)
 - [Hardware](#hardware)
 - [Technical Requirements](#technical-requirements)
-    - [Flow](#flow)
+    - [Flows](#flows)
     - [Languages](#languages)
         - [Front-End](#front-end)
         - [Back-End](#back-end)
@@ -198,7 +198,7 @@ These are all the hardware we'll use to develop the project:
 
 ## Technical Requirements
 
-### Flow
+### Flows
 
 <!-- TODO: Making graph for flow and applications -->
 
@@ -269,9 +269,9 @@ For this project, the versioning has been defined has below:
 
 | Ids       | Names          | Definitions                                                                                          |
 | --------- | -------------- | ---------------------------------------------------------------------------------------------------- |
-| **0**.0.0 | Major update   | This identifier will be used for the major update/product (0: before MVP; 1: MVP; 2: final product). |
-| 0.**0**.0 | Feature update | This identifier will be the number of feature added after each major version of the product.         |
-| 0.0.**0** | Fixes          | This identifier shows theh number of fixes in between two major updates of the product.              |
+| <ins>**0**</ins>.0.0 | Major update   | This identifier will be used for the major update/product (0: before MVP; 1: MVP; 2: final product). |
+| 0.<ins>**0**</ins>.0 | Feature update | This identifier will be the number of feature added after each major version of the product.         |
+| 0.0.<ins>**0**</ins> | Fixes          | This identifier shows theh number of fixes in between two major updates of the product.              |
 
 >[!CAUTION]
 > Increasing the major version indicator will reset the two other indicators.
@@ -279,29 +279,133 @@ For this project, the versioning has been defined has below:
 
 ### Server
 
-<!-- TODO -->
+<!-- TODO: To confirm with Geoffrey or Mathias -->
+This project required a webpage accessible easily on every operating system and even smaller devices, such as tablets. It also needs to store some basic applications for the customer to show to their client/user. Therefore, we decided to come up with a simple local host server to store all the data.
+
+However, if there is servers, there should be endpoints to whom giving requests. These endpoints would be described furthermore in the following part. \
+The development team will use Postman to test and develop these endpoints.
 
 #### Endpoints
 
-<!-- TODO -->
+For this project, four endpoints have been designed for our server to accomplish its role. \
+Here are listed all of the endpoints designed for this project:
+- **GET**: `http://localhost:3001/api/list`
+    - retrieving all the existing applications.
+- **GET**: `http://localhost:3001/api/map/{filename}`
+    - retriving a specific application.
+- **POST**: `http://localhost:3001/api/upload`
+    - updating an existing application.
+- **DELETE**: `http://localhost:3001/api/delete/{filename}`
+    - deleting an existing application.
+
+*{}: parameters*
+
+All of these endpoints are more detailed in our [API Documentation](./APIDocumentation.md).
 
 ### Data Management
 
 #### Local Storage
 
-<!-- TODO -->
+As previously mentioned in the [server](#server) part, we will be using a server with local host to store all of the predefined appliation asked by the client.
+You can find all of them at its repository: [ALGOSUP_POC](https://github.com/LeFl0w/ALGOSUP_POC/tree/main/Examples). \
+However, these examples are for now under sdf and verilog format, which is not suitable for our application.
+
+The development team has to create a parser that will translate these two files into one in JSON. It would be more suitable and convenient this way.
+
+The parser would be coded in JavaScript and would follow the described logic you can find by clicking [this link](https://github.com/LeFl0w/ALGOSUP_POC/blob/main/Doc/SDF.md).
+
+All of these application would be accessible directly within the application through a dropdown menu. You can learn more about it in the [Flows part](#flows).
+
+Finally, the parsed files would keep the same name as the sdf and verilog ones, except it would be JSON files.
+
+```Example
+FF1_post_synthesis.sdf + FF1_post_synthesis.v
+
+=> 
+
+FF1PostSynthesis.json
+```
 
 #### Creation Of Applications
 
-<!-- TODO -->
+Another feature required by the customer was to create applications within the webpage. To create these applications, the user would have to click on a add button. This will trigger an event and the user would be able to drag and drop (or search from it's local storage) a sdf and verilog file.
+
+>[!CAUTION]
+> These two files are mandatory and needed to do the parsing and the creation of the application.
+> If one of the two are missing, the application wouldn't be created.
+
+If the two files don't have the same name, a default name would be given to the application (`newApplication1`).
+
+Finally, to create an application, we still need to parse the files into a JSON file. However, we won't use the same parser as the first one will only serve as parsing the prerequisites example made by the client at the launching of the server. \
+Moreover, this parser would not send the data to the server but will keep them inside the repository in the `sdfFiles` folder.
 
 #### Data Security
 
-<!-- TODO -->
+<!-- TODO: To complete -->
+This project doesn't need a lot of data security. All of the project and examples are on public repository on GitHub since this project is a open source one. \
+Moreover, we are using a locally hosted server, which means it couldn't be reached by bad-intentioned people on internet.
+
+However, we still decided to put simple data security to avoid the webpage to be corrupted in an unexpected scenario.
+
+The development team will mainly create a user input validation process on the server, avoiding bad requests and wrong creation of applications.
+
+Here are some examples that could be implemented for the data security:
+- File Security using `multer`:
+```JS
+const multer = require('multer');
+const upload = multer({
+  fileFilter: (req, file, cb) => {
+    if (file.mimetype === 'image/png' || file.mimetype === 'image/jpeg') {
+      cb(null, true);
+    } else {
+      cb(new Error('Invalid file type'), false);
+    }
+  },
+});
+
+app.post('/upload', upload.single('file'), (req, res) => {
+  res.send('File uploaded successfully');
+});
+```
+
+- Input Validation & Sanitization using `express-validator`:
+```JS
+const { body, validationResult } = require('express-validator');
+
+app.post('/data', [
+  body('username').isAlphanumeric().trim().escape(),
+  body('email').isEmail().normalizeEmail(),
+], (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
+  res.send('Data is safe!');
+});
+```
 
 #### Data Integrity
 
-<!-- TODO -->
+<!-- TODO: To complete -->
+Data integrity is important in this project. Applications-created at the begining or later on-should always be the same and don't need to change while the server is running. \
+To ensure there are no issues in this field, developers will have to create integrity check within the code source.
+
+They could use the `Subresource Integrity` proposed by [mdn web docs](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity).
+
+Finally, hashing could also be used to ensure the integrity of the files, here is an example of it using `crypto`:
+```JS
+const crypto = require('crypto');
+
+function hashData(data) {
+  return crypto.createHash('sha256').update(data).digest('hex');
+}
+
+app.post('/verifyData', (req, res) => {
+  const originalHash = req.body.hash;
+  const newHash = hashData(req.body.data);
+  res.send(originalHash === newHash ? 'Data is intact' : 'Data has been tampered with');
+});
+```
 
 ## User Interface Design
 
