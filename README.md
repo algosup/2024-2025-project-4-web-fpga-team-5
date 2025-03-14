@@ -66,7 +66,7 @@ Give an example
 
 ## API Description
 
-In this section you'll be provided with the link to [api documentation](here)
+In this section you'll be provided with the link to [api documentation](./documents/technical/APIDocumentation.md)
 
 ## Contributors
 
@@ -77,5 +77,5 @@ In this section you'll be provided with the link to [api documentation](here)
 | <img src="https://avatars.githubusercontent.com/u/123485791?v=4" width="100" height="100"> | Program Manager    | Alexandre BOPP    | [GitHub](https://github.com/Boppalex) \| [LinkedIn](https://www.linkedin.com/in/alexandre-bopp-682a97250/)         |
 | <img src="https://avatars.githubusercontent.com/u/145995586?v=4" width="100" height="100"> | Technical Leader   | Maxime THIZEAU    | [GitHub](https://github.com/MaximeTAlgosup) \| [LinkedIn](https://www.linkedin.com/in/maxime-thizeau-0b311a293/)   |
 | <img src="https://avatars.githubusercontent.com/u/62845771?v=4" width="100" height="100">  | Software Developer | Geoffrey Delrieu  | [GitHub](https://github.com/Z2VvZ2Vv) \| [LinkedIn](https://www.linkedin.com/in/geoffrey-delrieu-77203a353/)       |
-| <img src="https://avatars.githubusercontent.com/u/145995367?v=4" width="100" height="100"> | Quality Assurance  | Mathias GAGNEPAIN | [GitHub](https://github.com/MistzSoftware) \| [LinkedIn](https://www.linkedin.com/in/mathias-gagnepain-426a131b0/) |
-| <img src="https://avatars.githubusercontent.com/u/145991425?v=4" width="100" height="100"> | Technical Writer   | Habi CAILLEAU     | [GitHub](https://github.com/habicll) \| [LinkedIn](https://www.linkedin.com/in/habi-cailleau-3b72b5293/)           |
+| <img src="https://avatars.githubusercontent.com/u/145995367?v=4" width="100" height="100"> | Quality Assurance  | Mathias DELILLE | [GitHub](https://github.com/MistzSoftware) \| [LinkedIn](https://www.linkedin.com/in/mathias-gagnepain-426a131b0/) |
+| <img src="https://avatars.githubusercontent.com/u/145991425?v=4" width="100" height="100"> | Technical Writer   | Habi CAILLEAU     | [GitHub](https://github.com/habicll) \| [LinkedIn](https://www.linkedin.com/in/habi-cailleau-3b72b5293/)   |

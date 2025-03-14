@@ -12,7 +12,7 @@ Our API as 4 endpoints which are listed below.
 
 ![Static Badge](https://img.shields.io/badge/GET-darkgreen)
 ```URL
-http://localhost:3001/api/list
+/api/list
 ```
 
 **Example:**
@@ -40,7 +40,7 @@ http://localhost:3001/api/list
 
 ![Static Badge](https://img.shields.io/badge/GET-darkgreen)
 ```URL
-http://localhost:3001/api/map/{filename}
+/api/map/{filename}
 ```
 *{}: parameters*
 
@@ -75,7 +75,7 @@ http://localhost:3001/api/map/
 
 ![Static Badge](https://img.shields.io/badge/POST-yellow)
 ```URL
-http://localhost:3001/api/upload/
+/api/upload/
 ```
 
 <!-- TODO: To complete -->
@@ -110,7 +110,7 @@ http://localhost:3001/api/upload/
 
 ![Static Badge](https://img.shields.io/badge/DELETE-orange)
 ```URL
-http://localhost:3001/api/delete/{filename}
+/api/delete/{filename}
 ```
 *{}: parameters*
 
