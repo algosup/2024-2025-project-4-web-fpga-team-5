@@ -7,6 +7,7 @@ import cors from 'cors';
 
 import { parseSDF } from './src/sdfProccess.js';
 import { parseVerilog } from './src/vProccess.js';
+import { mergeVerilogSDF } from './src/mergeVerilogSDF.js';
 
 export const app = express();
 const port = 3001;
@@ -24,178 +25,182 @@ app.use(express.json());
 const storage = multer.memoryStorage(); 
 
 // Filter to verify file type
-const createFileFilter = (allowedExtensions) => {
-    return (req, file, cb) => {
+const upload = multer({
+    storage: storage,
+    fileFilter: (req, file, cb) => {
+        // Définition des extensions autorisées PAR CHAMP
+        const fieldExtensionMap = {
+            sdfFile: ['.sdf'],
+            verilogFile: ['.v']
+        };
+
         const fileExtension = extname(file.originalname).toLowerCase();
-        if (fileExtension === allowedExtensions) {
+        const allowedExtensions = fieldExtensionMap[file.fieldname];
+
+        // Vérifier si l'extension correspond au bon champ
+        if (allowedExtensions && allowedExtensions.includes(fileExtension)) {
             cb(null, true);
         } else {
-            req.fileValidationError = `Invalid file type, only ${allowedExtensions} files are allowed!`;
+            req.fileValidationError = `Invalid file type for ${file.fieldname}, only ${allowedExtensions?.join(', ')} files are allowed!`;
             cb(null, false);
         }
-    };
-};
+    },
+});
 
-const sdfFileFilter = createFileFilter('.sdf');
-const verilogFileFilter = createFileFilter('.v');
 
-const uploadSdf = multer({ storage: storage, fileFilter: sdfFileFilter });
-const uploadVerilog = multer({ storage: storage, fileFilter: verilogFileFilter });
-
-//////////////////////////
-//Endpoint for SDF files//
-//////////////////////////
-
-// Endpoint for uploading and parsing SDF file
-app.post('/api/sdf/upload', (req, res) => {
-    uploadSdf.single('sdfFile')(req, res, async (err) => {
+// Endpoint for uploading and parsing SDF & Verilog file
+app.post('/api/upload', upload.fields([{ name: 'sdfFile' }, { name: 'verilogFile' }]), async (req, res) => {
+    try {
+        // Vérification des erreurs de validation de fichier
         if (req.fileValidationError) {
             return res.status(400).send(req.fileValidationError);
+        }   
+
+        const sdfFile = req.files?.['sdfFile']?.[0];
+        const verilogFile = req.files?.['verilogFile']?.[0];
+
+        // Check if files are uploaded
+        if (!sdfFile || !verilogFile) {
+            return res.status(400).send('Both SDF and Verilog files must be uploaded.');
         }
-        if (!req.file) {
-            return res.status(400).send('No file uploaded.');
+
+        const sdfContent = sdfFile.buffer.toString('utf-8').trim();
+        const verilogContent = verilogFile.buffer.toString('utf-8').trim();
+
+        if (!sdfContent || !verilogContent) {
+            return res.status(400).send('One or both uploaded files are empty.');
         }
-        
-        // Path to save the JSON file
-        const jsonFilePath = join(__dirname, 'sdf_files', `${req.file.originalname}.json`);
+
+        // Parse SDF and Verilog files
+        let sdfData, verilogData, commonInstances;
+        try {
+            sdfData = parseSDF(sdfContent);
+        } catch (error) {
+            return res.status(500).send('Error parsing SDF file.');
+        }
 
         try {
-            //check if file already exists
-            await fs.access(jsonFilePath);
-            return res.status(400).send('File already exists.');
+            verilogData = parseVerilog(verilogContent);
+        } catch (error) {
+            return res.status(500).send('Error parsing Verilog file.');
+        }
+        
+        try {
+            // commonInstances = mergeVerilogSDF(verilogContent, sdfContent);
+        } catch (error) {
+            console.log('Error merging files:', error);
+            
+            return res.status(500).send('Error merging files.');
+        }
+
+        // Save parsed SDF and Verilog files
+        try {
+            const projectName = req.body.projectName;
+            if (!projectName) {
+                return res.status(400).send('Project name is required.');
+            }
+
+            const projectDir = join(__dirname, 'parsed_files', projectName);
+
+            //check if project already exists
+            const exists = await fs.access(projectDir).then(() => true).catch(() => false);
+            if (exists) {
+                return res.status(404).send('The project already exists');
+            }
+
+            await fs.mkdir(projectDir, { recursive: true });
+            const sdfJsonPath = join(projectDir, `${sdfFile.originalname}.json`);
+            const verilogJsonPath = join(projectDir, `${verilogFile.originalname}.json`);
+
+            //check if files exists
+            try {
+                // Vérifier si l'un des fichiers existe déjà
+                const sdfExists = await fs.access(sdfJsonPath).then(() => true).catch(() => false);
+                const verilogExists = await fs.access(verilogJsonPath).then(() => true).catch(() => false);
+            
+                if (sdfExists) {
+                    return res.status(400).send('SDF file already exists.');
+                }
+                if (verilogExists) {
+                    return res.status(400).send('Verilog file already exists.');
+                }
+            
+                // Écriture des fichiers JSON
+                await fs.writeFile(sdfJsonPath, JSON.stringify(sdfData, null, 2));
+                await fs.writeFile(verilogJsonPath, JSON.stringify(verilogData, null, 2));
+                // await fs.writeFile(join(projectDir, projectName,'.json'), JSON.stringify(commonInstances, null, 2));
+            
+                res.send('SDF and Verilog files successfully parsed and merged.');
+            
+            } catch (error) {
+                res.status(500).send('Error processing files.');
+            }
 
         } catch (error) {
-            try {
-                // Parse the SDF file content
-                const sdfContent = req.file.buffer.toString('utf-8');
-
-                // Check if the file is empty
-                if (!sdfContent) {
-                    return res.status(400).send('Uploaded file is empty.');
-                }
-
-                const sdfData = parseSDF(sdfContent);
-        
-                // Save the parsed data as JSON
-                await fs.writeFile(jsonFilePath, JSON.stringify(sdfData, null, 2));
-        
-                res.send('File parsed and JSON saved successfully.');
-            } catch (error) {
-                res.status(500).send('Error parsing SDF file.');
-            }
+            console.log('Error saving parsed JSON files:', error);
+            
+            res.status(500).send('Error saving parsed JSON files.');
         }
-    });
+
+    } catch (error) {
+        res.status(500).send('Unexpected server error.');
+    }
 });
+
   
 // Endpoint API for sending parsed SDF file
-app.get('/api/sdf/map/:filename', async (req, res) => {
+app.get('/api/map/:filename', async (req, res) => {
     try {
-        const jsonFilePath = join(__dirname, 'sdf_files', `${req.params.filename}.json`);
-        const jsonData = await fs.readFile(jsonFilePath, 'utf-8');
+        const projectName = req.body.projectName;
+        if (!projectName) {
+            return res.status(400).send('Project name is required.');
+        }
+
+        const jsonFilePath = join(__dirname, 'parsed_files', `${projectName}`);
+        const jsonData = await fs.readdir(jsonFilePath, 'utf-8');
         res.json(JSON.parse(jsonData));
+
     } catch (error) {
         res.status(500).send('Error reading parsed SDF JSON file. File may not exist.');
     }
 });
 
 // Endpoint to delete a parsed SDF JSON file
-app.delete('/api/sdf/delete-json/:filename', async (req, res) => {
+app.delete('/api/delete-project/:projectName', async (req, res) => {
     try {
-        const jsonFilePath = join(__dirname, 'sdf_files', `${req.params.filename}.json`);
-        await fs.unlink(jsonFilePath);
-        res.send('SDF JSON file deleted successfully.');
+        const projectName = req.params.projectName;
+        const directoryPath = join(__dirname, 'parsed_files', projectName);
+
+        const exists = await fs.access(directoryPath).then(() => true).catch(() => false);
+        if (!exists) {
+            return res.status(404).send('Directory does not exist.');
+        }
+
+        await fs.rm(directoryPath, { recursive: true, force: true });
+        res.send('Directory deleted successfully.');
     } catch (error) {
-        res.status(500).send('Error deleting SDF JSON file, the file may not exists.');
+        return res.status(500).send('Error deleting directory, it may not exist.');
     }
 });
 
 // Endpoint to list all SDF files
-app.get('/api/sdf/list', async (req, res) => {
+app.get('/api/list', async (req, res) => {
     try {
-        const files = await fs.readdir(join(__dirname, 'sdf_files'));
-        res.json(files && files.map((file) => file.replace('.json', '')));
+        const directoryPath = join(__dirname, 'parsed_files');
+        const entries = await fs.readdir(directoryPath, { withFileTypes: true });
+
+        // Show only directories
+        const directories = entries
+            .filter(entry => entry.isDirectory())
+            .map(entry => entry.name);
+
+        res.json(directories);
     } catch (error) {
-        res.status(500).send('Error listing SDF JSON files.');
+        console.error('Error listing directories:', error);
+        res.status(500).send('Error listing directories.');
     }
 });
 
-//////////////////////////////
-//Endpoint for Verilog files//
-//////////////////////////////
-
-// Endpoint for uploading and parsing Verilog file
-app.post('/api/verilog/upload', (req, res) => {
-    uploadVerilog.single('verilogFile')(req, res, async (err) => {
-        if (req.fileValidationError) {
-            return res.status(400).send(req.fileValidationError);
-        }
-        if (!req.file) {
-            return res.status(400).send('No file uploaded.');
-        }
-        
-        // Path to save the JSON file
-        const jsonFilePath = join(__dirname, 'v_files', `${req.file.originalname}.json`);
-
-        try {
-            //check if file already exists
-            await fs.access(jsonFilePath);
-            return res.status(400).send('File already exists.');
-
-        } catch (error) {
-            try {
-                // Parse the SDF file content
-                const verilogContent = req.file.buffer.toString('utf-8');
-
-                // Check if the file is empty
-                if (!verilogContent) {
-                    return res.status(400).send('Uploaded file is empty.');
-                }
-
-                const verilogData = parseVerilog(verilogContent);
-        
-                // Save the parsed data as JSON
-                await fs.writeFile(jsonFilePath, JSON.stringify(verilogData, null, 2));
-        
-                res.send('File parsed and Verilog JSON saved successfully.');
-            } catch (error) {
-                res.status(500).send('Error parsing Verilog file.');
-            }
-        }
-    });
-});
-
-// Endpoint API for sending parsed Verilog file
-app.get('/api/verilog/map/:filename', async (req, res) => {
-    try {
-        const jsonFilePath = join(__dirname, 'v_files', `${req.params.filename}.json`);
-        const jsonData = await fs.readFile(jsonFilePath, 'utf-8');
-        res.json(JSON.parse(jsonData));
-    } catch (error) {
-        res.status(500).send('Error reading parsed Verilog JSON file. File may not exist.');
-    }
-});
-
-// Endpoint to delete a parsed Verilog JSON file
-app.delete('/api/verilog/delete-json/:filename', async (req, res) => {
-    try {
-        const jsonFilePath = join(__dirname, 'v_files', `${req.params.filename}.json`);
-        await fs.unlink(jsonFilePath);
-        res.send('Verilog JSON file deleted successfully.');
-    } catch (error) {
-        res.status(500).send('Error deleting Verilog JSON file, the file may not exists.');
-    }
-});
-
-// Endpoint to list all SDF files
-app.get('/api/verilog/list', async (req, res) => {
-    try {
-        const files = await fs.readdir(join(__dirname, 'v_files'));
-        res.json(files && files.map((file) => file.replace('.json', '')));
-    } catch (error) {
-        res.status(500).send('Error listing Verilog JSON files.');
-    }
-});
-
-export const server = app.listen(port, () => {
+app.listen(port, () => {
     console.log(`Backend launched on http://localhost:${port}`);
 });
