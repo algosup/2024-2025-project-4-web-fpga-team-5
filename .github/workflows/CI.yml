@@ -35,10 +35,18 @@ jobs:
       - name: CI starting
         run: | 
           echo ⏳ CI testing begin...
-          cd ./frontend/
 
       - name: Install Dependencies
-        run: npm install
+        run: |
+          echo ⏳ install frontend dependencies...
+          cd ./frontend/
+          npm install
+          echo ✅ frontend dependencies installed!
+          echo ⏳ install backend dependencies...
+          cd ../backend/
+          npm install
+          echo ✅ backend dependencies installed!
+
 
       - name: Building
         run: | 
