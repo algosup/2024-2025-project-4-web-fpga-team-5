@@ -1,0 +1,27 @@
+{
+  "sdfVersion": "2.1",
+  "design": "FF1",
+  "vendor": "verilog-to-routing",
+  "timescale": 1,
+  "instances": [
+    {
+      "instanceName": "routing_segment_D_output_0_0_to_lut_input_0_3",
+      "delays": [
+        {
+          "from": "datain",
+          "to": "dataout",
+          "delay": {
+            "min": 1693.56,
+            "typ": 1693.56,
+            "max": 1693.56
+          },
+          "slew": {
+            "min": 1693.56,
+            "typ": 1693.56,
+            "max": 1693.56
+          }
+        }
+      ]
+    }
+  ]
+}

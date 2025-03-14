@@ -1,0 +1,40 @@
+{
+  "modules": {
+    "FF1_norst": {
+      "ports": [
+        {
+          "type": "input",
+          "name": "D"
+        },
+        {
+          "type": "input",
+          "name": "clk"
+        },
+        {
+          "type": "output",
+          "name": "Q"
+        }
+      ]
+    }
+  },
+  "instances": [
+    {
+      "moduleType": "module",
+      "instanceName": "FF1_norst",
+      "connections": [
+        {
+          "signal": "D",
+          "direction": "input"
+        },
+        {
+          "signal": "clk",
+          "direction": "input"
+        },
+        {
+          "signal": "Q",
+          "direction": "output"
+        }
+      ]
+    }
+  ]
+}

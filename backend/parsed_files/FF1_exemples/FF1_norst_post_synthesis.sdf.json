@@ -1,0 +1,81 @@
+{
+  "instances": [
+    {
+      "name": "routing_segment_D_output_0_0_to_latch_Q_input_0_0",
+      "type": "fpga_interconnect",
+      "iopaths": []
+    },
+    {
+      "name": "routing_segment_clk_output_0_0_to_latch_Q_clock_0_0",
+      "type": "fpga_interconnect",
+      "iopaths": []
+    },
+    {
+      "name": "routing_segment_latch_Q_output_0_0_to_Q_input_0_0",
+      "type": "fpga_interconnect",
+      "iopaths": []
+    },
+    {
+      "name": "latch_Q",
+      "type": "DFF",
+      "iopaths": [
+        {
+          "from": "datain",
+          "to": "dataout",
+          "delays": {
+            "min": 1022.2,
+            "typ": 1022.2,
+            "max": 1022.2
+          },
+          "slews": {
+            "min": 1022.2,
+            "typ": 1022.2,
+            "max": 1022.2
+          }
+        },
+        {
+          "from": "datain",
+          "to": "dataout",
+          "delays": {
+            "min": 10,
+            "typ": 10,
+            "max": 10
+          },
+          "slews": {
+            "min": 10,
+            "typ": 10,
+            "max": 10
+          }
+        },
+        {
+          "from": "datain",
+          "to": "dataout",
+          "delays": {
+            "min": 1079.77,
+            "typ": 1079.77,
+            "max": 1079.77
+          },
+          "slews": {
+            "min": 1079.77,
+            "typ": 1079.77,
+            "max": 1079.77
+          }
+        },
+        {
+          "from": "clock",
+          "to": "Q",
+          "delays": {
+            "min": 303,
+            "typ": 303,
+            "max": 303
+          },
+          "slews": {
+            "min": 303,
+            "typ": 303,
+            "max": 303
+          }
+        }
+      ]
+    }
+  ]
+}
