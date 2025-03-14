@@ -59,13 +59,13 @@ jobs:
 
       runs-on: ubuntu-latest
       env:
-      CHROME_BIN: /usr/bin/google-chrome
+        CHROME_BIN: /usr/bin/google-chrome
 
       steps:
 
         
         - uses: actions/checkout@v4
-        
+
         - name: Install Chrome
           run: |
             sudo apt-get update
