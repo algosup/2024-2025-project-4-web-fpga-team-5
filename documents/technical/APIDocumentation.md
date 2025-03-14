@@ -106,7 +106,6 @@ http://localhost:3001/api/map/FF1NorstPostSynthesis.sdf
 /api/upload/
 ```
 
-<!-- TODO: To complete -->
 **Example:**
 ```
 http://localhost:3001/api/upload/
