@@ -51,6 +51,7 @@ jobs:
       - name: Building
         run: | 
           echo ⏳ Building...
+          cd ./frontend/
           npm run build
           echo ✅ Built!
 
@@ -96,5 +97,5 @@ jobs:
         run: |
           echo ⏳ API testing begin...
           cd ./backend/
-          npm test:e2e
+          npm run test:e2e
           echo ✅ backend e2e testing ended!
