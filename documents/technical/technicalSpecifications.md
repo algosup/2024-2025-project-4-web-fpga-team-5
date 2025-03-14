@@ -518,11 +518,11 @@ Express.JS drawbacks:
 
 For this project, the versioning has been defined has below:
 
-| Ids       | Names          | Definitions                                                                                          |
-| --------- | -------------- | ---------------------------------------------------------------------------------------------------- |
+| Ids                  | Names          | Definitions                                                                                          |
+| -------------------- | -------------- | ---------------------------------------------------------------------------------------------------- |
 | <ins>**0**</ins>.0.0 | Major update   | This identifier will be used for the major update/product (0: before MVP; 1: MVP; 2: final product). |
 | 0.<ins>**0**</ins>.0 | Feature update | This identifier will be the number of feature added after each major version of the product.         |
-| 0.0.<ins>**0**</ins> | Fixes          | This identifier shows the number of fixes in between two major updates of the product.              |
+| 0.0.<ins>**0**</ins> | Fixes          | This identifier shows the number of fixes in between two major updates of the product.               |
 
 >[!CAUTION]
 > Increasing the major version indicator will reset the two other indicators.
@@ -766,8 +766,8 @@ npm -v
 
 Installing Node.JS depends on your browser, therefore, precise your operating system pefore downloading the package in the [official website](https://nodejs.org/en/download).
 
-| Operating System | Illustration                                                                              |
-| ---------------- | ----------------------------------------------------------------------------------------- |
+| Operating System | Illustration                                                                                  |
+| ---------------- | --------------------------------------------------------------------------------------------- |
 | MacOS            | <img src="../../images/nodeJSMacOS.png" alt="nodeJS installation on MacOS" width="500em">     |
 | Windows          | <img src="../../images/nodeJSWindows.png" alt="nodeJS installation on Windows" width="500em"> |
 | Linux            | <img src="../../images/nodeJSLinux.png" alt="nodeJS installation on Linux" width="500em">     |
@@ -968,7 +968,7 @@ Our team will do its best to complete all the requirements in time, in that case
 ## Glossary
 
 | Ids                                | Names             | Definitions                                                                                                                                                                                                                                                                                                                   | Sources                                                                                                                                                                           |
-| ---------------------------------- | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------–---------------------------------------------------------------------------------------------------------------------------------------- |
+| ---------------------------------- | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | <a id="3" href="#3-bis">[3]</a>    | BEL               | It stands for Basic Element, these are the hardware electrical ressources available inside the FPGA like fliflop, Look-Up-Table (LUT), Block RAM                                                                                                                                                                              | [GitHub](https://github.com/LeFl0w/ALGOSUP_POC)                                                                                                                                   |
 | <a id="4" href="#4-bis">[4]</a>    | Clock cycles      | The time interval between rising edges of a repetitive clock signal.                                                                                                                                                                                                                                                          | [ScienceDirect](https://www.sciencedirect.com/topics/computer-science/clock-cycle#:~:text=A%20clock%20cycle%2C%20in%20the,be%20done%20per%20unit%20time.)                         |
 | <a id="18" href="#18-bis">[18]</a> | CRA               | It stands for Create React Application, which is the method used to create an appliation in React.                                                                                                                                                                                                                            | /                                                                                                                                                                                 |
