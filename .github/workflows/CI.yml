@@ -58,19 +58,11 @@ jobs:
   frontend-testing:
 
       runs-on: ubuntu-latest
-      env:
-        CHROME_BIN: /usr/bin/google-chrome
 
       steps:
 
         
         - uses: actions/checkout@v4
-
-        - name: Install Chrome
-          run: |
-            sudo apt-get update
-            sudo apt-get install -y google-chrome-stable
-            echo "CHROME_VERSION=$(google-chrome --version)"  # For debugging
             
         # Deploy Render app
         - name: Deploy Application
