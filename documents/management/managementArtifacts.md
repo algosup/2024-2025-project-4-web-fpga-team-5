@@ -40,17 +40,58 @@ To follow the progress of the project, multiple KPIs have been defined. They can
 
 Our KPIs have been separated into different categories as followed:
 
-Documents
-Project charter
-Functional specifications
-Technical specifications
-Test plan
-User manual
+Documents : 
+
+- Project charter
+- Functional specifications
+- Technical specifications
+- Test Case
+- Test plan
+- Management Artifacts
+- Porject CharterMais trkl 
+- User manual
+- READ.ME
+
+Design : 
+
+- Mock Up
+
+Development : 
+
+- Back end 
+- Front End
+
+Human Ressrouces : 
+
+- Unjustified absence time
+- Overtime
+
+You can see our project's KPIs  following [this link](https://algosup-my.sharepoint.com/:x:/p/robin_goumy/EYrk5Cafv1dMgymb8nSp5esBLqcweLlJSfQut3MZREPwcA?e=f8d4bO).
+
+###  Risks & Assumptions
+
+# Risks and Assumptions
+
+| ID  | Description | Consequence | Impact | Likelihood | Mitigation/Avoidance |
+|-----|------------|------------|--------|------------|----------------------|
+| 1   | Synchronizing the timing simulation with the 2D FPGA visualization may be difficult. | May lead to incorrect or non-intuitive visual representation. | High | Medium | Implement careful testing and debugging mechanisms. |
+| 2   | Users (teachers/students) may have different levels of expertise with FPGA and Verilog. | Some users might struggle with using the tool effectively. | Medium | High | Provide comprehensive documentation |
+| 3  | Teachers may struggle to prepare and upload new FPGA examples. | Limits the usability of the tool. | Medium | High | Develop a simple and well-documented process for adding new examples. |
+
 
 
 ### Mood
 
+The mood inside the team is calculate base on the different aspect : 
+- Motivation
+- Management 
+- Productivity
+- Communcation
 
+
+This is a simple average of the various categories, taking into account team size, number of responses and category evaluation.
+
+This average is currently :  🌟
 
 
 ## Weekly Reports
@@ -68,5 +109,4 @@ You can directly access the reports individually:
 
 ## Post Mortem 
 
-
-Method Waterfall
+NEED TO BE UPDATE
