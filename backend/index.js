@@ -7,7 +7,7 @@ import cors from 'cors';
 
 import { parseSDF } from './src/sdfProccess.js';
 import { parseVerilog } from './src/vProccess.js';
-import { mergeVerilogSDF } from './src/mergeVerilogSDF.js';
+import { mergeJsonForD3 } from './src/mergeVerilogSDF.js';
 
 export const app = express();
 const port = 3001;
@@ -86,7 +86,7 @@ app.post('/api/upload', upload.fields([{ name: 'sdfFile' }, { name: 'verilogFile
         }
         
         try {
-            // commonInstances = mergeVerilogSDF(verilogContent, sdfContent);
+            commonInstances = mergeJsonForD3(verilogData, sdfData);
         } catch (error) {
             console.log('Error merging files:', error);
             
@@ -128,7 +128,7 @@ app.post('/api/upload', upload.fields([{ name: 'sdfFile' }, { name: 'verilogFile
                 // Écriture des fichiers JSON
                 await fs.writeFile(sdfJsonPath, JSON.stringify(sdfData, null, 2));
                 await fs.writeFile(verilogJsonPath, JSON.stringify(verilogData, null, 2));
-                // await fs.writeFile(join(projectDir, projectName,'.json'), JSON.stringify(commonInstances, null, 2));
+                await fs.writeFile(join(projectDir, `${projectName}.json`), JSON.stringify(commonInstances, null, 2));
             
                 res.send('SDF and Verilog files successfully parsed and merged.');
             

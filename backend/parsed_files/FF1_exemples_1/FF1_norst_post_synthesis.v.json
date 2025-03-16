@@ -1,0 +1,80 @@
+{
+  "modules": {
+    "FF1_norst": {
+      "ports": [
+        {
+          "type": "input",
+          "name": "D"
+        },
+        {
+          "type": "input",
+          "name": "clk"
+        },
+        {
+          "type": "output",
+          "name": "Q"
+        }
+      ],
+      "instances": [
+        {
+          "type": "fpga_interconnect",
+          "name": "routing_segment_D_output_0_0_to_latch_Q_input_0_0",
+          "connections": [
+            {
+              "from": "D_output_0_0",
+              "to": "latch_Q_input_0_0"
+            }
+          ]
+        },
+        {
+          "type": "fpga_interconnect",
+          "name": "routing_segment_clk_output_0_0_to_latch_Q_clock_0_0",
+          "connections": [
+            {
+              "from": "clk_output_0_0",
+              "to": "latch_Q_clock_0_0"
+            }
+          ]
+        },
+        {
+          "type": "fpga_interconnect",
+          "name": "routing_segment_latch_Q_output_0_0_to_Q_input_0_0",
+          "connections": [
+            {
+              "from": "latch_Q_output_0_0",
+              "to": "Q_input_0_0"
+            }
+          ]
+        },
+        {
+          "type": "DFF",
+          "name": "latch_Q",
+          "connections": [
+            {
+              "from": "latch_Q_input_0_0",
+              "to": "latch_Q_output_0_0"
+            },
+            {
+              "from": "latch_Q_clock_0_0",
+              "to": "clk_output_0_0"
+            }
+          ]
+        }
+      ],
+      "connections": [
+        {
+          "from": "Q_input_0_0",
+          "to": "Q"
+        },
+        {
+          "from": "D",
+          "to": "D_output_0_0"
+        },
+        {
+          "from": "clk",
+          "to": "clk_output_0_0"
+        }
+      ]
+    }
+  }
+}
