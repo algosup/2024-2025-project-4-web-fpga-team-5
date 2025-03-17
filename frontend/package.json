@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview --host",
-    "test:e2e": "mocha tests/e2e/**/*.spec.ts"
+    "test:e2e": "npx tsx --no-warnings node_modules/.bin/mocha --timeout 30000 tests/e2e/**/*.spec.ts"
   },
   "dependencies": {
     "d3": "^7.9.0",
@@ -33,6 +33,7 @@
     "mocha": "^11.1.0",
     "selenium-webdriver": "^4.29.0",
     "ts-node": "^10.9.2",
+    "tsx": "^4.19.3",
     "typescript": "^5.8.2"
   }
 }
