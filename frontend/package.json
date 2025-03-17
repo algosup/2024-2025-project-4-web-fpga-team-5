@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview --host",
-    "test:e2e": "mocha --loader ts-node/esm --timeout 30000 tests/e2e/**/*.spec.ts"
+    "test:e2e": "mocha tests/e2e/**/*.spec.ts"
   },
   "dependencies": {
     "d3": "^7.9.0",
