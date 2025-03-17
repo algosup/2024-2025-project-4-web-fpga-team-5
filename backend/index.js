@@ -201,6 +201,6 @@ app.get('/api/list', async (req, res) => {
     }
 });
 
-app.listen(port, () => {
+export const server = app.listen(port, () => {
     console.log(`Backend launched on http://localhost:${port}`);
 });
