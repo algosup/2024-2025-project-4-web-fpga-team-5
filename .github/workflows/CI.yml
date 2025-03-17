@@ -59,7 +59,6 @@ jobs:
       runs-on: ubuntu-latest
 
       steps:
-
         
         - uses: actions/checkout@v4
             
@@ -98,5 +97,6 @@ jobs:
         run: |
           echo ⏳ API testing begin...
           cd ./backend/
+          npm i
           npm run test:e2e
           echo ✅ backend e2e testing ended!
