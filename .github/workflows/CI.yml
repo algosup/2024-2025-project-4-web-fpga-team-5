@@ -36,6 +36,9 @@ jobs:
         run: | 
           echo ⏳ CI testing begin...
 
+      - name: Set Node Options
+        run: echo "NODE_OPTIONS=--require=ts-node/register" >> $GITHUB_ENV
+
       - name: Install Dependencies
         run: |
           echo ⏳ install frontend dependencies...
@@ -47,6 +50,10 @@ jobs:
           npm install
           echo ✅ backend dependencies installed!
 
+      - name: Verify Dependencies
+        run: |
+          node -v
+          npm list ts-node mocha
 
       - name: Building
         run: | 

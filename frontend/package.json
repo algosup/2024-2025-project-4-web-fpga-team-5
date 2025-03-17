@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview --host",
-    "test:e2e": "npx mocha --timeout 30000 tests/e2e/**/*.spec.ts"
+    "test:e2e": "npx mocha --require ts-node/register --timeout 30000 tests/e2e/**/*.spec.ts"
   },
   "dependencies": {
     "chai": "^5.2.0",
