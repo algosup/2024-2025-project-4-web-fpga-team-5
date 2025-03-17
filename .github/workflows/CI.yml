@@ -77,12 +77,6 @@ jobs:
             sleep 60
             echo ✅ Application deployed!
 
-        - name: Use Node.js 18
-          uses: actions/setup-node@v3
-          with:
-            node-version: 18
-          
-
         - name: Run e2e testing
           run: | 
             echo ⏳ frontend e2e testing begin...
