@@ -82,6 +82,7 @@ jobs:
           run: | 
             echo ⏳ frontend e2e testing begin...
             cd ./frontend/
+            npm i
             npm run test:e2e
             echo ✅ frontend e2e testing ended!
 
