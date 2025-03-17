@@ -74,7 +74,7 @@ jobs:
             fi
             echo "⏳ Triggering deployment..."
             curl -v "$deploy_url"
-            sleep 60
+            sleep 180
             echo ✅ Application deployed!
 
         - name: Run e2e testing
