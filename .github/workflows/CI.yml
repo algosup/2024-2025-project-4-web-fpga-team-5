@@ -62,7 +62,6 @@ jobs:
         
         - uses: actions/checkout@v4
             
-        # Deploy Render app
         - name: Deploy Application
           env:
               deploy_url: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
@@ -72,18 +71,41 @@ jobs:
               echo "❌ Error: deploy_url is not set!"
               exit 1
             fi
-            echo "⏳ Triggering deployment..."
-            curl -v "$deploy_url"
-            sleep 180
-            echo ✅ Application deployed!
 
-        - name: Run e2e testing
-          run: | 
-            echo ⏳ frontend e2e testing begin...
-            cd ./frontend/
-            npm i
-            npm run test:e2e
-            echo ✅ frontend e2e testing ended!
+            echo "⏳ Triggering deployment..."
+            DEPLOY_RESPONSE=$(curl -s -X POST "$deploy_url")
+            DEPLOY_ID=$(echo "$DEPLOY_RESPONSE" | jq -r '.id')
+
+            if [[ -z "$DEPLOY_ID" || "$DEPLOY_ID" == "null" ]]; then
+              echo "❌ Failed to trigger deployment!"
+              exit 1
+            fi
+
+            echo "✅ Deployment triggered! ID: $DEPLOY_ID"
+
+            # Poll Render API until the deployment is live
+            MAX_ATTEMPTS=30
+            ATTEMPT=0
+            while [[ $ATTEMPT -lt $MAX_ATTEMPTS ]]; do
+              STATUS=$(curl -s "https://api.render.com/v1/deploys/$DEPLOY_ID" | jq -r '.status')
+              echo "⏳ Deployment status: $STATUS"
+
+              if [[ "$STATUS" == "live" ]]; then
+                echo "✅ Deployment is live!"
+                break
+              elif [[ "$STATUS" == "failed" ]]; then
+                echo "❌ Deployment failed!"
+                exit 1
+              fi
+
+              ATTEMPT=$((ATTEMPT + 1))
+              sleep 5  # Check status every 5 seconds
+            done
+
+            if [[ "$STATUS" != "live" ]]; then
+              echo "❌ Deployment did not complete in time!"
+              exit 1
+            fi
 
   backend-testing:
 
