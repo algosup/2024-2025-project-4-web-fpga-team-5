@@ -8,17 +8,17 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview --host",
-    "test:e2e": "npx mocha --require ts-node/register --timeout 30000 tests/e2e/**/*.spec.ts"
+    "test:e2e": "mocha --require ts-node/register --timeout 30000 tests/e2e/**/*.spec.ts"
   },
   "dependencies": {
     "chai": "^5.2.0",
     "d3": "^7.9.0",
-    "mocha": "^11.1.0",
-    "@types/mocha": "^10.0.10",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "mocha": "^11.1.0",
+    "@types/mocha": "^10.0.10",
     "ts-node": "^10.9.2",
     "@babel/preset-typescript": "^7.26.0",
     "@babel/register": "^7.25.9",
