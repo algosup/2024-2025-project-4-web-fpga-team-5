@@ -16,10 +16,10 @@
     "mocha": "^11.1.0",
     "@types/mocha": "^10.0.10",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "ts-node": "^10.9.2"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "ts-node": "^10.9.2",
     "@babel/preset-typescript": "^7.26.0",
     "@babel/register": "^7.25.9",
     "@eslint/js": "^9.21.0",
