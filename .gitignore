@@ -28,5 +28,4 @@ dist-ssr
 *.sw?
 
 # API files
-sdf_files
-v_files
+parsed_files
