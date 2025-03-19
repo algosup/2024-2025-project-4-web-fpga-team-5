@@ -35,59 +35,53 @@
 
 ### 1.1 Purpose
 
-This document defines the methodology, resources, schedule, and deliverables for testing the system to ensure it meets functional, performance, security, and usability requirements. It serves as a blueprint for stakeholders to understand the testing process and quality benchmarks.
+This document outlines the testing methodologies, resources, timelines, and deliverables required to ensure the software meets functional, performance, security, and usability requirements. It provides a clear framework for test execution and quality assurance.
 
 ### 1.2 Scope
 
-Testing covers:
+The scope of testing includes:
 
-- Functional validation against requirements specifications.
-- Non-functional testing (performance, security, compatibility, usability).
-- Integration with external systems/APIs.
-- Regression testing after code changes.
-- Cross-browser/device compatibility (if applicable).
+- Functional validation against business and technical requirements.
+- Non-functional testing: performance, security, compatibility, usability.
+- API and third-party system integration validation.
+- Regression testing to ensure stability after code changes.
+- Cross-platform and browser compatibility.
 
-**Exclusions**:  
+**Exclusions:**
 
-- Legacy components marked "out of scope" in requirements.
-- Third-party systems with existing SLAs.
+- Legacy components designated as out-of-scope.
+- Third-party services covered under vendor SLAs.
 
 ### 1.3 Objectives
 
-- Validate alignment with business/technical requirements.
-- Identify defects prior to production release.
-- Ensure system stability under expected load conditions.
-- Verify data integrity and security controls.
-- Confirm seamless integration with dependencies.
-- Provide actionable metrics for release readiness.
+- Ensure compliance with functional and technical requirements.
+- Detect and resolve defects before production deployment.
+- Validate system performance under expected workloads.
+- Ensure robust security measures and data integrity.
+- Facilitate smooth integration with external systems.
+- Provide actionable quality metrics for release decisions.
 
 ### 1.4 References
 
-- [Functional Requirements Specification](./functionalRequirements.md)
-- [Technical Design Document](./technicalDesign.md)
-- [WCAG 2.1 Guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/)
-- [API Documentation](./apiDocumentation.md) <!-- TODO: Create this document (TL or SE)-->
-- [Regression Testing Plan](./regressionPlan.md)  <!-- TODO: Create this document -->
-- [Integration Testing Strategy](./integrationStrategy.md)  <!-- TODO: Create this document -->
-- [Test Case Document](./testCases.md)  <!-- TODO: Create this document -->
-- [Defect Management Process](./defectManagement.md)
+- [Functional Specifications](../functional/functionalSpecifications.md)
+- [Technical Specifications](../technical/technicalSpecifications.md)
+- [Regression Testing Plan](./regressionPlan.md)
+- [Defect Management Process](./defectManagementProcess.md)
+- [API Documentation](../technical/APIDocumentation.md)
+- [Test Cases](https://github.com/orgs/algosup/projects/60)
 
 ## 2. Test Items
 
 ### 2.1 Features To Be Tested
 
-| Feature                               | Description                                                                   |
-| ------------------------------------- | ----------------------------------------------------------------------------- |
-| Web Interface                         | Test the user interface for usability, responsiveness, and functionality.     |
-| API Integration                       | Validate the integration with external APIs and services.                     |
-| Security Features                     | Ensure all security measures are implemented and functioning correctly.       |
-| Performance Metrics                   | Measure the system's performance under various conditions and loads.          |
-| User Authentication and Authorization | Test the login, registration, and role-based access control mechanisms.       |
-| Error Handling and Logging            | Verify that errors are handled gracefully and logged appropriately.           |
-| Cross-Browser Compatibility           | Ensure the web application works across different browsers and devices.       |
-| Regression Testing                    | Re-test existing functionalities to ensure new changes do not introduce bugs. |
-
-For detailed test cases, refer to the [Test Case Document](./testCases.md).
+| Feature                     | Description                                                             |
+| --------------------------- | ----------------------------------------------------------------------- |
+| Web Interface               | Validate UI/UX, responsiveness, and accessibility.                          |
+| API Integration             | Verify API request/response handling.                                   |
+| Performance Testing         | Assess system behavior under load.                                      |
+| Error Handling              | Ensure proper error handling.                                           |
+| Regression Testing          | Validate previously tested functionalities.                             |
+| Cross-Browser Compatibility | Ensure the web application works across different browsers and devices. |
 
 ### 2.2 Features Not To Be Tested
 
@@ -99,94 +93,108 @@ For detailed test cases, refer to the [Test Case Document](./testCases.md).
 | Third-Party YoWASP                   | Covered under vendor's SLA |
 | Third-Party python-sdf-timing        | Covered under vendor's SLA |
 
+For detailed test cases, refer to the [Test Cases](https://github.com/orgs/algosup/projects/60).
+
 ## 3. Test Strategy
 
 ### 3.1 Testing Types
 
-- **Functional**: Requirement-driven tests (manual/automated).
-- **Performance**: Load (expected traffic), Stress (breaking point), and Endurance (24h+ runtime) testing.
-- **Compatibility**: Browser/OS matrix testing.
-- **Usability**: UX validation against WCAG 2.1 guidelines.
+- **Functional Testing:** Verification of core functionalities.
+- **Performance Testing:** Load, stress, endurance testing.
+- **Security Testing:** Penetration testing.
+- **Compatibility Testing:** Browser/OS compatibility validation.
+- **Usability Testing:** Compliance with WCAG 2.1 guidelines.
 
 ### 3.2 Testing Levels
 
-| Level of testing | Name                    | Description                                                                  |
-| ---------------- | ----------------------- | ---------------------------------------------------------------------------- |
-| 1                | **Unit Testing**        | Developer-led component tests (Jest).                                        |
-| 2                | **Integration Testing** | API/contract testing (Postman, supertest).                                   |
-| 3                | **System Testing**      | End-to-end workflows (Selenium for the frontend, supertest for the backend). |
-| 4                | **UAT**                 | Business-user validation in staging environment.                             |
+| Level of testing | Name                    | Description                               |
+| ---------------- | ----------------------- | ----------------------------------------- |
+| 1                | **Unit Testing**        | Component-level testing by developers.    |
+| 2                | **Integration Testing** | Validation of APIs, third-party services. |
+| 3                | **System Testing**      | End-to-end testing of complete workflows. |
+| 4                | **UAT**                 | Business-user validation in staging.      |
+| 5                | **Regression Testing**  | Post-release validation of existing code. |
 
 ### 3.3 Test Design Techniques
 
-<!-- TODO: Describe the techniques used to design test cases (e.g., boundary value analysis, equivalence partitioning). -->
+- Boundary Value Analysis
+- Equivalence Partitioning
+- Error Guessing
+- State Transition Testing
 
 ## 4. Test Environment
 
 ### 4.1 Hardware
 
-- Server: <!-- TODO: Add the linux model and specifications after receiving it-->
+- Servers:
+  - GitHub-Hosted Runners (Executing tests): Ubuntu (x64), 4-core CPU, 16GB RAM, 14GB SSD.
+  - Render.com (Web Server): 512MB RAM, 0.1 CPU.
 - Workstations:
   - MacBook Air (macOs Sequoia): 16GB RAM, 500GB SSD, CPU M3.
   - Lenovo ThinkBook 14 G4 IAP (Windows 11): 16 GM RAM, 512GB SSD, CPU I7 12th gen.
 - Teststations:
   - MacBook Air (macOs Sequoia): 16GB RAM, 500GB SSD, CPU M3.
   - Lenovo ThinkBook 14 G4 IAP (Windows 11): 16 GM RAM, 512GB SSD, CPU I7 12th gen.
-  - Ubuntu <!-- TODO: Add more hardware info after receiving it-->
 
 ### 4.2 Software
 
-<!-- TODO: List the software requirements for the test environment. -->
+- **Testing Tools:** Selenium, Jest, Postman, Supertest, Mocha
+- **CI/CD:** GitHub Actions, Render.com deployment hooks
 
 ## 5. Test Schedule
 
-<!-- TODO: Provide a timeline for the testing activities, including start and end dates for each phase. -->
+Tests will be executed before each release and at each push to ensure code quality. Additionally, manual testing will be performed occasionally to ensure that nothing is missed by automated tests.
 
 ## 6. Test Deliverables
 
-<!-- TODO: List the deliverables that will be produced during the testing process (e.g., test cases, test scripts, test reports). -->
+- Test Plan
+- Test Cases
+- Defect Reports
+- Test Execution Reports
+- Regression Testing Results
 
 ## 7. Roles And Responsibilities
 
-| Role              | Responsibilities                                                                                                                   |
-| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| Software Engineer | Develops and maintains test scripts. Executes automated and manual tests.                                                          |
-| Quality Assurance | Designs and documents test cases, test plan, test reports, executes tests, and reports defects. Ensures quality standards are met. |
+| Role              | Responsibilities                                                                             |
+| ----------------- | -------------------------------------------------------------------------------------------- |
+| Quality Assurance | Test planning, monitoring, risk management, test execution, defect reporting, and documentation. |
+| Software Engineer | Unit testing, defect resolution.                                                             |
 
 ## 8. Defect Management
 
 ### 8.1 Defect Reporting Process
 
-The defect reporting process involves:
-
-- identifying
-- logging
-- triaging
-- assigning
-- resolving
-- verifying
-- closing defects
-
-For a detailed description of each step in the process, please refer to the [Defect Management Process](defectManagementProcess.md) document.
+1. Log defect with severity, priority, and environment details.
+2. Assign to the development team for resolution.
+3. Verify fix and retest.
+4. Update defect status to "Closed" upon successful validation.
 
 ### 8.2 Defect Tracking
 
-- **Dashboard**: GitHub project board with filters (e.g., "Critical Bugs").
-- **SLA**: Critical (24h), High (72h), Medium (1 sprint), Low (backlog).
-- **Closure**: Retest after fix, attach evidence, update status.
+- **GitHub Projects:** Kanban board for defect tracking.
+- **Slack Alerts:** Automated notifications for new defects.
+- **Daily Triage Meetings:** Review and prioritize reported issues.
+
+| Severity | Impact                                    | Resolution Time       |
+| -------- | ----------------------------------------- | --------------------- |
+| Critical | Blocks major functionality                | Fix within 24 hours   |
+| High     | Affects key features, but has workarounds | Fix within 72 hours   |
+| Medium   | Non-blocking but impacts user experience  | Fix within one sprint |
+| Low      | Minor UI issues or enhancements           | Added to backlog      |
+
+For detailed information on defect management, please refer to the [Defect Management Document](./defectManagementProcess.md).
 
 ## 9. Risks And Contingencies
 
-| Risk                        | Impact                       | Mitigation                               |
-| --------------------------- | ---------------------------- | ---------------------------------------- |
-| Delayed environment setup   | Testing timeline compression | Pre-provision cloud backups              |
-| Critical defects found late | Release postponement         | Shift-left testing; daily defect reviews |
-| Third-party API downtime    | Blocked integration tests    | Mock servers (WireMock)                  |
-| Resource attrition          | Knowledge gaps               | Cross-training; detailed runbooks        |
+| Risk                     | Impact                       | Mitigation                          |
+| ------------------------ | ---------------------------- | ----------------------------------- |
+| Delayed test environment | Testing timeline compression | Use Infrastructure-as-Code (IaC).   |
+| API downtime             | Blocked integration tests    | Implement mocks/stubs.              |
+| Resource attrition       | Knowledge gaps               | Maintain documentation and backups. |
 
 ## Glossary
 
-| Term | Definition                                                                                                                                                                                                                       |
-| ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| SLA  | A service-level agreement is an agreement between a service provider and a customer. Particular aspects of the service – quality, availability, responsibilities – are agreed between the service provider and the service user. |
-| UAT  | User Acceptance Testing                                                                                                                                                                                                          |
+| Term | Definition                                                                                                                                                                                                                            |
+| ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| SLA  | A service-level agreement is an agreement between a service provider and a customer. Particular aspects of the service – quality, availability, responsibilities – are agreed upon between the service provider and the service user. |
+| UAT  | User Acceptance Testing                                                                                                                                                                                                               |
