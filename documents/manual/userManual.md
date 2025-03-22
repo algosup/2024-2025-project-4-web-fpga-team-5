@@ -13,7 +13,7 @@
     - [User Roles: Visualize vs Create](#user-roles-visualize-vs-create)
   - [User Interface Overview](#user-interface-overview)
     - [Main Dashboard](#main-dashboard)
-  - [Navigation Tips](#navigation-tips)
+    - [Navigation Tips](#navigation-tips)
   - [Visualize Preloaded FPGA Simulations](#visualize-preloaded-fpga-simulations)
     - [Selecting Preloaded Examples](#selecting-preloaded-examples)
     - [2D Floorplan View (to fill after)](#2d-floorplan-view-to-fill-after)
@@ -26,9 +26,6 @@
   - [Troubleshooting](#troubleshooting)
     - [Common Issues](#common-issues)
     - [FAQs](#faqs)
-  - [Appendices](#appendices)
-    - [Glossary](#glossary)
-    - [References](#references)
 
 ## Introduction 
 
@@ -42,7 +39,6 @@ SPIN offers an intuitive visualization of real-time signal behavior on an FPGA b
 - **Demonstrate:** Provide hands-on examples of FPGA functionality through simulation.
 - **Empower:** Allow users to run pre-configured software examples as well as import their own files for custom simulations.
 
-By leveraging SPIN, users in the IT field—particularly those with limited experience in FPGA design—will gain practical insights into digital circuit behavior and FPGA operation.
 
 
 
@@ -96,7 +92,7 @@ Upon launching the application, you will see two primary sections:
 
 The dashboard layout is designed for easy switching between these two modes—just pick the one that suits your immediate needs.
 
-## Navigation Tips
+### Navigation Tips
 - **Choosing Your Mode:** On the main dashboard, click **Visualize** to explore preloaded or previously created examples, or click **Create** to add a new example.  
 - **Moving Around the FPGA View:** Once in the visualization screen, use your mouse or touch gestures to zoom and pan across the FPGA. This helps in closely examining signal paths and delays.  
 - **Switching Examples:** At any time, you can return to the main dashboard to select a different example or create another one.  
@@ -187,21 +183,34 @@ Pas sure encore
 
 ## Troubleshooting
 
-### Common Issues 
-List of potential problems users might encounter, with possible solutions.
+### Common Issues
+- **Simulation Not Starting:**  
+  - **Potential Causes:** Missing or incorrectly formatted input files (Verilog netlist or SDF delay file), or incompatible FPGA model.  
+  - **Solutions:**  
+    - Verify that your files follow the correct format and naming conventions.  
+    - Ensure the files are compatible with the selected FPGA model (e.g., NanoXplore NGultra or Xilinx Series 7).
+
+- **Display Errors:**  
+  - **Potential Causes:** Incorrect file content or missing graphical elements.  
+  - **Solutions:**  
+    - Check the netlist schematic to ensure all BELs are correctly represented.  
+    - Confirm that the SDF file accurately reflects timing delays.
+
+- **Control Buttons Not Responding:**  
+  - **Potential Causes:** Browser compatibility issues or incomplete file uploads.  
+  - **Solutions:**  
+    - Try refreshing the page or using a different browser.  
+    - Ensure that the simulation example is fully loaded before interacting with controls.
 
 ### FAQs
+- **Q:** What should I do if my simulation doesn’t start?  
+  **A:** Verify that your Verilog and SDF files adhere to the required formats, and check the compatibility with the FPGA model.
 
-Answers to frequently asked questions to assist users in resolving common queries
+- **Q:** How can I adjust the simulation speed?  
+  **A:** Use the Speed control options (e.g., 1x, 2x, or 3x) provided in the simulation interface.
 
+- **Q:** Can I edit my created examples?  
+  **A:** Yes, examples you create can be managed (edited or deleted) via the table at the bottom of the page.
 
-
-
-## Appendices
-
-### Glossary 
-Definitions of technical terms and acronyms used within the application and manual.
-
-### References 
-
-Links to additional resources, tutorials, or documentation related to FPGA design and simulation.
+- **Q:** What browsers are supported?  
+  **A:** The application works best on modern browsers like Chrome, Firefox, or Edge. For the best experience, ensure your browser is up-to-date.
