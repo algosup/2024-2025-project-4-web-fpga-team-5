@@ -76,7 +76,7 @@ The scope of testing includes:
 
 | Feature                     | Description                                                             |
 | --------------------------- | ----------------------------------------------------------------------- |
-| Web Interface               | Validate UI/UX, responsiveness, and accessibility.                          |
+| Web Interface               | Validate UI/UX, responsiveness, and accessibility.                      |
 | API Integration             | Verify API request/response handling.                                   |
 | Performance Testing         | Assess system behavior under load.                                      |
 | Error Handling              | Ensure proper error handling.                                           |
@@ -129,11 +129,11 @@ For detailed test cases, refer to the [Test Cases](https://github.com/orgs/algos
 - Servers:
   - GitHub-Hosted Runners (Executing tests): Ubuntu (x64), 4-core CPU, 16GB RAM, 14GB SSD.
   - Render.com (Web Server): 512MB RAM, 0.1 CPU.
-- Workstations:
-  - MacBook Air (macOs Sequoia): 16GB RAM, 500GB SSD, CPU M3.
+- Work stations:
+  - MacBook Air (macOS Sequoia): 16GB RAM, 500GB SSD, CPU M3.
   - Lenovo ThinkBook 14 G4 IAP (Windows 11): 16 GM RAM, 512GB SSD, CPU I7 12th gen.
-- Teststations:
-  - MacBook Air (macOs Sequoia): 16GB RAM, 500GB SSD, CPU M3.
+- Test stations:
+  - MacBook Air (macOS Sequoia): 16GB RAM, 500GB SSD, CPU M3.
   - Lenovo ThinkBook 14 G4 IAP (Windows 11): 16 GM RAM, 512GB SSD, CPU I7 12th gen.
 
 ### 4.2 Software
@@ -155,10 +155,10 @@ Tests will be executed before each release and at each push to ensure code quali
 
 ## 7. Roles And Responsibilities
 
-| Role              | Responsibilities                                                                             |
-| ----------------- | -------------------------------------------------------------------------------------------- |
+| Role              | Responsibilities                                                                                 |
+| ----------------- | ------------------------------------------------------------------------------------------------ |
 | Quality Assurance | Test planning, monitoring, risk management, test execution, defect reporting, and documentation. |
-| Software Engineer | Unit testing, defect resolution.                                                             |
+| Software Engineer | Unit testing, defect resolution.                                                                 |
 
 ## 8. Defect Management
 
@@ -194,7 +194,18 @@ For detailed information on defect management, please refer to the [Defect Manag
 
 ## Glossary
 
-| Term | Definition                                                                                                                                                                                                                            |
-| ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| SLA  | A service-level agreement is an agreement between a service provider and a customer. Particular aspects of the service – quality, availability, responsibilities – are agreed upon between the service provider and the service user. |
-| UAT  | User Acceptance Testing                                                                                                                                                                                                               |
+| Term  | Definition                                                                                                                                                                                                                            |
+| ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| SLA   | A service-level agreement is an agreement between a service provider and a customer. Particular aspects of the service – quality, availability, responsibilities – are agreed upon between the service provider and the service user. |
+| UAT   | User Acceptance Testing                                                                                                                                                                                                               |
+| API   | Application Programming Interface, a set of rules that allows different software entities to communicate with each other.                                                                                                             |
+| WCAG  | Web Content Accessibility Guidelines, a set of guidelines for making web content more accessible to people with disabilities.                                                                                                         |
+| IaC   | Infrastructure as Code, the process of managing and provisioning computing infrastructure through machine-readable definition files.                                                                                                  |
+| CI/CD | Continuous Integration and Continuous Deployment, a method to frequently deliver apps to customers by introducing automation into the stages of app development.                                                                       |
+| CPU   | Central Processing Unit, the primary component of a computer that performs most of the processing inside a computer.                                                                                                                  |
+| SSD   | Solid State Drive, a type of mass storage device similar to a hard disk drive (HDD).                                                                                                                                                  |
+| RAM   | Random Access Memory, a form of computer memory that can be read and changed in any order, typically used to store working data and machine code.                                                                                      |
+| VTR   | Verilog to Routing, a tool for the physical design of digital circuits.                                                                                                                                                               |
+| OSS   | Open Source Software, software with source code that anyone can inspect, modify, and enhance.                                                                                                                                         |
+| Kanban| A visual workflow management method used to visualize work, maximize efficiency, and improve continuously.                                                                                                                             |
+| Triage| The process of determining the priority of patients' treatments based on the severity of their condition. In software, it refers to prioritizing issues based on their severity and impact.                                           |
