@@ -28,7 +28,7 @@
     - [7.1 Objective](#71-objective)
     - [7.2 Closure Steps](#72-closure-steps)
     - [7.3 Status Transitions](#73-status-transitions)
-  - [8. Defect Reporting and Metrics](#8-defect-reporting-and-metrics)
+  - [8. Defect Reporting And Metrics](#8-defect-reporting-and-metrics)
     - [8.1 Objective](#81-objective)
     - [8.2 Key Metrics](#82-key-metrics)
     - [8.3 Tools](#83-tools)
@@ -194,7 +194,7 @@ graph LR
 **Open → In Progress → Resolved → Closed**<br>
 If a defect fails verification: **Resolved → Reopened → In Progress**
 
-## 8. Defect Reporting and Metrics
+## 8. Defect Reporting And Metrics
 
 ### 8.1 Objective
 
