@@ -207,7 +207,6 @@ These are all the hardware we'll use to develop the project:
 
 ### Diagrams
 
-<!-- TODO: Making graph for flow and applications -->
 #### List
 
 ```mermaid
@@ -491,7 +490,7 @@ Here are some pros and cons about Node.JS:
 
 Node.JS advantages:
 
-- **Fast Performance**: Built on Google’s V8 engine, making it highly efficient for I/O operations.
+- **Fast Performance**: Built on Google’s V8 engine, it is highly efficient for I/O operations.
 - **Large Ecosystem (NPM)**: Offers thousands of open-source packages to speed up development.
 - **Cross-Platform Compatibility**: Runs on Windows, Linux, and macOS.
 - **Active Community**: Backed by a large developer community and enterprise support.
@@ -542,11 +541,11 @@ Here are listed all of the endpoints designed for this project:
 
 - **GET**: `http://localhost:3001/api/list`
   - retrieving all the existing applications.
-- **GET**: `http://localhost:3001/api/map/{filename}`
+- **GET**: `http://localhost:3001/api/map/{projectName}`
   - retrieving a specific application.
 - **POST**: `http://localhost:3001/api/upload`
   - updating an existing application.
-- **DELETE**: `http://localhost:3001/api/delete/{filename}`
+- **DELETE**: `http://localhost:3001/api/delete/{projectName}`
   - deleting an existing application. \
 *{}: parameters*
 
@@ -556,7 +555,6 @@ All of these endpoints are more detailed in our [API Documentation](./APIDocumen
 
 #### Local Storage
 
-<!-- TODO: add a small example of parsing -->
 As previously mentioned in the [server](#server) part, we will be using a server with a local host to store all of the predefined applications asked by the client.
 You can find all of them in its repository: [ALGOSUP_POC](https://github.com/LeFl0w/ALGOSUP_POC/tree/main/Examples). \
 However, these examples are for now under SDF and Verilog<sup><a id="15-bis" href="#15">[15]</a></sup> format, which is not suitable for our application.
@@ -575,6 +573,90 @@ FF1_post_synthesis.sdf + FF1_post_synthesis.v
 => 
 
 FF1PostSynthesis.json
+```
+
+Underneath can be find a more explanatory parsing' example of the two files needed and the result. \
+Let's first start with the SDF file:
+
+```SDF
+(DELAYFILE
+    (SDFVERSION "2.1")
+    (DESIGN "FF1_norst")
+    (VENDOR "verilog-to-routing")
+    (PROGRAM "vpr")
+    (VERSION "9.0.0-dev+v8.0.0-11943-g8cb20aa52-dirty")
+    (DIVIDER /)
+    (TIMESCALE 1 ps)
+
+    (CELL
+        (CELLTYPE "fpga_interconnect")
+        (INSTANCE routing_segment_D_output_0_0_to_latch_Q_input_0_0)
+        (DELAY
+            (ABSOLUTE
+                (IOPATH datain dataout (1022.2:1022.2:1022.2) (1022.2:1022.2:1022.2))
+            )
+        )
+    )
+)
+```
+
+Then, the Verilog file:
+
+```Verilog
+module FF1_norst (
+    input \D ,
+);
+
+    //Wires
+    wire \D_output_0_0 ;
+    wire \latch_Q_input_0_0 ;
+
+    //IO assignments
+    assign \D_output_0_0  = \D ;
+
+    //Interconnect
+    fpga_interconnect \routing_segment_D_output_0_0_to_latch_Q_input_0_0  (
+        .datain(\D_output_0_0 ),
+        .dataout(\latch_Q_input_0_0 )
+    );
+
+endmodule
+```
+
+Finally, the parsed file would look like that:
+
+```JSON
+{
+  "modules": {
+    "FF1_norst": {
+      "ports": [
+        {
+          "type": "input",
+          "name": "D"
+        },
+      ],
+      "instances": [
+        {
+          "type": "fpga_interconnect",
+          "name": "routing_segment_D_output_0_0_to_latch_Q_input_0_0",
+          "connections": [
+            {
+              "from": "D_output_0_0",
+              "to": "latch_Q_input_0_0",
+              "delay": 1022.2
+            }
+          ]
+        },
+      ],
+      "connections": [
+        {
+          "from": "D",
+          "to": "D_output_0_0"
+        },
+      ]
+    }
+  }
+}
 ```
 
 #### Creation Of Applications
@@ -642,7 +724,7 @@ app.post('/data', [
 Data integrity is important in this project. Applications created at the beginning or later on should always be the same and don't need to change while the server is running. \
 To ensure there are no issues in this field, developers will have to create an integrity check within the code source.
 
-They could use the `Subresource Integrity` proposed by [mdn web docs](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity).
+They could use the `Subresource Integrity` proposed by [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity).
 
 Finally, hashing could also be used to ensure the integrity of the files, here is an example of it using `crypto`:
 
@@ -850,7 +932,7 @@ Some VSCode extensions that could be useful:
 
 #### D3.JS Installation
 
-To install D3 you could follow the installation guide in their [official website](https://d3js.org/getting-started).
+To install D3 you could follow the installation guide on their [official website](https://d3js.org/getting-started).
 
 1. Open your command prompt window, then navigate to your repository.
 2. Create the folder that will contain your repository, then navigate through it.
