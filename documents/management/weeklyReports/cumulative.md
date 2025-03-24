@@ -9,6 +9,7 @@
 
 <details>
 <summary>Table of Contents</summary>
+
 </details>
 
 ## Weekly Report Week 1 
