@@ -37,13 +37,13 @@ This section explains what happens when you execute the code above.
 
 The list of the main libraries and frameworks used in our project :
 
-| **Category** | **Technology/Tool** | **Link**                                                                                                  | **Description**                                                                |
-| ------------ | ------------------- | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| Frontend     | React.js            | [<img alt="React Logo" src="./images/react.jpeg" width="30" height="30">](https://react.dev)              | JavaScript library to create dynamic user interfaces.                          |
-| Frontend     | D3.js               | [<img alt="D3.js Logo" src="./images/d3.png" width="30" height="30">](https://d3js.org)                   | Library to create dynamic data visualizations.                                 |
-| Backend      | NodeJS & ExpressJS  | [<img alt="Nodejs Logo" src="./images/nodeJS.jpg" width="30" height="30">](https://nodejs.org)            | JavaScript server-side runtime environment with a framework for creating APIs. |
-| Database     | No DB               | [<img alt="JSON Logo" src="./images/json.png" width="30" height="30">](https://www.json.org/json-en.html) | Store as JSON.                                                                 |
-| Other        | Vite                | [<img alt="Vite Logo" src="./images/vite.png" width="30" height="30">](https://vitejs.dev)                | Tool to manage and build JavaScript modules.                                   |
+| **Category** | **Technology/Tool**   | **Link**                                                                                                  | **Description**                                                                |
+| ------------ | --------------------- | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| Frontend     | React.js              | [<img alt="React Logo" src="./images/react.jpeg" width="30" height="30">](https://react.dev)              | JavaScript library to create dynamic user interfaces.                          |
+| Frontend     | D3.js                 | [<img alt="D3.js Logo" src="./images/d3.png" width="30" height="30">](https://d3js.org)                   | Library to create dynamic data visualizations.                                 |
+| Backend      | Node.js & Express.js  | [<img alt="Node.js Logo" src="./images/nodeJS.jpg" width="30" height="30">](https://nodejs.org)           | JavaScript server-side runtime environment with a framework for creating APIs. |
+| Database     | No DB                 | [<img alt="JSON Logo" src="./images/json.png" width="30" height="30">](https://www.json.org/json-en.html) | Store as JSON.                                                                 |
+| Other        | Vite                  | [<img alt="Vite Logo" src="./images/vite.png" width="30" height="30">](https://vitejs.dev)                | Tool to manage and build JavaScript modules.                                   |
 
 **Language:** JS
 
@@ -54,7 +54,7 @@ What is needed to set up the dev environment. For instance, global dependencies 
 ## Tests
 
 Describe and show how to run the tests with code examples.
-Explain what these tests test and why.
+Explain what they test and why.
 
 ```shell
 Give an example
@@ -62,15 +62,15 @@ Give an example
 
 ## API Description
 
-In this section you'll be provided with the link to [api documentation](./documents/technical/APIDocumentation.md)
+In this section you'll be provided with the link to [api documentation](./documents/technical/APIDocumentation.md).
 
 ## Contributors
 
 | Photo                                                                                                                                     | Role              | Name             | Contact                                                                                                            |
 | ----------------------------------------------------------------------------------------------------------------------------------------- | ----------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------ |
-| <img alt="Project Manager Github Profile Picture" src="https://avatars.githubusercontent.com/u/182214449?v=4" width="100" height="100">   | Project Manager   | Robin GOUMY      | [GitHub](https://github.com/RobinGOUMY) \| [LinkedIn](https://www.linkedin.com/in/robin-goumy-66452832a/)          |
-| <img alt="Program Manager Github Profile Picture" src="https://avatars.githubusercontent.com/u/123485791?v=4" width="100" height="100">   | Program Manager   | Alexandre BOPP   | [GitHub](https://github.com/Boppalex) \| [LinkedIn](https://www.linkedin.com/in/alexandre-bopp-682a97250/)         |
-| <img alt="Technical Leader Github Profile Picture" src="https://avatars.githubusercontent.com/u/145995586?v=4" width="100" height="100">  | Technical Leader  | Maxime THIZEAU   | [GitHub](https://github.com/MaximeTAlgosup) \| [LinkedIn](https://www.linkedin.com/in/maxime-thizeau-0b311a293/)   |
-| <img alt="Software Engineer Github Profile Picture" src="https://avatars.githubusercontent.com/u/62845771?v=4" width="100" height="100">  | Software Engineer | Geoffrey Delrieu | [GitHub](https://github.com/Z2VvZ2Vv) \| [LinkedIn](https://www.linkedin.com/in/geoffrey-delrieu-77203a353/)       |
-| <img alt="Quality Assurance Github Profile Picture" src="https://avatars.githubusercontent.com/u/145995367?v=4" width="100" height="100"> | Quality Assurance | Mathias DELILLE  | [GitHub](https://github.com/MistzSoftware) \| [LinkedIn](https://www.linkedin.com/in/mathias-gagnepain-426a131b0/) |
-| <img alt="Technical Writer Github Profile Picture" src="https://avatars.githubusercontent.com/u/145991425?v=4" width="100" height="100">  | Technical Writer  | Habi CAILLEAU    | [GitHub](https://github.com/habicll) \| [LinkedIn](https://www.linkedin.com/in/habi-cailleau-3b72b5293/)           |
+| <img alt="Project Manager GitHub Profile Picture" src="https://avatars.githubusercontent.com/u/182214449?v=4" width="100" height="100">   | Project Manager   | Robin GOUMY      | [GitHub](https://github.com/RobinGOUMY) \| [LinkedIn](https://www.linkedin.com/in/robin-goumy-66452832a/)          |
+| <img alt="Program Manager GitHub Profile Picture" src="https://avatars.githubusercontent.com/u/123485791?v=4" width="100" height="100">   | Program Manager   | Alexandre BOPP   | [GitHub](https://github.com/Boppalex) \| [LinkedIn](https://www.linkedin.com/in/alexandre-bopp-682a97250/)         |
+| <img alt="Technical Leader GitHub Profile Picture" src="https://avatars.githubusercontent.com/u/145995586?v=4" width="100" height="100">  | Technical Leader  | Maxime THIZEAU   | [GitHub](https://github.com/MaximeTAlgosup) \| [LinkedIn](https://www.linkedin.com/in/maxime-thizeau-0b311a293/)   |
+| <img alt="Software Engineer GitHub Profile Picture" src="https://avatars.githubusercontent.com/u/62845771?v=4" width="100" height="100">  | Software Engineer | Geoffrey Delrieu | [GitHub](https://github.com/Z2VvZ2Vv) \| [LinkedIn](https://www.linkedin.com/in/geoffrey-delrieu-77203a353/)       |
+| <img alt="Quality Assurance GitHub Profile Picture" src="https://avatars.githubusercontent.com/u/145995367?v=4" width="100" height="100"> | Quality Assurance | Mathias DELILLE  | [GitHub](https://github.com/MistzSoftware) \| [LinkedIn](https://www.linkedin.com/in/mathias-gagnepain-426a131b0/) |
+| <img alt="Technical Writer GitHub Profile Picture" src="https://avatars.githubusercontent.com/u/145991425?v=4" width="100" height="100">  | Technical Writer  | Habi CAILLEAU    | [GitHub](https://github.com/habicll) \| [LinkedIn](https://www.linkedin.com/in/habi-cailleau-3b72b5293/)           |

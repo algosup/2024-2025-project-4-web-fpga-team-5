@@ -138,7 +138,7 @@ The structure shown below would allow team members to access every file quickly 
 
 Concerning the code structure, it would be parted into two different folders:
 
-- the first one would be dedicated to the back end;
+- the first one would be dedicated to the back-end;
 - while the second one would be for the front end.
 
 By following these conventions, every exterior person of the Team 5 project would be able to catch up quite easily and find the information needed for their own advancement.
@@ -485,7 +485,7 @@ Drawbacks:
 
 #### Back-End
 
-Concerning the back end, the choice has been made to keep it simple and to use Node.JS<sup><a id="10-bis" href="#10">[10]</a></sup> and Express.JS<sup><a id="11-bis" href="#11">[11]</a></sup> which are worldwide spread. \
+Concerning the backend, the choice has been made to keep it simple and to use Node.JS<sup><a id="10-bis" href="#10">[10]</a></sup> and Express.JS<sup><a id="11-bis" href="#11">[11]</a></sup> which are worldwide spread. \
 Here are some pros and cons about Node.JS:
 
 Node.JS advantages:
@@ -520,8 +520,8 @@ For this project, the versioning has been defined below:
 | Ids                  | Names          | Definitions                                                                                          |
 | -------------------- | -------------- | ---------------------------------------------------------------------------------------------------- |
 | <ins>**0**</ins>.0.0 | Major update   | This identifier will be used for the major update/product (0: before MVP; 1: MVP; 2: final product). |
-| 0.<ins>**0**</ins>.0 | Feature update | This identifier will be the number of features added after each major version of the product.         |
-| 0.0.<ins>**0**</ins> | Fixes          | This identifier shows the number of fixes between two major updates of the product.               |
+| 0.<ins>**0**</ins>.0 | Feature update | This identifier will be the number of features added after each major version of the product.        |
+| 0.0.<ins>**0**</ins> | Fixes          | This identifier shows the number of fixes between two major updates of the product.                  |
 
 >[!CAUTION]
 > Increasing the major version indicator will reset the two other indicators.
@@ -575,7 +575,7 @@ FF1_post_synthesis.sdf + FF1_post_synthesis.v
 FF1PostSynthesis.json
 ```
 
-Underneath can be find a more explanatory parsing' example of the two files needed and the result. \
+Underneath can be found a more explanatory parsing example of the two files needed and the result. \
 Let's first start with the SDF file:
 
 ```SDF

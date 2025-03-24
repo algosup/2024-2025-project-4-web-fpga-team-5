@@ -1,5 +1,26 @@
 # Regression Test Plan
 
+- [Regression Test Plan](#regression-test-plan)
+  - [1. Introduction](#1-introduction)
+    - [1.1 Purpose](#11-purpose)
+    - [1.2 Scope](#12-scope)
+  - [2. Test Strategy](#2-test-strategy)
+    - [2.1 Regression Testing Approach](#21-regression-testing-approach)
+    - [2.2 Entry \& Exit Criteria](#22-entry--exit-criteria)
+    - [2.3 Testing Levels](#23-testing-levels)
+  - [3. Test Environment](#3-test-environment)
+    - [3.1 Hardware \& Infrastructure](#31-hardware--infrastructure)
+    - [3.2 Software Stack](#32-software-stack)
+  - [4. Test Execution](#4-test-execution)
+    - [4.1 Regression Testing Schedule](#41-regression-testing-schedule)
+    - [4.2 Test Coverage](#42-test-coverage)
+  - [5. Defect Management](#5-defect-management)
+    - [5.1 Defect Reporting Process](#51-defect-reporting-process)
+    - [5.2 Defect Tracking \& Triage](#52-defect-tracking--triage)
+  - [6. Risks And Mitigation](#6-risks-and-mitigation)
+  - [7. Test Deliverables](#7-test-deliverables)
+  - [8. Glossary](#8-glossary)
+
 ## 1. Introduction
 
 ### 1.1 Purpose
@@ -20,8 +41,8 @@ Regression testing covers:
 
 ### 2.1 Regression Testing Approach
 
-| Type                           | Description                                    | Frequency           |
-| ------------------------------ | ---------------------------------------------- | ------------------- |
+| Type                           | Description                                     | Frequency           |
+| ------------------------------ | ----------------------------------------------- | ------------------- |
 | **Automated Regression Tests** | Runs nightly on CI/CD.                          | Nightly             |
 | **Manual Regression Tests**    | Conducted when UI/UX changes occur.             | On-demand           |
 | **Smoke Tests**                | Validate core functionalities post-deployment.  | On every deployment |
