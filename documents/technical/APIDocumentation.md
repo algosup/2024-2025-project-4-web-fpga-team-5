@@ -1,4 +1,4 @@
-# Technical Specifications - Web FPGA
+# API Documentation - Web FPGA
 
 ## Introduction
 
@@ -45,19 +45,19 @@ http://localhost:3001/api/list
 
 ![Static Badge](https://img.shields.io/badge/GET-darkgreen)
 ```URL
-/api/map/{filename}
+/api/map/{projectName}
 ```
 *{}: parameters*
 
 **Example:**
 ```
-http://localhost:3001/api/map/FF1NorstPostSynthesis.sdf
+http://localhost:3001/api/map/FF1NorstPostSynthesis.json
 ```
 
 **Parameter:**
-| Field    | Type   | Description               |
-| -------- | ------ | ------------------------- |
-| filename | String | name of the file to load. |
+| Field       | Type   | Description                  |
+| ----------- | ------ | ---------------------------- |
+| projectName | String | name of the project to load. |
 
 **Success 200**
 | Field  | Type   | Description |
@@ -73,6 +73,7 @@ http://localhost:3001/api/map/FF1NorstPostSynthesis.sdf
 | Code | Name        | Description               |
 | ---- | ----------- | ------------------------- |
 | 400  | Bad Request | Project name is required. |
+| 404  | Bad Request | Project not found.        |
 
 *Response (example)*
 ```HTML
@@ -124,9 +125,10 @@ body:
 | file2 | File | Verilog file. |
 
 **Success 200**
-| Field  | Type   | Description |
-| ------ | ------ | ----------- |
-| status | Number | 200         |
+| Field   | Type   | Description                  |
+| ------- | ------ | ---------------------------- |
+| status  | Number | 200                          |
+| message | String | Files uploaded successfully. |
 
 **Error 4xx**
 | Code | Name        | Description                                  |
@@ -137,6 +139,8 @@ body:
 | 400  | Bad Request | The project already exists.                  |
 | 400  | Bad Request | SDF file already exists.                     |
 | 400  | Bad Request | Verilog file already exists.                 |
+| 400  | Bad Request | Invalid file(s) format.                      |
+| 404  | Bad Request | File not found.                              |
 
 **Error 5xx**
 | Code | Name         | Description                     | 
@@ -168,20 +172,20 @@ http://localhost:3001/api/delete-project/FF1Examples
 ```
 
 **Parameter:**
-| Field    | Type   | Description               |
-| -------- | ------ | ------------------------- |
-| filename | String | name of the file to load. |
+| Field       | Type   | Description               |
+| ----------- | ------ | ------------------------- |
+| projectName | String | name of the file to load. |
 
 **Success 200**
-| Field   | Type   | Description                     |
-| ------- | ------ | ------------------------------- |
-| status  | Number | 200                             |
-| message | String | Directory deleted successfully. |
+| Field   | Type   | Description                   |
+| ------- | ------ | ----------------------------- |
+| status  | Number | 200                           |
+| message | String | Project deleted successfully. |
 
 **Error 4xx**
-| Code | Name        | Description               |
-| ---- | ----------- | ------------------------- |
-| 400  | Bad Request | Directory does not exist. |
+| Code | Name        | Description             |
+| ---- | ----------- | ----------------------- |
+| 404  | Bad Request | Project does not exist. |
 
 **Error 5xx**
 | Code | Name         | Description                                 |
