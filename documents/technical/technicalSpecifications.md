@@ -575,7 +575,7 @@ FF1_post_synthesis.sdf + FF1_post_synthesis.v
 FF1PostSynthesis.json
 ```
 
-Underneath can be find a more explanatory parsing' example of the two files needed and the result. \
+Underneath can be found a more explanatory parsing example of the two files needed and the result. \
 Let's first start with the SDF file:
 
 ```SDF
