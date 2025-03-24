@@ -64,11 +64,6 @@ http://localhost:3001/api/map/FF1NorstPostSynthesis.json
 | ------ | ------ | ----------- |
 | status | Number | 200         |
 
-<!-- TODO: add success example -->
-*Response (example)*
-```
-```
-
 **Error 4xx**
 | Code | Name        | Description               |
 | ---- | ----------- | ------------------------- |
@@ -151,10 +146,6 @@ body:
 | 500  | Server Error | Error saving parsed JSON files. |
 | 500  | Server Error | Unexpected server error.        |
 
-<!-- TODO: add examples -->
-*Response (example)*
-```
-```
 ---
 ## DELETE Methods
 
@@ -191,8 +182,3 @@ http://localhost:3001/api/delete-project/FF1Examples
 | Code | Name         | Description                                 |
 | ---- | ------------ | ------------------------------------------- |
 | 500  | Server Error | Error deleting directory, it may not exist. |
-
-<!-- TODO: add examples -->
-*Response (example)*
-```
-```
