@@ -19,24 +19,24 @@ During the second week, we concentrated on clarifying the final points with the 
 
 ## **Achievements**  
 
-- Find the technologie used
+- Find the technologies that would be used for this project
 - Clarify the project
-- Start to develop the MockUp
+- Start to develop the mock-up
 
 ---
 
 ## **Challenges & Risks**  
 
-- Learn how to use the technologie choose.   
+- Learn how to use the technologies chosen
 - Create a pleasure MockUp for the client
 
 ---
 
-## **Priorities for Next Week**  
+## **Priorities For Next Week**  
 
 - Finsh the MockUp and ask for an approve
 - Start the developpement
-- Finish the functional spécification
+- Finish the functional specification
 
 ---
 

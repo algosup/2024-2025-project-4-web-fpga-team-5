@@ -2,10 +2,10 @@
 
 ---
 
-# Project-4-web-fpga-team-5 - Project Charter
+# Management Artifacts - Web FPGA
 
 
-[logo]()
+<img src="../../images/logo.png" width="400" alt="Logo"/>
 
 
 </div>
@@ -14,7 +14,16 @@
 
 <details>
 <summary><b>Table of contents</b></summary>
-- [2024 - 2025 Project-2 Serious Game Team-8 - Management Artifacts](#2024---2025-project-2-serious-game-team-8---management-artifacts)
+
+- [Management Artifacts - Web FPGA](#management-artifacts---web-fpga)
+  - [RACI Matrix](#raci-matrix)
+  - [Key Performance Indicators](#key-performance-indicators)
+    - [KPIs](#kpis)
+    - [Risks \& Assumptions](#risks--assumptions)
+- [Risks and Assumptions](#risks-and-assumptions)
+    - [Mood](#mood)
+  - [Weekly Reports](#weekly-reports)
+
 
 </details>
 
@@ -28,45 +37,49 @@
 | System Testing           | A               | I               | C                  | R           | C                 | I      |
 | Documentation            | C               | R/A             | I                  | I           | R/A               | I      |
 
-**Legend:** R=Responsible, A=Accountable, C=Consulted, I=Informed
-
+| Letters | Stand for   |
+| ------- | ----------- |
+| R       | Responsible |
+| A       | Accountable |
+| C       | Consulted   |
+| I       | Informed    |
 
 ## Key Performance Indicators
 
 
 ### KPIs
 
-To follow the progress of the project, multiple KPIs have been defined. They can be viewed through our KPIs spread sheet.
+To follow the progress of the project, multiple KPIs have been defined. They can be viewed through our KPIs spreadsheet.
 
-Our KPIs have been separated into different categories as followed:
+Our KPIs have been separated into different categories as follows:
 
-Documents : 
+Documents: 
 
 - Project charter
-- Functional specifications
-- Technical specifications
+- Functional Specifications
+- Technical Specifications
 - Test Case
-- Test plan
+- Test Plan
 - Management Artifacts
-- Porject CharterMais trkl 
-- User manual
+- Project Charter
+- User Manual
 - READ.ME
 
-Design : 
+Design: 
 
 - Mock Up
 
-Development : 
+Development: 
 
 - Back end 
 - Front End
 
-Human Ressrouces : 
+Human Ressources: 
 
 - Unjustified absence time
 - Overtime
 
-You can see our project's KPIs  following [this link](https://algosup-my.sharepoint.com/:x:/p/robin_goumy/EYrk5Cafv1dMgymb8nSp5esBLqcweLlJSfQut3MZREPwcA?e=f8d4bO).
+You can see our project's KPIs following [this link](https://algosup-my.sharepoint.com/:x:/p/robin_goumy/EYrk5Cafv1dMgymb8nSp5esBLqcweLlJSfQut3MZREPwcA?e=f8d4bO).
 
 ###  Risks & Assumptions
 
@@ -82,16 +95,16 @@ You can see our project's KPIs  following [this link](https://algosup-my.sharepo
 
 ### Mood
 
-The mood inside the team is calculate base on the different aspect : 
+The mood inside the team is calculated based on the different aspects:
 - Motivation
 - Management 
 - Productivity
-- Communcation
+- Communication
 
 
 This is a simple average of the various categories, taking into account team size, number of responses and category evaluation.
 
-This average is currently :  🌟
+This average is currently: 7.5 🌟
 
 
 ## Weekly Reports
@@ -100,13 +113,12 @@ Each week a weekly report is done to ensure a follow of the project, [here]() yo
 
 You can directly access the reports individually:
 
-[Weekly report 1](https://github.com/algosup/2024-2025-project-4-web-fpga-team-5/tree/main/documents/management/weeklyReport/weekly_Report_1)
-[Weekly report 2](https://github.com/algosup/2024-2025-project-4-web-fpga-team-5/tree/main/documents/management/weeklyReport/weekly_Report_2)
-[Weekly report 3](https://github.com/algosup/2024-2025-project-4-web-fpga-team-5/tree/main/documents/management/weeklyReport/weekly_Report_3)
-[Weekly report 4](https://github.com/algosup/2024-2025-project-4-web-fpga-team-5/tree/main/documents/management/weeklyReport/weekly_Report_4)
-[Weekly report 5](https://github.com/algosup/2024-2025-project-4-web-fpga-team-5/tree/main/documents/management/weeklyReport/weekly_Report_5)
-[Weekly report 6](https://github.com/algosup/2024-2025-project-4-web-fpga-team-5/tree/main/documents/management/weeklyReport/weekly_Report_6)
+- [Weekly Report 1](weeklyReports/weeklyReport1.md)
+- [Weekly Report 2](weeklyReports/weeklyReport2.md)
+- [Weekly Report 3](weeklyReports/weeklyReport3.md)
+- [Weekly Report 4](weeklyReports/weeklyReport4.md)
+- [Weekly Report 5](weeklyReports/weeklyReport5.md)
+- [Weekly Report 6](weeklyReports/weeklyReport6.md)
 
-## Post Mortem 
+<!-- ## Post Mortem -->
 
-NEED TO BE UPDATE

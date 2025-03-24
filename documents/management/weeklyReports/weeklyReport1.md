@@ -33,7 +33,7 @@ For the first week, we focused on having a clear idea of what we will be doing. 
 
 ---
 
-## **Priorities for Next Week**  
+## **Priorities For Next Week**  
 
 - Develop Figma mockups based on customer feedback  
 - Work on the documentation to meet the deadline  
@@ -43,9 +43,9 @@ For the first week, we focused on having a clear idea of what we will be doing. 
 
 ## **Meetings & Deadlines**  
 
-| Date       | Event     | Participants    | Notes                                |
-|------------|----------|-----------------|--------------------------------------|
-| 08/03/2025 | Meeting  | All members     | Discuss the customer's response      |
+| Date       | Event    | Participants    | Notes                                  |
+|------------|----------|-----------------|----------------------------------------|
+| 08/03/2025 | Meeting  | All members     | Discuss the customer's response        |
 | 13/03/2025 | Deadline | Program Manager | Finalize the functional specifications |
 
 ---

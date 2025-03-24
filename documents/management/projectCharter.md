@@ -3,7 +3,7 @@
 
 ---
 
-# Project-4-web-fpga-team-5 - Project Charter
+# Project Charter - Web FPGA
 
 </div>
 
@@ -12,7 +12,7 @@
 <details>
 <summary><b>Table of contents</b>
 
-- [Project-4-web-fpga-team-5 - Project Charter](#project-4-web-fpga-team-5---project-charter)
+- [Project Charter - Web FPGA](#project-charter---web-fpga)
   - [Team member](#team-member)
   - [Scope](#scope)
     - [Project Purpose](#project-purpose)

@@ -18,7 +18,7 @@ No project hours this week, but in order to keep a steady flow of work, the team
 
 ## **Achievements**  
 
-- Complet all the back end part
+- Complete all the back end part
 - Review part of the Back and Front end
 
 
@@ -26,16 +26,16 @@ No project hours this week, but in order to keep a steady flow of work, the team
 
 ## **Challenges & Risks**  
 
-- Fix all the issues of the code find by the QA
+- Fix all the issues of the code found by the QA
 - Always the health problem for the Project Manager.
 
 ---
 
-## **Priorities for Next Week**  
+## **Priorities For Next Week**  
 
-- Complet the Technical Specifiactions
-- Finsh the Front end and link to back end
-- Constaint verification of the code
+- Complete the Technical Specifications
+- Finish the Front end and link to back-end
+- Verify the code constantly
 
 ---
 
@@ -44,7 +44,9 @@ No project hours this week, but in order to keep a steady flow of work, the team
 | Date       | Event     | Participants       | Notes                                                   |
 |------------|-----------|------------------- |-------------------------------------------------------- |
 | 25/03/2025 | Deadline  | Technical Leader   | Finalize the technical specifications                   |
-| 24/03/2025 | Deadline  | Software Engineer  | First version on the code for a review by the customer  |
+| 25/03/2025 | Deadline  | Quality Assurance  | Finalize the Test Plan                                  |
+| 25/03/2025 | Deadline  | Quality Assurance  | Finalize the Test Case                                  |
+| 24/03/2025 | Deadline  | Software Engineer  | First version of the code for a review by the customer  |
 
 ---
 
