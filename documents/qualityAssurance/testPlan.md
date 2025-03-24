@@ -76,7 +76,7 @@ The scope of testing includes:
 
 | Feature                     | Description                                                             |
 | --------------------------- | ----------------------------------------------------------------------- |
-| Web Interface               | Validate UI/UX, responsiveness, and accessibility.                          |
+| Web Interface               | Validate UI/UX, responsiveness, and accessibility.                      |
 | API Integration             | Verify API request/response handling.                                   |
 | Performance Testing         | Assess system behavior under load.                                      |
 | Error Handling              | Ensure proper error handling.                                           |
@@ -129,11 +129,11 @@ For detailed test cases, refer to the [Test Cases](https://github.com/orgs/algos
 - Servers:
   - GitHub-Hosted Runners (Executing tests): Ubuntu (x64), 4-core CPU, 16GB RAM, 14GB SSD.
   - Render.com (Web Server): 512MB RAM, 0.1 CPU.
-- Workstations:
-  - MacBook Air (macOs Sequoia): 16GB RAM, 500GB SSD, CPU M3.
+- Work stations:
+  - MacBook Air (macOS Sequoia): 16GB RAM, 500GB SSD, CPU M3.
   - Lenovo ThinkBook 14 G4 IAP (Windows 11): 16 GM RAM, 512GB SSD, CPU I7 12th gen.
-- Teststations:
-  - MacBook Air (macOs Sequoia): 16GB RAM, 500GB SSD, CPU M3.
+- Test stations:
+  - MacBook Air (macOS Sequoia): 16GB RAM, 500GB SSD, CPU M3.
   - Lenovo ThinkBook 14 G4 IAP (Windows 11): 16 GM RAM, 512GB SSD, CPU I7 12th gen.
 
 ### 4.2 Software
@@ -155,10 +155,10 @@ Tests will be executed before each release and at each push to ensure code quali
 
 ## 7. Roles And Responsibilities
 
-| Role              | Responsibilities                                                                             |
-| ----------------- | -------------------------------------------------------------------------------------------- |
+| Role              | Responsibilities                                                                                 |
+| ----------------- | ------------------------------------------------------------------------------------------------ |
 | Quality Assurance | Test planning, monitoring, risk management, test execution, defect reporting, and documentation. |
-| Software Engineer | Unit testing, defect resolution.                                                             |
+| Software Engineer | Unit testing, defect resolution.                                                                 |
 
 ## 8. Defect Management
 
