@@ -53,7 +53,7 @@
 
 This project aims to create a web interface, visually combining 2D FPGA layouts with real-time signal propagation. It will help students understand FPGA behavior through an interactive interface while allowing teachers to upload educational examples.
 
-[Here](https://github.com/LeFl0w/ALGOSUP_POC) you can find the Call for tender, of this project.
+[Here](https://github.com/LeFl0w/ALGOSUP_POC) you can find the Call For Tender, of this project.
 
 ### Core Requirements
 

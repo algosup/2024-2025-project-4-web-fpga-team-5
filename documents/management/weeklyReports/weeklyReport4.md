@@ -17,7 +17,7 @@ No project hours this week, but in order to keep a steady flow of work, the team
 
 ## Achievements  
 
-- Complete all the back-end part
+- Complete the entire back-end
 - Review part of the back-end and front-end
 
 

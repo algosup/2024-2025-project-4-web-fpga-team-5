@@ -25,7 +25,7 @@ I personally had health problems that prevented me from working on site, but I t
 
 ### Challenges & Risks  
 
-- Get the approve of the customer for the mock-up.
+- Request the customer's approval for the mock-up.
 - Health problem for the Project Manager.
 
 ---
