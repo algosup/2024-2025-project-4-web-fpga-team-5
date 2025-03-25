@@ -5,8 +5,6 @@
 
 # Weekly Report 2 
 
-
-
 </div>
 
 ---

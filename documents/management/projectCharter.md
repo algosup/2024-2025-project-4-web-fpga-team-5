@@ -21,7 +21,7 @@
       - [Student Interface](#student-interface)
       - [Teacher Interface](#teacher-interface)
       - [Expected Deliverables](#expected-deliverables)
-  - [Out Of Scope](#out-of-scope)
+      - [Out Of Scope](#out-of-scope)
   - [Project Limitations](#project-limitations)
     - [Constraints](#constraints)
     - [Risks](#risks)
@@ -82,7 +82,7 @@ This project aims to create a web interface, visually combining 2D FPGA layouts 
 - Source code on a GitHub repository.
 - Documentation on installation and usage.
 
-## Out Of Scope
+#### Out Of Scope
 
 - Have multiple educational examples (more than 2).
 - Create a 3D visualization of the signal.
@@ -116,14 +116,14 @@ Communication with the customer has been set up in Slack as well as GitHub for [
 
 ## Responsibilities
 
-| Team Members      | Position             | Key Responsibilities                                                                 | Success Criteria                                                                        |
-| ----------------- | -------------------- | ----------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| Team Members      | Position             | Key Responsibilities                                                                                                                                                     | Success Criteria                                                                                          |
+| ----------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------- |
 | Robin GOUMY       | Project Manager      | Oversee project schedule and resource allocation<br>Assign tasks among team members<br>Provide progress updates to stakeholders<br>Identify and mitigate potential risks | Timely project completion<br>Fully functional software<br>Optimal resource utilization<br>Smooth workflow |
-| Alexandre BOPP    | Program Manager      | Design mockups and general layout<br>Act as liaison with the client<br>Define functional requirements<br>Assess and manage project risks | Well-defined functional specifications<br>Positive client reception regarding design and usability |
-| Maxime THIZEAU    | Technical Leader       | Establish coding guidelines<br>Select appropriate technologies<br>Draft technical documentation<br>Supervise development work | Detailed and comprehensive technical documentation |
-| Geoffrey DELRIEU  | Software Developer   | Implement core features<br>Resolve software issues<br>Maintain and document the codebase<br>Develop and execute unit tests | Successful feature implementation<br>Minimal bug occurrence |
-| Mathias DELILLE | Quality Assurance    | Review and validate documentation<br>Conduct software testing<br>Ensure compliance with client requirements<br>Develop a structured testing plan | Well-defined and executed test plan<br>Effective bug detection<br>Comprehensive documentation |
-| Habi CAILLEAU     | Technical Writer     | Write and structure the user guide                                                   | Clear, well-organized, and accessible documentation |
+| Alexandre BOPP    | Program Manager      | Design mockups and general layout<br>Act as liaison with the client<br>Define functional requirements<br>Assess and manage project risks                                 | Well-defined functional specifications<br>Positive client reception regarding design and usability        |
+| Maxime THIZEAU    | Technical Leader     | Establish coding guidelines<br>Select appropriate technologies<br>Draft technical documentation<br>Supervise development work                                            | Detailed and comprehensive technical documentation                                                        |
+| Geoffrey DELRIEU  | Software Developer   | Implement core features<br>Resolve software issues<br>Maintain and document the codebase<br>Develop and execute unit tests                                               | Successful feature implementation<br>Minimal bug occurrence                                               |
+| Mathias DELILLE   | Quality Assurance    | Review and validate documentation<br>Conduct software testing<br>Ensure compliance with client requirements<br>Develop a structured testing plan                         | Well-defined and executed test plan<br>Effective bug detection<br>Comprehensive documentation             |
+| Habi CAILLEAU     | Technical Writer     | Write and structure the user guide                                                                                                                                       | Clear, well-organized, and accessible documentation                                                       |
 
 
 ## Deadlines
