@@ -13,17 +13,14 @@
 <br>
 
 <details>
-<summary><b>Table of contents</b></summary>
+<summary><b>Table Of Contents</b></summary>
 
 - [Management Artifacts - Web FPGA](#management-artifacts---web-fpga)
   - [RACI Matrix](#raci-matrix)
   - [Key Performance Indicators](#key-performance-indicators)
-    - [KPIs](#kpis)
-    - [Risks \& Assumptions](#risks--assumptions)
-- [Risks and Assumptions](#risks-and-assumptions)
-    - [Mood](#mood)
+  - [Risks \& Assumptions](#risks--assumptions)
+  - [Mood](#mood)
   - [Weekly Reports](#weekly-reports)
-
 
 </details>
 
@@ -37,6 +34,8 @@
 | System Testing           | A               | I               | C                  | R           | C                 | I      |
 | Documentation            | C               | R/A             | I                  | I           | R/A               | I      |
 
+**Legend:**
+
 | Letters | Stand for   |
 | ------- | ----------- |
 | R       | Responsible |
@@ -46,54 +45,48 @@
 
 ## Key Performance Indicators
 
-
-### KPIs
-
 To follow the progress of the project, multiple KPIs have been defined. They can be viewed through our KPIs spreadsheet.
 
 Our KPIs have been separated into different categories as follows:
 
 Documents: 
 
-- Project charter
+- Project Charter
 - Functional Specifications
 - Technical Specifications
-- Test Case
+- Test Cases
 - Test Plan
 - Management Artifacts
-- Project Charter
 - User Manual
 - READ.ME
 
 Design: 
 
-- Mock Up
+- Mock-up
 
 Development: 
 
-- Back end 
-- Front End
+- Back-end 
+- Front-end
 
-Human Ressources: 
+Human Resources: 
 
-- Unjustified absence time
+- Unjustified Absence Time
 - Overtime
 
 You can see our project's KPIs following [this link](https://algosup-my.sharepoint.com/:x:/p/robin_goumy/EYrk5Cafv1dMgymb8nSp5esBLqcweLlJSfQut3MZREPwcA?e=f8d4bO).
 
-###  Risks & Assumptions
+##  Risks & Assumptions
 
-# Risks and Assumptions
-
-| ID  | Description | Consequence | Impact | Likelihood | Mitigation/Avoidance |
-|-----|------------|------------|--------|------------|----------------------|
-| 1   | Synchronizing the timing simulation with the 2D FPGA visualization may be difficult. | May lead to incorrect or non-intuitive visual representation. | High | Medium | Implement careful testing and debugging mechanisms. |
-| 2   | Users (teachers/students) may have different levels of expertise with FPGA and Verilog. | Some users might struggle with using the tool effectively. | Medium | High | Provide comprehensive documentation |
-| 3  | Teachers may struggle to prepare and upload new FPGA examples. | Limits the usability of the tool. | Medium | High | Develop a simple and well-documented process for adding new examples. |
+| ID  | Description                                                                             | Consequence                                                                         | Impact | Likelihood | Mitigation/Avoidance                                                  |
+|-----|-----------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|--------|------------|-----------------------------------------------------------------------|
+| 1   | Synchronizing the timing simulation with the 2D FPGA visualization may be difficult.    | May lead to incorrect or non-intuitive visual representation.                       | High   | Medium     | Implement careful testing and debugging mechanisms.                   |
+| 2   | Users (teachers/students) may have different levels of expertise with FPGA and Verilog. | Some users might struggle with using the tool effectively.                          | Medium | High       | Provide comprehensive documentation.                                  |
+| 3   | Teachers may struggle to prepare and upload new FPGA examples.                          | Limits the usability of the tool.                                                   | Medium | High       | Develop a simple and well-documented process for adding new examples. |
 
 
 
-### Mood
+## Mood
 
 The mood inside the team is calculated based on the different aspects:
 - Motivation
@@ -109,7 +102,7 @@ This average is currently: 7.5 🌟
 
 ## Weekly Reports
 
-Each week a weekly report is done to ensure a follow of the project, [here]() you can find all the folder with cumulative weekly reports. 
+Weekly reports are done to ensure a follow of the project. You can find all the files within the [cumulative weekly reports](weeklyReports/cumulative.md).
 
 You can directly access the reports individually:
 

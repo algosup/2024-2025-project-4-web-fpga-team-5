@@ -3,53 +3,53 @@
 
 ---
 
-# **Weekly Report 4** 
+# Weekly Report 4 
 
 
 </div>
 
 ---
 
-## **Summary**  
+## Summary  
 
 No project hours this week, but in order to keep a steady flow of work, the team carried out some of the tasks in overtime, as well as to meet deadlines.
 
 ---
 
-## **Achievements**  
+## Achievements  
 
-- Complete all the back end part
-- Review part of the Back and Front end
+- Complete all the back-end part
+- Review part of the back-end and front-end
 
 
 ---
 
-## **Challenges & Risks**  
+## Challenges & Risks  
 
 - Fix all the issues of the code found by the QA
-- Always the health problem for the Project Manager.
+- Still the health problem for the Project Manager.
 
 ---
 
-## **Priorities For Next Week**  
+## Priorities For Next Week  
 
 - Complete the Technical Specifications
-- Finish the Front end and link to back-end
+- Finish the front-end and link to back-end
 - Verify the code constantly
 
 ---
 
-## **Meetings & Deadlines**  
+## Meetings & Deadlines  
 
 | Date       | Event     | Participants       | Notes                                                   |
 |------------|-----------|------------------- |-------------------------------------------------------- |
-| 25/03/2025 | Deadline  | Technical Leader   | Finalize the technical specifications                   |
-| 25/03/2025 | Deadline  | Quality Assurance  | Finalize the Test Plan                                  |
-| 25/03/2025 | Deadline  | Quality Assurance  | Finalize the Test Case                                  |
 | 24/03/2025 | Deadline  | Software Engineer  | First version of the code for a review by the customer  |
+| 25/03/2025 | Deadline  | Technical Leader   | Finalize the Technical Specifications                   |
+| 25/03/2025 | Deadline  | Quality Assurance  | Finalize the Test Plan                                  |
+| 25/03/2025 | Deadline  | Quality Assurance  | Finalize the Test Cases                                 |
 
 ---
 
-## **Conclusion**  
+## Conclusion  
 
 The project time was not to our liking, but in spite of this the team was able to move forward to meet the deadlines.

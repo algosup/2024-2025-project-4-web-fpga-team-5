@@ -3,7 +3,7 @@
 
 ---
 
-# **Weekly Report 2** 
+# Weekly Report 2 
 
 
 
@@ -11,13 +11,13 @@
 
 ---
 
-## **Summary**  
+## Summary  
 
 During the second week, we concentrated on clarifying the final points with the customer and developing the mock-up. We only had one progress session, which limited our progress.
 
 ---
 
-## **Achievements**  
+## Achievements  
 
 - Find the technologies that would be used for this project
 - Clarify the project
@@ -25,22 +25,22 @@ During the second week, we concentrated on clarifying the final points with the 
 
 ---
 
-## **Challenges & Risks**  
+## Challenges & Risks  
 
 - Learn how to use the technologies chosen
 - Create a pleasure MockUp for the client
 
 ---
 
-## **Priorities For Next Week**  
+## Priorities For Next Week  
 
-- Finsh the MockUp and ask for an approve
+- Finsh the mock-up and ask for an approve
 - Start the developpement
-- Finish the functional specification
+- Finish the Functional Specifications
 
 ---
 
-## **Meetings & Deadlines**  
+## Meetings & Deadlines  
 
 | Date       | Event     | Participants    | Notes                                  |
 |------------|-----------|-----------------|----------------------------------------|
@@ -48,6 +48,6 @@ During the second week, we concentrated on clarifying the final points with the 
 
 ---
 
-## **Conclusion**  
+## Conclusion  
 
 The project has had difficulty progressing due to a lack of time (only 2 sessions of 3H30 since the start of the project) as well as other factors. Some people have a serious lack of interest in the project, which is detrimental to the team as a whole. We'll be looking at ways of improving this situation: identifying the cause of the lack of interest, working on a case-by-case basis, instilling a climate of motivation or giving the project a new meaning.

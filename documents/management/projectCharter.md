@@ -10,10 +10,10 @@
 <br>
 
 <details>
-<summary><b>Table of contents</b>
+<summary><b>Table Of Contents</b>
 
 - [Project Charter - Web FPGA](#project-charter---web-fpga)
-  - [Team member](#team-member)
+  - [Team Members](#team-members)
   - [Scope](#scope)
     - [Project Purpose](#project-purpose)
     - [Core Requirements](#core-requirements)
@@ -28,14 +28,14 @@
   - [Stakeholders](#stakeholders)
   - [Communication](#communication)
   - [Responsibilities](#responsibilities)
-  - [Deadline](#deadline)
+  - [Deadlines](#deadlines)
   - [Allocated Resources](#allocated-resources)
 
 </summary>
 
 </details>
 
-## Team member
+## Team Members
 | Picture                                                                                    | Name              | Role                |
 | ------------------------------------------------------------------------------------------ | ----------------- | ------------------- |
 | <img src="https://avatars.githubusercontent.com/u/182214449?v=4" width="100" height="100"> | Robin GOUMY       | Project Manager     |
@@ -51,9 +51,9 @@
 
 ### Project Purpose
 
-This project aims to create a web interface, visually combining 2D FPGA layouts with real-time signal propagation. It will help students understand FPGA behavior through interactive interface while allowing teachers to upload educational examples.
+This project aims to create a web interface, visually combining 2D FPGA layouts with real-time signal propagation. It will help students understand FPGA behavior through an interactive interface while allowing teachers to upload educational examples.
 
-[Here](https://github.com/LeFl0w/ALGOSUP_POC/tree/main) you can find the Call of tender, of this project.
+[Here](https://github.com/LeFl0w/ALGOSUP_POC) you can find the Call for tender, of this project.
 
 ### Core Requirements
 
@@ -61,7 +61,7 @@ This project aims to create a web interface, visually combining 2D FPGA layouts 
 
 - Developed using an open-source web technology.
 - Accessible via a web browser.
-- Data hosted on a backend server.
+- Data hosted on a back-end server.
 
 #### Student Interface
 
@@ -79,13 +79,13 @@ This project aims to create a web interface, visually combining 2D FPGA layouts 
 
 #### Expected Deliverables
 
-- Source code on a Git repository.
+- Source code on a GitHub repository.
 - Documentation on installation and usage.
 
 ## Out Of Scope
 
-- Have multiple educational example (more than 2).
-- Create a 3D visualisation of the signal.
+- Have multiple educational examples (more than 2).
+- Create a 3D visualization of the signal.
 - Support for several FPGA families
 
 
@@ -95,7 +95,7 @@ This project aims to create a web interface, visually combining 2D FPGA layouts 
 
 - Input files must be in Verilog and SDF formats.
 - Need for smooth and interactive graphical visualization.
-- Backend must efficiently transform input data for frontend usage.
+- Back-end must efficiently transform input data for front-end usage.
 
 ### Risks
 
@@ -116,7 +116,7 @@ Communication with the customer has been set up in Slack as well as GitHub for [
 
 ## Responsibilities
 
-| Team Member       | Position             | Key Responsibilities                                                                 | Success Criteria                                                                        |
+| Team Members      | Position             | Key Responsibilities                                                                 | Success Criteria                                                                        |
 | ----------------- | -------------------- | ----------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
 | Robin GOUMY       | Project Manager      | Oversee project schedule and resource allocation<br>Assign tasks among team members<br>Provide progress updates to stakeholders<br>Identify and mitigate potential risks | Timely project completion<br>Fully functional software<br>Optimal resource utilization<br>Smooth workflow |
 | Alexandre BOPP    | Program Manager      | Design mockups and general layout<br>Act as liaison with the client<br>Define functional requirements<br>Assess and manage project risks | Well-defined functional specifications<br>Positive client reception regarding design and usability |
@@ -126,13 +126,13 @@ Communication with the customer has been set up in Slack as well as GitHub for [
 | Habi CAILLEAU     | Technical Writer     | Write and structure the user guide                                                   | Clear, well-organized, and accessible documentation |
 
 
-## Deadline
+## Deadlines
 
 | Date       | Milestone                 |
 | ---------- | ------------------------  |
 | 13/03/2025 | Functional Specifications |
 | 25/03/2025 | Technical Specifications  |
-| 24/03/2025 | Version 1 Code           |
+| 24/03/2025 | Version 1 Code            |
 | 25/03/2025 | Test Plan                 |
 | 25/03/2025 | Test Cases                |
 | 01/04/2025 | User Manual               |
