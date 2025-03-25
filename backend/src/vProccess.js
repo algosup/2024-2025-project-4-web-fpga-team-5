@@ -11,6 +11,26 @@ const cleanInstanceName = (name) => {
 
   return name;
 }
+
+// Helper function to split a connection string into device and IO parts
+const splitIntoDeviceAndIO = (connectionString) => {
+  // This regex pattern looks for strings ending with input_X_X or output_X_X pattern
+  const match = connectionString.match(/(.+)_(input|output|clock)_(\d+)_(\d+)$/);
+  
+  if (match) {
+    return {
+      device: match[1],
+      io: `${match[2]}_${match[3]}_${match[4]}`
+    };
+  }
+
+  // If no pattern is matched, return the original string as device and empty IO
+  return {
+    device: connectionString,
+    io: ""
+  };
+}
+
 export const parseVerilog = (verilogText) => {
   console.log("Starting Verilog file analysis...");
   console.log(`Length of Verilog text: ${verilogText.length} characters`);
@@ -90,9 +110,17 @@ export const parseVerilog = (verilogText) => {
     const fromClean = cleanInstanceName(ioAssignmentMatch[2].trim());
     const toClean = cleanInstanceName(ioAssignmentMatch[1].trim());
 
+    // Split the from and to into device and IO parts
+    const fromParts = splitIntoDeviceAndIO(fromClean);
+    const toParts = splitIntoDeviceAndIO(toClean);
+
     result.modules[moduleName].connections.push({
       "from": fromClean,
-      "to": toClean
+      "to": toClean,
+      "fromDevice": fromParts.device,
+      "fromIO": fromParts.io,
+      "toDevice": toParts.device,
+      "toIO": toParts.io
     });
     console.log(`Assignment found: ${fromClean} -> ${toClean}`);
   }
@@ -111,13 +139,19 @@ export const parseVerilog = (verilogText) => {
 
     console.log(`Interconnect found: ${instanceName} (${datain} -> ${dataout})`);
 
+    // Split the datain and dataout into device and IO parts
+    const fromParts = splitIntoDeviceAndIO(datain);
+    const toParts = splitIntoDeviceAndIO(dataout);
+
     result.modules[moduleName].instances.push({
       "type": "fpga_interconnect",
       "name": instanceName,
       "connections": [
         {
-          "from": datain,
-          "to": dataout
+          "fromDevice": fromParts.device,
+          "fromIO": fromParts.io,
+          "toDevice": toParts.device,
+          "toIO": toParts.io
         }
       ]
     });
@@ -151,57 +185,22 @@ export const parseVerilog = (verilogText) => {
       const qMatch = portsText.match(/\.Q\(\\([^)]+)\)/);
       const clkMatch = portsText.match(/\.clock\(\\([^)]+)\)/);
 
-      console.log(`  Port D match: ${dMatch ? dMatch[1] : 'Not found'}`);
-      console.log(`  Port Q match: ${qMatch ? qMatch[1] : 'Not found'}`);
-      console.log(`  Port clock match: ${clkMatch ? clkMatch[1] : 'Not found'}`);
+      const dPort = dMatch ? cleanInstanceName(dMatch[1]) : null;
+      const qPort = qMatch ? cleanInstanceName(qMatch[1]) : null;
+      const clkPort = clkMatch ? cleanInstanceName(clkMatch[1]) : null;
 
-      const connections = [];
-      if (dMatch && qMatch) {
-        const dClean = cleanInstanceName(dMatch[1]);
-        const qClean = cleanInstanceName(qMatch[1]);
-        connections.push({
-          "from": dClean,
-          "to": qClean
-        });
-        console.log(`  Connection D-Q: ${dClean} -> ${qClean}`);
-      }
+      console.log(`  Port D: ${dPort || 'Not found'}`);
+      console.log(`  Port Q: ${qPort || 'Not found'}`);
+      console.log(`  Port clock: ${clkPort || 'Not found'}`);
 
-      if (clkMatch) {
-        // Find the source of the clock
-        let clkSource = null;
-        const clkName = cleanInstanceName(clkMatch[1]);
-        console.log(`  Searching for clock signal source: ${clkName}`);
-
-        for (const interconnect of result.modules[moduleName].instances) {
-          if (interconnect.type === "fpga_interconnect") {
-            for (const conn of interconnect.connections) {
-              if (conn.to === clkName) {
-                clkSource = conn.from;
-                console.log(`  Clock source found: ${clkSource}`);
-                break;
-              }
-            }
-            if (clkSource) break;
-          }
-        }
-
-        if (clkSource) {
-          connections.push({
-            "from": clkName,
-            "to": clkSource
-          });
-          console.log(`  Clock connection: ${clkName} -> ${clkSource}`);
-        } else {
-          console.log(`  No clock source found for: ${clkName}`);
-        }
-      }
-
-      result.modules[moduleName].instances.push({
+      // Add connections if ports were found
+      const dffInstance = {
         "type": cellType,
-        "name": cellName,
-        "connections": connections
-      });
-      console.log(`  DFF added with ${connections.length} connections`);
+        "name": cellName
+      };
+
+      result.modules[moduleName].instances.push(dffInstance);
+      console.log(`  DFF added with connections`);
     }
     else if (cellType === "LUT_K") {
       lutCount++;
@@ -214,52 +213,10 @@ export const parseVerilog = (verilogText) => {
       console.log(`  Parameter K: ${kMatch ? kMatch[1] : 'Not found'}`);
       console.log(`  Parameter LUT_MASK: ${maskMatch ? maskMatch[1] : 'Not found'}`);
 
-      // Parse LUT_K ports
-      const inRegExp = /\.in\(\{([^}]+)\}/;
-      const inMatch = portsText.match(inRegExp);
-
-      console.log(`  Inputs match: ${inMatch ? inMatch[1].substring(0, 50) + '...' : 'Not found'}`);
-
-      const inPorts = inMatch ? inMatch[1].split(',').map(p => {
-        const match = p.trim().match(/\\([^,]+)/);
-        return match ? match[1] : null;
-      }).filter(Boolean) : [];
-
-      console.log(`  Inputs found: ${inPorts.length}`);
-      inPorts.forEach((port, i) => console.log(`    Input ${i}: ${port}`));
-
-      const outMatch = portsText.match(/\.out\(\\([^)]+)\)/);
-      console.log(`  Output port: ${outMatch ? outMatch[1] : 'Not found'}`);
-
-      const connections = [];
-      if (outMatch) {
-        const outName = cleanInstanceName(outMatch[1]);
-        console.log(`  Cleaned output: ${outName}`);
-
-        for (let inPort of inPorts) {
-          if (inPort.trim() !== "1'b0" && inPort.trim() !== "1'b1") {  // Skip constant values
-            // Remove the "lut_" prefix from LUT input names if present
-            let inName = cleanInstanceName(inPort.trim());
-            if (inName.startsWith("lut_")) {
-              inName = inName.substring(4);
-              console.log(`  Removed 'lut_' prefix: ${inName}`);
-            }
-            connections.push({
-              "from": inName,
-              "to": outName
-            });
-            console.log(`  Connection added: ${inName} -> ${outName}`);
-          } else {
-            console.log(`  Skipping constant value: ${inPort}`);
-          }
-        }
-      }
-
-      // Add parameters to the LUT_K instance
+      // Add LUT_K instance with parameters and connections
       const lutInstance = {
         "type": cellType,
-        "name": cellName,
-        "connections": connections
+        "name": cellName
       };
 
       // Add K and LUT_MASK parameters if found
@@ -270,8 +227,28 @@ export const parseVerilog = (verilogText) => {
         lutInstance.LUT_MASK = maskMatch[1].trim();
       }
 
+      // Parse input and output ports for LUT_K
+      const inputRegex = /\.I(\d)\(\\([^)]+)\)/g;
+      let inputMatch;
+      while ((inputMatch = inputRegex.exec(portsText)) !== null) {
+        const inputNum = inputMatch[1];
+        const inputSignal = cleanInstanceName(inputMatch[2]);
+        const inputParts = splitIntoDeviceAndIO(inputSignal);
+
+        console.log(`  Input I${inputNum}: ${inputSignal}`);
+      }
+
+      // Parse output port for LUT_K
+      const outputMatch = portsText.match(/\.O\(\\([^)]+)\)/);
+      if (outputMatch) {
+        const outputSignal = cleanInstanceName(outputMatch[1]);
+        const outputParts = splitIntoDeviceAndIO(outputSignal);
+
+        console.log(`  Output O: ${outputSignal}`);
+      }
+
       result.modules[moduleName].instances.push(lutInstance);
-      console.log(`  LUT_K added with ${connections.length} connections`);
+      console.log(`  LUT_K added with connections`);
     } else {
       otherCellCount++;
       console.log(`Unknown cell type ignored: ${cellType}`);

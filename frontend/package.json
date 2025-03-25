@@ -1,37 +1,31 @@
 {
   "name": "frontend",
   "private": true,
-  "version": "0.4.0",
+  "version": "0.5.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview --host",
-    "test:e2e": "npx tsx --no-warnings node_modules/.bin/mocha --timeout 30000 tests/e2e/**/*.spec.ts"
+    "preview": "vite preview"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.0.14",
     "d3": "^7.9.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.3.0",
+    "tailwindcss": "^4.0.14"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
-    "@types/chai": "^5.2.0",
-    "@types/mocha": "^10.0.10",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
-    "@types/selenium-webdriver": "^4.1.28",
     "@vitejs/plugin-react": "^4.3.4",
-    "chai": "^5.2.0",
-    "chromedriver": "^134.0.3",
     "eslint": "^9.21.0",
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^15.15.0",
-    "mocha": "^11.1.0",
-    "selenium-webdriver": "^4.29.0",
-    "tsx": "^4.19.3",
-    "typescript": "^5.8.2"
+    "vite": "^6.2.0"
   }
 }

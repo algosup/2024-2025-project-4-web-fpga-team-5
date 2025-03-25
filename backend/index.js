@@ -1,9 +1,10 @@
 import express from 'express';
 import multer from 'multer';
 import { fileURLToPath } from 'url';
-import { dirname, join, extname } from 'path';
+import { dirname, join, extname, parse } from 'path';
 import { promises as fs } from 'fs';
 import cors from 'cors';
+
 
 import { parseSDF } from './src/sdfProccess.js';
 import { parseVerilog } from './src/vProccess.js';
@@ -100,45 +101,28 @@ app.post('/api/upload', upload.fields([{ name: 'sdfFile' }, { name: 'verilogFile
                 return res.status(400).send('Project name is required.');
             }
 
-            const projectDir = join(__dirname, 'parsed_files', projectName);
-
-            //check if project already exists
-            const exists = await fs.access(projectDir).then(() => true).catch(() => false);
-            if (exists) {
-                return res.status(404).send('The project already exists');
-            }
-
-            await fs.mkdir(projectDir, { recursive: true });
-            const sdfJsonPath = join(projectDir, `${sdfFile.originalname}.json`);
-            const verilogJsonPath = join(projectDir, `${verilogFile.originalname}.json`);
+            const projectJSON_Path = join(__dirname, 'parsed_files', `${projectName}.json`);
 
             //check if files exists
             try {
-                // Vérifier si l'un des fichiers existe déjà
-                const sdfExists = await fs.access(sdfJsonPath).then(() => true).catch(() => false);
-                const verilogExists = await fs.access(verilogJsonPath).then(() => true).catch(() => false);
-            
-                if (sdfExists) {
-                    return res.status(400).send('SDF file already exists.');
-                }
-                if (verilogExists) {
-                    return res.status(400).send('Verilog file already exists.');
-                }
-            
-                // Écriture des fichiers JSON
-                await fs.writeFile(sdfJsonPath, JSON.stringify(sdfData, null, 2));
-                await fs.writeFile(verilogJsonPath, JSON.stringify(verilogData, null, 2));
-                await fs.writeFile(join(projectDir, `${projectName}.json`), JSON.stringify(commonInstances, null, 2));
-            
-                res.send('SDF and Verilog files successfully parsed and merged.');
-            
+                // check if file exists
+                await fs.access(projectJSON_Path);
+                console.error('File already exists');
+                return res.status(400).send('File already exists');
+
             } catch (error) {
-                res.status(500).send('Error processing files.');
+                try {
+                    await fs.writeFile(join(projectJSON_Path), JSON.stringify(commonInstances, null, 2));
+                    res.send('SDF and Verilog files successfully parsed and merged.');
+
+                } catch (error) {
+                    console.error('Error saving parsed JSON files:', error);
+                    res.status(500).send('Error saving parsed JSON files.');
+                }
             }
 
         } catch (error) {
             console.log('Error saving parsed JSON files:', error);
-            
             res.status(500).send('Error saving parsed JSON files.');
         }
 
@@ -149,19 +133,30 @@ app.post('/api/upload', upload.fields([{ name: 'sdfFile' }, { name: 'verilogFile
 
   
 // Endpoint API for sending parsed SDF file
-app.get('/api/map/:filename', async (req, res) => {
+app.get('/api/map/:projectName', async (req, res) => {
     try {
-        const projectName = req.body.projectName;
+        const projectName = req.params.projectName;
         if (!projectName) {
             return res.status(400).send('Project name is required.');
         }
 
-        const jsonFilePath = join(__dirname, 'parsed_files', `${projectName}`);
-        const jsonData = await fs.readdir(jsonFilePath, 'utf-8');
+        // Construct the file path using string concatenation
+        const jsonFilePath = join(__dirname, 'parsed_files', `${projectName}.json`);
+        
+        // Check if the file exists
+        await fs.access(jsonFilePath);
+
+        // Read the file content
+        const jsonData = await fs.readFile(jsonFilePath, 'utf-8');
         res.json(JSON.parse(jsonData));
 
     } catch (error) {
-        res.status(500).send('Error reading parsed SDF JSON file. File may not exist.');
+        if (error.code === 'ENOENT') {
+            // File does not exist
+            return res.status(404).send('File not found.');
+        }
+        console.error('Error reading parsed SDF JSON file:', error);
+        res.status(500).send('Error reading parsed SDF JSON file.');
     }
 });
 
@@ -169,19 +164,32 @@ app.get('/api/map/:filename', async (req, res) => {
 app.delete('/api/delete-project/:projectName', async (req, res) => {
     try {
         const projectName = req.params.projectName;
-        const directoryPath = join(__dirname, 'parsed_files', projectName);
 
-        const exists = await fs.access(directoryPath).then(() => true).catch(() => false);
-        if (!exists) {
-            return res.status(404).send('Directory does not exist.');
+        // Validate projectName
+        if (!projectName || typeof projectName !== 'string') {
+            return res.status(400).send('Invalid project name.');
         }
 
-        await fs.rm(directoryPath, { recursive: true, force: true });
-        res.send('Directory deleted successfully.');
+        const projectPath = join(__dirname, 'parsed_files', `${projectName}.json`);
+
+        try {
+            // verify if file exists
+            await fs.access(projectPath);
+        } catch (err) {
+            // file does not exist
+            return res.status(404).send('File does not exist.');    
+        }
+
+        // Delete file
+        await fs.unlink(projectPath);
+        res.send('File deleted successfully.');
+
     } catch (error) {
-        return res.status(500).send('Error deleting directory, it may not exist.');
+        console.error('Error deleting file:', error);
+        res.status(500).send('Error deleting file, please try again later.');
     }
 });
+
 
 // Endpoint to list all SDF files
 app.get('/api/list', async (req, res) => {
@@ -189,15 +197,29 @@ app.get('/api/list', async (req, res) => {
         const directoryPath = join(__dirname, 'parsed_files');
         const entries = await fs.readdir(directoryPath, { withFileTypes: true });
 
-        // Show only directories
-        const directories = entries
-            .filter(entry => entry.isDirectory())
-            .map(entry => entry.name);
+        // Prepare an array to hold file information
+        const filesInfo = [];
 
-        res.json(directories);
+        // Iterate over entries to get file names and creation dates
+        for (const entry of entries) {
+            if (entry.isFile() && entry.name.endsWith('.json')) {
+                const filePath = join(directoryPath, entry.name);
+                const stats = await fs.stat(filePath);
+
+                // Format the date to only include the date part (YYYY-MM-DD)
+                const createdDate = stats.birthtime.toISOString().split('T')[0];
+
+                filesInfo.push({
+                    name: entry.name.replace('.json', ''),
+                    createdDate
+                });
+            }
+        }
+
+        res.json(filesInfo);
     } catch (error) {
-        console.error('Error listing directories:', error);
-        res.status(500).send('Error listing directories.');
+        console.error('Error listing files:', error);
+        res.status(500).send('Error listing files.');
     }
 });
 
