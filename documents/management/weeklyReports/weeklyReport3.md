@@ -33,7 +33,7 @@ I personally had health problems that prevented me from working on site, but I t
 ## Priorities For Next Week  
 
 - Advance on the Technical Specifications
-- Finsihed the back-end
+- Finish the back-end
 - Verify the code constantly
 
 ---

@@ -26,7 +26,7 @@ No project hours this week, but in order to keep a steady flow of work, the team
 ## Challenges & Risks  
 
 - Fix all the issues of the code found by the QA
-- Still the health problem for the Project Manager.
+- The Project manager had health problem still
 
 ---
 

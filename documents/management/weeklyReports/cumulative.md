@@ -11,7 +11,7 @@
 
 
 <details>
-<summary>Table of Contents</summary>
+<summary>Table Of Contents</summary>
 
 - [Weekly Reports Cumulative](#weekly-reports-cumulative)
   - [Weekly Report Week 1](#weekly-report-week-1)
@@ -120,7 +120,7 @@ During the second week, we concentrated on clarifying the final points with the 
 
 ### Priorities For Next Week  
 
-- Finsh the MockUp and ask for an approve
+- Finsh the mock-up and ask for an approve
 - Start the developpement
 - Finish the Functional Specifications
 
@@ -165,7 +165,7 @@ I personally had health problems that prevented me from working on site, but I t
 ### Priorities For Next Week  
 
 - Advance on the Technical Specifications
-- Finsh the back-end
+- Finish the back-end
 - Verify the code constantly
 
 ---
@@ -205,7 +205,7 @@ No project hours this week, but in order to keep a steady flow of work, the team
 ### Challenges & Risks  
 
 - Fix all the issues of the code found by the QA
-- Still the health problem for the Project Manager.
+- The Project manager had health problem still
 
 ---
 

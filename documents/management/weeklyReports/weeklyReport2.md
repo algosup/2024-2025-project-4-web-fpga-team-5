@@ -26,7 +26,7 @@ During the second week, we concentrated on clarifying the final points with the 
 ## Challenges & Risks  
 
 - Learn how to use the technologies chosen
-- Create a pleasure MockUp for the client
+- Create a pleasure mock-up for the client
 
 ---
 
