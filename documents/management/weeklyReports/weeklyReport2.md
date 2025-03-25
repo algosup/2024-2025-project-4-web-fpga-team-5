@@ -32,7 +32,7 @@ During the second week, we concentrated on clarifying the final points with the 
 
 ## Priorities For Next Week  
 
-- Finsh the mock-up and ask for an approve
+- Finish the mock-up and ask for an approve
 - Start the developpement
 - Finish the Functional Specifications
 
