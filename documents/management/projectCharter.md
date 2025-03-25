@@ -1,4 +1,3 @@
-
 <div align="center">
 
 ---
@@ -44,8 +43,6 @@
 | <img src="https://avatars.githubusercontent.com/u/62845771?v=4" width="100" height="100">  | Geoffrey DELRIEU  | Software Engineer   |
 | <img src="https://avatars.githubusercontent.com/u/145995367?v=4" width="100" height="100"> | Mathias DELILLE   | Quality Assurance   |
 | <img src="https://avatars.githubusercontent.com/u/145991425?v=4" width="100" height="100"> | Habi CAILLEAU     | Technical Writer    |
-
-
 
 ## Scope
 
@@ -103,7 +100,6 @@ This project aims to create a web interface, visually combining 2D FPGA layouts 
 - Performance and interactivity: Ensuring real-time, smooth animation.
 - Tool interoperability: Potential incompatibilities between input formats and open-source tools could slow down development.
 
-
 ## Stakeholders
 
 | Role   | Representative              | 
@@ -124,7 +120,6 @@ Communication with the customer has been set up in Slack as well as GitHub for [
 | Geoffrey DELRIEU  | Software Developer   | Implement core features<br>Resolve software issues<br>Maintain and document the codebase<br>Develop and execute unit tests                                               | Successful feature implementation<br>Minimal bug occurrence                                               |
 | Mathias DELILLE   | Quality Assurance    | Review and validate documentation<br>Conduct software testing<br>Ensure compliance with client requirements<br>Develop a structured testing plan                         | Well-defined and executed test plan<br>Effective bug detection<br>Comprehensive documentation             |
 | Habi CAILLEAU     | Technical Writer     | Write and structure the user guide                                                                                                                                       | Clear, well-organized, and accessible documentation                                                       |
-
 
 ## Deadlines
 

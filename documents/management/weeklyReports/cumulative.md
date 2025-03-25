@@ -4,11 +4,9 @@
 
 # Weekly Reports Cumulative
 
-
 </div>
  
 ---
-
 
 <details>
 <summary>Table Of Contents</summary>
@@ -179,7 +177,6 @@ I personally had health problems that prevented me from working on site, but I t
 | 25/03/2025 | Deadline  | Quality Assurance  | Finalize the Test Plan                                  |
 | 25/03/2025 | Deadline  | Quality Assurance  | Finalize the Test Cases                                 |
 
-
 ---
 
 ### Conclusion  
@@ -198,7 +195,6 @@ No project hours this week, but in order to keep a steady flow of work, the team
 
 - Complete the entire back-end
 - Review part of the back-end and front-end
-
 
 ---
 
@@ -226,7 +222,6 @@ No project hours this week, but in order to keep a steady flow of work, the team
 | 25/03/2025 | Deadline  | Quality Assurance  | Finalize the Test Plan                                  |
 | 25/03/2025 | Deadline  | Quality Assurance  | Finalize the Test Cases                                 |
 
-
 ---
 
 ### Conclusion  
@@ -236,5 +231,3 @@ The project time was not to our liking, but in spite of this the team was able t
 ## Weekly Report Week 5 
 
 ## Weekly Report Week 6 
-
-

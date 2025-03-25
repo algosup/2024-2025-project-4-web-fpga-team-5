@@ -4,7 +4,6 @@
 
 # Management Artifacts - Web FPGA
 
-
 <img src="../../images/logo.png" width="400" alt="Logo"/>
 
 
@@ -84,8 +83,6 @@ You can see our project's KPIs following [this link](https://algosup-my.sharepoi
 | 2   | Users (teachers/students) may have different levels of expertise with FPGA and Verilog. | Some users might struggle with using the tool effectively.                          | Medium | High       | Provide comprehensive documentation.                                  |
 | 3   | Teachers may struggle to prepare and upload new FPGA examples.                          | Limits the usability of the tool.                                                   | Medium | High       | Develop a simple and well-documented process for adding new examples. |
 
-
-
 ## Mood
 
 The mood inside the team is calculated based on the different aspects:
@@ -94,11 +91,9 @@ The mood inside the team is calculated based on the different aspects:
 - Productivity
 - Communication
 
-
 This is a simple average of the various categories, taking into account team size, number of responses and category evaluation.
 
 This average is currently: 7.5 🌟
-
 
 ## Weekly Reports
 
@@ -114,4 +109,3 @@ You can directly access the reports individually:
 - [Weekly Report 6](weeklyReports/weeklyReport6.md)
 
 <!-- ## Post Mortem -->
-
