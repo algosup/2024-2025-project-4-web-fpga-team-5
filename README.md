@@ -1,12 +1,53 @@
-<img alt="CNES Logo" src="./images/cnes.png"  width="160" height="60" alt="Logo of the project" align="right">
+<img alt="CNES Logo" src="./images/cnes.png"  width="160" height="60" align="right">
 
 # Web FPGA - Team 5
 
+This repository held a visualization of a FPGA simulation.
+
+---
+
+## Definition
+
 This project involves creating a web-based interface for an FPGA simulator that visually demonstrates how signals propagate within an FPGA. It is designed to serve as an educational tool. Our goal is to help users understand FPGA internals by merging a 2D floorplan view of the FPGA (showing its basic elements and the interconnections between them) with a dynamic simulation of signal timing.
 
-## Installing / Getting started
+---
 
-A quick introduction of the minimal setup you need.
+## Table Of Contents
+
+- [Status](#status)
+- [Roadmap](#roadmap)
+- [Installing/Getting Started](#installinggetting-started)
+- [Documentation Of The Project](#documentation-of-the-project)
+- [Developing](#developing)
+  - [Built With](#built-with)
+  - [Prerequisites](#prerequisites)
+- [Tests](#tests)
+- [Contributing](#contributing)
+- [API Description](#api-description)
+- [Changelog](#changelog)
+- [Copyrights](#copyrights)
+- [License](#license)
+- [Contacts](#contacts)
+- [Credits And Acknowledgement](#credits-and-acknowledgement)
+
+---
+
+## Status
+
+This project is still in progress and would be done after the 2025/04/01. After this date, consider the project as ended, or as archived.
+
+---
+
+## Roadmap
+
+This project is a six-week school project. Therefore, the roadmap would only be effective for this among if time. \
+If you want to give it an eye, you can access the roadmap by clicking [this link](https://sharing.clickup.com/9015908151/g/h/8cp7ntq-1135/93cbe38f66cc00e).
+
+---
+
+## Installing/Getting Started
+
+A quick introduction of the minimal setup you need. 
 
 ```shell
 commands here
@@ -14,7 +55,9 @@ commands here
 
 This section explains what happens when you execute the code above.
 
-## Documentation of the project
+---
+
+## Documentation Of The Project
 
 - This document describes what the software should do by outlining user requirements and expected functionalities :
   - **[Functional Specifications](documents/functional/functionalSpecifications.md)**
@@ -30,6 +73,8 @@ This section explains what happens when you execute the code above.
   
 - This document provides end-users with instructions on how to use the system and troubleshoot common issues.
   - **[User Manual](documents/manual/userManual.md)**
+
+---
 
 ## Developing
 
@@ -47,30 +92,108 @@ The list of the main libraries and frameworks used in our project :
 
 **Language:** JS
 
+---
+
 ### Prerequisites
 
-What is needed to set up the dev environment. For instance, global dependencies or any other tools. include download links.
+To set up the dev environment you'll need to have many dependencies and libraries installed.
+
+All the different installation guide could be found in the [Technical Specifications](documents/technical/technicalSpecifications.md#environment-configuration).
+
+---
 
 ## Tests
 
-Describe and show how to run the tests with code examples.
-Explain what they test and why.
+This section will explain how to run the end to end tests created by the quality assurance of the team. \
+We assume that you are at the root of the project and that Node.JS is already installed. \
+If not you can fork the project at [this link](https://github.com/algosup/2024-2025-project-4-web-fpga-team-5/fork) and install Node.JS at [this one](https://nodejs.org/en/download).
+
+To test the front-end:
 
 ```shell
-Give an example
+# Move to the correct folder
+cd frontend/
+
+# Dependencies installation
+npm i
+
+# Execute the test suites
+npm run test:e2e
 ```
+
+To test the back-end:
+
+```shell
+# Move to the correct folder
+cd backend/
+
+# Dependencies installation
+npm i
+
+# Execute the test suites
+npm run test:e2e
+```
+
+---
+
+## Contributing
+
+To contribute to our project, please, ensure you follow our conventions you can find in the [CONTRIBUTING.md](CONTRIBUTING.md) file.
+
+---
 
 ## API Description
 
-In this section you'll be provided with the link to [api documentation](./documents/technical/APIDocumentation.md).
+In this section you'll be provided with the link to [API documentation](./documents/technical/APIDocumentation.md).
 
-## Contributors
+---
 
-| Photo                                                                                                                                     | Role              | Name             | Contact                                                                                                            |
-| ----------------------------------------------------------------------------------------------------------------------------------------- | ----------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------ |
-| <img alt="Project Manager GitHub Profile Picture" src="https://avatars.githubusercontent.com/u/182214449?v=4" width="100" height="100">   | Project Manager   | Robin GOUMY      | [GitHub](https://github.com/RobinGOUMY) \| [LinkedIn](https://www.linkedin.com/in/robin-goumy-66452832a/)          |
-| <img alt="Program Manager GitHub Profile Picture" src="https://avatars.githubusercontent.com/u/123485791?v=4" width="100" height="100">   | Program Manager   | Alexandre BOPP   | [GitHub](https://github.com/Boppalex) \| [LinkedIn](https://www.linkedin.com/in/alexandre-bopp-682a97250/)         |
-| <img alt="Technical Leader GitHub Profile Picture" src="https://avatars.githubusercontent.com/u/145995586?v=4" width="100" height="100">  | Technical Leader  | Maxime THIZEAU   | [GitHub](https://github.com/MaximeTAlgosup) \| [LinkedIn](https://www.linkedin.com/in/maxime-thizeau-0b311a293/)   |
-| <img alt="Software Engineer GitHub Profile Picture" src="https://avatars.githubusercontent.com/u/62845771?v=4" width="100" height="100">  | Software Engineer | Geoffrey Delrieu | [GitHub](https://github.com/Z2VvZ2Vv) \| [LinkedIn](https://www.linkedin.com/in/geoffrey-delrieu-77203a353/)       |
-| <img alt="Quality Assurance GitHub Profile Picture" src="https://avatars.githubusercontent.com/u/145995367?v=4" width="100" height="100"> | Quality Assurance | Mathias DELILLE  | [GitHub](https://github.com/MistzSoftware) \| [LinkedIn](https://www.linkedin.com/in/mathias-gagnepain-426a131b0/) |
-| <img alt="Technical Writer GitHub Profile Picture" src="https://avatars.githubusercontent.com/u/145991425?v=4" width="100" height="100">  | Technical Writer  | Habi CAILLEAU    | [GitHub](https://github.com/habicll) \| [LinkedIn](https://www.linkedin.com/in/habi-cailleau-3b72b5293/)           |
+## Changelog
+
+**v1.0.0**:
+<!-- TODO -->
+
+---
+
+## Copyrights
+
+<!-- TODO -->
+
+---
+
+## License
+
+<!-- TODO -->
+
+---
+
+## Contacts
+
+To contact our project team. Please, send a message at the following E-mails:
+
+- Project Manager's E-mail: robin.goumy@algosup.com
+- Program Manager's E-mail: alexandre.bopp@algosup.com
+
+For others social media information, please, refer to [Credits And Acknowledgement](#credits-and-acknowledgement).
+
+---
+
+## Credits And Acknowledgement
+
+Particular thanks to Florent from the [CNES](https://cnes.fr/en) for giving us the opportunity to work on this project.
+
+Thanks for the our school, [ALGOSUP](https://algosup.com/en.html) for letting us improve and having such interesting projects.
+
+Finally, thanks to all the team members for those six weeks. \
+You can find their profiles underneath.
+
+| Role              | Name             | Contact                                                                                                            |
+| ----------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------ |
+| Project Manager   | Robin GOUMY      | [GitHub](https://github.com/RobinGOUMY) \| [LinkedIn](https://www.linkedin.com/in/robin-goumy-66452832a/)          |
+| Program Manager   | Alexandre BOPP   | [GitHub](https://github.com/Boppalex) \| [LinkedIn](https://www.linkedin.com/in/alexandre-bopp-682a97250/)         |
+| Technical Leader  | Maxime THIZEAU   | [GitHub](https://github.com/MaximeTAlgosup) \| [LinkedIn](https://www.linkedin.com/in/maxime-thizeau-0b311a293/)   |
+| Software Engineer | Geoffrey Delrieu | [GitHub](https://github.com/Z2VvZ2Vv) \| [LinkedIn](https://www.linkedin.com/in/geoffrey-delrieu-77203a353/)       |
+| Quality Assurance | Mathias DELILLE  | [GitHub](https://github.com/MistzSoftware) \| [LinkedIn](https://www.linkedin.com/in/mathias-gagnepain-426a131b0/) |
+| Technical Writer  | Habi CAILLEAU    | [GitHub](https://github.com/habicll) \| [LinkedIn](https://www.linkedin.com/in/habi-cailleau-3b72b5293/)           |
+
+[Back to the top](#web-fpga---team-5)
