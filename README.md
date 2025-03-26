@@ -244,8 +244,9 @@ In this section you'll be provided with the link to [API documentation](./docume
 
 ## Changelog
 
-**v1.0.0**:
-<!-- TODO -->
+- **Latest**: NULL
+- **Curren**t: NULL
+- **Version List**: [Click to view](https://github.com/algosup/2024-2025-project-4-web-fpga-team-5/tags)
 
 ---
 
