@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
+    "preview": "vite preview --host",
     "test:e2e": "npx tsx --no-warnings node_modules/.bin/mocha --timeout 30000 tests/e2e/**/*.spec.ts"
   },
   "dependencies": {

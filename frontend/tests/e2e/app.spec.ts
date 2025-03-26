@@ -23,7 +23,7 @@ describe('Main Page Tests', () => {
 
     it('should display correct page title', async () => {
         const title = await driver.getTitle();
-        expect(title).to.include('Vite + React');
+        expect(title).to.include('SPIN - Cnes');
     });
 
     it('should display correct heading 1', async () => {
@@ -58,7 +58,7 @@ describe('Main Page Tests', () => {
     });
 });
 
-describe('Page 1 Tests', () => {
+describe('Visualization Page Tests', () => {
     let driver: any;
 
     before(async () => {
@@ -68,7 +68,7 @@ describe('Page 1 Tests', () => {
             .forBrowser('chrome')
             .build();
 
-        await driver.get('https://two024-2025-project-4-web-fpga-team-5.onrender.com/page1'); // TODO: change with the real page name
+        await driver.get('https://two024-2025-project-4-web-fpga-team-5.onrender.com/visualize');
     });
 
     after(async () => {
@@ -94,7 +94,7 @@ describe('Page 1 Tests', () => {
 });
 
 
-describe('Page 2 Tests', () => {
+describe('Creation Page Tests', () => {
     let driver: any;
 
     before(async () => {
@@ -104,7 +104,7 @@ describe('Page 2 Tests', () => {
             .forBrowser('chrome')
             .build();
 
-        await driver.get('https://two024-2025-project-4-web-fpga-team-5.onrender.com/page2'); // TODO: change with the real page name
+        await driver.get('https://two024-2025-project-4-web-fpga-team-5.onrender.com/create');
     });
 
     after(async () => {
