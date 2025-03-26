@@ -17,6 +17,8 @@ This project involves creating a web-based interface for an FPGA simulator that 
 - [Status](#status)
 - [Roadmap](#roadmap)
 - [Installing/Getting Started](#installinggetting-started)
+  - [User Installation Procedure](#user-installation-procedure)
+  - [Developers Installation Procedure](#developers-installation-procedure)
 - [Documentation Of The Project](#documentation-of-the-project)
 - [Developing](#developing)
   - [Built With](#built-with)
@@ -47,13 +49,102 @@ If you want to give it an eye, you can access the roadmap by clicking [this link
 
 ## Installing/Getting Started
 
-A quick introduction of the minimal setup you need. 
+### User Installation Procedure
 
-```shell
-commands here
+1. Clone the repository.
+
+```bash
+git clone https://github.com/algosup/2024-2025-project-4-web-fpga-team-5
 ```
 
-This section explains what happens when you execute the code above.
+2. Navigate to the directory.
+
+```bash
+cd 2024-2025-project-4-web-fpga-team-5/backend
+```
+
+3. Install dependencies.
+
+```bash
+npm i
+```
+
+4. Start the server.
+
+```bash
+node index.js
+```
+
+---
+
+The application is now available at the following address:
+>http://localhost:3000 
+
+Or:
+
+>http://[adresseIP]:3000
+
+---
+
+### Developers Installation Procedure
+
+1. Clone the repository (branch dev).
+
+```bash
+git clone https://github.com/algosup/2024-2025-project-4-web-fpga-team-5
+```
+
+2. Navigate to the backend directory.
+
+```bash
+cd 2024-2025-project-4-web-fpga-team-5/backend
+```
+
+3. Install dependencies.
+
+```bash
+npm i
+```
+
+4. Navigate to the frontend directory.
+
+```bash
+cd ../frontend
+```
+
+5. Install dependencies.
+
+```bash
+npm i
+```
+
+6. Go back to main directory.
+
+```bash
+cd ..
+```
+
+7. Start the backend server (first terminal).
+
+```bash
+node 2024-2025-project-4-web-fpga-team-5/backend/index.js
+```
+
+8. Start the Vite server (second terminal).
+
+```bash
+cd 2024-2025-project-4-web-fpga-team-5/frontend
+npm run dev
+```
+
+---
+
+The application is now available at the following address:
+>http://localhost:3001
+
+---
+
+For better information, please, refer to the [User Manual](documents/manual/userManual.md).
 
 ---
 
