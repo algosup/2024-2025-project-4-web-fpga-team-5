@@ -30,8 +30,14 @@ http://localhost:3001/api/list
 *Response (example)*
 ```JSON
 [
-    "FF1_exemples",
-    "FF1_exemples_1"
+    {
+        "name": "FF1_exemples",
+        "createdDate": "2025-03-24"
+    },
+    {
+        "name": "test",
+        "createdDate": "2025-03-25"
+    }
 ]
 ```
 
@@ -51,7 +57,7 @@ http://localhost:3001/api/list
 
 **Example:**
 ```
-http://localhost:3001/api/map/FF1NorstPostSynthesis.json
+http://localhost:3001/api/map/FF1_exemples
 ```
 
 **Parameter:**
@@ -108,8 +114,9 @@ http://localhost:3001/api/upload/
 
 body:
 {
-  "sdf": "RisingEdge_DFlipFlop_AsyncResetHigh_post_synthesis.sdf",
-  "v": "RisingEdge_DFlipFlop_AsyncResetHigh_post_synthesis.v"
+    ("sdfFile", file, "/path/to/file/FF1_norst_post_synthesis.sdf"),
+    ("verilogFile", file, "/path/to/file/FF1_norst_post_synthesis.v"),
+    ("projectName", text, "FF1_exemples")
 }
 ```
 
@@ -159,7 +166,7 @@ body:
 
 **Example:**
 ```
-http://localhost:3001/api/delete-project/FF1Examples
+http://localhost:3001/api/delete-project/FF1_exemples
 ```
 
 **Parameter:**
