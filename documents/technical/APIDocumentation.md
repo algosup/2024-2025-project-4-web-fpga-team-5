@@ -101,7 +101,7 @@ http://localhost:3001/api/map/FF1_exemples
 ---
 ## POST Methods
 
-### POST - Updating An Existing File
+### POST - Uploading An Existing File
 
 ![Static Badge](https://img.shields.io/badge/POST-yellow)
 ```URL
