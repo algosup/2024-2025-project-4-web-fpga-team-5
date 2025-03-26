@@ -121,10 +121,11 @@ body:
 ```
 
 **Parameter (request body):**
-| Field | Type | Description   |
-| ----- | ---- | ------------- |
-| file1 | File | SDF file.     |
-| file2 | File | Verilog file. |
+| Field       | Type | Description   |
+| -----       | ---- | ------------- |
+| sdfFile     | File | SDF file.     |
+| verilogFile | File | Verilog file. |
+| projectName | text | Project name. |
 
 **Success 200**
 | Field   | Type   | Description                  |
@@ -139,8 +140,6 @@ body:
 | 400  | Bad Request | One or both uploaded files are empty.        |
 | 400  | Bad Request | Project name is required.                    |
 | 400  | Bad Request | The project already exists.                  |
-| 400  | Bad Request | SDF file already exists.                     |
-| 400  | Bad Request | Verilog file already exists.                 |
 | 400  | Bad Request | Invalid file(s) format.                      |
 | 404  | Bad Request | File not found.                              |
 
