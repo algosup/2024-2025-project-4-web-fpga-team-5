@@ -316,4 +316,4 @@ You can find their profiles underneath.
 | Quality Assurance | Mathias DELILLE  | [GitHub](https://github.com/MistzSoftware) \| [LinkedIn](https://www.linkedin.com/in/mathias-gagnepain-426a131b0/) |
 | Technical Writer  | Habi CAILLEAU    | [GitHub](https://github.com/habicll) \| [LinkedIn](https://www.linkedin.com/in/habi-cailleau-3b72b5293/)           |
 
-[Back to the top](#web-fpga---team-5
+[Back to the top](#web-fpga---team-5)
