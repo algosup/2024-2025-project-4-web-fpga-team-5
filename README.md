@@ -14,23 +14,26 @@ This project involves creating a web-based interface for an FPGA simulator that 
 
 ## Table Of Contents
 
-- [Status](#status)
-- [Roadmap](#roadmap)
-- [Installing/Getting Started](#installinggetting-started)
-  - [User Installation Procedure](#user-installation-procedure)
-  - [Developers Installation Procedure](#developers-installation-procedure)
-- [Documentation Of The Project](#documentation-of-the-project)
-- [Developing](#developing)
-  - [Built With](#built-with)
-  - [Prerequisites](#prerequisites)
-- [Tests](#tests)
-- [Contributing](#contributing)
-- [API Description](#api-description)
-- [Changelog](#changelog)
-- [Copyrights](#copyrights)
-- [License](#license)
-- [Contacts](#contacts)
-- [Credits And Acknowledgement](#credits-and-acknowledgement)
+- [Web FPGA - Team 5](#web-fpga---team-5)
+  - [Definition](#definition)
+  - [Table Of Contents](#table-of-contents)
+  - [Status](#status)
+  - [Roadmap](#roadmap)
+  - [Installing/Getting Started](#installinggetting-started)
+    - [User Installation Procedure](#user-installation-procedure)
+    - [Developers Installation Procedure](#developers-installation-procedure)
+  - [Documentation Of The Project](#documentation-of-the-project)
+  - [Developing](#developing)
+    - [Built With](#built-with)
+    - [Prerequisites](#prerequisites)
+  - [Tests](#tests)
+  - [Contributing](#contributing)
+  - [API Description](#api-description)
+  - [Changelog](#changelog)
+  - [Copyrights](#copyrights)
+  - [License](#license)
+  - [Contacts](#contacts)
+  - [Credits And Acknowledgement](#credits-and-acknowledgement)
 
 ---
 
@@ -248,7 +251,33 @@ In this section you'll be provided with the link to [API documentation](./docume
 
 ## Copyrights
 
-<!-- TODO -->
+**Ownership:** CNES and ALGOSUP
+**Third-party Assets:**
+
+- **Images:**
+  - CNES Logo (Public Domain)
+  - React Logo (MIT License)
+  - D3.js Logo (BSD-3-Clause License)
+  - Node.js Logo (MIT License)
+  - JSON Logo (Public Domain)
+  - Vite Logo (MIT License)
+  - SPIN Logo (AI Generated)
+- **Frontend:**
+  - React.js (MIT License)
+  - React DOM (MIT License)
+  - React Router DOM (MIT License)
+  - D3.js (BSD-3-Clause License)
+  - TailwindCSS (MIT License)
+  - Vite (MIT License)
+  - @tailwindcss/vite (MIT License)
+- **Backend:**
+  - Express.js (MIT License)
+  - CORS (MIT License)
+  - Multer (MIT License)
+  - Jest (MIT License)
+  - Supertest (MIT License)
+
+**Copyright Notice:** © 2024 CNES and ALGOSUP. All rights reserved.  
 
 ---
 
@@ -262,8 +291,8 @@ In this section you'll be provided with the link to [API documentation](./docume
 
 To contact our project team. Please, send a message at the following E-mails:
 
-- Project Manager's E-mail: robin.goumy@algosup.com
-- Program Manager's E-mail: alexandre.bopp@algosup.com
+- Project Manager's E-mail: <robin.goumy@algosup.com>
+- Program Manager's E-mail: <alexandre.bopp@algosup.com>
 
 For others social media information, please, refer to [Credits And Acknowledgement](#credits-and-acknowledgement).
 
@@ -287,4 +316,4 @@ You can find their profiles underneath.
 | Quality Assurance | Mathias DELILLE  | [GitHub](https://github.com/MistzSoftware) \| [LinkedIn](https://www.linkedin.com/in/mathias-gagnepain-426a131b0/) |
 | Technical Writer  | Habi CAILLEAU    | [GitHub](https://github.com/habicll) \| [LinkedIn](https://www.linkedin.com/in/habi-cailleau-3b72b5293/)           |
 
-[Back to the top](#web-fpga---team-5)
+[Back to the top](#web-fpga---team-5
