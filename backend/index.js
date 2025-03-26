@@ -101,6 +101,17 @@ app.post('/api/upload', upload.fields([{ name: 'sdfFile' }, { name: 'verilogFile
                 return res.status(400).send('Project name is required.');
             }
 
+            //try if folder 'parsed_files' exists
+            try {
+                await fs.access(join(__dirname, 'parsed_files'));
+            } catch (error) {
+                try {
+                    await fs.mkdir(join(__dirname, 'parsed_files'));
+                } catch (error) {
+                    return res.status(500).send('Error creating directory.');
+                }
+            }
+
             const projectJSON_Path = join(__dirname, 'parsed_files', `${projectName}.json`);
 
             //check if files exists

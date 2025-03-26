@@ -35,7 +35,7 @@ function Home() {
           </p>
         </div>
         
-        <div className="mt-4 mb-10 md:mb-0 flex flex-col items-center gap-8 bg-[#14002b] p-8 md:p-10 rounded-xl shadow-2xl w-full max-w-xl">
+        <div className="mt-4 mb-10 md:mb-10 flex flex-col items-center gap-8 bg-[#14002b] p-8 md:p-10 rounded-xl shadow-2xl w-full max-w-xl">
           <p className="text-2xl md:text-3xl text-white font-semibold">Get Started</p>
           
           <div className="flex flex-col sm:flex-row gap-8 w-full justify-center items-center">
