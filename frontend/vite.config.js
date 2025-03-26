@@ -8,4 +8,7 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  preview: {
+    allowedHosts: ['two024-2025-project-4-web-fpga-team-5.onrender.com'],
+  }
 })
