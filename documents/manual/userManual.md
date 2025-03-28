@@ -4,7 +4,7 @@
   - [Introduction](#introduction)
     - [Purpose Of The Manual And Application (find a right header name)](#purpose-of-the-manual-and-application-find-a-right-header-name)
     - [Scope](#scope)
-  - [Getting Started (to fill)](#getting-started-to-fill)
+  - [Getting Started](#getting-started)
     - [System Requirements](#system-requirements)
     - [Installation Guide](#installation-guide)
     - [Accessing the Application](#accessing-the-application)
@@ -22,7 +22,6 @@
   - [Create Simulation](#create-simulation)
     - [Uploading New Applications](#uploading-new-applications)
     - [Generating the right File Format](#generating-the-right-file-format)
-    - [Supported FPGA Models](#supported-fpga-models)
   - [Troubleshooting](#troubleshooting)
     - [Common Issues](#common-issues)
     - [FAQs](#faqs)
@@ -42,16 +41,14 @@ SPIN offers an intuitive visualization of real-time signal behavior on an FPGA b
 
 
 
-## Getting Started (to fill)
+## Getting Started 
 
 ### System Requirements
->List the necessary hardware and software prerequisites for optimal performance.
-
+In pdf
 ### Installation Guide
->Provide step-by-step instructions for setting up the application, including any dependencies.
-
+In pdf
 ### Accessing the Application
->Detail how users can access the web interface, including URL and login procedures if applicable.
+In pdf
 
 
 
@@ -114,13 +111,9 @@ To select an example:
 2. Choose from the available examples (e.g., "1ff_VTR," "2ffs_VTR," etc.).
 3. If you have created your own simulations, they will also appear in this menu for easy access.
 
-📌 Note: Below is a representation of the dropdown menu:
->(Add image here)
-
 
 In the visualize part, you can choose to load the 2D floorplan and simulation controls with the preloaded examples(e.g., “1ff_VTR,” “2ffs_VTR,” etc.). These examples are available in a dropdown menu located at the bottom of the page. Furthermore, in this menu you will also have access to the simulation you have created beforehand. Below is a representation of the drop-down menu : 
 
->(add image)
 
 ### 2D Floorplan View (to fill after)
 > **Note:** This section will be updated once the final design and visual representation of the FPGA are confirmed.  
@@ -145,10 +138,7 @@ The simulation interface is navigable, the following features can be used to dri
 
 - **Zoom:** Click on the magnifying glass icons to adjust the zoom level, allowing you to focus on specific areas or view the entire FPGA layout.
 - **Pan** : Click and drag within the simulation area to move across different regions of the FPGA.
-- Select (not sure if we do it) (it's about select BELs)
 
-
-Guide on zooming, panning, and selecting specific components within the FPGA visualization.
 
 
 
@@ -173,12 +163,6 @@ Before creating a new simulation, ensure that your files meet the following requ
 
 - Verilog application : Must be a netlist schematic in a Verilog (.v) format.
 - Testbench : Must be a Standard Delay (SDF) file with a .sdf format.
-
-
-### Supported FPGA Models
-Information on compatible FPGA architectures provide by the file, such as NanoXplore NGultra and Xilinx Series 7.
-
-Pas sure encore 
 
 
 ## Troubleshooting
