@@ -41,6 +41,12 @@
     - [Meetings \& Deadlines](#meetings--deadlines-3)
     - [Conclusion](#conclusion-3)
   - [Weekly Report Week 5](#weekly-report-week-5)
+    - [Summary](#summary-4)
+    - [Achievements](#achievements-4)
+    - [Challenges \& Risks](#challenges--risks-4)
+    - [Priorities For Next Week](#priorities-for-next-week-4)
+    - [Meetings \& Deadlines](#meetings--deadlines-4)
+    - [Conclusion](#conclusion-4)
   - [Weekly Report Week 6](#weekly-report-week-6)
 
 
@@ -229,5 +235,49 @@ No project hours this week, but in order to keep a steady flow of work, the team
 The project time was not to our liking, but in spite of this the team was able to move forward to meet the deadlines.
 
 ## Weekly Report Week 5 
+
+### Summary  
+
+This week was mainly focused on the final details, and the V1 of the code. IT was productive,  we successfully completed many documents and the V1 of the code. 
+
+---
+
+### Achievements  
+
+- Complete the V1 of the project
+- Complete quality assurance documents
+- Complete the User Manual
+
+---
+
+### Challenges & Risks  
+
+- Meet the final deadlines
+- Satisfy the customer
+- Get an answer about the first version by the customer
+
+---
+
+### Priorities For Next Week  
+
+- Finish the code for the deadline
+- Prepare the oral presentation's
+- Verify the code constantly
+
+---
+
+### Meetings & Deadlines  
+
+| Date       | Event     | Participants       | Notes                                                   |
+|------------|-----------|------------------- |-------------------------------------------------------- |
+| 01/04/2025 | Deadline  | Software Engineer  | Last version of the code for a review by the customer   |
+| 01/04/2025 | Deadline  | Project Manager    | Finalize the Management documentations                  |
+| 01/04/2025 | Deadline  | Technical Writer   | Finalize the User Manual                                |
+
+---
+
+### Conclusion  
+
+Apart from a few missed hours, the team seems more motivated, and work has progressed well this week. We managed to finish some of the documentation and V1 of the code on time. Furthermore, the customer doesn't answer us despite several messages, so we don't have feedback about the V1 version.
 
 ## Weekly Report Week 6 
