@@ -140,4 +140,6 @@ Communication with the customer has been set up in Slack as well as GitHub for [
 
 **Total estimated human hours:** 70h * 6 = 420H
 
+You can access [here](https://sharing.clickup.com/9015908151/c/h/6-901508851396-5/62029e4ec0f9df3) to the planning of project time hours.
+
 ---
