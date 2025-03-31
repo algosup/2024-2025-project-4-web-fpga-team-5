@@ -29,16 +29,15 @@ const storage = multer.memoryStorage();
 const upload = multer({
     storage: storage,
     fileFilter: (req, file, cb) => {
-        // Définition des extensions autorisées PAR CHAMP
         const fieldExtensionMap = {
             sdfFile: ['.sdf'],
             verilogFile: ['.v']
         };
 
+        // Check if the file field name is in the map
         const fileExtension = extname(file.originalname).toLowerCase();
         const allowedExtensions = fieldExtensionMap[file.fieldname];
 
-        // Vérifier si l'extension correspond au bon champ
         if (allowedExtensions && allowedExtensions.includes(fileExtension)) {
             cb(null, true);
         } else {
@@ -52,7 +51,7 @@ const upload = multer({
 // Endpoint for uploading and parsing SDF & Verilog file
 app.post('/api/upload', upload.fields([{ name: 'sdfFile' }, { name: 'verilogFile' }]), async (req, res) => {
     try {
-        // Vérification des erreurs de validation de fichier
+        // verify if files are uploaded
         if (req.fileValidationError) {
             return res.status(400).send(req.fileValidationError);
         }   
@@ -206,6 +205,15 @@ app.delete('/api/delete-project/:projectName', async (req, res) => {
 app.get('/api/list', async (req, res) => {
     try {
         const directoryPath = join(__dirname, 'parsed_files');
+
+        // Check if the directory exists
+        try {
+            await fs.access(directoryPath);
+        } catch (error) {
+            // Create the directory if it doesn't exist
+            await fs.mkdir(directoryPath, { recursive: true });
+        }
+
         const entries = await fs.readdir(directoryPath, { withFileTypes: true });
 
         // Prepare an array to hold file information
