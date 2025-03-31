@@ -6,7 +6,6 @@
 
 <img src="../../images/logo.png" width="400" alt="Logo"/>
 
-
 </div>
 
 <br>
@@ -28,7 +27,6 @@
 
 </details>
 
-
 ## Tasks
 
 All information is maintained and updated in Clickup for real-time tracking.
@@ -39,8 +37,8 @@ All information is maintained and updated in Clickup for real-time tracking.
 - **Gantt Chart:** [View the Gantt chart](https://sharing.clickup.com/9015908151/g/h/8cp7ntq-1135/93cbe38f66cc00e)
    A visual timeline created in Clickup that outlines project milestones and deadlines.
   
-
 ## RACI Matrix  
+
 | Name                     | Project Manager | Program Manager | Software Engineer | QA Engineer | Technical Writer | Client |
 |--------------------------|-----------------|-----------------|--------------------|-------------|-------------------|--------|
 | Project kick-off         | I               | R/A             | I                  | I           | I                 | C      |
@@ -65,7 +63,7 @@ To follow the progress of the project, multiple KPIs have been defined. They can
 
 Our KPIs have been separated into different categories as follows:
 
-### Documents: 
+### Documents:
 
 - Project Charter
 - Functional Specifications
@@ -76,7 +74,6 @@ Our KPIs have been separated into different categories as follows:
 - User Manual
 - READ.ME
 
-
 **Formula:**  
 
 <div align="center">
@@ -85,14 +82,13 @@ $$\text{Progress} = \frac{\text{Current Number of Completed Sections}}{\text{Tot
 
 </div>
 
-### Design: 
+### Design:
 
 - Mock-up
   
 You can access to the mock-up following [this link](https://www.figma.com/design/YohFQNPfGWHBlULNmWJFgS/WebFPGA?node-id=0-1&p=f&t=iZloJbAbCTv3OLB5-0).
 
-
-**Formula:**  
+**Formula:**
 
 <div align="center">
 
@@ -100,7 +96,7 @@ $$\text{Progress} = \frac{\text{Current Number of Completed Pages}}{\text{Total 
 
 </div>
 
-### Development: 
+### Development:
 
 - Back-end 
 - Front-end
@@ -118,11 +114,9 @@ $$\text{Progress} = \frac{(\text{Completed Tasks} + \sum \text{Partial Progress 
 - Unjustified Absence Time
 - Overtime
 
-
 You can see our project's KPIs following [this link](https://algosup-my.sharepoint.com/:x:/p/robin_goumy/EYrk5Cafv1dMgymb8nSp5esBLqcweLlJSfQut3MZREPwcA?e=f8d4bO).
 
-
-##  Risks & Assumptions
+## Risks & Assumptions
 
 | ID  | Description                                                                             | Consequence                                                                         | Impact | Likelihood | Mitigation/Avoidance                                                  |
 |-----|-----------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|--------|------------|-----------------------------------------------------------------------|
@@ -133,6 +127,7 @@ You can see our project's KPIs following [this link](https://algosup-my.sharepoi
 ## Mood
 
 The mood inside the team is calculated based on the different aspects:
+
 - Motivation
 - Management 
 - Productivity

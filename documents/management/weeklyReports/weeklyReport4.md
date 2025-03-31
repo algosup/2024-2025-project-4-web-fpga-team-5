@@ -8,27 +8,27 @@
 
 ---
 
-## Summary  
+## Summary
 
 No project hours this week, but in order to keep a steady flow of work, the team carried out some of the tasks in overtime, as well as to meet deadlines.
 
 ---
 
-## Achievements  
+## Achievements
 
 - Complete the entire back-end
 - Review part of the back-end and front-end
 
 ---
 
-## Challenges & Risks  
+## Challenges & Risks
 
 - Fix all the issues of the code found by the QA
 - The Project manager had health problem still
 
 ---
 
-## Priorities For Next Week  
+## Priorities For Next Week
 
 - Complete the Technical Specifications
 - Finish the front-end and link to back-end
@@ -47,6 +47,6 @@ No project hours this week, but in order to keep a steady flow of work, the team
 
 ---
 
-## Conclusion  
+## Conclusion 
 
 The project time was not to our liking, but in spite of this the team was able to move forward to meet the deadlines.

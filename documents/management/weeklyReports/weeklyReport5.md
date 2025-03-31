@@ -8,13 +8,13 @@
 
 ---
 
-## Summary  
+## Summary
 
 This week was mainly focused on the final details, and the V1 of the code. IT was productive,  we successfully completed many documents and the V1 of the code. 
 
 ---
 
-## Achievements  
+## Achievements
 
 - Complete the V1 of the project
 - Complete quality assurance documents
@@ -22,7 +22,7 @@ This week was mainly focused on the final details, and the V1 of the code. IT wa
 
 ---
 
-## Challenges & Risks  
+## Challenges & Risks
 
 - Meet the final deadlines
 - Satisfy the customer
@@ -30,7 +30,7 @@ This week was mainly focused on the final details, and the V1 of the code. IT wa
 
 ---
 
-## Priorities For Next Week  
+## Priorities For Next Week
 
 - Finish the code for the deadline
 - Prepare the oral presentation's
@@ -38,7 +38,7 @@ This week was mainly focused on the final details, and the V1 of the code. IT wa
 
 ---
 
-## Meetings & Deadlines  
+## Meetings & Deadlines
 
 | Date       | Event     | Participants       | Notes                                                   |
 |------------|-----------|------------------- |-------------------------------------------------------- |
@@ -48,6 +48,6 @@ This week was mainly focused on the final details, and the V1 of the code. IT wa
 
 ---
 
-## Conclusion  
+## Conclusion
 
 Apart from a few missed hours, the team seems more motivated, and work has progressed well this week. We managed to finish some of the documentation and V1 of the code on time. Furthermore, the customer doesn't answer us despite several messages, so we don't have feedback about the V1 version.
