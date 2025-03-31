@@ -12,9 +12,9 @@ function Visualize() {
   const [speed, setSpeed] = useState(0.1);
   const [data, setData] = useState(null);
   const [currentStep, setCurrentStep] = useState(0);
-  const [activePaths, setActivePaths] = useState([]);
+  const [activeSignalPaths, setActiveSignalPaths] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [showLabels, setShowLabels] = useState(false);
+  const [isLabelsVisible, setIsLabelsVisible] = useState(false);
   const [isFullPage, setIsFullPage] = useState(false);
 
   
@@ -24,7 +24,7 @@ function Visualize() {
   const simulationTimeRef = useRef(0);
   const zoomBehaviorRef = useRef(null);
 
-  const [examples, setExamples] = useState([]);
+  const [projectExamples, setProjectExamples] = useState([]);
 
   useEffect(() => {
     // Function to fetch data from the API
@@ -45,7 +45,7 @@ function Visualize() {
         console.log("Fetched examples:", updatedExamples);
         
         // Update the state with the fetched data
-        setExamples(updatedExamples);
+        setProjectExamples(updatedExamples);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -63,7 +63,7 @@ function Visualize() {
     }
 
     setIsLoading(true);
-    const selectedPath = examples.find(ex => ex.name === selectedExample)?.path;
+    const selectedPath = projectExamples.find(ex => ex.name === selectedExample)?.path;
     
     // In a real implementation, this would fetch from the server
     fetch(selectedPath)
@@ -71,8 +71,8 @@ function Visualize() {
       .then(jsonData => {
         setData(jsonData);
         setCurrentStep(0);
-        setActivePaths([]);
-        setupVisualization(jsonData, containerRef, svgRef, zoomLevel, showLabels);
+        setActiveSignalPaths([]);
+        setupVisualization(jsonData, containerRef, svgRef, zoomLevel, isLabelsVisible);
         
         // Store reference to the zoom behavior if it's created during setup
         if (svgRef.current && svgRef.current.__zoom) {
@@ -90,14 +90,14 @@ function Visualize() {
   // Update when zoom level or label visibility changes
   useEffect(() => {
     if (data) {
-      setupVisualization(data, containerRef, svgRef, zoomLevel, showLabels);
+      setupVisualization(data, containerRef, svgRef, zoomLevel, isLabelsVisible);
       
       // Update zoom behavior reference
       if (svgRef.current && svgRef.current.__zoom) {
         zoomBehaviorRef.current = svgRef.current.__zoom;
       }
     }
-  }, [zoomLevel, showLabels]);
+  }, [zoomLevel, isLabelsVisible]);
 
   // Animation functions
   useEffect(() => {
@@ -113,7 +113,7 @@ function Visualize() {
         
         // Determine which paths should be active based on simulation time
         const newActivePaths = updateActivePaths(data, svgRef, simulationTimeRef.current);
-        setActivePaths(newActivePaths || []);
+        setActiveSignalPaths(newActivePaths || []);
         
         lastTimestamp = timestamp;
         animationRef.current = requestAnimationFrame(animate);
@@ -147,7 +147,7 @@ function Visualize() {
     // Increment simulation time by the calculated step size
     simulationTimeRef.current += stepSize;
     const newActivePaths = updateActivePaths(data, svgRef, simulationTimeRef.current);
-    setActivePaths(newActivePaths || []);
+    setActiveSignalPaths(newActivePaths || []);
   };
 
 
@@ -168,7 +168,7 @@ function Visualize() {
     // Increment simulation time by the calculated step size
     simulationTimeRef.current += stepSize;
     const newActivePaths = updateActivePaths(data, svgRef, simulationTimeRef.current);
-    setActivePaths(newActivePaths || []);
+    setActiveSignalPaths(newActivePaths || []);
   };
 
   // Handle reset view - complete reset of both pan and zoom
@@ -188,7 +188,7 @@ function Visualize() {
           containerRef, 
           svgRef, 
           1,  // Reset zoom level to 1
-          showLabels
+          isLabelsVisible
         );
       } catch (e) {
         console.error("Error resetting view:", e);
@@ -197,24 +197,24 @@ function Visualize() {
   };
 
   // Toggle IO labels visibility
-  const toggleLabels = () => {
-    setShowLabels(!showLabels);
+  const handleToggleLabels = () => {
+    setIsLabelsVisible(prev => !prev);
   };
 
   // Handle play/pause controls
-  const togglePlayback = () => {
+  const handleTogglePlayback = () => {
     setIsPlaying(prev => !prev);
   };
 
   // Reset simulation
-  const resetSimulation = () => {
+  const handleResetSimulation = () => {
     simulationTimeRef.current = 0;
-    setActivePaths([]);
+    setActiveSignalPaths([]);
     const newActivePaths = updateActivePaths(data, svgRef, simulationTimeRef.current);
-    setActivePaths(newActivePaths || []);
+    setActiveSignalPaths(newActivePaths || []);
   };
 
-  const toggleFullPage = () => {
+  const handleToggleFullPage = () => {
     setIsFullPage(prev => !prev);
   };
 
@@ -250,7 +250,7 @@ function Visualize() {
             className="w-full p-3 md:p-4 border rounded-lg bg-[#14002b] text-white text-lg focus:outline-none"
           >
             <option hidden>Select an example</option>
-            {examples.map(example => (
+            {projectExamples.map(example => (
               <option key={example.name} value={example.name}>{example.name}</option>
             ))}
           </select>
@@ -281,7 +281,7 @@ function Visualize() {
               <span className="text-white text-sm">DFFs</span>
             </div>
             <div className="flex items-center">
-              <div className="w-4 h-4 bg-gradient-to-r from-[#0984e3] to-[#2ecc71] mr-2"></div>
+              <div className="w-4 h-4 bg-gradient-to-r from-[#0984e3] to-[#2ecc71] mr-2 rounded"></div>
               <span className="text-white text-sm">Active Signals</span>
             </div>
           </div>
@@ -301,14 +301,14 @@ function Visualize() {
           
           {/* Simulation Info */}
           <div className="text-white mb-4 text-center">
-            <p>Simulation Time: {Math.floor(simulationTimeRef.current)} units</p>
-            <p>Active Paths: {activePaths.length}</p>
+            <p>Simulation Time: {Math.floor(simulationTimeRef.current)} picoseconds</p>
+            <p>Active Paths: {activeSignalPaths.length}</p>
           </div>
           
           {/* Playback Controls */}
           <div className="flex flex-wrap gap-4 justify-center mb-6">
             <button 
-              onClick={togglePlayback}
+              onClick={handleTogglePlayback}
               disabled={!selectedExample}
               className={`px-6 py-3 ${!selectedExample ? 'bg-gray-400' : 'bg-white hover:bg-gray-200'} text-[#14002b] rounded-lg font-bold shadow-lg transition-all duration-300 ease-in-out 
                       hover:shadow-2xl hover:scale-105 text-lg`}
@@ -332,7 +332,7 @@ function Visualize() {
               Back {speed === 0.001 ? '(-1)' : speed === 0.01 ? '(-10)' : speed === 0.1 ? '(-100)' : '(-1000)'}
             </button>
             <button 
-              onClick={resetSimulation}
+              onClick={handleResetSimulation}
               disabled={!selectedExample}
               className={`px-6 py-3 ${!selectedExample ? 'bg-gray-400' : 'bg-white hover:bg-gray-200'} text-[#14002b] rounded-lg font-bold shadow-lg transition-all duration-300 ease-in-out 
                       hover:shadow-2xl hover:scale-105 text-lg`}
@@ -368,16 +368,16 @@ function Visualize() {
               Reset View
             </button>
             <button 
-              onClick={toggleLabels}
+              onClick={handleToggleLabels}
               disabled={!selectedExample}
-              className={`px-6 py-3 ${!selectedExample ? 'bg-gray-400' : showLabels ? 'bg-green-500 hover:bg-green-600 text-white' : 'bg-white hover:bg-gray-200'} text-[#14002b] rounded-lg font-bold shadow-lg transition-all duration-300 ease-in-out 
+              className={`px-6 py-3 ${!selectedExample ? 'bg-gray-400' : isLabelsVisible ? 'bg-green-500 hover:bg-green-600 text-white' : 'bg-white hover:bg-gray-200'} text-[#14002b] rounded-lg font-bold shadow-lg transition-all duration-300 ease-in-out 
                       hover:shadow-2xl hover:scale-105 text-lg`}
             >
-              {showLabels ? 'Hide I/O Labels' : 'Show I/O Labels'}
+              {isLabelsVisible ? 'Hide I/O Labels' : 'Show I/O Labels'}
             </button>
 
             <button 
-              onClick={toggleFullPage}
+              onClick={handleToggleFullPage}
               className={`px-6 py-3 bg-white hover:bg-gray-200 text-[#14002b] rounded-lg font-bold shadow-lg transition-all duration-300 ease-in-out 
                       hover:shadow-2xl hover:scale-105 text-lg`}
             >

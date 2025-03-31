@@ -7,7 +7,7 @@ function Create() {
   const fileInputRef = useRef(null);
 
   // State for existing examples
-  const [examples, setExamples] = useState([]);
+  const [projectExamples, setProjectExamples] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,7 +23,7 @@ function Create() {
           date: item.createdDate,
         }));
 
-        setExamples(formattedData);
+        setProjectExamples(formattedData);
       } catch (error) {
         console.error("Erreur API :", error);
       }
@@ -34,8 +34,8 @@ function Create() {
 
   // State for the new example
   const [exampleName, setExampleName] = useState("");
-  const [uploadedFiles, setUploadedFiles] = useState([]);
-  const [dragActive, setDragActive] = useState(false);
+  const [uploadedVerilogFiles, setUploadedVerilogFiles] = useState([]);
+  const [isDragActive, setIsDragActive] = useState(false);
 
   // Drag and drop handling
   const handleDrag = (e) => {
@@ -43,9 +43,9 @@ function Create() {
     e.stopPropagation();
 
     if (e.type === "dragenter" || e.type === "dragover") {
-      setDragActive(true);
+      setIsDragActive(true);
     } else if (e.type === "dragleave") {
-      setDragActive(false);
+      setIsDragActive(false);
     }
   };
 
@@ -53,7 +53,7 @@ function Create() {
   const handleDrop = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    setDragActive(false);
+    setIsDragActive(false);
 
     if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
       handleFiles(e.dataTransfer.files);
@@ -82,43 +82,43 @@ function Create() {
     });
 
     if (validFiles.length > 0) {
-      setUploadedFiles([...uploadedFiles, ...validFiles]);
+      setUploadedVerilogFiles([...uploadedVerilogFiles, ...validFiles]);
     } else {
       alert("Please upload only Verilog (.v) or SDF (.sdf) files");
     }
   };
 
   // Remove a file from the list
-  const removeFile = (index) => {
-    const newFiles = [...uploadedFiles];
+  const handleRemoveFile = (index) => {
+    const newFiles = [...uploadedVerilogFiles];
     newFiles.splice(index, 1);
-    setUploadedFiles(newFiles);
+    setUploadedVerilogFiles(newFiles);
   };
 
   // Create a new example
-  const createExample = async () => {
+  const handleCreateExample = async () => {
     if (!exampleName.trim()) {
       alert("Please name your example");
       return;
     }
 
-    if (uploadedFiles.length === 0) {
+    if (uploadedVerilogFiles.length === 0) {
       alert("Please upload at least one file");
       return;
     }
 
     // Check if we have both a Verilog file and an SDF file
-    const hasVerilog = uploadedFiles.some(file => file.name.endsWith('.v'));
-    const hasSDF = uploadedFiles.some(file => file.name.endsWith('.sdf'));
+    const hasVerilog = uploadedVerilogFiles.some(file => file.name.endsWith('.v'));
+    const hasSDF = uploadedVerilogFiles.some(file => file.name.endsWith('.sdf'));
 
-    if (!hasVerilog || !hasSDF || uploadedFiles.length > 2) {
+    if (!hasVerilog || !hasSDF || uploadedVerilogFiles.length > 2) {
       alert("Please upload both a Verilog (.v) file and an SDF (.sdf) file");
       return;
     }
 
     // Find the files based on their extensions
-    const verilogFile = uploadedFiles.find(file => file.name.endsWith('.v'));
-    const sdfFile = uploadedFiles.find(file => file.name.endsWith('.sdf'));
+    const verilogFile = uploadedVerilogFiles.find(file => file.name.endsWith('.v'));
+    const sdfFile = uploadedVerilogFiles.find(file => file.name.endsWith('.sdf'));
 
     // Create a FormData object to send the files
     const formData = new FormData();
@@ -144,16 +144,14 @@ function Create() {
       const newExample = {
         name: exampleName,
         date: formattedDate,
-        files: uploadedFiles
+        files: uploadedVerilogFiles
       };
-
-      // In a real use case, we would send this data to the server
-      // For now, we just add it to our local state
-      setExamples([...examples, newExample]);
+      // Add the new example to the state
+      setProjectExamples([...projectExamples, newExample]);
 
       // Reset the form
       setExampleName("");
-      setUploadedFiles([]);
+      setUploadedVerilogFiles([]);
 
     } catch (error) {
       console.error('Error:', error);
@@ -162,8 +160,8 @@ function Create() {
   };
 
   // Delete an existing example
-  const deleteExample = async (index) => {
-    const fileToDelete = examples[index]; // Get the file to delete
+  const handleDeleteExample = async (index) => {
+    const fileToDelete = projectExamples[index]; // Get the file to delete
     
   try {
     const response = await fetch(`${API_URL}/api/delete-project/${fileToDelete.name}`, {
@@ -173,9 +171,9 @@ function Create() {
     if (!response.ok) throw new Error("Erreur lors de la suppression");
 
     // update the state
-    const newFiles = [...examples];
+    const newFiles = [...projectExamples];
     newFiles.splice(index, 1);
-    setExamples(newFiles);
+    setProjectExamples(newFiles);
     
   } catch (error) {
     console.error("Erreur lors de la suppression :", error);
@@ -215,7 +213,7 @@ function Create() {
               {/* Drag & drop zone */}
               <div
                 className={`md:col-span-1 md:row-span-2 h-40 md:h-48 w-full flex flex-col items-center justify-center rounded-lg border-2 border-dashed transition-colors ${
-                  dragActive ? "bg-purple-100 border-purple-500" : "bg-white border-gray-300"
+                  isDragActive ? "bg-purple-100 border-purple-500" : "bg-white border-gray-300"
                 }`}
                 onDragEnter={handleDrag}
                 onDragLeave={handleDrag}
@@ -251,14 +249,14 @@ function Create() {
 
               {/* Uploaded Files */}
               <div className="bg-white h-full p-4 rounded-lg text-[#14002b] flex flex-col overflow-y-auto max-h-48">
-                {uploadedFiles.length > 0 ? (
-                  uploadedFiles.map((file, index) => (
+                {uploadedVerilogFiles.length > 0 ? (
+                  uploadedVerilogFiles.map((file, index) => (
                     <div key={index} className="flex justify-between items-center mb-2">
                       <span className={file.name.endsWith('.v') ? "text-blue-600" : "text-green-600"}>
                         {file.name} ({(file.size / 1024).toFixed(2)} KB)
                       </span>
                       <button
-                        onClick={() => removeFile(index)}
+                        onClick={() => handleRemoveFile(index)}
                         className="text-red-500 hover:text-red-700"
                       >
                         ×
@@ -273,7 +271,7 @@ function Create() {
 
             <div className="flex justify-end mt-6">
               <button
-                onClick={createExample}
+                onClick={handleCreateExample}
                 className="px-6 py-3 bg-white text-[#14002b] rounded-lg font-bold shadow-lg hover:bg-gray-200 transition-all duration-300 ease-in-out
                         hover:shadow-2xl hover:scale-105 text-lg"
               >
@@ -290,7 +288,7 @@ function Create() {
           </h2>
 
           <div className="bg-white p-6 rounded-xl shadow-xl mb-8">
-            {examples.length > 0 ? (
+            {projectExamples.length > 0 ? (
               <table className="w-full border-collapse text-[#14002b]">
                 <thead>
                   <tr className="bg-[#14002b] text-white">
@@ -300,17 +298,17 @@ function Create() {
                   </tr>
                 </thead>
                 <tbody>
-                  {examples.map((ex, index) => (
+                  {projectExamples.map((ex, index) => (
                     <tr
                       key={index}
-                      className={`border-b border-[#14002b] ${index === examples.length - 1 ? 'border-none' : ''}`}
+                      className={`border-b border-[#14002b] ${index === projectExamples.length - 1 ? 'border-none' : ''}`}
                     >
                       <td className="p-3 text-center">{ex.name}</td>
                       <td className="p-3 text-center">{ex.date}</td>
                       <td className="p-3 text-center">
                         <div className="flex justify-center gap-2">
                           <button
-                            onClick={() => deleteExample(index)}
+                            onClick={() => handleDeleteExample(index)}
                             className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-all duration-300"
                           >
                             Delete

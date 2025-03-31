@@ -4,7 +4,7 @@ function Home() {
   const navigate = useNavigate();
 
   return (
-    <div className="w-screen h-screen bg-gray-100 flex flex-col items-center">
+    <div className="h-screen bg-gray-100 flex flex-col items-center">
       {/* Header Section */}
       <header className="bg-[#14002b] w-full flex flex-col items-center p-4 md:p-6 border-b-2 border-white shadow-lg">
         <div 

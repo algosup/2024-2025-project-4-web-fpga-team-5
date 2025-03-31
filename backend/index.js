@@ -1,14 +1,14 @@
 import express from 'express';
 import multer from 'multer';
 import { fileURLToPath } from 'url';
-import { dirname, join, extname, parse } from 'path';
+import { dirname, join, extname } from 'path';
 import { promises as fs } from 'fs';
 import cors from 'cors';
+// import { resolve } from 'path';
 
-
-import { parseSDF } from './src/sdfProccess.js';
-import { parseVerilog } from './src/vProccess.js';
-import { mergeJsonForD3 } from './src/mergeVerilogSDF.js';
+import { parseSDF } from './src/sdfProcess.js';
+import { parseVerilog } from './src/vProcess.js';
+import { mergeJsonForD3 } from './src/mergeVerilogSdf.js';
 
 export const app = express();
 const port = 3001;
@@ -118,8 +118,8 @@ app.post('/api/upload', upload.fields([{ name: 'sdfFile' }, { name: 'verilogFile
             try {
                 // check if file exists
                 await fs.access(projectJSON_Path);
-                console.error('File already exists');
-                return res.status(400).send('File already exists');
+                console.error('Project already exists');
+                return res.status(400).send('Project already exists');
 
             } catch (error) {
                 try {
@@ -233,6 +233,14 @@ app.get('/api/list', async (req, res) => {
         res.status(500).send('Error listing files.');
     }
 });
+
+// Part of production code
+// app.use(express.static(join(__dirname, '../frontend/')));
+
+// app.get('*', (req, res) => {
+//     res.sendFile(resolve(__dirname, '../frontend/', 'index.html'));
+// });
+// 
 
 export const server = app.listen(port, () => {
     console.log(`Backend launched on http://localhost:${port}`);

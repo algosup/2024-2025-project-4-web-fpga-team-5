@@ -1,17 +1,5 @@
-// Clean instance name
-const cleanInstanceName = (name) => {
-  // Trim any leading or trailing spaces
-  name = name.trim();
-
-  // Replace escape sequences to match SDF format
-  name = name.replace(/\\\$/g, '$');
-  name = name.replace(/\\\./g, '.');
-  name = name.replace(/\\:/g, ':');
-  name = name.replace(/\\~/g, '~');
-  name = name.replace(/\\\^/g, '^');
-
-  return name;
-}
+// import function to clean instance names
+import { cleanInstanceName } from './utils.js';
 
 export const parseSDF = (sdfContent) => {
   console.log("Starting SDF file analysis...");

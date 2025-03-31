@@ -179,7 +179,6 @@ function organizeComponents(moduleData) {
     });
 
   // Calculate positions for components using a force-directed layout
-  const portSpacing = 80;
   const componentSpacing = 100;
   const layers = calculateLayers(graph);
 
@@ -470,8 +469,6 @@ function calculateIOPoint(node, ioName, ioType) {
   return { x, y };
 }
 
-
-
 // Draw components (LUTs, DFFs, etc.)
 function drawComponents(g, components, showLabels) {
   const componentsGroup = g.append("g")
@@ -621,7 +618,6 @@ function getIOName(ioName) {
 }
 
 // Update active paths based on simulation time
-// Update active paths based on simulation time
 export function updateActivePaths(data, svgRef, simulationTime) {
   if (!data || !svgRef.current) return [];
 
@@ -638,7 +634,7 @@ export function updateActivePaths(data, svgRef, simulationTime) {
       interconnect.connections.forEach(conn => {
         const pathId = `path-${conn.fromDevice}_${conn.fromIO}_to_${conn.toDevice}_${conn.toIO}`;
         const isClockPath = conn.fromIO.toLowerCase().includes('clock') ||
-                            conn.toIO.toLowerCase().includes('clock')
+          conn.toIO.toLowerCase().includes('clock');
 
         // Check if the connection is active based on simulation time
         if (simulationTime >= (conn.delay || 0)) {
@@ -646,7 +642,7 @@ export function updateActivePaths(data, svgRef, simulationTime) {
             // Clock paths blink at 100 MHz frequency
             const cycleTime = 10; // nanoseconds
             const isActiveInCycle = Math.floor(simulationTime / cycleTime) % 2 === 0;
-            
+
             if (isActiveInCycle) {
               newActivePaths.push(pathId);
             }
@@ -661,33 +657,32 @@ export function updateActivePaths(data, svgRef, simulationTime) {
   // Update path visualization
   if (svgRef.current) {
     const svg = d3.select(svgRef.current);
-    
+
     svg.selectAll(".connection-path")
-      .attr("stroke", function() {
+      .attr("stroke", function () {
         const pathId = d3.select(this).attr("id");
-        const delay = parseFloat(d3.select(this).attr("data-delay") || 0);
-        
+
         // Clock paths blink
         if (newActivePaths.includes(pathId)) {
           return COLORS.ACTIVE_PATH;
         }
-        
+
         // Fixed active paths (non-clock) remain active
         if (fixedActivePaths.includes(pathId)) {
           return COLORS.ACTIVE_PATH;
         }
-        
+
         // Inactive paths
         return COLORS.INTERCONNECT;
       })
-      .attr("stroke-width", function() {
+      .attr("stroke-width", function () {
         const pathId = d3.select(this).attr("id");
-        
+
         // Clock paths and fixed active paths have different stroke width
         if (newActivePaths.includes(pathId) || fixedActivePaths.includes(pathId)) {
           return 3;
         }
-        
+
         return 2; // Default stroke width
       });
   }
@@ -695,5 +690,3 @@ export function updateActivePaths(data, svgRef, simulationTime) {
   // Combine both types of active paths for return
   return [...newActivePaths, ...fixedActivePaths];
 }
-
-

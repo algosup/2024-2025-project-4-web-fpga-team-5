@@ -1,22 +1,11 @@
-const cleanInstanceName = (name) => {
-  // Trim any leading or trailing spaces
-  name = name.trim();
-  
-  // Replace escape sequences to match SDF format
-  name = name.replace(/\\\$/g, '$');     
-  name = name.replace(/\\\./g, '.');     
-  name = name.replace(/\\:/g, ':');      
-  name = name.replace(/\\~/g, '~');      
-  name = name.replace(/\\\^/g, '^');       
-
-  return name;
-}
+// import function to clean instance names
+import { cleanInstanceName } from './utils.js';
 
 // Helper function to split a connection string into device and IO parts
 const splitIntoDeviceAndIO = (connectionString) => {
   // This regex pattern looks for strings ending with input_X_X or output_X_X pattern
   const match = connectionString.match(/(.+)_(input|output|clock)_(\d+)_(\d+)$/);
-  
+
   if (match) {
     return {
       device: match[1],
