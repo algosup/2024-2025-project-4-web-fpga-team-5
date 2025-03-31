@@ -2,11 +2,6 @@ import request from 'supertest';
 import { expect, it, jest } from '@jest/globals';
 import { app, server } from '../index.js';
 
-// Mock SDF parsing
-jest.mock('../src/sdfProccess.js', () => ({
-    parseSDF: jest.fn(),
-}));
-
 // Mock fs.promises methods directly
 jest.mock('fs', () => ({
     promises: {
