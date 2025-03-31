@@ -81,7 +81,7 @@ Our KPIs have been separated into different categories as follows:
 
 <div align="center">
 
-$$\text{Progress (\%)} = \frac{\text{Current Number of Completed Sections}}{\text{Total Predefined Sections}} \times 100$$ 
+$$\text{Progress} = \frac{\text{Current Number of Completed Sections}}{\text{Total Predefined Sections}} \times 100$$ 
 
 </div>
 
@@ -96,7 +96,7 @@ You can access to the mock-up following [this link](https://www.figma.com/design
 
 <div align="center">
 
-$$\text{Progress (\%)} = \frac{\text{Current Number of Completed Pages}}{\text{Total Predefined Pages}} \times 100$$ 
+$$\text{Progress} = \frac{\text{Current Number of Completed Pages}}{\text{Total Predefined Pages}} \times 100$$ 
 
 </div>
 
@@ -109,7 +109,7 @@ $$\text{Progress (\%)} = \frac{\text{Current Number of Completed Pages}}{\text{T
 
 <div align="center">
 
-$$\text{Progress (\%)} = \frac{(\text{Completed Tasks} + \sum \text{Partial Progress on Ongoing Tasks})}{\text{Total Tasks Planned}} \times 100$$  
+$$\text{Progress} = \frac{(\text{Completed Tasks} + \sum \text{Partial Progress on Ongoing Tasks})}{\text{Total Tasks Planned}} \times 100$$  
 
 </div>
 
