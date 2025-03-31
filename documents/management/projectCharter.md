@@ -100,6 +100,8 @@ This project aims to create a web interface, visually combining 2D FPGA layouts 
 - Performance and interactivity: Ensuring real-time, smooth animation.
 - Tool interoperability: Potential incompatibilities between input formats and open-source tools could slow down development.
 
+
+
 ## Stakeholders
 
 | Role   | Representative              | 
