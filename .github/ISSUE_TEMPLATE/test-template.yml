@@ -1,0 +1,61 @@
+name: Test
+description: Template for creating tests based on test cases
+title: "[TEST]"
+labels: ["test"]
+projects:
+  - "2024-2025-Project-4-Team-5 Quality Assurance Planning"
+type: Task
+assignees:
+    - MistzSoftware
+body:
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Results
+      description: Describe the actual results of the test case.
+      placeholder: Describe the actual results of the test case.
+    validations:
+      required: true
+  - type: dropdown
+    id: status
+    attributes:
+      label: Test Status
+      description: The status of the test.
+      options:
+        - Passed
+        - Failed
+        - Blocked
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating System
+      description: The operating system used for the test.
+      options:
+        - Windows
+        - macOS
+        - Linux
+    validations:
+      required: true
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      description: The browser used for the test.
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+        - Edge
+        - Internet Explorer
+    validations:
+      required: false
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: The version of the software you tested.
+      placeholder: 0.0.0
+    validations:
+      required: true
