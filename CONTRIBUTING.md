@@ -1,6 +1,6 @@
 # Contributing Guidelines
 
-Thank you for your interest in contributing to the Web FPGA project! This project is a school assignment with a specific deadline, so we appreciate your understanding that we won't be maintaining this project beyond the current academic period, which ends on the 1st of April. However, your contributions are valuable for the success of the project during this period.
+Thank you for your interest in contributing to the Web FPGA project! The development team will work on different projects afte the 1st of April. Therefore, we will be less active on that project, but it should't stop you from contributing! We would look at every of those contributions!
 
 ## Getting Started
 
@@ -22,6 +22,7 @@ Thank you for your interest in contributing to the Web FPGA project! This projec
 ### Branching Strategy
 
 - Create a new branch for each feature, bug fix, or improvement. Use a descriptive branch name:
+
     ```bash
     git checkout -b feature/new-feature
     ```
@@ -33,12 +34,14 @@ Thank you for your interest in contributing to the Web FPGA project! This projec
 ### Commit Messages
 
 - Write clear and concise commit messages. Begin your commit message with a verb in the present tense:
+
     - **Good**: `Resolve performance issue in the web site.`
     - **Bad**: `Fixed stuff.`
 
 ### Pull Requests
 
 - Ensure that your branch is up-to-date with the main repository before submitting a pull request:
+
     ```bash
     git pull origin main
     ```
@@ -51,4 +54,4 @@ If you encounter any issues or have suggestions for improvement, please feel fre
 
 ## Conclusion
 
-Thank you for your contribution! Your efforts are valuable to the success of our project during this academic period. If you have any questions, feel free to reach out to us. Happy coding!
+Thank you for your contribution! Your efforts are valuable to the success of our project. If you have any questions, feel free to reach out to us. Happy coding!
