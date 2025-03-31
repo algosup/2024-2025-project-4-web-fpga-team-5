@@ -92,7 +92,7 @@ git clone https://github.com/algosup/2024-2025-project-4-web-fpga-team-5
 2. Navigate to the directory.
 
 ```bash
-cd 2024-2025-project-4-web-fpga-team-5/backend
+cd 2024-2025-project-4-web-fpga-team-5
 ```
 
 3. Install dependencies.
@@ -110,69 +110,11 @@ npm run main
 ---
 
 The application is now available at the following address:
-> <http://localhost:3000>
+> <http://localhost:5173>
 
 Or:
 
-> <http://[adresseIP]:3000>
-
----
-
-### Developers Installation Procedure
-
-1. Clone the repository (branch dev).
-
-```bash
-git clone https://github.com/algosup/2024-2025-project-4-web-fpga-team-5
-```
-
-2. Navigate to the backend directory.
-
-```bash
-cd 2024-2025-project-4-web-fpga-team-5/backend
-```
-
-3. Install dependencies.
-
-```bash
-npm i
-```
-
-4. Navigate to the frontend directory.
-
-```bash
-cd ../frontend
-```
-
-5. Install dependencies.
-
-```bash
-npm i
-```
-
-6. Go back to the main directory.
-
-```bash
-cd ..
-```
-
-7. Start the backend server (first terminal).
-
-```bash
-node 2024-2025-project-4-web-fpga-team-5/backend/index.js
-```
-
-8. Start the Vite server (second terminal).
-
-```bash
-cd 2024-2025-project-4-web-fpga-team-5/frontend
-npm run dev
-```
-
----
-
-The application is now available at the following address:
->http://localhost:3001
+> <http://[adresseIP]:5173>
 
 ---
 
