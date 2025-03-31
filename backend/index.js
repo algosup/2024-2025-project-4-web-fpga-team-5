@@ -11,7 +11,7 @@ import { parseVerilog } from './src/vProcess.js';
 import { mergeJsonForD3 } from './src/mergeVerilogSdf.js';
 
 export const app = express();
-const port = 3001;
+const PORT = 3001;
 
 // Get absolute path
 const __filename = fileURLToPath(import.meta.url);
@@ -242,6 +242,6 @@ app.get('/api/list', async (req, res) => {
 // });
 // 
 
-export const server = app.listen(port, () => {
-    console.log(`Backend launched on http://localhost:${port}`);
+export const server = app.listen(PORT, () => {
+    console.log(`Backend launched on http://localhost:${PORT}`);
 });
