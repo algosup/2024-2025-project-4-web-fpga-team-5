@@ -38,7 +38,7 @@ This project involves creating a web-based interface for an FPGA simulator that 
 
 ## Status
 
-This project is currently in progress. However, after the 2025/04/01, our team will be focusing on other project, that's why the frequency of updates will be greatly diminuished. \
+This project is currently in progress. However, after 2025/04/01, our team will be focusing on another project, which is why the frequency of updates will be greatly diminished. \
 Therefore, if you are willing to keep going on this project, please refer to the [Contributing](#contributing) part.
 
 ---
@@ -51,13 +51,13 @@ Therefore, if you are willing to keep going on this project, please refer to the
 
 2. Click on the desired example.
 
-A new page with the visualizzation of teh example should open.
+A new page with the visualization of the example should open.
 
-> ![INFO]
+> [!NOTE]
 > On the visualization page, you can:
 > - Zoom In/Zoom Out
 > - Move around
-> - Full screen
+> - Fullscreen
 
 ---
 
@@ -65,11 +65,11 @@ A new page with the visualizzation of teh example should open.
 
 1. Click on Create.
 
-2. Click on the name text-box, then, enter your example name.
+2. Click on the name text box, then, enter your example name.
 
 3. Click on Add Example, then, select the wanted files.
 
-> ![NOTE]
+> [!NOTE]
 > You can also drag and drop them directly inside the section.
 
 4. Click on the Create button.
@@ -100,10 +100,10 @@ cd 2024-2025-project-4-web-fpga-team-5/backend
 npm i
 ```
 
-4. Start the server.
+4. Run the app.
 
 ```bash
-node index.js
+npm run main
 ```
 
 ---
@@ -149,7 +149,7 @@ cd ../frontend
 npm i
 ```
 
-6. Go back to main directory.
+6. Go back to the main directory.
 
 ```bash
 cd ..
@@ -181,7 +181,7 @@ For better information, please, refer to the [User Manual](documents/manual/user
 
 ## Roadmap
 
-This project is a six-week school project. Therefore, the roadmap would only be effective for this among if time. \
+This project is a six-week school project. Therefore, the roadmap would only be effective for this amount of time. \
 If you want to take a look, you can access the roadmap by clicking [this link](https://sharing.clickup.com/9015908151/g/h/8cp7ntq-1135/93cbe38f66cc00e).
 
 ---
@@ -206,7 +206,7 @@ If you want to take a look, you can access the roadmap by clicking [this link](h
 
 The list of the main libraries and frameworks used in our project :
 
-| **Category** | **Technology/Tool**   | **Link**                                                                                                  | **Description**                                                                |
+| **Category** | **Technology/Tool** | **Link** | **Description** |
 | ------------ | --------------------- | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
 | Frontend     | React.js              | [<img alt="React Logo" src="./images/react.jpeg" width="30" height="30">](https://react.dev)              | JavaScript library to create dynamic user interfaces.                          |
 | Frontend     | D3.js                 | [<img alt="D3.js Logo" src="./images/d3.png" width="30" height="30">](https://d3js.org)                   | Library to create dynamic data visualizations.                                 |
@@ -222,14 +222,14 @@ The list of the main libraries and frameworks used in our project :
 
 To set up the dev environment you'll need to have many dependencies and libraries installed.
 
-All the different installation guide could be found in the [Technical Specifications](documents/technical/technicalSpecifications.md#environment-configuration).
+All the different installation guides can be found in the [Technical Specifications](documents/technical/technicalSpecifications.md#environment-configuration).
 
 ---
 
 ## Tests
 
-This section explains how to run the end to end tests created by the quality assurance of the team. \
-You must be at the root of the project and that Node.JS is already installed. \
+This section explains how to run the end-to-end tests created by the quality assurance. \
+You must be at the root of the project and Node.JS is already installed. \
 If not you need to fork the project at [this link](https://github.com/algosup/2024-2025-project-4-web-fpga-team-5/fork) and install Node.JS at [this one](https://nodejs.org/en/download).
 
 To test the front-end:
@@ -262,7 +262,7 @@ npm run test:e2e
 
 ## Contributing
 
-To contribute to our project, please, ensure you follow our conventions you can find in the [CONTRIBUTING.md](CONTRIBUTING.md) file.
+To contribute to our project, please, ensure you follow the conventions you can find in the [CONTRIBUTING.md](CONTRIBUTING.md) file.
 
 ---
 
@@ -293,7 +293,7 @@ Access the API documentation [here](./documents/technical/APIDocumentation.md).
 - Node.js Logo (MIT License)
 - JSON Logo (Public Domain)
 - Vite Logo (MIT License)
-- SPIN Logo (AI Generated)
+- SPIN Logo (AI-Generated)
 
 **Frontend:**
 
@@ -319,12 +319,12 @@ Access the API documentation [here](./documents/technical/APIDocumentation.md).
 
 ## Contacts
 
-To contact our project team. Please, send a message at the following E-mails:
+To contact our project team. Please, send a message to the following E-mails:
 
 - Project Manager's E-mail: <robin.goumy@algosup.com>
 - Program Manager's E-mail: <alexandre.bopp@algosup.com>
 
-For others social media information, please, refer to [Credits And Acknowledgement](#credits-and-acknowledgement).
+For other social media information, please, refer to [Credits And Acknowledgement](#credits-and-acknowledgement).
 
 ---
 
@@ -332,7 +332,7 @@ For others social media information, please, refer to [Credits And Acknowledgeme
 
 Particular thanks to Florent from the [CNES](https://cnes.fr/en) for giving us the opportunity to work on this project.
 
-Thanks for the our school, [ALGOSUP](https://algosup.com/en.html) for letting us improve and having such interesting projects.
+Thanks to our school, [ALGOSUP](https://algosup.com/en.html) for letting us improve and having such interesting projects.
 
 Finally, thanks to all the team members for those six weeks. \
 You can find their profiles underneath.
