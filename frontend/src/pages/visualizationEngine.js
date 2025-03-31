@@ -620,7 +620,6 @@ function getIOName(ioName) {
   return ioName;
 }
 
-// Update active paths based on simulation time
 // Update active paths based on simulation time with flowing animation effect
 export function updateActivePaths(data, svgRef, simulationTime) {
   if (!data || !svgRef.current) return [];
@@ -632,7 +631,7 @@ export function updateActivePaths(data, svgRef, simulationTime) {
   const activeSignalPaths = [];
   
   // Animation parameters for signal propagation
-  const signalAnimationDuration = 10; // ms for the signal to travel along a path
+  const SIGNAL_ANIM_DURATION = 10; // in ps, for the signal to travel along a path
 
   // Iterate through interconnect instances
   moduleData.instances
@@ -644,20 +643,29 @@ export function updateActivePaths(data, svgRef, simulationTime) {
           conn.toIO.toLowerCase().includes('clock');
         const delay = conn.delay || 0;
 
-        // Check if the connection is active based on simulation time
-        if (simulationTime >= delay - signalAnimationDuration) {
+        // Animation ends at the delay time
+        const animationStartTime = delay - SIGNAL_ANIM_DURATION;
+
+        // Check if the simulation time is within the animation window or after it
+        if (simulationTime >= animationStartTime) {
           if (isClockPath) {
             // Clock paths blink at 100 MHz frequency
             const cycleTime = 10; // nanoseconds
             const isActiveInCycle = Math.floor(simulationTime / cycleTime) % 2 === 0;
 
-            if (isActiveInCycle) {
+            if (isActiveInCycle && simulationTime >= delay) {
               activeClockPaths.push(pathId);
             }
           } else {
-            // Calculate animation progress for non-clock signals
-            const timeSinceActivation = simulationTime - delay;
-            const progress = Math.min(1, timeSinceActivation / signalAnimationDuration);
+            // Calculate animation progress
+            let progress;
+            if (simulationTime >= delay) {
+              // After delay, the progress is complete
+              progress = 1;
+            } else {
+              // During animation window, calculate progress
+              progress = (simulationTime - animationStartTime) / SIGNAL_ANIM_DURATION;
+            }
             
             activeSignalPaths.push({
               id: pathId,
@@ -723,14 +731,12 @@ export function updateActivePaths(data, svgRef, simulationTime) {
         
         if (isTargetPort) {
           // For target ports, check if any incoming signals have reached
-          const incomingPathId = `path-*_*_to_${componentId}_${ioName}`;
           const incomingPaths = activeSignalPaths.filter(p => 
             p.id.includes(`_to_${componentId}_${ioName}`) && p.progress === 1
           );
           isActive = incomingPaths.length > 0;
         } else {
           // For source ports, check if any outgoing signals have started
-          const outgoingPathId = `path-${componentId}_${ioName}_to_*_*`;
           const outgoingPaths = activeSignalPaths.filter(p => 
             p.id.includes(`${componentId}_${ioName}_to_`) && p.progress > 0
           );
