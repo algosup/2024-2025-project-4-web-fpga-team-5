@@ -1,6 +1,6 @@
 {
     "name": "spin",
-    "version": "1.0.2",
+    "version": "1.1.0",
     "description": "Application pour analyser et visualiser des fichiers Verilog et SDF",
     "main": "index.js",
     "scripts": {
@@ -10,10 +10,7 @@
         "start:backend": "cd backend && node index.js",
         "start:frontend": "cd frontend && npm run dev",
         "main": "concurrently \"npm run start:backend\" \"npm run start:frontend\" \"npm run open:browser\"",
-        "open:browser": "wait-on http://localhost:5173 && open-cli http://localhost:5173",
-        "test": "npm run test:backend && npm run test:frontend",
-        "test:backend": "cd backend && npm test",
-        "test:frontend": "cd frontend && npm test"
+        "open:browser": "wait-on http://localhost:5173 && open-cli http://localhost:5173"
     },
     "keywords": [
         "verilog",
@@ -22,7 +19,6 @@
         "visualization"
     ],
     "author": "",
-    "license": "ISC",
     "devDependencies": {
         "concurrently": "^8.2.2",
         "open-cli": "^7.2.0",

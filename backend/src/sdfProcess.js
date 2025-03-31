@@ -2,24 +2,17 @@
 import { cleanInstanceName } from './utils.js';
 
 export const parseSDF = (sdfContent) => {
-  console.log("Starting SDF file analysis...");
 
   // Extracting basic information
-  console.log("Extracting design name...");
   const designMatch = sdfContent.match(/\(DESIGN\s+"([^"]+)"\)/);
   const design = designMatch ? designMatch[1] : "";
-  console.log(`Design name found: ${design}`);
 
-  console.log("Extracting timescale...");
   const timescaleMatch = sdfContent.match(/\(TIMESCALE\s+(\d+)\s+(\w+)\)/);
   const timescale = timescaleMatch ? parseInt(timescaleMatch[1]) : 1;
   const timeUnit = timescaleMatch ? timescaleMatch[2] : "ps";
-  console.log(`Timescale found: ${timescale} ${timeUnit}`);
 
   // Extracting cells
   const instances = [];
-
-  console.log("Searching for CELL sections...");
   const cellPattern = /\(CELL\s*\(CELLTYPE\s+"([^"]+)"\)\s*\(INSTANCE\s+([^\)]+)\)/g;
 
   // Collect all matches in an array
@@ -34,16 +27,12 @@ export const parseSDF = (sdfContent) => {
     });
   }
 
-  console.log(`Number of CELL sections found: ${cellMatches.length}`);
-
   for (let i = 0; i < cellMatches.length; i++) {
     const cellType = cellMatches[i].cellType;
     const rawInstanceName = cellMatches[i].rawInstanceName;
 
     // Clean the instance name
     const instanceName = cleanInstanceName(rawInstanceName);
-
-    console.log(`\nProcessing cell ${i + 1}/${cellMatches.length}: ${instanceName} (Type: ${cellType})`);
 
     // Determine the end of this cell
     let endPos;
@@ -65,8 +54,6 @@ export const parseSDF = (sdfContent) => {
 
     // For DFF, handle specifically
     if (cellType === "DFF") {
-      console.log(`  Specific processing for DFF: ${instanceName}`);
-
       // Search for IOPATH with posedge/negedge for DFF
       const dffIopathMatch = cellContent.match(/\(IOPATH\s+\(posedge\s+\w+\)\s+\w+\s+\(([^)]+)\)/);
 
@@ -84,8 +71,6 @@ export const parseSDF = (sdfContent) => {
           // If it's a single value
           delayValue = parseInt(delayParts[0]);
         }
-
-        console.log(`  DFF IOPATH found with delay: ${delayValue}`);
         cellData.delays = delayValue;
       }
 
@@ -104,14 +89,9 @@ export const parseSDF = (sdfContent) => {
         } else {
           setupTime = parseFloat(setupParts[0]);
         }
-
-        console.log(`  Setup found with time: ${setupTime}`);
         cellData.timingChecks = setupTime;
       }
     } else {
-      // Standard processing for other cell types
-      console.log(`  Searching for IOPATH delays for ${instanceName}...`);
-
       // Standard IOPATH search
       const iopathPattern = /\(IOPATH\s+(\S+)\s+(\S+)\s+\(([^:)]+)(?::([^:)]+))?(?::([^)]+))?\)/g;
 
@@ -134,8 +114,6 @@ export const parseSDF = (sdfContent) => {
           delayValue = parseFloat(delayStr);
         }
 
-        console.log(`  IOPATH found: ${fromPin} -> ${toPin}, Delay: ${delayValue}`);
-
         cellData.delays.push({
           from: fromPin,
           to: toPin,
@@ -153,7 +131,6 @@ export const parseSDF = (sdfContent) => {
     instances.push(cellData);
   }
 
-  console.log("\nBuilding the final result...");
   // Building the final result
   const result = {
     design: design,
@@ -162,7 +139,5 @@ export const parseSDF = (sdfContent) => {
     instances: instances
   };
 
-  const dffCount = instances.filter(instance => instance.cellType === "DFF").length;
-  console.log(`Analysis complete. ${instances.length} instances extracted, including ${dffCount} DFF.`);
   return result;
 }

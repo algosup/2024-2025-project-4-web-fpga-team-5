@@ -25,7 +25,7 @@ function Create() {
 
         setProjectExamples(formattedData);
       } catch (error) {
-        console.error("Erreur API :", error);
+        throw new Error("API error :", error);
       }
     };
 
@@ -154,7 +154,7 @@ function Create() {
       setUploadedVerilogFiles([]);
 
     } catch (error) {
-      console.error('Error:', error);
+      throw new Error('Error API:', error);
       alert("Failed to upload files");
     }
   };
@@ -176,7 +176,7 @@ function Create() {
     setProjectExamples(newFiles);
     
   } catch (error) {
-    console.error("Erreur lors de la suppression :", error);
+    throw new Error("Erreur lors de la suppression :", error);
   }
 };
 

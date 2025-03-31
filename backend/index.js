@@ -4,7 +4,6 @@ import { fileURLToPath } from 'url';
 import { dirname, join, extname } from 'path';
 import { promises as fs } from 'fs';
 import cors from 'cors';
-// import { resolve } from 'path';
 
 import { parseSDF } from './src/sdfProcess.js';
 import { parseVerilog } from './src/vProcess.js';
@@ -241,14 +240,6 @@ app.get('/api/list', async (req, res) => {
         res.status(500).send('Error listing files.');
     }
 });
-
-// Part of production code
-// app.use(express.static(join(__dirname, '../frontend/')));
-
-// app.get('*', (req, res) => {
-//     res.sendFile(resolve(__dirname, '../frontend/', 'index.html'));
-// });
-// 
 
 export const server = app.listen(PORT, () => {
     console.log(`Backend launched on http://localhost:${PORT}`);

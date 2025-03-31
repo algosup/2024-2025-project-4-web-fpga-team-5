@@ -41,13 +41,11 @@ function Visualize() {
           name: item.name,
           path: `${API_URL}/api/map/${item.name}`
         }));
-
-        console.log("Fetched examples:", updatedExamples);
         
         // Update the state with the fetched data
         setProjectExamples(updatedExamples);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        throw new Error('Error fetching data:', error);
       }
     };
 
@@ -82,8 +80,8 @@ function Visualize() {
         setIsLoading(false);
       })
       .catch(error => {
-        console.error("Error loading data:", error);
         setIsLoading(false);
+        throw new Error("Error loading data:", error);
       });
   }, [selectedExample]);
 
@@ -191,7 +189,7 @@ function Visualize() {
           isLabelsVisible
         );
       } catch (e) {
-        console.error("Error resetting view:", e);
+        throw new Error("Error resetting view:", e);
       }
     }
   };
