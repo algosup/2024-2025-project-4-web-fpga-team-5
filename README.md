@@ -1,8 +1,8 @@
 <img alt="CNES Logo" src="./images/cnes.png"  width="160" height="60" align="right">
 
-# Web FPGA - Team 5
+# Web FPGA - SPIN
 
-This repository held a visualization of a FPGA simulation.
+This repository held a tool to visualize an FPGA simulation.
 
 ---
 
@@ -15,12 +15,15 @@ This project involves creating a web-based interface for an FPGA simulator that 
 ## Table Of Contents
 
 - [Status](#status)
-- [Roadmap](#roadmap)
+- [Usage](#usage)
+  - [How To Visualize An Example](#how-to-visualize-an-example)
+  - [How To Create A New Example](#how-to-create-a-new-example)
 - [Installing/Getting Started](#installinggetting-started)
   - [User Installation Procedure](#user-installation-procedure)
   - [Developers Installation Procedure](#developers-installation-procedure)
+- [Roadmap](#roadmap)
 - [Documentation Of The Project](#documentation-of-the-project)
-- [Developing](#developing)
+- [Development](#development)
   - [Built With](#built-with)
   - [Prerequisites](#prerequisites)
 - [Tests](#tests)
@@ -28,7 +31,6 @@ This project involves creating a web-based interface for an FPGA simulator that 
 - [API Description](#api-description)
 - [Changelog](#changelog)
 - [Copyrights](#copyrights)
-- [License](#license)
 - [Contacts](#contacts)
 - [Credits And Acknowledgement](#credits-and-acknowledgement)
 
@@ -36,14 +38,43 @@ This project involves creating a web-based interface for an FPGA simulator that 
 
 ## Status
 
-This project is still in progress and would be done after the 2025/04/01. After this date, consider the project as ended, or as archived.
+This project is currently in progress. However, after the 2025/04/01, our team will be focusing on other project, that's why the frequency of updates will be greatly diminuished. \
+Therefore, if you are willing to keep going on this project, please refer to the [Contributing](#contributing) part.
 
 ---
 
-## Roadmap
+## Usage
 
-This project is a six-week school project. Therefore, the roadmap would only be effective for this among if time. \
-If you want to give it an eye, you can access the roadmap by clicking [this link](https://sharing.clickup.com/9015908151/g/h/8cp7ntq-1135/93cbe38f66cc00e).
+### How To Visualize An Example
+
+1. Click on Visualize.
+
+2. Click on the desired example.
+
+A new page with the visualizzation of teh example should open.
+
+> ![INFO]
+> On the visualization page, you can:
+> - Zoom In/Zoom Out
+> - Move around
+> - Full screen
+
+---
+
+### How To Create A New Example
+
+1. Click on Create.
+
+2. Click on the name text-box, then, enter your example name.
+
+3. Click on Add Example, then, select the wanted files.
+
+> ![NOTE]
+> You can also drag and drop them directly inside the section.
+
+4. Click on the Create button.
+
+You can now refer to the [How To Visualize An Example](#how-to-visualize-an-example) section to visualize your example again.
 
 ---
 
@@ -148,26 +179,28 @@ For better information, please, refer to the [User Manual](documents/manual/user
 
 ---
 
-## Documentation Of The Project
+## Roadmap
 
-- This document describes what the software should do by outlining user requirements and expected functionalities :
-  - **[Functional Specifications](documents/functional/functionalSpecifications.md)**
-
-- This document details how the software will be built, including architecture, design, and technology choices.
-  - **[Technical Specifications](documents/technical/technicalSpecifications.md)**
-  
-- This document officially initiates the project by defining its scope, objectives, stakeholders, and overall framework.
-  - **[Project Charter](documents/management/projectCharter.md)**
-  
-- This document outlines the strategy, procedures, and criteria for verifying that the system meets its requirements.
-  - **[Test Plan](documents/qualityAssurance/testPlan.md)**
-  
-- This document provides end-users with instructions on how to use the system and troubleshoot common issues.
-  - **[User Manual](documents/manual/userManual.md)**
+This project is a six-week school project. Therefore, the roadmap would only be effective for this among if time. \
+If you want to take a look, you can access the roadmap by clicking [this link](https://sharing.clickup.com/9015908151/g/h/8cp7ntq-1135/93cbe38f66cc00e).
 
 ---
 
-## Developing
+## Documentation Of The Project
+
+**[Functional Specifications](documents/functional/functionalSpecifications.md)**: Describes what the software does by outlining user requirements and expected functionalities.
+
+**[Technical Specifications](documents/technical/technicalSpecifications.md)**: Details how the software will be built, including architecture, design, and technology choices.
+
+**[Project Charter](documents/management/projectCharter.md)**: Officially initiates the project by defining its scope, objectives, stakeholders, and overall framework.
+
+**[Test Plan](documents/qualityAssurance/testPlan.md)**: Outlines the strategy, procedures, and criteria for verifying that the system meets its requirements.
+
+**[User Manual](documents/manual/userManual.md)**: Provides end-users with instructions on how to use the system and how to troubleshoot common issues.
+
+---
+
+## Development
 
 ### Built With
 
@@ -195,9 +228,9 @@ All the different installation guide could be found in the [Technical Specificat
 
 ## Tests
 
-This section will explain how to run the end to end tests created by the quality assurance of the team. \
-We assume that you are at the root of the project and that Node.JS is already installed. \
-If not you can fork the project at [this link](https://github.com/algosup/2024-2025-project-4-web-fpga-team-5/fork) and install Node.JS at [this one](https://nodejs.org/en/download).
+This section explains how to run the end to end tests created by the quality assurance of the team. \
+You must be at the root of the project and that Node.JS is already installed. \
+If not you need to fork the project at [this link](https://github.com/algosup/2024-2025-project-4-web-fpga-team-5/fork) and install Node.JS at [this one](https://nodejs.org/en/download).
 
 To test the front-end:
 
@@ -235,15 +268,15 @@ To contribute to our project, please, ensure you follow our conventions you can 
 
 ## API Description
 
-In this section you'll be provided with the link to [API documentation](./documents/technical/APIDocumentation.md).
+Access the API documentation [here](./documents/technical/APIDocumentation.md).
 
 ---
 
 ## Changelog
 
-- **Latest**: NULL
-- **Curren**t: NULL
-- **Version List**: [Click to view](https://github.com/algosup/2024-2025-project-4-web-fpga-team-5/tags)
+**Latest**: NULL \
+**Curren**t: NULL \
+**Version List**: [Click to view](https://github.com/algosup/2024-2025-project-4-web-fpga-team-5/tags) 
 
 ---
 
@@ -252,36 +285,35 @@ In this section you'll be provided with the link to [API documentation](./docume
 **Ownership:** CNES and ALGOSUP
 **Third-party Assets:**
 
-- **Images:**
-  - CNES Logo (Public Domain)
-  - React Logo (MIT License)
-  - D3.js Logo (BSD-3-Clause License)
-  - Node.js Logo (MIT License)
-  - JSON Logo (Public Domain)
-  - Vite Logo (MIT License)
-  - SPIN Logo (AI Generated)
-- **Frontend:**
-  - React.js (MIT License)
-  - React DOM (MIT License)
-  - React Router DOM (MIT License)
-  - D3.js (BSD-3-Clause License)
-  - TailwindCSS (MIT License)
-  - Vite (MIT License)
-  - @tailwindcss/vite (MIT License)
-- **Backend:**
-  - Express.js (MIT License)
-  - CORS (MIT License)
-  - Multer (MIT License)
-  - Jest (MIT License)
-  - Supertest (MIT License)
+**Images:**
+
+- CNES Logo (Public Domain)
+- React Logo (MIT License)
+- D3.js Logo (BSD-3-Clause License)
+- Node.js Logo (MIT License)
+- JSON Logo (Public Domain)
+- Vite Logo (MIT License)
+- SPIN Logo (AI Generated)
+
+**Frontend:**
+
+- React.js (MIT License)
+- React DOM (MIT License)
+- React Router DOM (MIT License)
+- D3.js (BSD-3-Clause License)
+- TailwindCSS (MIT License)
+- Vite (MIT License)
+- @tailwindcss/vite (MIT License)
+
+**Backend:**
+
+- Express.js (MIT License)
+- CORS (MIT License)
+- Multer (MIT License)
+- Jest (MIT License)
+- Supertest (MIT License)
 
 **Copyright Notice:** © 2024 CNES and ALGOSUP. All rights reserved.  
-
----
-
-## License
-
-<!-- TODO -->
 
 ---
 
