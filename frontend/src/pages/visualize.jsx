@@ -231,14 +231,14 @@ function Visualize() {
           />
           <h1 className="text-3xl md:text-4xl font-bold text-white">SPIN</h1>
         </div>
-        <p className="text-md md:text-lg text-white mt-2">Signal Propagation Inspector</p>
+        <h2 className="text-md md:text-lg text-white mt-2">Signal Propagation Inspector</h2>
       </header>
 
       {/* Main Content */}
       <main className="flex-grow w-full flex flex-col items-center py-6">
-        <h2 className="text-xl md:text-2xl text-[#14002b] font-semibold text-center mb-6">
+        <h3 className="text-xl md:text-2xl text-[#14002b] font-semibold text-center mb-6">
           Welcome To The Visualization
-        </h2>
+        </h3>
 
         {/* Dropdown Selection */}
         <div className="w-full max-w-xl mb-8">

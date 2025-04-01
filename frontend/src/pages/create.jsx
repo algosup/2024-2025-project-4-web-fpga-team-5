@@ -195,16 +195,16 @@ function Create() {
           />
           <h1 className="text-3xl md:text-4xl font-bold text-white">SPIN</h1>
         </div>
-        <p className="text-md md:text-lg text-white mt-2">Signal Propagation Inspector</p>
+        <h2 className="text-md md:text-lg text-white mt-2">Signal Propagation Inspector</h2>
       </header>
 
       {/* Main Content */}
       <main className="flex flex-col items-center flex-grow w-full overflow-y-auto">
         {/* Create Section */}
         <section className="w-full max-w-4xl px-4 md:px-6 py-8">
-          <h2 className="text-xl md:text-2xl text-[#14002b] font-semibold text-center mb-6">
+          <h3 className="text-xl md:text-2xl text-[#14002b] font-semibold text-center mb-6">
             Welcome to the Creation Interface
-          </h2>
+          </h3>
 
           <div className="bg-[#14002b] p-6 md:p-8 rounded-xl shadow-2xl mb-10">
             <h3 className="text-xl font-semibold text-white mb-4">Add Example</h3>

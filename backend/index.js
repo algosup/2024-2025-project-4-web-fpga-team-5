@@ -40,7 +40,7 @@ const upload = multer({
         if (allowedExtensions && allowedExtensions.includes(fileExtension)) {
             cb(null, true);
         } else {
-            req.fileValidationError = `Invalid file type for ${file.fieldname}, only ${allowedExtensions?.join(', ')} files are allowed!`;
+            req.fileValidationError = `Invalid file(s) format.`;
             cb(null, false);
         }
     },
@@ -114,12 +114,12 @@ app.post('/api/upload', upload.fields([{ name: 'sdfFile' }, { name: 'verilogFile
             try {
                 // check if file exists
                 await fs.access(projectJSON_Path);
-                return res.status(400).send('Project already exists');
+                return res.status(400).send('The project already exists.');
 
             } catch (error) {
                 try {
                     await fs.writeFile(join(projectJSON_Path), JSON.stringify(commonInstances, null, 2));
-                    res.send('SDF and Verilog files successfully parsed and merged.');
+                    res.status(200).send('Files uploaded successfully.');
 
                 } catch (error) {
                     res.status(500).send('Error saving parsed JSON files.');
@@ -135,6 +135,10 @@ app.post('/api/upload', upload.fields([{ name: 'sdfFile' }, { name: 'verilogFile
     }
 });
 
+// Endpoint to show a error message if no project name is provided
+app.get('/api/map', (req, res) => {
+    return res.status(400).send('Project name is required.');
+});
   
 // Endpoint API for sending parsed SDF file
 app.get('/api/map/:projectName', async (req, res) => {
@@ -157,7 +161,7 @@ app.get('/api/map/:projectName', async (req, res) => {
     } catch (error) {
         if (error.code === 'ENOENT') {
             // File does not exist
-            return res.status(404).send('File not found.');
+            return res.status(400).send('Project not found.');
         }
         res.status(500).send('Error reading parsed SDF JSON file.');
     }
@@ -180,7 +184,7 @@ app.delete('/api/delete-project/:projectName', async (req, res) => {
             await fs.access(projectPath);
         } catch (err) {
             // file does not exist
-            return res.status(404).send('File does not exist.');    
+            return res.status(404).send('Project does not exist.');    
         }
 
         // Delete file

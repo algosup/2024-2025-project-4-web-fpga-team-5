@@ -18,14 +18,14 @@ function Home() {
           />
           <h1 className="text-3xl md:text-4xl font-bold text-white">SPIN</h1>
         </div>
-        <p className="text-md md:text-lg text-white mt-2">Signal Propagation Inspector</p>
+        <h2 className="text-md md:text-lg text-white mt-2">Signal Propagation Inspector</h2>
       </header>
 
       {/* Main Content */}
       <main className="flex flex-col items-center justify-center flex-grow w-full max-w-4xl px-4 md:px-0">
-        <h2 className="text-xl md:text-2xl text-[#14002b] font-semibold text-center mb-6 mt-10 md:mt-6">
+        <h3 className="text-xl md:text-2xl text-[#14002b] font-semibold text-center mb-6 mt-10 md:mt-6">
           Welcome to the FPGA Educational Simulator
-        </h2>
+        </h3>
 
         
         {/* Project Description */}
