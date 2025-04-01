@@ -305,7 +305,7 @@ function drawConnections(g, components, graph) {
 
     // Draw connection path
     const pathGenerator = d3.line()
-      .curve(d3.curveBasis)
+      .curve(d3.curveLinear)
       .x(d => d.x)
       .y(d => d.y);
 
@@ -437,7 +437,10 @@ function calculateIOPoint(node, ioName, ioType) {
         // Separate clock and non-clock inputs
         if (isClockIO) {
           // Push clock inputs further to the left
-          y = node.y + 10;
+          y = node.y + 18;
+          
+          //Push clock inputs to the middle of the DFF
+          x = (node.x - SIZES.DFF_WIDTH / 2) + SIZES.DFF_WIDTH / 2;
         }
 
         if (totalIOCount > 1) {
@@ -617,15 +620,18 @@ function getIOName(ioName) {
   return ioName;
 }
 
-// Update active paths based on simulation time
+// Update active paths based on simulation time with flowing animation effect
 export function updateActivePaths(data, svgRef, simulationTime) {
   if (!data || !svgRef.current) return [];
 
   const moduleName = Object.keys(data.modules)[0];
   const moduleData = data.modules[moduleName];
 
-  const newActivePaths = [];
-  const fixedActivePaths = [];
+  const activeClockPaths = [];
+  const activeSignalPaths = [];
+  
+  // Animation parameters for signal propagation
+  const SIGNAL_ANIM_DURATION = 10; // in ps, for the signal to travel along a path
 
   // Iterate through interconnect instances
   moduleData.instances
@@ -635,20 +641,36 @@ export function updateActivePaths(data, svgRef, simulationTime) {
         const pathId = `path-${conn.fromDevice}_${conn.fromIO}_to_${conn.toDevice}_${conn.toIO}`;
         const isClockPath = conn.fromIO.toLowerCase().includes('clock') ||
           conn.toIO.toLowerCase().includes('clock');
+        const delay = conn.delay || 0;
 
-        // Check if the connection is active based on simulation time
-        if (simulationTime >= (conn.delay || 0)) {
+        // Animation ends at the delay time
+        const animationStartTime = delay - SIGNAL_ANIM_DURATION;
+
+        // Check if the simulation time is within the animation window or after it
+        if (simulationTime >= animationStartTime) {
           if (isClockPath) {
             // Clock paths blink at 100 MHz frequency
             const cycleTime = 10; // nanoseconds
             const isActiveInCycle = Math.floor(simulationTime / cycleTime) % 2 === 0;
 
-            if (isActiveInCycle) {
-              newActivePaths.push(pathId);
+            if (isActiveInCycle && simulationTime >= delay) {
+              activeClockPaths.push(pathId);
             }
           } else {
-            // Non-clock paths remain fixed once activated
-            fixedActivePaths.push(pathId);
+            // Calculate animation progress
+            let progress;
+            if (simulationTime >= delay) {
+              // After delay, the progress is complete
+              progress = 1;
+            } else {
+              // During animation window, calculate progress
+              progress = (simulationTime - animationStartTime) / SIGNAL_ANIM_DURATION;
+            }
+            
+            activeSignalPaths.push({
+              id: pathId,
+              progress: progress
+            });
           }
         }
       });
@@ -658,35 +680,138 @@ export function updateActivePaths(data, svgRef, simulationTime) {
   if (svgRef.current) {
     const svg = d3.select(svgRef.current);
 
+    // Update clock paths (blinking)
     svg.selectAll(".connection-path")
-      .attr("stroke", function () {
-        const pathId = d3.select(this).attr("id");
-
-        // Clock paths blink
-        if (newActivePaths.includes(pathId)) {
-          return COLORS.ACTIVE_PATH;
+      .each(function() {
+        const path = d3.select(this);
+        const pathId = path.attr("id");
+        const isClockPath = activeClockPaths.includes(pathId);
+        const signalInfo = activeSignalPaths.find(p => p.id === pathId);
+        
+        // Reset any existing gradients
+        path.attr("stroke-dasharray", null)
+            .attr("stroke-dashoffset", null);
+        
+        if (isClockPath) {
+          // Clock paths blink
+          path.attr("stroke", COLORS.ACTIVE_PATH)
+              .attr("stroke-width", 3);
+        } else if (signalInfo) {
+          // For non-clock signal paths, create flowing effect
+          const pathLength = this.getTotalLength();
+          
+          if (signalInfo.progress < 1) {
+            // During animation: show partial path with gradient
+            path.attr("stroke", COLORS.ACTIVE_PATH)
+                .attr("stroke-width", 3)
+                .attr("stroke-dasharray", pathLength)
+                .attr("stroke-dashoffset", pathLength * (1 - signalInfo.progress));
+          } else {
+            // After animation completes: show full path
+            path.attr("stroke", COLORS.ACTIVE_PATH)
+                .attr("stroke-width", 3);
+          }
+        } else {
+          // Inactive paths
+          path.attr("stroke", COLORS.INTERCONNECT)
+              .attr("stroke-width", 2);
         }
-
-        // Fixed active paths (non-clock) remain active
-        if (fixedActivePaths.includes(pathId)) {
-          return COLORS.ACTIVE_PATH;
+      });
+      
+    // Update port indicators to light up when the signal reaches them
+    svg.selectAll(".io-port")
+      .each(function() {
+        const port = d3.select(this);
+        const componentId = port.attr("data-component");
+        const ioName = port.attr("data-io");
+        const isTargetPort = port.classed("target-port");
+        
+        // Find if any connected paths are active and have reached this port
+        let isActive = false;
+        
+        if (isTargetPort) {
+          // For target ports, check if any incoming signals have reached
+          const incomingPaths = activeSignalPaths.filter(p => 
+            p.id.includes(`_to_${componentId}_${ioName}`) && p.progress === 1
+          );
+          isActive = incomingPaths.length > 0;
+        } else {
+          // For source ports, check if any outgoing signals have started
+          const outgoingPaths = activeSignalPaths.filter(p => 
+            p.id.includes(`${componentId}_${ioName}_to_`) && p.progress > 0
+          );
+          isActive = outgoingPaths.length > 0;
         }
-
-        // Inactive paths
-        return COLORS.INTERCONNECT;
-      })
-      .attr("stroke-width", function () {
-        const pathId = d3.select(this).attr("id");
-
-        // Clock paths and fixed active paths have different stroke width
-        if (newActivePaths.includes(pathId) || fixedActivePaths.includes(pathId)) {
-          return 3;
+        
+        // Update port appearance based on activity
+        if (isActive) {
+          port.attr("r", SIZES.PORT_RADIUS * 1.2)
+              .attr("fill", isTargetPort ? COLORS.OUTPUT_PORT : COLORS.INPUT_PORT)
+              .attr("opacity", 1);
+        } else {
+          port.attr("r", SIZES.PORT_RADIUS)
+              .attr("opacity", 0.8);
         }
-
-        return 2; // Default stroke width
+      });
+      
+    // Highlight components that are receiving signals
+    svg.selectAll(".component")
+      .each(function() {
+        const component = d3.select(this);
+        const componentClass = component.attr("class");
+        const componentId = componentClass.match(/component-([^\s]+)/)?.[1];
+        
+        if (!componentId) return;
+        
+        // Check if any signals have fully reached this component
+        const incomingPaths = activeSignalPaths.filter(p => 
+          p.id.includes(`_to_${componentId}_`) && p.progress === 1
+        );
+        
+        const isActive = incomingPaths.length > 0;
+        
+        // Add a subtle pulse effect when component is active
+        if (isActive) {
+          // Get current fill color
+          const currentFill = component.attr("fill");
+          
+          // Create a subtle pulsing effect
+          if (!component.classed("active-pulse")) {
+            component.classed("active-pulse", true)
+                    .attr("original-fill", currentFill);
+                    
+            // Create subtle pulse effect using CSS animation
+            const id = "pulse-" + Math.random().toString(36).substr(2, 9);
+            component.attr("filter", `url(#${id})`);
+            
+            // Create filter for glow effect
+            const defs = svg.select("defs");
+            const filter = defs.append("filter")
+                              .attr("id", id)
+                              .attr("x", "-50%")
+                              .attr("y", "-50%")
+                              .attr("width", "200%")
+                              .attr("height", "200%");
+                              
+            filter.append("feGaussianBlur")
+                  .attr("stdDeviation", "2")
+                  .attr("result", "blur");
+                  
+            filter.append("feComposite")
+                  .attr("in", "SourceGraphic")
+                  .attr("in2", "blur")
+                  .attr("operator", "over");
+          }
+        } else {
+          // Remove pulse effect
+          if (component.classed("active-pulse")) {
+            component.classed("active-pulse", false)
+                    .attr("filter", null);
+          }
+        }
       });
   }
 
-  // Combine both types of active paths for return
-  return [...newActivePaths, ...fixedActivePaths];
+  // Return all active path IDs
+  return [...activeClockPaths, ...activeSignalPaths.map(p => p.id)];
 }
