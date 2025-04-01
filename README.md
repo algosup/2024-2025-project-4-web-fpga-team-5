@@ -19,8 +19,6 @@ This project involves creating a web-based interface for an FPGA simulator that 
   - [How To Visualize An Example](#how-to-visualize-an-example)
   - [How To Create A New Example](#how-to-create-a-new-example)
 - [Installing/Getting Started](#installinggetting-started)
-  - [User Installation Procedure](#user-installation-procedure)
-  - [Developers Installation Procedure](#developers-installation-procedure)
 - [Roadmap](#roadmap)
 - [Documentation Of The Project](#documentation-of-the-project)
 - [Development](#development)
@@ -80,8 +78,6 @@ You can now refer to the [How To Visualize An Example](#how-to-visualize-an-exam
 ---
 
 ## Installing/Getting Started
-
-### User Installation Procedure
 
 1. Clone the repository.
 
