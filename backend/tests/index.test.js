@@ -292,14 +292,14 @@ describe('API Endpoints Tests', () => {
 
     // Normal Conditions Test
     it('successfully deletes the parsed JSON file', async () => {
-        const response = await request(app).delete('/api/delete/testProject');
+        const response = await request(app).delete('/api/delete-project/testProject');
         expect(response.status).toBe(200);
         expect(response.text).toBe('Project deleted successfully.');
     });
 
     // Project not found Test
     it('fail to delete the parsed JSON file (file not found)', async () => {
-        const response = await request(app).delete('/api/delete/nonExistent');
+        const response = await request(app).delete('/api/delete-project/nonExistent');
         expect(response.status).toBe(404);
         expect(response.text).toBe('Project does not exist.');
     });
