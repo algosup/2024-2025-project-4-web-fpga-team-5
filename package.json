@@ -1,6 +1,6 @@
 {
     "name": "spin",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "description": "App for visualizing FPGA designs",
     "main": "index.js",
     "scripts": {

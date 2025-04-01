@@ -87,8 +87,6 @@ app.post('/api/upload', upload.fields([{ name: 'sdfFile' }, { name: 'verilogFile
         try {
             commonInstances = mergeJsonForD3(verilogData, sdfData);
         } catch (error) {
-            console.log('Error merging files:', error);
-            
             return res.status(500).send('Error merging files.');
         }
 
@@ -116,7 +114,6 @@ app.post('/api/upload', upload.fields([{ name: 'sdfFile' }, { name: 'verilogFile
             try {
                 // check if file exists
                 await fs.access(projectJSON_Path);
-                console.error('Project already exists');
                 return res.status(400).send('Project already exists');
 
             } catch (error) {
@@ -125,13 +122,11 @@ app.post('/api/upload', upload.fields([{ name: 'sdfFile' }, { name: 'verilogFile
                     res.send('SDF and Verilog files successfully parsed and merged.');
 
                 } catch (error) {
-                    console.error('Error saving parsed JSON files:', error);
                     res.status(500).send('Error saving parsed JSON files.');
                 }
             }
 
         } catch (error) {
-            console.log('Error saving parsed JSON files:', error);
             res.status(500).send('Error saving parsed JSON files.');
         }
 
@@ -164,7 +159,6 @@ app.get('/api/map/:projectName', async (req, res) => {
             // File does not exist
             return res.status(404).send('File not found.');
         }
-        console.error('Error reading parsed SDF JSON file:', error);
         res.status(500).send('Error reading parsed SDF JSON file.');
     }
 });
@@ -194,7 +188,6 @@ app.delete('/api/delete-project/:projectName', async (req, res) => {
         res.send('File deleted successfully.');
 
     } catch (error) {
-        console.error('Error deleting file:', error);
         res.status(500).send('Error deleting file, please try again later.');
     }
 });
@@ -236,11 +229,8 @@ app.get('/api/list', async (req, res) => {
 
         res.json(filesInfo);
     } catch (error) {
-        console.error('Error listing files:', error);
         res.status(500).send('Error listing files.');
     }
 });
 
-export const server = app.listen(PORT, () => {
-    console.log(`Backend launched on http://localhost:${PORT}`);
-});
+export const server = app.listen(PORT, () => {});
