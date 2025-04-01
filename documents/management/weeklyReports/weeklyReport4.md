@@ -2,7 +2,7 @@
 
 ---
 
-# Weekly Report 4 
+# Weekly Report 4
 
 </div>
 
@@ -47,6 +47,6 @@ No project hours this week, but in order to keep a steady flow of work, the team
 
 ---
 
-## Conclusion 
+## Conclusion
 
 The project time was not to our liking, but in spite of this the team was able to move forward to meet the deadlines.

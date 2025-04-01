@@ -10,7 +10,7 @@
 
 ## Summary
 
-This week was mainly focused on the final details, and the V1 of the code. IT was productive,  we successfully completed many documents and the V1 of the code. 
+This week was mainly focused on the final details, and the V1 of the code. IT was productive,  we successfully completed many documents and the V1 of the code.
 
 ---
 

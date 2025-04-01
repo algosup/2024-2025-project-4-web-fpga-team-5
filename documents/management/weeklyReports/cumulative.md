@@ -105,7 +105,7 @@ During the second week, we concentrated on clarifying the final points with the 
 
 ---
 
-### Achievements 
+### Achievements
 
 - Find the technologies that would be used for this project
 - Clarify the project
@@ -156,14 +156,14 @@ I personally had health problems that prevented me from working on site, but I t
 
 ---
 
-### Challenges & Risks 
+### Challenges & Risks
 
 - Request the customer's approval for the mock-up.
 - Health problem for the Project Manager.
 
 ---
 
-### Priorities For Next Week 
+### Priorities For Next Week
 
 - Advance on the Technical Specifications
 - Finish the back-end
@@ -171,7 +171,7 @@ I personally had health problems that prevented me from working on site, but I t
 
 ---
 
-### Meetings & Deadlines 
+### Meetings & Deadlines
 
 | Date       | Event     | Participants       | Notes                                                   |
 |------------|-----------|------------------- |-------------------------------------------------------- |

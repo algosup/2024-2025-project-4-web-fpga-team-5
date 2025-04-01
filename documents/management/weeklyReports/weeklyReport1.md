@@ -2,13 +2,13 @@
 
 ---
 
-# Weekly Report 1 
+# Weekly Report 1
 
 </div>
 
 ---
 
-## Summary 
+## Summary
 
 For the first week, we focused on having a clear idea of what we will be doing. The goal was to brainstorm about the project.  
 
@@ -48,6 +48,6 @@ For the first week, we focused on having a clear idea of what we will be doing. 
 
 ---
 
-## Conclusion 
+## Conclusion
 
 Our team faced several challenges during this first week (time constraints, communication issues, etc.). However, we have shown strong potential to succeed in this project.

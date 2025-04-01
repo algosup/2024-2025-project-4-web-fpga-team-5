@@ -35,6 +35,7 @@
 </details>
 
 ## Team Members
+
 | Picture                                                                                             | Name              | Role                |
 | --------------------------------------------------------------------------------------------------- | ----------------- | ------------------- |
 | <img src="https://avatars.githubusercontent.com/u/182214449?v=4" width="100" height="100" alt="PP"> | Robin GOUMY       | Project Manager     |

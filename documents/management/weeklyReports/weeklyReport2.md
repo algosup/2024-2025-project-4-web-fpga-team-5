@@ -2,19 +2,19 @@
 
 ---
 
-# Weekly Report 2 
+# Weekly Report 2
 
 </div>
 
 ---
 
-## Summary 
+## Summary
 
 During the second week, we concentrated on clarifying the final points with the customer and developing the mock-up. We only had one progress session, which limited our progress.
 
 ---
 
-## Achievements 
+## Achievements
 
 - Find the technologies that would be used for this project
 - Clarify the project
@@ -29,7 +29,7 @@ During the second week, we concentrated on clarifying the final points with the 
 
 ---
 
-## Priorities For Next Week 
+## Priorities For Next Week
 
 - Finish the mock-up and ask for an approve
 - Start the developpement

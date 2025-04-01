@@ -2,7 +2,7 @@
 
 ---
 
-# Weekly Report 3 
+# Weekly Report 3
 
 </div>
 
