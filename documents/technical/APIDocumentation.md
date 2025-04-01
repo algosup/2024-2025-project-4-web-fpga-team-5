@@ -18,7 +18,7 @@ Our API as 4 endpoints which are listed below.
 
 **Example:**
 
-```
+```URL
 http://localhost:3001/api/list
 ```
 
@@ -52,6 +52,7 @@ http://localhost:3001/api/list
 | 500  | Server Error | Error listing directories. |
 
 ---
+
 ### GET - Obtaining A Single Result From The Server
 
 ![Static Badge](https://img.shields.io/badge/GET-darkgreen)
@@ -64,7 +65,7 @@ http://localhost:3001/api/list
 
 **Example:**
 
-```
+```URL
 http://localhost:3001/api/map/FF1_exemples
 ```
 
