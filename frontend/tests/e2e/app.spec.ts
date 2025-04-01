@@ -23,7 +23,7 @@ describe('Main Page Tests', () => {
 
     it('should display correct page title', async () => {
         const title = await driver.getTitle();
-        expect(title).to.include('SPIN - Cnes');
+        expect(title).to.include('SPIN - CNES');
     });
 
     it('should display correct heading 1', async () => {
