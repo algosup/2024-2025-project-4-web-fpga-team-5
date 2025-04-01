@@ -1,0 +1,27 @@
+{
+    "name": "spin",
+    "version": "1.2.2",
+    "description": "App for visualizing FPGA designs",
+    "main": "index.js",
+    "scripts": {
+        "install": "npm run install:backend && npm run install:frontend",
+        "install:backend": "cd backend && npm install",
+        "install:frontend": "cd frontend && npm install",
+        "start:backend": "cd backend && node index.js",
+        "start:frontend": "cd frontend && npm run dev",
+        "main": "concurrently \"npm run start:backend\" \"npm run start:frontend\" \"npm run open:browser\"",
+        "open:browser": "wait-on http://localhost:5173 && open-cli http://localhost:5173"
+    },
+    "keywords": [
+        "verilog",
+        "sdf",
+        "electronics",
+        "visualization"
+    ],
+    "author": "",
+    "devDependencies": {
+        "concurrently": "^8.2.2",
+        "open-cli": "^7.2.0",
+        "wait-on": "^7.2.0"
+    }
+}
