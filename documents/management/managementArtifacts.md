@@ -6,7 +6,6 @@
 
 <img src="../../images/logo.png" width="400" alt="Logo"/>
 
-
 </div>
 
 <br>
@@ -15,15 +14,31 @@
 <summary><b>Table Of Contents</b></summary>
 
 - [Management Artifacts - Web FPGA](#management-artifacts---web-fpga)
+  - [Tasks](#tasks)
   - [RACI Matrix](#raci-matrix)
   - [Key Performance Indicators](#key-performance-indicators)
+    - [Documents:](#documents)
+    - [Design:](#design)
+    - [Development:](#development)
+    - [Human Resources:](#human-resources)
   - [Risks \& Assumptions](#risks--assumptions)
   - [Mood](#mood)
   - [Weekly Reports](#weekly-reports)
 
 </details>
 
+## Tasks
+
+All information is maintained and updated in Clickup for real-time tracking.
+
+- **All the Tasks:** [View all tasks](https://sharing.clickup.com/9015908151/l/h/8cp7ntq-995/c86b113626f4488)  
+  This section lists every task with detailed priorities, assigned roles, and deadlines.
+
+- **Gantt Chart:** [View the Gantt chart](https://sharing.clickup.com/9015908151/g/h/8cp7ntq-1135/93cbe38f66cc00e)
+   A visual timeline created in Clickup that outlines project milestones and deadlines.
+  
 ## RACI Matrix  
+
 | Name                     | Project Manager | Program Manager | Software Engineer | QA Engineer | Technical Writer | Client |
 |--------------------------|-----------------|-----------------|--------------------|-------------|-------------------|--------|
 | Project kick-off         | I               | R/A             | I                  | I           | I                 | C      |
@@ -48,7 +63,7 @@ To follow the progress of the project, multiple KPIs have been defined. They can
 
 Our KPIs have been separated into different categories as follows:
 
-Documents: 
+### Documents:
 
 - Project Charter
 - Functional Specifications
@@ -59,23 +74,49 @@ Documents:
 - User Manual
 - READ.ME
 
-Design: 
+**Formula:**  
+
+<div align="center">
+
+$$\text{Progress} = \frac{\text{Current Number of Completed Sections}}{\text{Total Predefined Sections}} \times 100$$ 
+
+</div>
+
+### Design:
 
 - Mock-up
+  
+You can access to the mock-up following [this link](https://www.figma.com/design/YohFQNPfGWHBlULNmWJFgS/WebFPGA?node-id=0-1&p=f&t=iZloJbAbCTv3OLB5-0).
 
-Development: 
+**Formula:**
+
+<div align="center">
+
+$$\text{Progress} = \frac{\text{Current Number of Completed Pages}}{\text{Total Predefined Pages}} \times 100$$ 
+
+</div>
+
+### Development:
 
 - Back-end 
 - Front-end
 
-Human Resources: 
+**Formula:**  
+
+<div align="center">
+
+$$\text{Progress} = \frac{(\text{Completed Tasks} + \sum \text{Partial Progress on Ongoing Tasks})}{\text{Total Tasks Planned}} \times 100$$  
+
+</div>
+
+### Human Resources: 
 
 - Unjustified Absence Time
 - Overtime
 
 You can see our project's KPIs following [this link](https://algosup-my.sharepoint.com/:x:/p/robin_goumy/EYrk5Cafv1dMgymb8nSp5esBLqcweLlJSfQut3MZREPwcA?e=f8d4bO).
 
-##  Risks & Assumptions
+## Risks & Assumptions
 
 | ID  | Description                                                                             | Consequence                                                                         | Impact | Likelihood | Mitigation/Avoidance                                                  |
 |-----|-----------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|--------|------------|-----------------------------------------------------------------------|
@@ -86,6 +127,7 @@ You can see our project's KPIs following [this link](https://algosup-my.sharepoi
 ## Mood
 
 The mood inside the team is calculated based on the different aspects:
+
 - Motivation
 - Management 
 - Productivity
@@ -93,7 +135,7 @@ The mood inside the team is calculated based on the different aspects:
 
 This is a simple average of the various categories, taking into account team size, number of responses and category evaluation.
 
-This average is currently: 7.5 🌟
+This average is currently: 7.8 🌟
 
 ## Weekly Reports
 

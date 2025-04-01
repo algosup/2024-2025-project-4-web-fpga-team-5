@@ -35,14 +35,15 @@
 </details>
 
 ## Team Members
-| Picture                                                                                    | Name              | Role                |
-| ------------------------------------------------------------------------------------------ | ----------------- | ------------------- |
-| <img src="https://avatars.githubusercontent.com/u/182214449?v=4" width="100" height="100"> | Robin GOUMY       | Project Manager     |
-| <img src="https://avatars.githubusercontent.com/u/123485791?v=4" width="100" height="100"> | Alexandre BOPP    | Program Manager     |
-| <img src="https://avatars.githubusercontent.com/u/145995586?v=4" width="100" height="100"> | Maxime THIZEAU    | Technical Leader    |
-| <img src="https://avatars.githubusercontent.com/u/62845771?v=4" width="100" height="100">  | Geoffrey DELRIEU  | Software Engineer   |
-| <img src="https://avatars.githubusercontent.com/u/145995367?v=4" width="100" height="100"> | Mathias DELILLE   | Quality Assurance   |
-| <img src="https://avatars.githubusercontent.com/u/145991425?v=4" width="100" height="100"> | Habi CAILLEAU     | Technical Writer    |
+
+| Picture                                                                                             | Name              | Role                |
+| --------------------------------------------------------------------------------------------------- | ----------------- | ------------------- |
+| <img src="https://avatars.githubusercontent.com/u/182214449?v=4" width="100" height="100" alt="PP"> | Robin GOUMY       | Project Manager     |
+| <img src="https://avatars.githubusercontent.com/u/123485791?v=4" width="100" height="100" alt="PP"> | Alexandre BOPP    | Program Manager     |
+| <img src="https://avatars.githubusercontent.com/u/145995586?v=4" width="100" height="100" alt="PP"> | Maxime THIZEAU    | Technical Leader    |
+| <img src="https://avatars.githubusercontent.com/u/62845771?v=4" width="100" height="100" alt="PP">  | Geoffrey DELRIEU  | Software Engineer   |
+| <img src="https://avatars.githubusercontent.com/u/145995367?v=4" width="100" height="100" alt="PP"> | Mathias DELILLE   | Quality Assurance   |
+| <img src="https://avatars.githubusercontent.com/u/145991425?v=4" width="100" height="100" alt="PP"> | Habi CAILLEAU     | Technical Writer    |
 
 ## Scope
 
@@ -85,7 +86,6 @@ This project aims to create a web interface, visually combining 2D FPGA layouts 
 - Create a 3D visualization of the signal.
 - Support for several FPGA families
 
-
 ## Project Limitations
 
 ### Constraints
@@ -99,11 +99,11 @@ This project aims to create a web interface, visually combining 2D FPGA layouts 
 - Complex data transformation: Converting Verilog and SDF files into a usable frontend format could be challenging.
 - Performance and interactivity: Ensuring real-time, smooth animation.
 - Tool interoperability: Potential incompatibilities between input formats and open-source tools could slow down development.
-
+  
 ## Stakeholders
 
-| Role   | Representative              | 
-| ------ | --------------------------- | 
+| Role   | Representative              |
+| ------ | --------------------------- |
 | Client | Florent Manni (CNES)        |
 
 ## Communication
@@ -139,5 +139,7 @@ Communication with the customer has been set up in Slack as well as GitHub for [
 - **Work Hours:** 20 half-days of 3 hours and 30 minutes each = 70h
 
 **Total estimated human hours:** 70h * 6 = 420H
+
+You can access [here](https://sharing.clickup.com/9015908151/c/h/6-901508851396-5/62029e4ec0f9df3) to the planning of project time hours.
 
 ---

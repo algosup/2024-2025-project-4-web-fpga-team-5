@@ -5,7 +5,7 @@
 # Weekly Reports Cumulative
 
 </div>
- 
+
 ---
 
 <details>
@@ -41,12 +41,17 @@
     - [Meetings \& Deadlines](#meetings--deadlines-3)
     - [Conclusion](#conclusion-3)
   - [Weekly Report Week 5](#weekly-report-week-5)
+    - [Summary](#summary-4)
+    - [Achievements](#achievements-4)
+    - [Challenges \& Risks](#challenges--risks-4)
+    - [Priorities For Next Week](#priorities-for-next-week-4)
+    - [Meetings \& Deadlines](#meetings--deadlines-4)
+    - [Conclusion](#conclusion-4)
   - [Weekly Report Week 6](#weekly-report-week-6)
-
 
 </details>
 
-## Weekly Report Week 1 
+## Weekly Report Week 1
 
 ### Summary  
 
@@ -54,7 +59,7 @@ For the first week, we focused on having a clear idea of what we will be doing. 
 
 ---
 
-### Achievements 
+### Achievements
 
 - Brainstormed about the project  
 - Created a flowchart for the client  
@@ -92,16 +97,15 @@ For the first week, we focused on having a clear idea of what we will be doing. 
 
 Our team faced several challenges during this first week (time constraints, communication issues, etc.). However, we have shown strong potential to succeed in this project.  
 
-
 ## Weekly Report Week 2
 
-### Summary  
+### Summary
 
 During the second week, we concentrated on clarifying the final points with the customer and developing the mock-up. We only had one progress session, which limited our progress.
 
 ---
 
-### Achievements  
+### Achievements
 
 - Find the technologies that would be used for this project
 - Clarify the project
@@ -109,14 +113,14 @@ During the second week, we concentrated on clarifying the final points with the 
 
 ---
 
-### Challenges & Risks  
+### Challenges & Risks
 
 - Learn how to use the technologies chosen
 - Create a pleasure mock-up for the client
 
 ---
 
-### Priorities For Next Week  
+### Priorities For Next Week
 
 - Finish the mock-up and ask for an approve
 - Start the developpement
@@ -124,7 +128,7 @@ During the second week, we concentrated on clarifying the final points with the 
 
 ---
 
-### Meetings & Deadlines  
+### Meetings & Deadlines
 
 | Date       | Event     | Participants    | Notes                                  |
 |------------|-----------|-----------------|----------------------------------------|
@@ -132,20 +136,19 @@ During the second week, we concentrated on clarifying the final points with the 
 
 ---
 
-### Conclusion  
+### Conclusion
 
 The project has had difficulty progressing due to a lack of time (only 2 sessions of 3H30 since the start of the project) as well as other factors. Some people have a serious lack of interest in the project, which is detrimental to the team as a whole. We'll be looking at ways of improving this situation: identifying the cause of the lack of interest, working on a case-by-case basis, instilling a climate of motivation or giving the project a new meaning.
 
+## Weekly Report Week 3
 
-## Weekly Report Week 3 
-
-### Summary  
+### Summary
 
 I personally had health problems that prevented me from working on site, but I tried to manage the team from a distance. Despite this, the team made great progress on the project, thanks to numerous sessions. The final version of the mock-up has been completed, as have the Functional Specifications.
 
 ---
 
-### Achievements  
+### Achievements
 
 - Finish the Functionnal Specifications
 - Finish the mock-up
@@ -153,14 +156,14 @@ I personally had health problems that prevented me from working on site, but I t
 
 ---
 
-### Challenges & Risks  
+### Challenges & Risks
 
 - Request the customer's approval for the mock-up.
 - Health problem for the Project Manager.
 
 ---
 
-### Priorities For Next Week  
+### Priorities For Next Week
 
 - Advance on the Technical Specifications
 - Finish the back-end
@@ -168,7 +171,7 @@ I personally had health problems that prevented me from working on site, but I t
 
 ---
 
-### Meetings & Deadlines  
+### Meetings & Deadlines
 
 | Date       | Event     | Participants       | Notes                                                   |
 |------------|-----------|------------------- |-------------------------------------------------------- |
@@ -179,33 +182,33 @@ I personally had health problems that prevented me from working on site, but I t
 
 ---
 
-### Conclusion  
+### Conclusion
 
 It's been a productive week, and the functional part has been completed with a validated mock-up and a verified document. Despite my absence for medical reasons, the team was able to pull together and work as a team to complete the tasks and meet the deadlines.
 
-## Weekly Report Week 4 
+## Weekly Report Week 4
 
-### Summary  
+### Summary
 
 No project hours this week, but in order to keep a steady flow of work, the team carried out some of the tasks in overtime, as well as to meet deadlines.
 
 ---
 
-### Achievements  
+### Achievements
 
 - Complete the entire back-end
 - Review part of the back-end and front-end
 
 ---
 
-### Challenges & Risks  
+### Challenges & Risks
 
 - Fix all the issues of the code found by the QA
 - The Project manager had health problem still
 
 ---
 
-### Priorities For Next Week  
+### Priorities For Next Week
 
 - Complete the Technical Specifications
 - Finish the front-end and link to back-end
@@ -213,7 +216,7 @@ No project hours this week, but in order to keep a steady flow of work, the team
 
 ---
 
-### Meetings & Deadlines  
+### Meetings & Deadlines
 
 | Date       | Event     | Participants       | Notes                                                   |
 |------------|-----------|------------------- |-------------------------------------------------------- |
@@ -224,10 +227,54 @@ No project hours this week, but in order to keep a steady flow of work, the team
 
 ---
 
-### Conclusion  
+### Conclusion
 
 The project time was not to our liking, but in spite of this the team was able to move forward to meet the deadlines.
 
-## Weekly Report Week 5 
+## Weekly Report Week 5
 
-## Weekly Report Week 6 
+### Summary
+
+This week was mainly focused on the final details, and the V1 of the code. IT was productive,  we successfully completed many documents and the V1 of the code. 
+
+---
+
+### Achievements
+
+- Complete the V1 of the project
+- Complete quality assurance documents
+- Complete the User Manual
+
+---
+
+### Challenges & Risks
+
+- Meet the final deadlines
+- Satisfy the customer
+- Get an answer about the first version by the customer
+
+---
+
+### Priorities For Next Week
+
+- Finish the code for the deadline
+- Prepare the oral presentation's
+- Verify the code constantly
+
+---
+
+### Meetings & Deadlines
+
+| Date       | Event     | Participants       | Notes                                                   |
+|------------|-----------|------------------- |-------------------------------------------------------- |
+| 01/04/2025 | Deadline  | Software Engineer  | Last version of the code for a review by the customer   |
+| 01/04/2025 | Deadline  | Project Manager    | Finalize the Management documentations                  |
+| 01/04/2025 | Deadline  | Technical Writer   | Finalize the User Manual                                |
+
+---
+
+### Conclusion
+
+Apart from a few missed hours, the team seems more motivated, and work has progressed well this week. We managed to finish some of the documentation and V1 of the code on time. Furthermore, the customer doesn't answer us despite several messages, so we don't have feedback about the V1 version.
+
+## Weekly Report Week 6
