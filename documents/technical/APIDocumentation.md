@@ -11,11 +11,13 @@ Our API as 4 endpoints which are listed below.
 ### GET - Obtaining The Entire List Of Existing Applications
 
 ![Static Badge](https://img.shields.io/badge/GET-darkgreen)
+
 ```URL
 /api/list
 ```
 
 **Example:**
+
 ```
 http://localhost:3001/api/list
 ```
@@ -23,11 +25,13 @@ http://localhost:3001/api/list
 **No parameters**
 
 **Success 200**
+
 | Field   | Type    | Description |
 | ------- | ------- | ----------- |
 | status  | Number  | 200         |
 
 *Response (example)*
+
 ```JSON
 [
     {
@@ -42,6 +46,7 @@ http://localhost:3001/api/list
 ```
 
 **Error 5xx**
+
 | Code | Name         | Description                |
 | ---- | ------------ | -------------------------- |
 | 500  | Server Error | Error listing directories. |
@@ -50,33 +55,40 @@ http://localhost:3001/api/list
 ### GET - Obtaining A Single Result From The Server
 
 ![Static Badge](https://img.shields.io/badge/GET-darkgreen)
+
 ```URL
 /api/map/{projectName}
 ```
+
 *{}: parameters*
 
 **Example:**
+
 ```
 http://localhost:3001/api/map/FF1_exemples
 ```
 
 **Parameter:**
+
 | Field       | Type   | Description                  |
 | ----------- | ------ | ---------------------------- |
 | projectName | String | name of the project to load. |
 
 **Success 200**
+
 | Field  | Type   | Description |
 | ------ | ------ | ----------- |
 | status | Number | 200         |
 
 **Error 4xx**
+
 | Code | Name        | Description               |
 | ---- | ----------- | ------------------------- |
 | 400  | Bad Request | Project name is required. |
 | 404  | Bad Request | Project not found.        |
 
 *Response (example)*
+
 ```HTML
 <!DOCTYPE html>
 <html lang="en">
@@ -94,21 +106,25 @@ http://localhost:3001/api/map/FF1_exemples
 ```
 
 **Error 5xx**
+
 | Code | Name         | Description                                             |
 | ---- | ------------ | ------------------------------------------------------- |
 | 500  | Server Error | Error reading parsed SDF JSON file. File may not exist. |
 
 ---
+
 ## POST Methods
 
 ### POST - Uploading An Existing File
 
 ![Static Badge](https://img.shields.io/badge/POST-yellow)
+
 ```URL
 /api/upload/
 ```
 
 **Example:**
+
 ```
 http://localhost:3001/api/upload/
 
@@ -121,6 +137,7 @@ body:
 ```
 
 **Parameter (request body):**
+
 | Field       | Type | Description   |
 | -----       | ---- | ------------- |
 | sdfFile     | File | SDF file.     |
@@ -128,12 +145,14 @@ body:
 | projectName | text | Project name. |
 
 **Success 200**
+
 | Field   | Type   | Description                  |
 | ------- | ------ | ---------------------------- |
 | status  | Number | 200                          |
 | message | String | Files uploaded successfully. |
 
 **Error 4xx**
+
 | Code | Name        | Description                                  |
 | ---- | ----------- | -------------------------------------------- |
 | 400  | Bad Request | Both SDF and Verilog files must be uploaded. |
@@ -144,6 +163,7 @@ body:
 | 404  | Bad Request | File not found.                              |
 
 **Error 5xx**
+
 | Code | Name         | Description                     | 
 | ---- | ------------ | ------------------------------- |
 | 500  | Server Error | Error parsing SDF file.         |
@@ -153,38 +173,46 @@ body:
 | 500  | Server Error | Unexpected server error.        |
 
 ---
+
 ## DELETE Methods
 
 ### DELETE - Removing An Existing Application
 
 ![Static Badge](https://img.shields.io/badge/DELETE-orange)
+
 ```URL
 /api/delete-project/{projectName}
 ```
+
 *{}: parameters*
 
 **Example:**
+
 ```
 http://localhost:3001/api/delete-project/FF1_exemples
 ```
 
 **Parameter:**
+
 | Field       | Type   | Description               |
 | ----------- | ------ | ------------------------- |
 | projectName | String | name of the file to load. |
 
 **Success 200**
+
 | Field   | Type   | Description                   |
 | ------- | ------ | ----------------------------- |
 | status  | Number | 200                           |
 | message | String | Project deleted successfully. |
 
 **Error 4xx**
+
 | Code | Name        | Description             |
 | ---- | ----------- | ----------------------- |
 | 404  | Bad Request | Project does not exist. |
 
 **Error 5xx**
+
 | Code | Name         | Description                                 |
 | ---- | ------------ | ------------------------------------------- |
 | 500  | Server Error | Error deleting directory, it may not exist. |

@@ -8,12 +8,12 @@ Thank you for your interest in contributing to the Web FPGA project! The develop
 
 2. **Clone the forked repository to your local machine:**
 
-    - [your-folder] = The location of your clone.
+  - [your-folder] = The location of your clone.
 
-    ```bash
-    git clone https://github.com/algosup/2024-2025-project-4-web-fpga-team-5.git
-    cd [your-folder]
-    ```
+  ```bash
+  git clone https://github.com/algosup/2024-2025-project-4-web-fpga-team-5.git
+  cd [your-folder]
+  ```
 
 3. **Set Up SPIN on your local machine. Ensure that you can build and run the project locally.**
 
@@ -23,9 +23,9 @@ Thank you for your interest in contributing to the Web FPGA project! The develop
 
 - Create a new branch for each feature, bug fix, or improvement. Use a descriptive branch name:
 
-    ```bash
-    git checkout -b feature/new-feature
-    ```
+  ```bash
+  git checkout -b feature/new-feature
+  ```
 
 ### Code Style
 
@@ -35,16 +35,16 @@ Thank you for your interest in contributing to the Web FPGA project! The develop
 
 - Write clear and concise commit messages. Begin your commit message with a verb in the present tense:
 
-    - **Good**: `Resolve performance issue in the web site.`
-    - **Bad**: `Fixed stuff.`
+  - **Good**: `Resolve performance issue in the web site.`
+  - **Bad**: `Fixed stuff.`
 
 ### Pull Requests
 
 - Ensure that your branch is up-to-date with the main repository before submitting a pull request:
 
-    ```bash
-    git pull origin main
-    ```
+  ```bash
+  git pull origin main
+  ```
 
 - Open a pull request with a clear title and description. Reference any related issues in the description.
 
