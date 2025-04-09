@@ -24,7 +24,7 @@ This week was mainly devoted to final details, improving the code based on custo
 
 ## Challenges & Risks
 
-- Get the anwser of the customer the last week
+- Get the answer of the customer the last week
 - Get ready for the oral presentation
 - Be able to fix last issues on the code
 
@@ -36,8 +36,8 @@ This week was mainly devoted to final details, improving the code based on custo
 |------------|-----------|------------------- |-------------------------------------------------------- |
 | 01/04/2025 | Deadline  | Software Engineer  | Last version of the code for a review by the customer   |
 | 01/04/2025 | Deadline  | Technical Writer   | Finalize the User Manual                                |
-| 04/04/2025 | Deadline  | All Team Menbers   | Oral Presentation                                       |
-| 04/04/2025 | Deadline  | Project Manager    | Finalize the Management documentations                  |
+| 04/04/2025 | Deadline  | All Team Members   | Oral Presentation                                       |
+| 04/04/2025 | Deadline  | Project Manager    | Finalize the Management documentation                   |
 ---
 
 ## Conclusion
